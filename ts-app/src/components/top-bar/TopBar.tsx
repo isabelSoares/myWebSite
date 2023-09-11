@@ -1,25 +1,31 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import { Container, Toolbar, Typography } from '@mui/material';
+import { Box, Button, Container,Toolbar, Typography } from '@mui/material';
 
 
-interface IProps {
-    info: string
-}
+interface IProps {}
+
+const pages = ['Intro', 'CV', 'Hobbies'];
 
 export const TopBar = (props: IProps) => {
+    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         noWrap
                         component="a"
                         href="/"
                         sx={{
-                        mr: 2,
-                        display: { xs: 'none', md: 'flex' },
+                        display: 'flex',
+                        flexGrow: 1,
                         fontFamily: 'monospace',
                         fontWeight: 700,
                         letterSpacing: '.3rem',
@@ -27,8 +33,19 @@ export const TopBar = (props: IProps) => {
                         textDecoration: 'none',
                         }}
                     >
-                     🐼   
+                        LOGO
                     </Typography>
+                    <Box sx={{ flexGrow: 1, display: 'flex'}}>
+                        {pages.map((page) => (
+                        <Button
+                            key={page}
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            {page}
+                        </Button>
+                        ))}
+                    </Box>
                 </Toolbar>
             </Container>    
         </AppBar>

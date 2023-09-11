@@ -6,9 +6,7 @@ import { TopBar } from './components/top-bar/TopBar';
 function App() {
   return (
     <div className="App">
-      <TopBar
-        info="Me"
-      />
+      <TopBar/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
