@@ -14,8 +14,8 @@ export const AboutMe = (props: IProps) => {
             </p>
             <p>
                 I'm considered a curious person that always wants to learn
-                more and more 🤓 Since I was child, I really interested to explore areas to 
-                train my brain, such as puzzles, "alphabet soup", training games, among others...
+                more and more 🤓 <br /> Since I was child, I really interested to explore areas to 
+                train my brain, such as puzzles, "alphabet soup", training games, among others...<br />
                 Probably that is why, I love math, machine learning and robotics 🤭
             </p>
         </header>
