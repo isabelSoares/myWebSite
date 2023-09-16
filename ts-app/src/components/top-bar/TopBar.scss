@@ -1,14 +1,13 @@
-.TopBar {
-    text-align: center;
-}
-
-.TopBar-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.top-bar {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
     font-size: calc(10px + 2vmin);
-    color: white;
+    
+    .top-bar-button{
+        display: block;
+        color: white;
+        font-weight: bold;
+    }
 }

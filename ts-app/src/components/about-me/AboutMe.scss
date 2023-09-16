@@ -1,15 +1,43 @@
-.About-me {
-    text-align: center;
-}
-
-.About-me-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.about-me{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: calc(20px + 2vmin);
+    font-size: calc(10px + 2vmin);
+    padding: 70px;
+    gap: 20px;
+}
+
+.about-me-photo{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 40%;
+    max-height: 40%;
+
+    img {
+        width: 70%;
+    }
+}
+
+.about-me-text{
+    display: flex;
+    flex-direction: column;
     color: white;
-  }
-  
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 50%;
+
+    h1 {
+        width: 100%;
+        text-align: left;
+    }
+
+    p {
+        width: 95%;
+        text-align: left;
+        font-size: medium;
+    }
+}

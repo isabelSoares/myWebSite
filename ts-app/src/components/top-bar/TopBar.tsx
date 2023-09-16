@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import ForestIcon from '@mui/icons-material/Forest';
+import './TopBar.scss';
+import LocalFloristSharpIcon from '@mui/icons-material/LocalFloristSharp';
 import { Box, Button, Container,Toolbar, Typography } from '@mui/material';
 
 
@@ -16,26 +17,10 @@ export const TopBar = (props: IProps) => {
     };
 
     return (
-        <AppBar position="static" sx={{ background: "#aaf6f5"}}>
+        <AppBar position="static" className="top-bar">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                        display: 'flex',
-                        flexGrow: 1,
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.3rem',
-                        color: 'black',
-                        textDecoration: 'none',
-                        }}
-                    >
-                        <ForestIcon />
-                    </Typography>
+                    <LocalFloristSharpIcon />
                     <Box 
                         sx={{ flexGrow: 1, display: 'flex'}}
                         justifyContent="flex-end"
@@ -44,9 +29,9 @@ export const TopBar = (props: IProps) => {
                         >
                             {pages.map((page) => (
                             <Button
+                                className='top-bar-button'
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block' }}
                             >
                                 {page}
                             </Button>
