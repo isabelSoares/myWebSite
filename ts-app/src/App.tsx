@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
+import { ContactMe } from './components/contact-me/ContactMe';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 const darkTheme = createTheme({
@@ -22,10 +24,15 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
+      <CssBaseline />
+      <Router>
         <TopBar/>
-        <AboutMe/>
-      </ThemeProvider>
+        <Routes>
+          <Route path="/" element={<AboutMe />} />
+          <Route path="/contact" element={<ContactMe />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
     </div>
   );
 }

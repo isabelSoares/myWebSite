@@ -1,0 +1,39 @@
+.contact-me{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 90px;
+
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+    .contact-me-linkedin{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        font-size: x-large;
+    }
+}
+
+
+.contact-me-text{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 50%;
+
+    p {
+        width: 95%;
+        text-align: left;
+        font-size: medium;
+    }
+
+}
