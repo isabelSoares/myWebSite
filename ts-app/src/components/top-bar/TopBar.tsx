@@ -8,7 +8,7 @@ import './TopBar.scss';
 
 interface IProps {}
 
-const pages = ['About', 'Resume', 'Hobbies', 'Contact'];
+const pages = ['About', 'Resume', 'Hobbies'];
 
 export const TopBar = (props: IProps) => {
     const navigate = useNavigate();
@@ -20,7 +20,7 @@ export const TopBar = (props: IProps) => {
     };
 
     const constHandleButtonClick = () => {
-        navigate('/contact');
+        navigate('/resume');
     }
 
     return (

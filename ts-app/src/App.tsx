@@ -3,7 +3,8 @@ import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
-import { ContactMe } from './components/contact-me/ContactMe';
+import { ResumeCV } from './components/resume/ResumeCV';
+
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 const darkTheme = createTheme({
@@ -29,7 +30,7 @@ function App() {
         <TopBar/>
         <Routes>
           <Route path="/" element={<AboutMe />} />
-          <Route path="/contact" element={<ContactMe />} />
+          <Route path="/resume" element={<ResumeCV />} />
         </Routes>
       </Router>
     </ThemeProvider>
