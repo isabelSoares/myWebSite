@@ -13,3 +13,25 @@
         color: #e6db74;
     }
 }
+
+.resume-me-accordion {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding: 90px;
+
+    ul{
+        align-items: flex-start;
+    }
+
+    li{
+        align-items: flex-start;
+    }
+}
+
+.icon-style {
+    vertical-align: middle;
+    margin-right: 8px; 
+}
