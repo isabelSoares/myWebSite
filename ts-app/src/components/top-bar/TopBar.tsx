@@ -2,26 +2,20 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import LocalFloristSharpIcon from '@mui/icons-material/LocalFloristSharp';
 import { Box, Button, Container,Toolbar } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 import './TopBar.scss';
 
 interface IProps {}
 
-const pages = ['About', 'Resume', 'Hobbies'];
+const redirect_buttons = [
+    {name:'About', page: "/"},
+    {name:'Resume', page:"/resume"},
+    {name:'Hobbies', page:"/hobbies"}
+];
 
 export const TopBar = (props: IProps) => {
     const navigate = useNavigate();
-
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const constHandleButtonClick = () => {
-        navigate('/resume');
-    }
 
     return (
         <AppBar position="static" className="top-bar">
@@ -34,13 +28,13 @@ export const TopBar = (props: IProps) => {
                         alignItems="flex-end"
                         font-weight="bold"
                         >
-                            {pages.map((page) => (
+                            {redirect_buttons.map((button_info) => (
                                 <Button
                                     className='top-bar-button'
-                                    key={page}
-                                    onClick={constHandleButtonClick}
+                                    key={button_info.name}
+                                    onClick={() => navigate(button_info.page)}
                                 >
-                                    {page}
+                                    {button_info.name}
                                 </Button>     
                             ))}
                     </Box>

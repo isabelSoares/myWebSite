@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
+import { Hobbies } from './components/hobbies/Hobbies';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AboutMe />} />
           <Route path="/resume" element={<ResumeCV />} />
+          <Route path="/hobbies" element={<Hobbies />} />
         </Routes>
       </Router>
     </ThemeProvider>

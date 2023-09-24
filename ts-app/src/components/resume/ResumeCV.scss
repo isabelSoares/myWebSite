@@ -21,6 +21,11 @@
     align-items: center;
     justify-content: center;
     padding: 90px;
+    gap:10px;
+
+    .summary .MuiAccordionSummary-content {
+        align-items: center;
+    }
 
     ul{
         align-items: flex-start;
@@ -34,4 +39,10 @@
 .icon-style {
     vertical-align: middle;
     margin-right: 8px; 
+}
+
+.resume-me-text{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
 }
