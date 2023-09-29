@@ -27,12 +27,15 @@
         align-items: center;
     }
 
-    ul{
-        align-items: flex-start;
+    .resume-me-accordion-title {
+        width: 100%;
+        text-align: center;
+        color: #e6db74; 
     }
 
-    li{
-        align-items: flex-start;
+    p {
+        margin-top: 7px;
+        margin-bottom: 7px;
     }
 }
 
