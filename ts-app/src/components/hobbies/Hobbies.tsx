@@ -14,7 +14,20 @@ export const Hobbies = (props: IProps) => {
                 But, moreover I really love to take pictures to sightseeing, people, building architecture. <br />
                 I love to travel around the world however never without a camera in my hands <FontAwesomeIcon icon={faCameraRetro}  className="icon-style"/>
             </p>
-            <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+            <div className='hobbies-folder'>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+                <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
+            </div>
         </div>
     )
 }
