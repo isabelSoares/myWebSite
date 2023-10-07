@@ -12,7 +12,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFolder} from '@fortawesome/free-solid-svg-icons';
 
-interface IProps {}
+export interface IPhotoAlbum {
+    albumName:string,
+    dialogTitle:string,
+    dialogImages:ImageInformation[]
+}
+
+export interface ImageInformation {
+    description:string,
+    image:string
+}
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -23,8 +32,9 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     },
 }));
 
-export const PhotoAlbum = (props: IProps) => {   
+export const PhotoAlbum = (props: IPhotoAlbum) => {   
     const [open, setOpen] = React.useState(false);
+    const [photoIndex, setPhotoIndex] = React.useState(0);
 
     const handleClickOpen = () => {
       setOpen(true);
@@ -32,13 +42,19 @@ export const PhotoAlbum = (props: IProps) => {
     const handleClose = () => {
       setOpen(false);
     };
+    const handleClickPrevious = () => {
+      setPhotoIndex((index) => index - 1);
+    };
+    const handleClickNext = () => {
+        setPhotoIndex((index) => index + 1);
+    };
 
     return (
         <div className="photos">
             <Button variant="outlined" onClick={handleClickOpen}>
                 <div className='photos-album-box'>
                     <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
-                    <p>Malta,2023</p>
+                    <p>{props.albumName}</p>
                 </div>
             </Button>
             <BootstrapDialog
@@ -47,7 +63,7 @@ export const PhotoAlbum = (props: IProps) => {
                 open={open}
                 >
                 <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-                    Malta, September 2023
+                    {props.dialogTitle}
                 </DialogTitle>
                 <IconButton
                 aria-label="close"
@@ -62,13 +78,13 @@ export const PhotoAlbum = (props: IProps) => {
                 <CloseIcon />
                 </IconButton>
                 <DialogContent dividers>
-                    <p>Sliema, Malta</p>
+                    <p>{props.dialogImages[photoIndex].description}</p>
                     <div className='photos-dialog'>
-                        <img src='https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl' className='photo-dialog'></img>
+                        <img src={props.dialogImages[photoIndex].image} className='photo-dialog'></img>
                     </div>
                     <div className='buttons-dialog'>
-                        <Button variant="contained">Previous</Button>
-                        <Button variant="contained">Next</Button>
+                        <Button variant="contained" disabled={photoIndex === 0} onClick={handleClickPrevious}>Previous</Button>
+                        <Button variant="contained" disabled={photoIndex ===  props.dialogImages.length - 1} onClick={handleClickNext}>Next</Button>
                     </div>
                 </DialogContent>
             </BootstrapDialog>
