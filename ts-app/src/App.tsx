@@ -12,12 +12,13 @@ const darkTheme = createTheme({
   palette: {
     background: {
       default: '#0f1924',
+      paper: '#9BCECA'
     },
     primary: {
-      main: '#4a9db0',
+      main: '#9BCECA',
     },
     secondary: {
-      main: '#e6db74',
+      main: '#357B8D',
     }
   },
 });

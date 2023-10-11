@@ -1,7 +1,6 @@
 .resume-cv{
     display: flex;
     flex-direction: column;
-    color: white;
     align-items: center;
     justify-content: center;
     max-width: 100%;
@@ -10,7 +9,6 @@
     h1 {
         width: 100%;
         text-align: center;
-        color: #e6db74;
     }
 }
 
@@ -30,7 +28,7 @@
     .resume-me-accordion-title {
         width: 100%;
         text-align: center;
-        color: #e6db74; 
+        color: white;
     }
 
     p {

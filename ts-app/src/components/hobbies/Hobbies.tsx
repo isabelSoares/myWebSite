@@ -46,28 +46,42 @@ const albumsInformation: IPhotoAlbum[] = [
         albumName: 'Italy, 2022',
         dialogTitle: 'November, 2022',
         dialogImages: [
-            {description: 'Roma', image:'https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl'}
+            {description: 'Vatican', image:'https://drive.google.com/uc?id=1krrz8xaU_V9iw3fVah42gh8-IMdzBakd'},
+            {description: 'Vatican', image:'https://drive.google.com/uc?id=1LfAgJA9uLwX3_IAG88XDEzVZUKcc6Hm2'},
+            {description: 'Vatican', image:'https://drive.google.com/uc?id=1DFMt5y3IST7k6_6Lsh48rVmfD6VXlU8M'},
+            {description: 'Rome', image:'https://drive.google.com/uc?id=1Oghta8pl0fo40aXDX5icPhfOwG6Mvaav'},
+            {description: 'Rome', image:'https://drive.google.com/uc?id=13BP7u-IJCrk1e5oEWWFQ0Ku2HPehyk0H'}
         ]
     },
     {
         albumName: 'Republic Dominican, 2022',
         dialogTitle: 'July, 2022',
         dialogImages: [
-            {description: 'Punta Cana', image:'https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl'}
+            {description: 'Isla Sahona, Punta Cana', image:'https://drive.google.com/uc?id=1k8e6JxZonWG9pkwUhgQygziwELxnOQ4S'},
+            {description: 'Punta Cana', image:'https://drive.google.com/uc?id=11ivFSAoeConRmlN0yr8ThbcLcpO95WfK'},
+            {description: 'Monkeyland, Punta Cana', image:'https://drive.google.com/uc?id=1bXfNZ_SwQ61Cb_-RoeRwwOtzl68oSa4g'},
+            {description: 'Monkeyland, Punta Cana', image:'https://drive.google.com/uc?id=1flS2UaZGA-ghBy5e_y2wiMgV78C47FQd'}
         ]
     },
     {
-        albumName: 'Netherlands,2022 & 2020',
-        dialogTitle: 'Malta September,2023',
+        albumName: 'Netherlands, 2020 & 2022',
+        dialogTitle: 'February, 2020 & 2020',
         dialogImages: [
-            {description: 'Sliema,Malta', image:'https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl'}
+            {description: 'Den Haag', image:'https://drive.google.com/uc?id=1giLlDjwiZSNVNVt-rbIKktc2b-PlJbEv'},
+            {description: 'Utrecht', image:'https://drive.google.com/uc?id=1jdLOGOYQ5AzHMWqFzhr-2p6X88bIBPfK'},
+            {description: 'Rotterdam', image:'https://drive.google.com/uc?id=1FxwGXz-pp0-yMLAiMkW_QRvVflbpdxly'},
+            {description: 'Eindhoven', image:'https://drive.google.com/uc?id=12VGHGx-iwlQhCMT_Fn-Eax7PgxEliCra'},
+            {description: 'Eindhoven', image:'https://drive.google.com/uc?id=1yhmDZ6c85Ue04Fpm2ZVFHDys0yhqTIRG'}
         ]
     },
     {
         albumName: 'Portugal',
         dialogTitle: 'During my life',
         dialogImages: [
-            {description: 'Serra da Estrela', image:'https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl'}
+            {description: 'Serra da Estrela', image:'https://drive.google.com/uc?id=1dcWgoflybCu3_S_kSt4SHo5Ea0G5R81T'},
+            {description: 'Gêres', image:'https://drive.google.com/uc?id=13NJvx4SGbI9QiLzUr5OxRmQ-igPK-5SJ'},
+            {description: 'Gêres', image:'https://drive.google.com/uc?id=13UEbG2v-ndkHeJDOjY4vhJj8-nFYrzZw'},
+            {description: 'Gêres', image:'https://drive.google.com/uc?id=1b56p1iDOpknk7p_vPYSyNxQHgX3kT52y'}
         ]
     }
 ]

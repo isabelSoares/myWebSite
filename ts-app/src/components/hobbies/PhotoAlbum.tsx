@@ -83,8 +83,8 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                         <img src={props.dialogImages[photoIndex].image} className='photo-dialog'></img>
                     </div>
                     <div className='buttons-dialog'>
-                        <Button variant="contained" disabled={photoIndex === 0} onClick={handleClickPrevious}>Previous</Button>
-                        <Button variant="contained" disabled={photoIndex ===  props.dialogImages.length - 1} onClick={handleClickNext}>Next</Button>
+                        <Button color="secondary" variant="contained" disabled={photoIndex === 0} onClick={handleClickPrevious}>Previous</Button>
+                        <Button color="secondary" variant="contained" disabled={photoIndex ===  props.dialogImages.length - 1} onClick={handleClickNext}>Next</Button>
                     </div>
                 </DialogContent>
             </BootstrapDialog>
