@@ -92,12 +92,12 @@ export const Hobbies = (props: IProps) => {
     return(
         <div className='hobbies'>
             <p>
-                As a ordinary teenager, my favorite hobbies are always listening to music and watching series and movies.
-                But, moreover I really love to  <br /> take pictures to landscapes, people, building architecture.
-                I love travelling around the world however never without a camera in my hands to collect all memories <FontAwesomeIcon icon={faCameraRetro} className="icon-style"/> <br />
+                As a ordinary teenager, my favorite hobbies are listening to music and watching series and movies.
+                However, what I really love is to <br /> take pictures of landscapes, people, buildings and architectural pieces.
+                I love travelling around the world, always with a camera in my hands to collect all memories <FontAwesomeIcon icon={faCameraRetro} className="icon-style"/> <br />
             </p>
             <img src='https://drive.google.com/uc?id=1fsD6tf-XtOEIiIKvHZ1p_fdx4Q0A46lD' alt='Isabel is photographing' className='hobby-photography'></img>
-            <p>Below, you could see some of my favourites pictures taken for me during some trips that I did with my family and friends:</p>
+            <p>Below, you can see some of my favourites pictures taken by me during some of the trips I took with my family and friends:</p>
             <div className='hobbies-folder'>
                 {albumsInformation.map((item) => (
                     <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages} />
