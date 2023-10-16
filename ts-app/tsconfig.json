@@ -21,8 +21,11 @@
     "jsx": "react-jsx",
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts"], // Adjust patterns to include your project files
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "store.ts", "src/components/chatbot/Chatbot.tsx"], // Adjust patterns to include your project files
   "exclude": ["node_modules"]
   
 }

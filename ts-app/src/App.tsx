@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.scss';
+import { Provider } from "mobx-react";
+import { store } from "./store";
+import Chatbot from "./components/chatbot/Chatbot";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
@@ -25,19 +28,26 @@ const darkTheme = createTheme({
 
 function App() {
   return (
-    <div className="App">
-      <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <Router>
-        <TopBar/>
-        <Routes>
-          <Route path="/" element={<AboutMe />} />
-          <Route path="/resume" element={<ResumeCV />} />
-          <Route path="/hobbies" element={<Hobbies />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
-    </div>
+    <Provider ApplicationStore={store}>
+      <div className="App">
+        <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Router>
+          <TopBar/>
+          <Routes>
+            <Route path="/" element={<AboutMe />} />
+            <Route path="/resume" element={<ResumeCV />} />
+            <Route path="/hobbies" element={<Hobbies />} />
+          </Routes>
+          <Chatbot
+            closeChatwindow={() => console.log("Should have been closed")}
+            isOpen={true}
+            ApplicationStore={store}
+          />
+        </Router>
+      </ThemeProvider>
+      </div>
+    </Provider>
   );
 }
 
