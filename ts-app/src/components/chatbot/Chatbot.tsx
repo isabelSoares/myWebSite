@@ -1,10 +1,12 @@
-// ./chatComponent.js
-
 import React, { useState, useEffect } from "react";
 import { ApplicationStore } from "./../../store";
 import { FiSend, FiX } from "react-icons/fi";
 import { observer, inject } from "mobx-react";
 import { toJS } from "mobx";
+import './Chatbot.scss';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
 const center = {
   display: "flex",
@@ -37,50 +39,30 @@ const Chatbot = (props: IProps) => {
   console.log(data);
  
   return (
-        <div className="chat-container">
-          <div className="chat-head">
-            <div style={{ ...center }}>
+        <div className="chatbot-box">
+          <div className="chatbot-top-bar">
               <h5> IsabelChatbot {isLoadingChatMessages && "is typing ..."} </h5>
-            </div>
-            <div style={{ ...center }} className="hover">
               <FiX onClick={(_) => closeChatwindow()} />
-            </div>
           </div>
-          <div className="chat-body">
-            <ul className="chat-window">
+          <div className="chatbot-body">
+            <ul>
               {data.map(({ fulfillmentText, userMessage }) => (
                 <li>
                   {userMessage && (
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <p style={{ opacity: 0 }}> . </p>
-                      <div
-                        key={userMessage}
-                        style={{
-                          background: "red",
-                          color: "white",
-                        }}
-                        className="chat-card"
-                      >
+                    <div className="chatbot-window">
+                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
+                      <div className="chatbot-card" key={userMessage}>
                         <p>{userMessage}</p>
                       </div>
                     </div>
                   )}
                   {fulfillmentText && (
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
+                    <div  className="chatbot-window"
                     >
                       <div key={fulfillmentText} className="chat-card">
                         <p>{fulfillmentText}</p>
                       </div>
-                      <p style={{ opacity: 0 }}> . </p>
+                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
                     </div>
                   )}
                 </li>

@@ -11,8 +11,12 @@ const albumsInformation: IPhotoAlbum[] = [
         dialogTitle: 'September, 2023',
         dialogImages: [
             { description: 'Sliema, Malta', image:'https://drive.google.com/uc?id=15EX34FKkK7_AuZeqehqnD4C6o14zpHKl'},
+            { description: 'Blue Lagoon, Malta', image:'https://drive.google.com/uc?id=14ipADLlKyckQP_Ck99xwopmIdUPY9nql'},
+            { description: 'Blue Lagoon, Malta', image:'https://drive.google.com/uc?id=1xPx_NoDa7eDHBpyjFIvF6gD4jTKPQBMZ'},
+            { description: 'Blue Lagoon, Malta', image:'https://drive.google.com/uc?id=1Uy1ekKazIngNRDOj3vGEMXF98-pw9_8c'},
             { description: 'Valetta, Malta', image:'https://drive.google.com/uc?id=13Rq_ayr-kqGkI_uEWJcSbYGLN9DGzmY-'},
-            { description: 'Blue Lagoon, Malta', image:'https://drive.google.com/uc?id=1Uy1ekKazIngNRDOj3vGEMXF98-pw9_8c'}
+            { description: 'Blue Grotto, Malta', image:'https://drive.google.com/uc?id=1CeXlmcyaiE6r3iUDHHCZkgYXY-FhJwNM'},
+            { description: 'Gozo, Malta', image:'https://drive.google.com/uc?id=1yUO-EsE8hQT2y6yN9JUoLzs0xTPhjvpK'}
         ]
     },
     {
@@ -81,7 +85,11 @@ const albumsInformation: IPhotoAlbum[] = [
             {description: 'Serra da Estrela', image:'https://drive.google.com/uc?id=1dcWgoflybCu3_S_kSt4SHo5Ea0G5R81T'},
             {description: 'Gêres', image:'https://drive.google.com/uc?id=13NJvx4SGbI9QiLzUr5OxRmQ-igPK-5SJ'},
             {description: 'Gêres', image:'https://drive.google.com/uc?id=13UEbG2v-ndkHeJDOjY4vhJj8-nFYrzZw'},
-            {description: 'Gêres', image:'https://drive.google.com/uc?id=1b56p1iDOpknk7p_vPYSyNxQHgX3kT52y'}
+            {description: 'Lisboa', image:'https://drive.google.com/uc?id=1-jEvC9bCGAkmuXsnGLHPHiYyBcRNJJjW'},
+            {description: 'Lisboa', image:'https://drive.google.com/uc?id=1RpBAY7zhyxcCJIa_xaVknXDFWJCZggFR'},
+            {description: 'Lisboa', image:'https://drive.google.com/uc?id=1pKrysmFLQXNDSeYTNnyqKT_AT_UdZw1i'},
+            {description: 'Porto', image:'https://drive.google.com/uc?id=18QltN7BkP6KTGqbqDqv6hjlDdxehRZKs'},
+            {description: 'Porto', image:'https://drive.google.com/uc?id=1EnCfnPC2o5AAjoa4F4wf5cZyRfxUN69J'}
         ]
     }
 ]

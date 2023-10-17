@@ -1,0 +1,38 @@
+chatbot-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #9BCECA;
+
+    chatbot-top-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: calc(5px + 2vmin);
+    }
+
+    chatbot-body {
+        ul {
+            list-style: none;
+        }
+
+        chatbot-window {
+            display: flex;
+            justify-content: space-between;
+
+            chatbot-card{
+                color: #0f1924;
+            }
+        }
+
+
+    }
+}
+
+.icon-style {
+    vertical-align: middle;
+    margin-right: 8px; 
+}
