@@ -25,14 +25,18 @@ export class ApplicationStore {
 
   @action
   handleConversation = (message?: string) => {
-     this.isLoadingChatMessages = true;
-     this.agentMessages.push({ userMessage: message });
+    if (this.agentMessages.length != 0 && !message) {
+      return;
+    }
 
-     Axios.post(`${ENDPOINT}`, null, {
+    this.isLoadingChatMessages = true;
+    this.agentMessages.push({ userMessage: message });
+
+    Axios.post(`${ENDPOINT}`, null, {
       params: {
         message: message || "Hi",
       }
-     })
+    })
       .then((res) => {
         this.agentMessages.push({
           fulfillmentText: res.data.data[0].queryResult.fulfillmentMessages[0].text.text[0]

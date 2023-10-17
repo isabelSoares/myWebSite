@@ -32,7 +32,6 @@ const Chatbot = (props: IProps) => {
 
   useEffect(() => {
     handleConversation();
-    return () => handleConversation()
   }, []);
 
   const data = toJS(agentMessages);
@@ -41,28 +40,32 @@ const Chatbot = (props: IProps) => {
   return (
         <div className="chatbot-box">
           <div className="chatbot-top-bar">
+            <div className="title">
               <h5> IsabelChatbot {isLoadingChatMessages && "is typing ..."} </h5>
+            </div>
+            <div className="close-icon">
               <FiX onClick={(_) => closeChatwindow()} />
+            </div>
           </div>
           <div className="chatbot-body">
             <ul>
               {data.map(({ fulfillmentText, userMessage }) => (
-                <li>
+                <li className={"dialog-line" + (fulfillmentText ? " bot-line" : "") + (userMessage ? " user-line" : "")}>
                   {userMessage && (
-                    <div className="chatbot-window">
-                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
-                      <div className="chatbot-card" key={userMessage}>
+                    <div className="chatbot-bubble">
+                      <div className="chatbot-text" key={userMessage}>
                         <p>{userMessage}</p>
                       </div>
+                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
                     </div>
                   )}
                   {fulfillmentText && (
-                    <div  className="chatbot-window"
+                    <div  className="chatbot-bubble"
                     >
-                      <div key={fulfillmentText} className="chat-card">
+                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
+                      <div key={fulfillmentText} className="chatbot-text">
                         <p>{fulfillmentText}</p>
                       </div>
-                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
                     </div>
                   )}
                 </li>
@@ -74,16 +77,16 @@ const Chatbot = (props: IProps) => {
                 e.preventDefault();
                 handleConversation(Message);
               }}
-              className="input-container"
+              className="chatbot-input-container"
             >
               <input
-                className="input"
+                className="chatbot-input"
                 type="text"
                 onChange={(e) => setMessage(e.target.value)}
                 value={Message}
                 placeholder="Begin a conversation with our agent"
               />
-              <div className="send-btn-ctn">
+              <div className="send-icon">
                 <div
                   className="hover"
                   onClick={() => handleConversation(Message)}
