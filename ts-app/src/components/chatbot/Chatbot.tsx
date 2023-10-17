@@ -6,7 +6,7 @@ import { toJS } from "mobx";
 import './Chatbot.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faRobot, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 
 const center = {
   display: "flex",
@@ -56,7 +56,7 @@ const Chatbot = (props: IProps) => {
                       <div className="chatbot-text" key={userMessage}>
                         <p>{userMessage}</p>
                       </div>
-                      <FontAwesomeIcon icon={faRobot} className="icon-style"/>
+                      <FontAwesomeIcon icon={faCircleUser} className="icon-style"/>
                     </div>
                   )}
                   {fulfillmentText && (
@@ -91,7 +91,7 @@ const Chatbot = (props: IProps) => {
                   className="hover"
                   onClick={() => handleConversation(Message)}
                 >
-                  <FiSend style={{ transform: "rotate(50deg)" }} />
+                  <FiSend style={{ transform: "rotate(45deg)" }} />
                 </div>
               </div>
             </form>
