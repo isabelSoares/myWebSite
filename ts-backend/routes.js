@@ -10,7 +10,7 @@ app.post("/text-input", async (req, res) => {
 
   // Create a new session
    const sessionClient = new Dialogflow.SessionsClient({
-    keyFilename: Path.join(__dirname, "./keys.json"),
+    keyFilename: Path.join(__dirname, "./key.json"),
   });
 
   const sessionPath = sessionClient.projectAgentSessionPath(

@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.scss';
-import { Provider } from "mobx-react";
-import { store } from "./store";
-import Chatbot from "./components/chatbot/Chatbot";
+import { Widget, addResponseMessage } from 'react-chat-widget';
+
+import 'react-chat-widget/lib/styles.css';
+
+import { sendBot } from "./store";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
@@ -27,10 +29,17 @@ const darkTheme = createTheme({
 });
 
 function App() {
+
+  const handleNewUserMessage = (newMessage) => {
+    console.log(`New message incoming! ${newMessage}`);
+    sendBot(newMessage).then((response) => {
+      addResponseMessage(response);
+    });
+  };
+
   return (
-    <Provider ApplicationStore={store}>
-      <div className="App">
-        <ThemeProvider theme={darkTheme}>
+    <div className="App">
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Router>
           <TopBar/>
@@ -39,15 +48,14 @@ function App() {
             <Route path="/resume" element={<ResumeCV />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
-          <Chatbot
-            closeChatwindow={() => console.log("Should have been closed")}
-            isOpen={true}
-            ApplicationStore={store}
-          />
         </Router>
       </ThemeProvider>
-      </div>
-    </Provider>
+      <Widget 
+        handleNewUserMessage={handleNewUserMessage}
+        title="Isabel Chatbot"
+        subtitle="If you feel lazy today, you can ask me something about Isabel..."
+        />
+    </div>
   );
 }
 
