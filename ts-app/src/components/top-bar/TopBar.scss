@@ -4,10 +4,25 @@
     align-items: flex-end;
     justify-content: flex-end;
     font-size: calc(10px + 2vmin);
-    
-    .top-bar-button{
-        display: block;
-        color: #0f1924;
-        font-weight: bold;
+
+    .top-bar-box {
+        display: flex;
+        flex-grow: 1;
+        gap: 10px;
+        justify-content:flex-end;
+        align-items:flex-end;
+        font-weight:bold;
+
+        .top-bar-button{
+            display: block;
+            color: #0f1924;
+            font-weight: normal;
+        }
+        
+        .top-bar-button-selected {
+            border: 2px solid #0f1924;
+            font-weight: bold;
+        }
     }
+    
 }
