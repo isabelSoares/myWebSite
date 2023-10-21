@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.scss';
-import { Widget, addResponseMessage } from 'react-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
-
-import { sendBot } from "./store";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
 import { Hobbies } from './components/hobbies/Hobbies';
+import { Chatbot } from './components/chatbot/Chatbot';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -30,13 +27,6 @@ const darkTheme = createTheme({
 
 function App() {
 
-  const handleNewUserMessage = (newMessage) => {
-    console.log(`New message incoming! ${newMessage}`);
-    sendBot(newMessage).then((response) => {
-      addResponseMessage(response);
-    });
-  };
-
   return (
     <div className="App">
       <ThemeProvider theme={darkTheme}>
@@ -50,11 +40,7 @@ function App() {
           </Routes>
         </Router>
       </ThemeProvider>
-      <Widget 
-        handleNewUserMessage={handleNewUserMessage}
-        title="Isabel Chatbot"
-        subtitle="If you feel lazy today, you can ask me something about Isabel..."
-        />
+      <Chatbot />
     </div>
   );
 }
