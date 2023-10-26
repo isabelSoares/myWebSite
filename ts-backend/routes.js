@@ -41,8 +41,4 @@ app.post("/text-input", async (req, res) => {
 
 });
 
-app.post("/voice-input", (req, res) => {
-  res.status(200).send({ data : "VOICE ENDPOINT CONNECTION SUCCESSFUL" })
-});
-
 module.exports = app

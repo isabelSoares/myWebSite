@@ -24,7 +24,8 @@ export const TopBar = (props: IProps) => {
         <AppBar position="static" className="top-bar">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <LocalFloristSharpIcon />
+                    
+                    <img src='https://drive.google.com/uc?id=11pTJGgYJnrZ-3W-dh2hF744MN32X-BRB' alt='flower' width="35px"></img>
                     <Box className="top-bar-box"
                         >
                             {redirect_buttons.map((button_info) => (

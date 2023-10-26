@@ -102,7 +102,7 @@ export const Hobbies = (props: IProps) => {
             <p>
                 As a ordinary teenager, my favorite hobbies are listening to music and watching series and movies.
                 However, what I really love is to <br /> take pictures of landscapes, people, buildings and architectural pieces.
-                I love travelling around the world, always with a camera in my hands to collect all memories <FontAwesomeIcon icon={faCameraRetro} className="icon-style"/> <br />
+                I love travelling around the world, always with a camera in my hands to collect all memories 📷 🎞️ <br />
             </p>
             <img src='https://drive.google.com/uc?id=1fsD6tf-XtOEIiIKvHZ1p_fdx4Q0A46lD' alt='Isabel is photographing' className='hobby-photography'></img>
             <p>Below, you can see some of my favourites pictures taken by me during some of the trips I took with my family and friends:</p>

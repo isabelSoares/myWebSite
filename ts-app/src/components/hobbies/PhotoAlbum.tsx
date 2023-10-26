@@ -58,6 +58,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 </div>
             </Button>
             <BootstrapDialog
+                className='teste'
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
                 open={open}
@@ -78,9 +79,11 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 <CloseIcon />
                 </IconButton>
                 <DialogContent dividers>
-                    <p>{props.dialogImages[photoIndex].description}</p>
-                    <div className='photos-dialog'>
-                        <img src={props.dialogImages[photoIndex].image} className='photo-dialog'></img>
+                    <div className='content-dialog'>
+                        <p>{props.dialogImages[photoIndex].description}</p>
+                        <div className='photos-dialog'>
+                            <img src={props.dialogImages[photoIndex].image} className='photo-dialog'></img>
+                        </div>
                     </div>
                     <div className='buttons-dialog'>
                         <Button color="secondary" variant="contained" disabled={photoIndex === 0} onClick={handleClickPrevious}>Previous</Button>
