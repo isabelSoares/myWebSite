@@ -32,7 +32,9 @@ export const AboutMe = (props: IProps) => {
             </div>
             <div className='about-me-text'>
                 <h1>
-                    <b>Hi everyone! <br /> I'm Isabel Soares 👋🏻</b>
+                    Hi everyone!
+                    <br/>
+                    I'm Isabel Soares 👋🏻
                 </h1>
                 <p>
                     I'm from Portugal. I studied Computer Science and Engineering
@@ -43,6 +45,9 @@ export const AboutMe = (props: IProps) => {
                     more and more 🤓 <br /> Since I was child, I was always interested in exploring areas that would 
                     train my brain, such as puzzles, word search games, brain games...<br />
                     Probably that is why, I love math, machine learning and robotics 🤭
+                </p>
+                <p>
+                    If you want to know a little bit more about me, explore this website or if you feel lazy today, you can ask the chat bot, on the bottom right corner ➡️
                 </p>
             </div>
         </div>

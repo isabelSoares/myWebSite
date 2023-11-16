@@ -4,6 +4,7 @@
   "description": "The website that introduces me 🍃",
   "main": "index.js",
   "scripts": {
+    "start": "node agentRoutes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
