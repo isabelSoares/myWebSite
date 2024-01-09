@@ -14,7 +14,6 @@ const albumsInformation: IPhotoAlbum[] = [
             { description: 'Blue Lagoon', image:'https://drive.google.com/uc?id=14ipADLlKyckQP_Ck99xwopmIdUPY9nql'},
             { description: 'Blue Lagoon', image:'https://drive.google.com/uc?id=1xPx_NoDa7eDHBpyjFIvF6gD4jTKPQBMZ'},
             { description: 'Blue Lagoon', image:'https://drive.google.com/uc?id=1Uy1ekKazIngNRDOj3vGEMXF98-pw9_8c'},
-            { description: 'Valetta', image:'https://drive.google.com/uc?id=13Rq_ayr-kqGkI_uEWJcSbYGLN9DGzmY-'},
             { description: 'Valetta', image:'https://drive.google.com/uc?id=1EwtRxEsviAwVnxSiH9kzWy9hmbFvE0Us'},
             { description: 'Blue Grotto', image:'https://drive.google.com/uc?id=1CeXlmcyaiE6r3iUDHHCZkgYXY-FhJwNM'},
             { description: 'Gozo', image:'https://drive.google.com/uc?id=1yUO-EsE8hQT2y6yN9JUoLzs0xTPhjvpK'}
