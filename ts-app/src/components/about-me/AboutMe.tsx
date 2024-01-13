@@ -11,7 +11,7 @@ export const AboutMe = (props: IProps) => {
     return(
         <div className="about-me">
             <div className="about-me-photo">
-                <img src="https://drive.google.com/uc?id=1FZxwrJFjZVCfcEwMhzQwrjalehIolNxH" alt="MeMyselfAndI"/>
+                <img src="https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/meMyselfAndI.JPG" alt="MeMyselfAndI"/>
                 <div className="contact-me">
                     <div className="contact-me-mail">
                         <a href="mailto:isabel.srsoares@gmail.com">

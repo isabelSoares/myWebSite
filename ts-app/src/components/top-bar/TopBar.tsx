@@ -25,7 +25,7 @@ export const TopBar = (props: IProps) => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     
-                    <img src='https://drive.google.com/uc?id=11pTJGgYJnrZ-3W-dh2hF744MN32X-BRB' alt='flower' width="35px"></img>
+                    <img src='https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/flower.png' alt='flower' width="35px"></img>
                     <Box className="top-bar-box"
                         >
                             {redirect_buttons.map((button_info) => (
