@@ -1,6 +1,7 @@
 import Axios from "axios";
 
-const ENDPOINT = "http://localhost:8000/api/agent/text-input";
+const ENDPOINT_BASE = "http://ec2-54-166-158-169.compute-1.amazonaws.com:8080";
+const ENDPOINT = `${ENDPOINT_BASE}/api/agent/text-input`;
 
 export const sendBot = async (client_message: string) => {
 
