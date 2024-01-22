@@ -12,7 +12,6 @@ const albumsInformation: IPhotoAlbum[] = [
         dialogImages: [
             { description: 'Sliema', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG20230831095211_01.jpg'},
             { description: 'Blue Lagoon', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8902.jpg'},
-            { description: 'Blue Lagoon', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8879.jpg'},
             { description: 'Blue Lagoon', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8891.jpg'},
             { description: 'Valetta', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8367.jpg'},
             { description: 'Blue Grotto', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_9148.jpg'},

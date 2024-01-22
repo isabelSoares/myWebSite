@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:lts-alpine
+FROM --platform=linux/amd64 node:lts-alpine as build
 
 WORKDIR /app
 
@@ -8,6 +8,15 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+RUN npm run build
 
-CMD ["npm", "start"]
+FROM --platform=linux/amd64 nginx:alpine
+
+# Copy the built app from the build stage to the nginx public directory
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx when the container runs
+CMD ["nginx", "-g", "daemon off;"]
