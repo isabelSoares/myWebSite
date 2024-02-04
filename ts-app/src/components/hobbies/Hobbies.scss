@@ -10,7 +10,7 @@
 
     p {
         width: 100%;
-        text-align: center;
+        text-align: justify;
     }
 
     .hobby-photography {
@@ -33,4 +33,24 @@
             height: 100%;
         }
     }    
+}
+
+@media (max-width: 480px) {
+    .hobbies {
+        padding: 25px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hobbies .hobby-photography {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hobbies .hobbies-folder {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

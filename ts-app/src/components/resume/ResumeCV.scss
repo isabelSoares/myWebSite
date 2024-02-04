@@ -46,3 +46,10 @@
     flex-direction: column;
     text-align: justify;
 }
+
+@media (max-width: 480px) {
+    .resume-me-accordion {
+        width: 100%;
+        padding: 50px;
+    }
+}

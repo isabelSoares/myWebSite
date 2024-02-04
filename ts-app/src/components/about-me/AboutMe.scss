@@ -97,3 +97,25 @@
         }
     }
 }
+
+@media (max-width: 480px) {
+    .about-me {
+        flex-direction: column;
+        padding: 25px;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me-photo{
+        max-width: 50%;
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me-text{
+        max-width: 95%;
+        gap: 10px;
+    }
+}
