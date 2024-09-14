@@ -1,38 +1,15 @@
 .resume-cv{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    padding: 90px;
-
-    h1 {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-.resume-me-accordion {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    align-items: center;
-    justify-content: center;
-    padding: 90px;
-    gap:10px;
-
-    .summary .MuiAccordionSummary-content {
-        align-items: center;
-    }
-
-    .resume-me-accordion-title {
-        width: 100%;
-        color: white;
-    }
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+    width: 90%;
 
     p {
-        margin-top: 7px;
-        margin-bottom: 7px;
+        width: 100%;
+        text-align: flex-start;
+        color: white;
     }
 }
 
@@ -45,11 +22,4 @@
     display: flex;
     flex-direction: column;
     text-align: justify;
-}
-
-@media (max-width: 480px) {
-    .resume-me-accordion {
-        width: 100%;
-        padding: 50px;
-    }
 }
