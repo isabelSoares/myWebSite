@@ -7,16 +7,17 @@ import SchoolIcon from '@mui/icons-material/School';
 import ForumIcon from '@mui/icons-material/Forum';
 import ComputerIcon from '@mui/icons-material/Computer';
 import SmartToySharpIcon from '@mui/icons-material/SmartToySharp';
+import WebSharpIcon from '@mui/icons-material/WebSharp';
 
 interface IProps {}
 
 const redirect_buttons = [
-  {name:'Master Degree', page: "/master"},
-  {name:'Licenciate Degree', page:"/licenciate"},
-  {name:'Current Job', page:"/currentJob"},
-  {name:'EAI developer', page:"/firstJob"},
-  {name:'Internship', page:"/internship"},
-  {name:'Teaching', page:"/teaching"}
+    {name:'Current Job', page:"/resume/currentJob", icon: <WebSharpIcon />},
+    {name:'EAI developer', page:"/resume/firstJob", icon: <ComputerIcon />},
+    {name:'Teaching', page:"/resume/teaching", icon: <SmartToySharpIcon />},
+    {name:'Internship', page:"/resume/internship", icon: <ForumIcon />},
+    {name:'Master Degree', page: "/resume/master", icon: <SchoolIcon />},
+    {name:'Licenciate Degree', page:"/resume/licenciate", icon: <SchoolIcon />}
 ];
 
 export const ResumeCV = (props: IProps) => {
@@ -27,6 +28,7 @@ export const ResumeCV = (props: IProps) => {
         index: number,
         ) => {
             setSelectedIndex(index);
+            navigate(redirect_buttons[index].page, { replace: true })
     };
 
     const navigate = useNavigate();
@@ -39,62 +41,23 @@ export const ResumeCV = (props: IProps) => {
             <p>
                 Now if you want to know a little bit more about my education and previous and current job, feel free to take a look:
             </p>
-            <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }} className='resume-cv-box'>
                 <List component="nav" aria-label="main mailbox folders">
-                    <ListItemButton
-                        selected={selectedIndex === 0}
-                        onClick={(event) => handleListItemClick(event, 0)}
-                    >
-                        <ListItemIcon>
-                        <SchoolIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Current job" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 1}
-                        onClick={(event) => handleListItemClick(event, 1)}
-                    >
-                        <ListItemIcon>
-                        <ComputerIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="EAI developer" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 2}
-                        onClick={(event) => handleListItemClick(event, 2)}
-                    >
-                        <ListItemIcon>
-                        <SmartToySharpIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Teaching assistant" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 3}
-                        onClick={(event) => handleListItemClick(event, 3)}
-                    >
-                        <ListItemIcon>
-                        <ForumIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Internship" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 4}
-                        onClick={(event) => handleListItemClick(event, 4)}
-                    >
-                        <ListItemIcon>
-                        <SchoolIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Master Degree Computer Science and Engineering" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 5}
-                        onClick={(event) => handleListItemClick(event, 5)}
-                    >
-                        <ListItemIcon>
-                        <SchoolIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Licenciate Degree Computer Science and Engineering" />
-                    </ListItemButton>
+                    {
+                        redirect_buttons.map((line, index)=> {
+                            return (
+                                <ListItemButton
+                                    selected={selectedIndex === index}
+                                    onClick={(event) => handleListItemClick(event, index)}
+                                >
+                                    <ListItemIcon>
+                                        {line.icon}
+                                    </ListItemIcon>
+                                    <ListItemText primary={line.name} />
+                                </ListItemButton>
+                            );      
+                        })
+                    }
                 </List>
             </Box>
         </div>

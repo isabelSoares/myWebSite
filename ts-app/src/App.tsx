@@ -5,6 +5,12 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
+import { Master } from './components/resume/education/Master';
+import { Licenciate } from './components/resume/education/Licenciate';
+import { Internship } from './components/resume/job/Internship';
+import { Teaching } from './components/resume/job/Teaching';
+import { EAI } from './components/resume/job/EAI';
+import { FeTOBi } from './components/resume/job/FeTOBi';
 import { Hobbies } from './components/hobbies/Hobbies';
 import { Chatbot } from './components/chatbot/Chatbot';
 
@@ -36,6 +42,12 @@ function App() {
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="/resume" element={<ResumeCV />} />
+            <Route path="/resume/master" element={<Master />} />
+            <Route path="/resume/licenciate" element={<Licenciate />} />
+            <Route path="/resume/internship" element={<Internship />} />
+            <Route path="/resume/teaching" element={<Teaching />} />
+            <Route path="/resume/firstJob" element={<EAI />} />
+            <Route path="/resume/currentJob" element={<FeTOBi />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
         </Router>

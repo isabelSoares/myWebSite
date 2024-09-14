@@ -2,9 +2,6 @@ import React from 'react';
 import './Hobbies.scss';
 import { IPhotoAlbum, PhotoAlbum } from './PhotoAlbum';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCameraRetro} from '@fortawesome/free-solid-svg-icons';
-
 const albumsInformation: IPhotoAlbum[] = [
     {
         albumName: 'Malta, 2023',

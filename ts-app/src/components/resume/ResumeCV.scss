@@ -11,15 +11,13 @@
         text-align: flex-start;
         color: white;
     }
+
+    .resume-cv-box {
+        width: 90%;
+    }
 }
 
 .icon-style {
     vertical-align: middle;
     margin-right: 8px; 
-}
-
-.resume-me-text{
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
 }

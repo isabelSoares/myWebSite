@@ -9,9 +9,9 @@ import './TopBar.scss';
 interface IProps {}
 
 const redirect_buttons = [
-    {name:'About', page: "/"},
-    {name:'Resume', page:"/resume"},
-    {name:'Hobbies', page:"/hobbies"}
+    {name:'About', page: "/", morePages: false},
+    {name:'Resume', page:"/resume", morePages: true},
+    {name:'Hobbies', page:"/hobbies", morePages: false}
 ];
 
 export const TopBar = (props: IProps) => {
@@ -30,7 +30,7 @@ export const TopBar = (props: IProps) => {
                         >
                             {redirect_buttons.map((button_info) => (
                                 <Button
-                                    className={'top-bar-button'  + (location.pathname == button_info.page ? ' top-bar-button-selected' : '') }
+                                    className={'top-bar-button'  + (location.pathname === button_info.page || (button_info.morePages && location.pathname.startsWith(button_info.page))   ? ' top-bar-button-selected' : '') }
                                     key={button_info.name}
                                     onClick={() => navigate(button_info.page)}
                                 >
