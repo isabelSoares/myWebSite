@@ -45,6 +45,7 @@ export const AboutMe = (props: IProps) => {
                     more and more 🤓 <br /> Since I was child, I was always interested in exploring areas that would 
                     train my brain, such as puzzles, word search games, brain games...<br />
                     Probably that is why, I love math, machine learning and robotics 🤭
+                    Right now, I'm a frontend developer passionate about combining AI with human-computer interaction. I love creating intuitive, user-focused interfaces that leverage AI to enhance the user experience.
                 </p>
                 <p>
                     If you want to know a little bit more about me, explore this website or if you feel lazy today, you can ask the chat bot, on the bottom right corner ➡️

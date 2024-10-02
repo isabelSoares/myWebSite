@@ -47,7 +47,7 @@ function App() {
             <Route path="/resume/internship" element={<Internship />} />
             <Route path="/resume/teaching" element={<Teaching />} />
             <Route path="/resume/firstJob" element={<EAI />} />
-            <Route path="/resume/currentJob" element={<FeTOBi />} />
+            <Route path="/resume/fetobi" element={<FeTOBi />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
         </Router>

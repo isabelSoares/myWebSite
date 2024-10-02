@@ -12,12 +12,12 @@ import WebSharpIcon from '@mui/icons-material/WebSharp';
 interface IProps {}
 
 const redirect_buttons = [
-    {name:'Current Job', page:"/resume/currentJob", icon: <WebSharpIcon />},
-    {name:'EAI developer', page:"/resume/firstJob", icon: <ComputerIcon />},
-    {name:'Teaching', page:"/resume/teaching", icon: <SmartToySharpIcon />},
-    {name:'Internship', page:"/resume/internship", icon: <ForumIcon />},
-    {name:'Master Degree', page: "/resume/master", icon: <SchoolIcon />},
-    {name:'Licenciate Degree', page:"/resume/licenciate", icon: <SchoolIcon />}
+    {name:'Frontend developer @ TOBi, Vodafone Portugal', page:"/resume/fetobi", icon: <WebSharpIcon />},
+    {name:'EAI developer @ Vodafone Portugal', page:"/resume/firstJob", icon: <ComputerIcon />},
+    {name:'Teaching @ Instituto Superior Técnico', page:"/resume/teaching", icon: <SmartToySharpIcon />},
+    {name:'Internship @ Cegid', page:"/resume/internship", icon: <ForumIcon />},
+    {name:'Master Degree @ Instituto Superior Técnico', page: "/resume/master", icon: <SchoolIcon />},
+    {name:'Licenciate Degree @ Instituto Superior Técnico', page:"/resume/licenciate", icon: <SchoolIcon />}
 ];
 
 export const ResumeCV = (props: IProps) => {
@@ -46,7 +46,7 @@ export const ResumeCV = (props: IProps) => {
                     {
                         redirect_buttons.map((line, index)=> {
                             return (
-                                <ListItemButton
+                                <ListItemButton className='resume-cv-list-item'
                                     selected={selectedIndex === index}
                                     onClick={(event) => handleListItemClick(event, index)}
                                 >

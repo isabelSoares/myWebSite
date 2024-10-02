@@ -13,8 +13,15 @@
     }
 
     .resume-cv-box {
-        width: 90%;
+        max-width: 100% !important;
+        border: 2px solid;
+        border-radius: 6px;
     }
+}
+
+.resume-cv-list-item {
+    border: 2px solid #000;
+    border-radius: 6px;
 }
 
 .icon-style {

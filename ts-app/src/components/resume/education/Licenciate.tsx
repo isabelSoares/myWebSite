@@ -10,8 +10,8 @@ interface IProps {}
 export const Licenciate = (props: IProps) => {   
     return(
         <div className="licenciate">
-              <Typography className='resume-me-text'>
-                <p><a href="https://tecnico.ulisboa.pt/en/" target="_blank">Instituto Superior Técnico (IST) - ULisboa</a>&emsp; <FontAwesomeIcon icon={faCalendarDays} className="icon-style"/>09/2017 - 06/2020</p>
+              <Typography className='licenciate'>
+                <p className='title'><a href="https://tecnico.ulisboa.pt/en/" target="_blank">Instituto Superior Técnico (IST) - ULisboa</a>&emsp; <FontAwesomeIcon icon={faCalendarDays} className="icon-style"/>09/2017 - 06/2020</p>
                 <p>
                   I took courses related with Informatics, Mathematics and Physics. I also had a Management course during a semester.
                   During this period, I was also mentor of a couple of first-year students on 2019/2020, welcoming them and helping them have the best experience possible.

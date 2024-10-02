@@ -12,7 +12,7 @@ export const Master = (props: IProps) => {
     return(
         <div className="master">
             <Typography className='resume-me-text'>
-                <p><a href="https://tecnico.ulisboa.pt/en/"  target="_blank">Instituto Superior Técnico (IST) - ULisboa</a> &emsp; <FontAwesomeIcon icon={faCalendarDays} className="icon-style"/>09/2020 - 11/2022</p>
+                <p className='title'><a href="https://tecnico.ulisboa.pt/en/"  target="_blank">Instituto Superior Técnico (IST) - ULisboa</a> &emsp; <FontAwesomeIcon icon={faCalendarDays} className="icon-style"/>09/2020 - 11/2022</p>
                 <p>
                   I specialized in Frontend and Artificial Intelligence. Maybe you are wondering <i>why?</i> <br />
                   During my bachelor degree, my favorites courses were related with user interaction and as mentioned in the ABOUT section,
