@@ -12,7 +12,7 @@ import WebSharpIcon from '@mui/icons-material/WebSharp';
 interface IProps {}
 
 const redirect_buttons = [
-    {name:'Frontend developer @ TOBi, Vodafone Portugal', page:"/resume/fetobi", icon: <WebSharpIcon />},
+    {name:'FullStack developer @ Vodafone Portugal', page:"/resume/fullStack", icon: <WebSharpIcon />},
     {name:'EAI developer @ Vodafone Portugal', page:"/resume/firstJob", icon: <ComputerIcon />},
     {name:'Teaching @ Instituto Superior Técnico', page:"/resume/teaching", icon: <SmartToySharpIcon />},
     {name:'Internship @ Cegid', page:"/resume/internship", icon: <ForumIcon />},
