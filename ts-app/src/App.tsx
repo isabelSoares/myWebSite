@@ -10,7 +10,7 @@ import { Licenciate } from './components/resume/education/Licenciate';
 import { Internship } from './components/resume/job/Internship';
 import { Teaching } from './components/resume/job/Teaching';
 import { EAI } from './components/resume/job/EAI';
-import { FullStack } from './components/resume/job/FullStack';
+import { Frontend } from './components/resume/job/Frontend';
 import { Hobbies } from './components/hobbies/Hobbies';
 import { Chatbot } from './components/chatbot/Chatbot';
 
@@ -47,7 +47,7 @@ function App() {
             <Route path="/resume/internship" element={<Internship />} />
             <Route path="/resume/teaching" element={<Teaching />} />
             <Route path="/resume/firstJob" element={<EAI />} />
-            <Route path="/resume/fullStack" element={<FullStack />} />
+            <Route path="/resume/frontend" element={<Frontend />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
         </Router>
