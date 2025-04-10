@@ -1,7 +1,7 @@
 .eai {
     margin-top: 50px;
     margin-left: 10px;
-    width: 95%;
+    max-width: 95%;
     text-align: flex-start;
     color: white;
 
@@ -10,5 +10,18 @@
         border: 2px solid #fff;
         border-radius: 6px;
         padding: 15px;
+        max-width: 95%;
+    }
+
+    .MuiTypography-root{
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 640px) {
+    .eai{
+        margin-top: 25px;
+        max-width: 95%;
+        gap: 10px;
     }
 }

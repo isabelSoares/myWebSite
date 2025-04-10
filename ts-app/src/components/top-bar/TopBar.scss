@@ -8,6 +8,7 @@
     .top-bar-box {
         display: flex;
         flex-grow: 1;
+        margin-right: 10px;
         gap: 10px;
         justify-content:flex-end;
         align-items:flex-end;
@@ -27,9 +28,8 @@
     
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .top-bar {
         padding: 0px 10px;
-
     }
 }

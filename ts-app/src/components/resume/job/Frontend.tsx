@@ -14,7 +14,7 @@ export const Frontend = (props: IProps) => {
                 <p className='title'><FontAwesomeIcon icon={faCalendarDays} className="icon-style"/>10/2024 - Present</p>
                 <p>
                     After eight months, my job area rotation ended at TOBi squad. So, I started to work at <a href='https://www.vodafone.pt/'  target="_blank">Vodafone's website</a> team, as a Front-End developer.<br></br>
-                    I developed visual improvements for the website, without logging.
+                    I developed visual improvements for the website (specifically the part for both customers and not customers).
                     For instance, I implemented visual improvements on the red banner with quicklinks for Vodafone's products on homepage and improve the client's packs configurator for a better appealing customer experience. 
                 </p>
                 <p>

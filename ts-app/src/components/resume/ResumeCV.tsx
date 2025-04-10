@@ -1,8 +1,8 @@
 import React from 'react';
 import './ResumeCV.scss';
 
-import { Box, List, Button, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
-import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { Box, Divider, List, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import { useLocation, useNavigate} from 'react-router-dom';
 import SchoolIcon from '@mui/icons-material/School';
 import ForumIcon from '@mui/icons-material/Forum';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -46,16 +46,19 @@ export const ResumeCV = (props: IProps) => {
                     {
                         redirect_buttons.map((line, index)=> {
                             return (
-                                <ListItemButton className='resume-cv-list-item'
-                                    selected={selectedIndex === index}
-                                    onClick={(event) => handleListItemClick(event, index)}
-                                >
-                                    <ListItemIcon>
-                                        {line.icon}
-                                    </ListItemIcon>
-                                    <ListItemText primary={line.name} />
-                                </ListItemButton>
-                            );      
+                                <React.Fragment key={index}>
+                                    <ListItemButton className='resume-cv-list-item'
+                                        selected={selectedIndex === index}
+                                        onClick={(event) => handleListItemClick(event, index)}
+                                    >
+                                        <ListItemIcon>
+                                            {line.icon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={line.name} />
+                                    </ListItemButton>
+                                    <Divider variant="middle" component="li" />
+                                </React.Fragment>
+                            );
                         })
                     }
                 </List>

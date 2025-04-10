@@ -35,21 +35,21 @@
     }    
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .hobbies {
         padding: 25px;
         gap: 20px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .hobbies .hobby-photography {
         width: 60%;
         height: 60%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .hobbies .hobbies-folder {
         grid-template-columns: repeat(1, 1fr);
     }

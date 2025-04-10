@@ -98,7 +98,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .about-me {
         flex-direction: column;
         padding: 25px;
@@ -106,14 +106,14 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .about-me-photo{
         max-width: 50%;
         order: 2;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .about-me-text{
         max-width: 95%;
         gap: 10px;

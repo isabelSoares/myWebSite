@@ -4,6 +4,51 @@ import { IPhotoAlbum, PhotoAlbum } from './PhotoAlbum';
 
 const albumsInformation: IPhotoAlbum[] = [
     {
+        albumName: 'Austria, 2025',
+        dialogTitle: 'March, 2025',
+        dialogImages: [
+            { description: 'Schonbrunn Garden', image:''},
+            { description: 'Opera Wiener Staatsoper', image:''},
+            { description: 'Hallstatt', image:''},
+            { description: 'Top of Innsbruck', image:''},
+            { description: 'Innbrucke', image:''}
+        ]
+    },
+    {
+        albumName: 'UK, 2024',
+        dialogTitle: 'October, 2024',
+        dialogImages: [
+            { description: 'Hyde Park', image:''},
+            { description: 'Tower Bridge', image:''},
+            { description: 'Nothing Hill', image:''},
+            { description: 'Hampstead Health', image:''},
+            { description: 'Vintage markets', image:''}
+        ]
+    },
+    {
+        albumName: 'Croatia, 2024',
+        dialogTitle: 'June, 2024',
+        dialogImages: [
+            { description: 'Dubrovnik', image:''},
+            { description: 'Dubrovnik', image:''},
+            { description: 'Makarska', image:''},
+            { description: 'Hvar', image:''},
+            { description: 'Bol', image:''},
+            { description: 'Krka National Park', image:''},
+            { description: 'Krka National Park', image:''}
+
+        ]
+    },
+    {
+        albumName: 'Switzerland, 2024',
+        dialogTitle: 'March, 2024',
+        dialogImages: [
+            { description: 'Zurich', image:''},
+            { description: 'The top of Zurich', image:''},
+            { description: 'Geneve', image:''}
+        ]
+    },
+    {
         albumName: 'Malta, 2023',
         dialogTitle: 'September, 2023',
         dialogImages: [
@@ -39,7 +84,7 @@ const albumsInformation: IPhotoAlbum[] = [
         ]
     },
     {
-        albumName: 'Spain, 2023',
+        albumName: 'Spain, 2023 & 2025',
         dialogTitle: 'March, 2023',
         dialogImages: [
             {description: 'Salamanca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1761.jpg'},
@@ -48,14 +93,15 @@ const albumsInformation: IPhotoAlbum[] = [
         ]
     },
     {
-        albumName: 'Italy, 2022',
-        dialogTitle: 'November, 2022',
+        albumName: 'Italy, 2022 & 2024',
+        dialogTitle: 'November, 2022 and 2024',
         dialogImages: [
             {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9661.JPG'},
             {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9663.JPG'},
             {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9689.JPG'},
             {description: 'Rome', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9682.JPG'},
-            {description: 'Rome', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9672.JPG'}
+            {description: 'Rome', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9672.JPG'},
+            {description: 'Portofino', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9672.JPG'}
         ]
     },
     {

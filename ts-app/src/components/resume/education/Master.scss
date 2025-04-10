@@ -10,5 +10,18 @@
         border: 2px solid #fff;
         border-radius: 6px;
         padding: 15px;
+        
+    }
+
+    .MuiTypography-root{
+            max-width: 95%;
+    }
+}
+    
+@media (max-width: 640px) {
+    .licenciate{
+        margin-top: 25px;
+        max-width: 95%;
+        gap: 10px;
     }
 }
