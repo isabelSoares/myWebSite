@@ -5,28 +5,21 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
-import { Master } from './components/resume/education/Master';
-import { Licenciate } from './components/resume/education/Licenciate';
-import { Internship } from './components/resume/job/Internship';
-import { Teaching } from './components/resume/job/Teaching';
-import { EAI } from './components/resume/job/EAI';
-import { Frontend } from './components/resume/job/Frontend';
 import { Hobbies } from './components/hobbies/Hobbies';
-import { Chatbot } from './components/chatbot/Chatbot';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
-const darkTheme = createTheme({
+const siteTheme = createTheme({
   palette: {
     background: {
-      default: '#0f1924',
-      paper: '#9BCECA'
+      default: '#f4f0e8',
+      paper: '#fffdf8'
     },
     primary: {
-      main: '#9BCECA',
+      main: '#d96c4b',
     },
     secondary: {
-      main: '#357B8D',
+      main: '#155e63',
     }
   },
 });
@@ -35,24 +28,17 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={siteTheme}>
         <CssBaseline />
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <TopBar/>
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="/resume" element={<ResumeCV />} />
-            <Route path="/resume/master" element={<Master />} />
-            <Route path="/resume/licenciate" element={<Licenciate />} />
-            <Route path="/resume/internship" element={<Internship />} />
-            <Route path="/resume/teaching" element={<Teaching />} />
-            <Route path="/resume/firstJob" element={<EAI />} />
-            <Route path="/resume/frontend" element={<Frontend />} />
             <Route path="/hobbies" element={<Hobbies />} />
           </Routes>
         </Router>
       </ThemeProvider>
-      <Chatbot />
     </div>
   );
 }

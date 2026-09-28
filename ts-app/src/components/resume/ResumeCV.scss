@@ -1,30 +1,223 @@
-.resume-cv{
+.resume-cv {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 84px 42px 110px;
+    position: relative;
+}
+
+.section-kicker {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.resume-heading {
+    align-items: flex-end;
+    border-bottom: 1px solid #cdd2c9;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.resume-heading h1 {
+    font-size: clamp(3rem, 7vw, 7rem);
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.resume-contact {
+    color: #155e63;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    text-decoration: none;
+}
+
+.resume-contacts {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    margin-top: 30px;
-    width: 90%;
-
-    p {
-        width: 100%;
-        text-align: flex-start;
-        color: white;
-    }
-
-    .resume-cv-box {
-        max-width: 100% !important;
-        border: 2px solid;
-        border-radius: 6px;
-    }
+    gap: 10px;
 }
 
-.resume-cv-list-item {
-    border: 2px solid #000;
-    border-radius: 6px;
+.resume-contact svg {
+    color: #d96c4b;
+    margin-left: 6px;
 }
 
-.icon-style {
-    vertical-align: middle;
-    margin-right: 8px; 
+.experience-list {
+    margin-top: 16px;
+}
+
+.experience-card {
+    border-bottom: 1px solid #cdd2c9;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: 70px 1fr;
+    padding: 42px 0 48px;
+}
+
+.experience-index {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+.experience-meta {
+    color: #6f8080;
+    display: flex;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    justify-content: space-between;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.experience-meta svg {
+    color: #d96c4b;
+    margin-right: 4px;
+}
+
+.experience-content h2 {
+    color: #17262b;
+    font-size: clamp(1.8rem, 3.2vw, 3.4rem);
+    letter-spacing: -0.07em;
+    line-height: 1;
+    margin: 19px 0 15px;
+}
+
+.experience-summary {
+    color: #155e63;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 650px;
+}
+
+.experience-content ul,
+.resume-panel ul {
+    color: #53676a;
+    line-height: 1.6;
+    margin: 22px 0 0;
+    max-width: 850px;
+    padding-left: 20px;
+}
+
+.experience-content li,
+.resume-panel li {
+    margin-bottom: 9px;
+}
+
+.resume-lower-grid {
+    display: grid;
+    gap: 70px;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+}
+
+.resume-panel h2 {
+    font-size: 2rem;
+    letter-spacing: -0.06em;
+    margin: 0 0 8px;
+}
+
+.resume-panel p:not(.section-kicker) {
+    color: #53676a;
+    line-height: 1.6;
+}
+
+.resume-period {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+}
+
+.skills-panel {
+    border-left: 1px solid #cdd2c9;
+    padding-left: 42px;
+}
+
+.skill-row,
+.language-row {
+    border-bottom: 1px solid #cdd2c9;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 100px 1fr;
+    padding: 16px 0;
+}
+
+.skill-row strong,
+.language-row strong {
+    color: #17262b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+}
+
+.skill-row span,
+.language-row span {
+    color: #53676a;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.resume-scroll-note {
+    bottom: 28px;
+    color: #7a8989;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    position: absolute;
+    right: 42px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.resume-scroll-note svg {
+    color: #d96c4b;
+    margin-right: 7px;
+}
+
+@media (max-width: 760px) {
+    .resume-cv {
+        padding: 60px 24px 90px;
+    }
+
+    .resume-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    .experience-card {
+        gap: 14px;
+        grid-template-columns: 36px 1fr;
+        padding: 32px 0 38px;
+    }
+
+    .experience-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-lower-grid {
+        gap: 50px;
+        grid-template-columns: 1fr;
+    }
+
+    .skills-panel {
+        border-left: 0;
+        border-top: 1px solid #cdd2c9;
+        padding-left: 0;
+        padding-top: 45px;
+    }
+
+    .resume-scroll-note {
+        bottom: 25px;
+        left: 24px;
+        right: auto;
+    }
 }

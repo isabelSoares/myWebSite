@@ -1,121 +1,302 @@
-.about-me{
-    display: flex;
-    flex-direction: row;
+.about-me {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 76px 42px 100px;
+}
+
+.about-me-hero {
     align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    padding: 100px;
-    padding-top: 70px;
-    gap: 160px;
+    display: grid;
+    gap: clamp(40px, 8vw, 120px);
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 390px);
+    min-height: min(680px, calc(100vh - 78px));
 }
 
-.about-me-photo{
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 30%;
-    max-height: 40%;
-
-    img {
-        width: 100%;
-    }
+.about-me-copy {
+    max-width: 680px;
 }
 
-.about-me-text{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: flex-start;
-    justify-content: flex-start;
-    max-width: 50%;
-    max-height: 20%;
-    gap: 10px;
-
-    h1 {
-        width: 100%;
-        text-align: left;
-        margin-top: 0px;
-    }
-
-    p {
-        width: 95%;
-        text-align: left;
-        font-size: medium;
-    }
+.eyebrow,
+.section-kicker,
+.about-me-portrait-label {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 22px;
+    text-transform: uppercase;
 }
 
-.contact-me{
-    display: flex;
-    flex-direction: row;
+.about-me h1 {
+    color: #17262b;
+    font-size: clamp(3rem, 6.2vw, 6.7rem);
+    letter-spacing: -0.075em;
+    line-height: 0.96;
+    margin: 0;
+    max-width: 800px;
+}
+
+.about-me-lead {
+    color: #53676a;
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.6;
+    margin: 34px 0 0;
+    max-width: 600px;
+}
+
+.about-me-actions {
     align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: 38px;
+}
+
+.primary-action,
+.text-action {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+}
+
+.primary-action {
+    background: #17262b;
+    border-radius: 999px;
+    color: #fffdf8;
+    padding: 15px 20px;
+}
+
+.primary-action svg {
+    color: #f2b19c;
+    margin-left: 10px;
+}
+
+.text-action {
+    border-bottom: 1px solid #d96c4b;
+    color: #17262b;
+    padding-bottom: 4px;
+}
+
+.about-me-facts {
+    color: #7a8989;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
     gap: 20px;
-
-    .contact-me-mail{
-        display: flex;
-        flex: 1 1 0;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 70%;
-        font-size: x-large;
-                
-        a {
-            color: white;
-        }
-    }
-
-    .contact-me-linkedin{
-        display: flex;
-        flex: 1 1 0;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        font-size: x-large;
-                
-        a {
-            color: white;
-        }
-    }
-
-    .contact-me-github{
-        display: flex;
-        flex: 1 1 0;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        font-size: x-large;
-
-        a {
-            color: white;
-        }
-    }
+    margin-top: 68px;
 }
 
-@media (max-width: 640px) {
+.about-me-facts svg {
+    color: #d96c4b;
+    margin-right: 7px;
+}
+
+.about-me-portrait-wrap {
+    position: relative;
+}
+
+.about-me-portrait-label {
+    left: -30px;
+    position: absolute;
+    top: -34px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+}
+
+.about-me-portrait {
+    aspect-ratio: 0.78;
+    display: block;
+    filter: saturate(0.75);
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-me-stamp {
+    align-items: center;
+    background: #d96c4b;
+    border-radius: 50%;
+    color: #fffdf8;
+    display: flex;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    height: 70px;
+    justify-content: center;
+    line-height: 1.2;
+    position: absolute;
+    right: -25px;
+    text-align: center;
+    top: 35%;
+    transform: rotate(12deg);
+    width: 70px;
+}
+
+.about-me-details {
+    border-top: 1px solid #cdd2c9;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 80px;
+    padding-top: 30px;
+}
+
+.about-me-details h2 {
+    font-size: clamp(1.8rem, 3vw, 3.1rem);
+    letter-spacing: -0.06em;
+    line-height: 1;
+    margin: 0;
+    max-width: 390px;
+}
+
+.about-me-details-copy {
+    color: #53676a;
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 520px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: #17262b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    text-decoration: none;
+}
+
+.social-links svg {
+    color: #d96c4b;
+    margin-right: 6px;
+}
+
+.impact-strip {
+    border-bottom: 1px solid #cdd2c9;
+    border-top: 1px solid #cdd2c9;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 90px;
+    padding: 25px 0;
+}
+
+.impact-item {
+    align-items: baseline;
+    display: flex;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.impact-item + .impact-item {
+    border-left: 1px solid #cdd2c9;
+    padding-left: 25px;
+}
+
+.impact-item strong {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.55rem;
+}
+
+.impact-item span {
+    color: #53676a;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.personal-note {
+    border-bottom: 1px solid #cdd2c9;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    padding: 90px 0 100px;
+}
+
+.personal-note h2 {
+    font-size: clamp(2rem, 3.8vw, 4rem);
+    letter-spacing: -0.07em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 460px;
+}
+
+.personal-note-copy {
+    color: #53676a;
+    line-height: 1.65;
+    max-width: 500px;
+}
+
+.personal-note-link {
+    color: #17262b;
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-top: 22px;
+    text-decoration: none;
+}
+
+.personal-note-link svg {
+    color: #d96c4b;
+    margin-left: 7px;
+}
+
+@media (max-width: 760px) {
     .about-me {
-        flex-direction: column;
-        padding: 25px;
-        gap: 50px;
+        padding: 60px 24px 70px;
     }
-}
 
-@media (max-width: 640px) {
-    .about-me-photo{
-        max-width: 50%;
-        order: 2;
+    .about-me-hero,
+    .about-me-details {
+        grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 640px) {
-    .about-me-text{
-        max-width: 95%;
-        gap: 10px;
+    .about-me-hero {
+        min-height: auto;
+    }
+
+    .about-me-portrait-wrap {
+        margin: 36px auto 0;
+        max-width: 300px;
+        width: 80%;
+    }
+
+    .about-me-facts {
+        margin-top: 48px;
+    }
+
+    .about-me-details {
+        gap: 22px;
+        margin-top: 70px;
+    }
+
+    .impact-strip,
+    .personal-note {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-strip {
+        gap: 18px;
+        margin-top: 70px;
+    }
+
+    .impact-item {
+        padding: 0;
+    }
+
+    .impact-item + .impact-item {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    .personal-note {
+        gap: 20px;
+        padding: 70px 0;
     }
 }
