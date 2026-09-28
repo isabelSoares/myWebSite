@@ -146,19 +146,33 @@ interface IProps {}
 
 export const Hobbies = (props: IProps) => {   
     return(
-        <div className='hobbies'>
-            <p>
-                As a ordinary teenager, my favorite hobbies are listening to music and watching series and movies.
-                However, what I really love is to <br /> take pictures of landscapes, people, buildings and architectural pieces.
-                I love travelling around the world, always with a camera in my hands to collect all memories 📷 🎞️ <br />
-            </p>
-            <img src='https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/IMG_9251.jpg' className='hobby-photography' referrerPolicy="no-referrer"></img>
-            <p>Below, you can see some of my favourites pictures taken by me during some of the trips I took with my family and friends:</p>
+        <main className='hobbies'>
+            <header className="hobbies-heading">
+                <p className="section-kicker">03 / OFF THE CLOCK</p>
+                <h1>Different inputs<br />make better ideas.</h1>
+                <p className="hobbies-lead">Photography is the thread running through my travels. I also make space for movement, small creative rituals, and the things that keep me curious.</p>
+            </header>
+            <section className="interest-list" aria-label="Interests">
+                {['Photography', 'Boxing', 'LEGO', 'Running', 'Music', 'Pilates'].map((interest, index) => (
+                    <div className="interest-item" key={interest}>
+                        <span>0{index + 1}</span>
+                        <strong>{interest}</strong>
+                    </div>
+                ))}
+            </section>
+            <section className="photography-section">
+                <div className="photography-intro">
+                    <p className="section-kicker">A VISUAL NOTEBOOK</p>
+                    <h2>Collected along the way.</h2>
+                    <p>Landscapes, people, buildings, and architectural details from trips with family and friends.</p>
+                </div>
+                <img src='https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/IMG_9251.jpg' alt='A landscape photographed by Isabel' className='hobby-photography' referrerPolicy="no-referrer" />
+            </section>
             <div className='hobbies-folder'>
-                {albumsInformation.map((item) => (
-                    <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages} />
+                {albumsInformation.filter((item) => item.dialogImages.some((image) => image.image)).map((item) => (
+                    <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages.filter((image) => image.image)} />
                 ))}
             </div>
-        </div>
+        </main>
     )
 }

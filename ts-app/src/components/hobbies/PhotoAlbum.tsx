@@ -82,7 +82,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                     <div className='content-dialog'>
                         <p>{props.dialogImages[photoIndex].description}</p>
                         <div className='photos-dialog'>
-                            <img src={props.dialogImages[photoIndex].image} className='photo-dialog'></img>
+                            <img src={props.dialogImages[photoIndex].image} alt={props.dialogImages[photoIndex].description} className='photo-dialog' />
                         </div>
                     </div>
                     <div className='buttons-dialog'>

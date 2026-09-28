@@ -1,35 +1,62 @@
 .top-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    font-size: calc(10px + 2vmin);
+    background: rgba(244, 240, 232, 0.94) !important;
+    box-shadow: none !important;
+    color: #17262b;
+    position: sticky !important;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(14px);
 
     .top-bar-box {
         display: flex;
         flex-grow: 1;
-        margin-right: 10px;
-        gap: 10px;
+        gap: 4px;
         justify-content:flex-end;
-        align-items:flex-end;
-        font-weight:bold;
+        align-items:center;
 
-        .top-bar-button{
-            display: block;
-            color: #0f1924;
-            font-weight: normal;
+        .top-bar-button {
+            color: #17262b;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            min-width: auto;
+            padding: 8px 12px;
+            text-transform: uppercase;
         }
         
         .top-bar-button-selected {
-            border: 2px solid #0f1924;
-            font-weight: bold;
+            background: #17262b;
+            border-radius: 999px;
+            color: #f4f0e8;
         }
     }
-    
+
+    .top-bar-mark {
+        background: transparent;
+        border: 0;
+        color: #17262b;
+        cursor: pointer;
+        font-family: 'Space Mono', monospace;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: -0.08em;
+        padding: 8px 0;
+
+        span {
+            color: #d96c4b;
+        }
+    }
 }
 
 @media (max-width: 640px) {
     .top-bar {
-        padding: 0px 10px;
+        .top-bar-box {
+            gap: 0;
+
+            .top-bar-button {
+                font-size: 0.62rem;
+                padding: 8px 6px;
+            }
+        }
     }
 }

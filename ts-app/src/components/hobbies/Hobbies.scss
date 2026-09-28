@@ -1,56 +1,114 @@
-.hobbies{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    width: 90%;
-    padding: 10px;
+.hobbies {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 84px 42px 110px;
+}
 
-    p {
-        width: 100%;
-        text-align: justify;
+.section-kicker {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.hobbies-heading {
+    border-bottom: 1px solid #cdd2c9;
+    padding-bottom: 60px;
+}
+
+.hobbies h1 {
+    font-size: clamp(3.1rem, 8vw, 8rem);
+    letter-spacing: -0.09em;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.hobbies-lead {
+    color: #53676a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 35px 0 0;
+    max-width: 550px;
+}
+
+.interest-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.interest-item {
+    align-items: center;
+    border-bottom: 1px solid #cdd2c9;
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.interest-item span {
+    color: #d96c4b;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+}
+
+.interest-item strong {
+    font-size: 1.2rem;
+    letter-spacing: -0.04em;
+}
+
+.photography-section {
+    align-items: flex-end;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 1fr 0.8fr;
+    padding: 100px 0 65px;
+}
+
+.photography-intro h2 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    letter-spacing: -0.07em;
+    line-height: 0.95;
+    margin: 0 0 20px;
+}
+
+.photography-intro > p:last-child {
+    color: #53676a;
+    line-height: 1.6;
+    max-width: 350px;
+}
+
+.hobby-photography {
+    aspect-ratio: 1.25;
+    display: block;
+    filter: saturate(0.8);
+    object-fit: cover;
+    width: 100%;
+}
+
+.hobbies-folder {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 760px) {
+    .hobbies {
+        padding: 60px 24px 80px;
     }
 
-    .hobby-photography {
-        display: flex;
-        align-items: center;
-        width: 20%;
-        height: 20%;
+    .interest-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photography-section {
+        gap: 30px;
+        grid-template-columns: 1fr;
+        padding-top: 70px;
     }
 
     .hobbies-folder {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(4, 1fr);
-
-        .icon-style {
-            vertical-align: middle;
-            margin-top: 20px;
-            margin-right: 8px;
-            width: 20%;
-            height: 100%;
-        }
-    }    
-}
-
-@media (max-width: 640px) {
-    .hobbies {
-        padding: 25px;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 640px) {
-    .hobbies .hobby-photography {
-        width: 60%;
-        height: 60%;
-    }
-}
-
-@media (max-width: 640px) {
-    .hobbies .hobbies-folder {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
