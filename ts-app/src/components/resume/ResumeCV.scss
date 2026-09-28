@@ -37,6 +37,13 @@
     text-decoration: none;
 }
 
+.resume-contacts {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .resume-contact svg {
     color: #d96c4b;
     margin-left: 6px;

@@ -85,7 +85,9 @@ export const ResumeCV = () => {
                     <p className="section-kicker">02 / EXPERIENCE</p>
                     <h1>A career in progress.</h1>
                 </div>
-                <a className="resume-contact" href="mailto:isabel.srsoares@gmail.com">isabel.srsoares@gmail.com <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                <div className="resume-contacts">
+                    <a className="resume-contact" href="mailto:isabel.srsoares@gmail.com">isabel.srsoares@gmail.com <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                </div>
             </header>
 
             <section className="experience-list" id="experience" aria-label="Professional experience">

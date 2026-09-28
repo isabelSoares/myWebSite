@@ -54,8 +54,18 @@
 }
 
 .interest-item strong {
+    display: block;
     font-size: 1.2rem;
     letter-spacing: -0.04em;
+}
+
+.interest-item small {
+    color: #7a8989;
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    line-height: 1.4;
+    margin-top: 6px;
 }
 
 .photography-section {
