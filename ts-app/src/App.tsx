@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -9,14 +9,15 @@ import { Hobbies } from './components/hobbies/Hobbies';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
-const siteTheme = createTheme({
+const createSiteTheme = (darkMode: boolean) => createTheme({
   palette: {
+    mode: darkMode ? 'dark' : 'light',
     background: {
-      default: '#f4f0e8',
-      paper: '#fffdf8'
+      default: darkMode ? '#17262b' : '#f4f0e8',
+      paper: darkMode ? '#20383d' : '#fffdf8'
     },
     primary: {
-      main: '#d96c4b',
+      main: darkMode ? '#f2c94c' : '#243b53',
     },
     secondary: {
       main: '#155e63',
@@ -25,13 +26,18 @@ const siteTheme = createTheme({
 });
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('dark-mode') === 'true');
+
+  useEffect(() => {
+    localStorage.setItem('dark-mode', String(darkMode));
+  }, [darkMode]);
 
   return (
-    <div className="App">
-        <ThemeProvider theme={siteTheme}>
+    <div className={`App${darkMode ? ' dark-mode' : ''}`}>
+        <ThemeProvider theme={createSiteTheme(darkMode)}>
         <CssBaseline />
         <Router basename={process.env.PUBLIC_URL}>
-          <TopBar/>
+          <TopBar darkMode={darkMode} onToggleDarkMode={() => setDarkMode((isDark) => !isDark)} />
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="/resume" element={<ResumeCV />} />

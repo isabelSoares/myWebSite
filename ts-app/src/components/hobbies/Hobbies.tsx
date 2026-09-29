@@ -11,8 +11,7 @@ const albumPhotos = (country: string, files: string[]): ImageInformation[] => fi
 
 const albumsInformation: IPhotoAlbum[] = [
     {
-        albumName: 'Austria, 2025',
-        dialogTitle: 'March, 2025',
+        albumName: 'Austria',
         dialogImages: [
             { description: 'Schonbrunn Garden', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8550.webp'},
             { description: 'Opera Wiener Staatsoper', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_7778.webp'},
@@ -22,13 +21,11 @@ const albumsInformation: IPhotoAlbum[] = [
         ]
     },
     {
-        albumName: 'UK, 2024',
-        dialogTitle: 'October, 2024',
+        albumName: 'UK',
         dialogImages: albumPhotos('uk', ['IMG_1110.webp', 'IMG_0720.webp', 'IMG_1237.webp', 'IMG_0671.webp', 'IMG_0962.webp', 'IMG_0503.webp', 'IMG_5458.webp'])
     },
     {
-        albumName: 'Croatia, 2024',
-        dialogTitle: 'June, 2024',
+        albumName: 'Croatia',
         dialogImages: [
             { description: 'Dubrovnik coastline', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8442.webp'},
             { description: 'Croatian coast', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8287.webp'},
@@ -38,64 +35,46 @@ const albumsInformation: IPhotoAlbum[] = [
         ]
     },
     {
-        albumName: 'Switzerland, 2024',
-        dialogTitle: 'March, 2024',
+        albumName: 'Switzerland',
         dialogImages: [
             { description: 'Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5237.webp'},
             { description: 'The top of Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5481.webp'}
         ]
     },
     {
-        albumName: 'Malta, 2023',
-        dialogTitle: 'September, 2023',
+        albumName: 'Malta',
         dialogImages: albumPhotos('malta', ['IMG20230831095211_01.webp', 'IMG_9248.webp', 'IMG_8686.webp'])
     },
     {
         albumName: 'Spain',
-        dialogTitle: '',
-        dialogImages: [
-            {description: 'Salamanca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1761.jpg'},
-            {description: 'La Alberca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1865.jpg'},
-            {description: 'La Alberca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1875.jpg'}
-        ]
+        dialogImages: albumPhotos('spain', ['IMG_20230831_095211_01.webp', 'IMG_9248.webp', 'IMG_8686.webp'])
     },
     {
-        albumName: 'Italy, 2022 & 2024',
-        dialogTitle: 'November, 2022 and 2024',
+        albumName: 'Italy',
         dialogImages: albumPhotos('italy', ['IMG_0950.webp', 'IMG_1096.webp', 'IMG_1130.webp', 'IMG_3161.webp', 'IMG_1015.webp', 'IMG_1016.webp', 'IMG_0986.webp'])
     },
     {
-        albumName: 'Republic Dominican, 2022',
-        dialogTitle: 'July, 2022',
-        dialogImages: [
-            {description: 'Isla Sahona, Punta Cana', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/RepublicDominican/IMG_2902.jpg'},
-            {description: 'Punta Cana', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/RepublicDominican/IMG_2623.jpg'},
-            {description: 'Monkeyland, Punta Cana', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/RepublicDominican/IMG_2B2CD28C5E20-54.jpeg'}
-        ]
+        albumName: 'Republic Dominican',
+        dialogImages: [...albumPhotos('republicDominican', ['IMG_2902.webp'])]
     },
     {
-        albumName: 'Netherlands, 2020 & 2022',
-        dialogTitle: 'February, 2020 & 2020',
+        albumName: 'Netherlands',
         dialogImages: albumPhotos('netherlands', ['IMG_4420.webp', 'IMG_4436.webp', 'IMG_4712.webp', 'IMG_4401.webp', 'IMG_4266.webp', 'DSCF8321.webp', 'IMG_4646.webp', 'IMG_4187.webp', 'IMG_3877.webp', 'IMG_4366.webp', 'IMG_3821.webp', 'IMG_3867.webp', 'IMG_4377.webp', 'IMG_4252.webp', 'IMG_4340.webp', 'IMG_4419.webp'])
     },
     {
         albumName: 'Brazil',
-        dialogTitle: 'Travel memories',
         dialogImages: albumPhotos('brazil', ['IMG_7670.webp', 'IMG_7305.webp', 'IMG_6871.webp', 'IMG_6864.webp', 'IMG_7829.webp', 'IMG_7034.webp'])
     },
     {
         albumName: 'Canada',
-        dialogTitle: 'Travel memories',
         dialogImages: albumPhotos('canada', ['IMG_7519.webp', 'IMG_7416.webp', 'IMG_9076.webp', 'IMG_8954.webp', 'IMG_7490.webp'])
     },
     {
         albumName: 'France',
-        dialogTitle: 'Travel memories',
         dialogImages: albumPhotos('france', ['IMG_1176.webp', 'IMG_1583.webp', 'IMG_1624.webp', 'IMG_1632.webp', 'IMG_1609.webp'])
     },
     {
         albumName: 'USA',
-        dialogTitle: 'Travel memories',
         dialogImages: albumPhotos('usa', [
             'IMG_4709.webp', 'IMG_5159.webp', 'IMG_4898.webp', 'IMG_2624.webp', 'IMG_5179.webp', 'IMG_2079.webp',
             'IMG_2901.webp', 'IMG_2015.webp', 'IMG_4895.webp', 'IMG_5379.webp', 'IMG_5528.webp', 'IMG_8101.webp',
@@ -107,7 +86,6 @@ const albumsInformation: IPhotoAlbum[] = [
     },
     {
         albumName: 'Portugal',
-        dialogTitle: 'During my life',
         dialogImages: albumPhotos('portugal', [
             'IMG_0265.webp', 'IMG_1931.webp', 'IMG_5860.webp', 'IMG_1858.webp', 'IMG_8946.webp',
             'IMG_1706.webp', 'IMG_1839.webp', 'IMG_6647.webp', 'IMG_9770.webp', 'IMG_7200.webp',
@@ -164,11 +142,11 @@ export const Hobbies = (props: IProps) => {
                     <h2>A few places I have photographed.</h2>
                     <p>Landscapes, people, buildings, and architectural details from trips with family and friends. The albums are not a professional photography portfolio; they are just memories I like.</p>
                 </div>
-                <img src='https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/IMG_9251.jpg' alt='A landscape photographed by Isabel' className='hobby-photography' referrerPolicy="no-referrer" />
+                <img src={`${process.env.PUBLIC_URL}/photos/1BB3E15D-4298-4C6F-8739-81386C84431E.webp`} alt='sunset and a person jump' className='hobby-photography' />
             </section>
             <div className='hobbies-folder'>
                 {albumsInformation.filter((item) => item.dialogImages.some((image) => image.image)).map((item) => (
-                    <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages.filter((image) => image.image)} />
+                    <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogImages={item.dialogImages.filter((image) => image.image)} />
                 ))}
             </div>
             <aside className="instagram-invite" aria-label="Photography Instagram invitation">

@@ -1,16 +1,58 @@
 .photos {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
 }
 
 .photos-album-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+
+    &::before {
+        color: var(--site-accent);
+        content: counter(album, decimal-leading-zero);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+    }
 
     p {
-        text-align: center;
+        color: var(--site-text);
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.photos .photo-album-button {
+    align-items: flex-start;
+    border-color: var(--site-border);
+    border-radius: 0;
+    color: var(--site-text);
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    min-height: 150px;
+    padding: 22px;
+    text-align: left;
+    text-transform: none;
+    transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    width: 100%;
+
+    &:hover {
+        background: var(--site-surface);
+        border-color: var(--site-teal);
+        transform: translateY(-3px);
+    }
+
+    .icon-style {
+        color: var(--site-teal);
+        font-size: 1.35rem;
     }
 }
 
@@ -56,6 +98,20 @@
             column-gap: 20px;
             width: 100%;
             margin-top: 20px;
+
+            .photo-navigation-button {
+                background-color: var(--site-accent);
+                color: var(--site-on-accent);
+
+                &:hover {
+                    background-color: var(--site-teal);
+                }
+
+                &:disabled {
+                    background-color: var(--site-border);
+                    color: var(--site-muted);
+                }
+            }
         }
     }
 }

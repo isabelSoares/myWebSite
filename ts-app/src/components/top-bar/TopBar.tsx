@@ -1,11 +1,16 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import { Box, Button, Container, Toolbar } from '@mui/material';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import './TopBar.scss';
 
-interface IProps {}
+interface IProps {
+    darkMode: boolean;
+    onToggleDarkMode: () => void;
+}
 
 const redirect_buttons = [
     {name:'About', page: "/"},
@@ -13,7 +18,7 @@ const redirect_buttons = [
     {name:'Off the clock', page:"/hobbies"}
 ];
 
-export const TopBar = (props: IProps) => {
+export const TopBar = ({ darkMode, onToggleDarkMode }: IProps) => {
     const navigate = useNavigate();
 
     const location = useLocation();
@@ -26,8 +31,7 @@ export const TopBar = (props: IProps) => {
                     <button className="top-bar-mark" aria-label="Go to Isabel's homepage" onClick={() => navigate('/')}>
                         IS<span>.</span>
                     </button>
-                    <Box className="top-bar-box"
-                        >
+                    <Box className="top-bar-box">
                             {redirect_buttons.map((button_info) => (
                                 <Button
                                     className={'top-bar-button'  + (location.pathname === button_info.page ? ' top-bar-button-selected' : '') }
@@ -38,6 +42,14 @@ export const TopBar = (props: IProps) => {
                                     {button_info.name}
                                 </Button>     
                             ))}
+                            <button
+                                className="theme-toggle"
+                                type="button"
+                                onClick={onToggleDarkMode}
+                                aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            >
+                                {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                            </button>
                     </Box>
                 </Toolbar>
             </Container>    

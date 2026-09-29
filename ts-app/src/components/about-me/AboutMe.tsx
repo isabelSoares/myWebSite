@@ -29,7 +29,7 @@ export const AboutMe = () => {
                 <div className="about-me-portrait-wrap">
                     <div className="about-me-portrait-label">CURIOUS BY DEFAULT</div>
                     <img
-                        src="photos/IMG_7833.webp"
+                        src={`${process.env.PUBLIC_URL}/photos/IMG_7833.webp`}
                         alt="Isabel Soares"
                         className="about-me-portrait"
                     />
