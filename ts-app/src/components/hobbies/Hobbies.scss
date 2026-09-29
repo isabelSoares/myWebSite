@@ -103,6 +103,27 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.instagram-invite {
+    border-top: 1px solid #cdd2c9;
+    margin-top: 70px;
+    max-width: 620px;
+    padding-top: 28px;
+}
+
+.instagram-invite p:last-child {
+    color: #53676a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.instagram-invite a {
+    color: #d96c4b;
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
 @media (max-width: 760px) {
     .hobbies {
         padding: 60px 24px 80px;

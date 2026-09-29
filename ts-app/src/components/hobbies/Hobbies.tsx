@@ -1,41 +1,39 @@
 import React from 'react';
 import './Hobbies.scss';
-import { IPhotoAlbum, PhotoAlbum } from './PhotoAlbum';
+import { IPhotoAlbum, ImageInformation, PhotoAlbum } from './PhotoAlbum';
+
+const photoBaseUrl = 'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos';
+
+const albumPhotos = (country: string, files: string[]): ImageInformation[] => files.map((file, index) => ({
+    description: `${country} photo ${index + 1}`,
+    image: `${photoBaseUrl}/${country}/${file}`
+}));
 
 const albumsInformation: IPhotoAlbum[] = [
     {
         albumName: 'Austria, 2025',
         dialogTitle: 'March, 2025',
         dialogImages: [
-            { description: 'Schonbrunn Garden', image:''},
-            { description: 'Opera Wiener Staatsoper', image:''},
-            { description: 'Hallstatt', image:''},
-            { description: 'Top of Innsbruck', image:''},
-            { description: 'Innbrucke', image:''}
+            { description: 'Schonbrunn Garden', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8550.webp'},
+            { description: 'Opera Wiener Staatsoper', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_7778.webp'},
+            { description: 'Hallstatt', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_1757.webp'},
+            { description: 'Top of Innsbruck', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_0594.webp'},
+            { description: 'Innbrucke', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8278.webp'}
         ]
     },
     {
         albumName: 'UK, 2024',
         dialogTitle: 'October, 2024',
-        dialogImages: [
-            { description: 'Hyde Park', image:''},
-            { description: 'Tower Bridge', image:''},
-            { description: 'Nothing Hill', image:''},
-            { description: 'Hampstead Health', image:''},
-            { description: 'Vintage markets', image:''}
-        ]
+        dialogImages: albumPhotos('uk', ['IMG_1110.webp', 'IMG_0720.webp', 'IMG_1237.webp', 'IMG_0671.webp', 'IMG_0962.webp', 'IMG_0503.webp', 'IMG_5458.webp'])
     },
     {
         albumName: 'Croatia, 2024',
         dialogTitle: 'June, 2024',
         dialogImages: [
-            { description: 'Dubrovnik', image:''},
-            { description: 'Dubrovnik', image:''},
-            { description: 'Makarska', image:''},
-            { description: 'Hvar', image:''},
-            { description: 'Bol', image:''},
-            { description: 'Krka National Park', image:''},
-            { description: 'Krka National Park', image:''}
+            { description: 'Dubrovnik coastline', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8442.webp'},
+            { description: 'Croatian coast', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8287.webp'},
+            { description: 'Krka National Park', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_9141.webp'},
+            { description: 'Croatian coast', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8278.webp'}
 
         ]
     },
@@ -43,49 +41,18 @@ const albumsInformation: IPhotoAlbum[] = [
         albumName: 'Switzerland, 2024',
         dialogTitle: 'March, 2024',
         dialogImages: [
-            { description: 'Zurich', image:''},
-            { description: 'The top of Zurich', image:''},
-            { description: 'Geneve', image:''}
+            { description: 'Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5237.webp'},
+            { description: 'The top of Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5481.webp'}
         ]
     },
     {
         albumName: 'Malta, 2023',
         dialogTitle: 'September, 2023',
-        dialogImages: [
-            { description: 'Sliema', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG20230831095211_01.jpg'},
-            { description: 'Blue Lagoon', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8902.jpg'},
-            { description: 'Blue Lagoon', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8891.jpg'},
-            { description: 'Valetta', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8367.jpg'},
-            { description: 'Blue Grotto', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_9148.jpg'},
-            { description: 'Gozo', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Malta/IMG_8930.jpg'}
-        ]
+        dialogImages: albumPhotos('malta', ['IMG20230831095211_01.webp', 'IMG_9248.webp', 'IMG_8686.webp'])
     },
     {
-        albumName: 'Cape Verde, 2023',
-        dialogTitle: 'July, 2023',
-        dialogImages: [
-            { description: 'Santa Maria, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5920.jpg'},
-            { description: 'Fishing area, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5427.jpg'},
-            { description: 'Salt mines, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5504.jpg'},
-            { description: 'Buracona, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5416.jpg'},
-            { description: 'Buracona, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5402.jpg'},
-            { description: 'Buracona, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5396.jpg'},
-            { description: 'Buracona, Sal', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/CapeVerde/IMG_5410.jpg'}
-        ]
-    },
-    {
-        albumName: 'Hungary, 2023',
-        dialogTitle: 'April, 2023',
-        dialogImages: [
-            { description: 'Fisherman\'s Bastion, Budapest', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Hungary/IMG_2502.jpg'},
-            { description: 'Parlament, Budapest', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Hungary/IMG_2756.jpg'},
-            { description: 'Shoes on the Danube Bank, Budapest', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Hungary/Shoes2ndWorldWar.jpg'},
-            { description: 'Széchenyi Thermal, Budapest', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Hungary/Termal.jpg'}
-        ]
-    },
-    {
-        albumName: 'Spain, 2023 & 2025',
-        dialogTitle: 'March, 2023',
+        albumName: 'Spain',
+        dialogTitle: '',
         dialogImages: [
             {description: 'Salamanca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1761.jpg'},
             {description: 'La Alberca', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Spain/IMG_1865.jpg'},
@@ -95,14 +62,7 @@ const albumsInformation: IPhotoAlbum[] = [
     {
         albumName: 'Italy, 2022 & 2024',
         dialogTitle: 'November, 2022 and 2024',
-        dialogImages: [
-            {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9661.JPG'},
-            {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9663.JPG'},
-            {description: 'Vatican', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9689.JPG'},
-            {description: 'Rome', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9682.JPG'},
-            {description: 'Rome', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9672.JPG'},
-            {description: 'Portofino', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Italy/IMG_9672.JPG'}
-        ]
+        dialogImages: albumPhotos('italy', ['IMG_0950.webp', 'IMG_1096.webp', 'IMG_1130.webp', 'IMG_3161.webp', 'IMG_1015.webp', 'IMG_1016.webp', 'IMG_0986.webp'])
     },
     {
         albumName: 'Republic Dominican, 2022',
@@ -116,29 +76,55 @@ const albumsInformation: IPhotoAlbum[] = [
     {
         albumName: 'Netherlands, 2020 & 2022',
         dialogTitle: 'February, 2020 & 2020',
-        dialogImages: [
-            {description: 'Den Haag', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Netherlands/IMG_2B2CD28C5E20-7.jpeg'},
-            {description: 'Utrecht', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Netherlands/IMG_2B2CD28C5E20-6.jpeg'},
-            {description: 'Rotterdam', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Netherlands/IMG_2B2CD28C5E20-10.jpeg'},
-            {description: 'Eindhoven', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Netherlands/IMG_2B2CD28C5E20-2.jpeg'},
-            {description: 'Eindhoven', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Netherlands/IMG_2B2CD28C5E20-3.jpeg'}
-        ]
+        dialogImages: albumPhotos('netherlands', ['IMG_4420.webp', 'IMG_4436.webp', 'IMG_4712.webp', 'IMG_4401.webp', 'IMG_4266.webp', 'DSCF8321.webp', 'IMG_4646.webp', 'IMG_4187.webp', 'IMG_3877.webp', 'IMG_4366.webp', 'IMG_3821.webp', 'IMG_3867.webp', 'IMG_4377.webp', 'IMG_4252.webp', 'IMG_4340.webp', 'IMG_4419.webp'])
+    },
+    {
+        albumName: 'Brazil',
+        dialogTitle: 'Travel memories',
+        dialogImages: albumPhotos('brazil', ['IMG_7670.webp', 'IMG_7305.webp', 'IMG_6871.webp', 'IMG_6864.webp', 'IMG_7829.webp', 'IMG_7034.webp'])
+    },
+    {
+        albumName: 'Canada',
+        dialogTitle: 'Travel memories',
+        dialogImages: albumPhotos('canada', ['IMG_7519.webp', 'IMG_7416.webp', 'IMG_9076.webp', 'IMG_8954.webp', 'IMG_7490.webp'])
+    },
+    {
+        albumName: 'France',
+        dialogTitle: 'Travel memories',
+        dialogImages: albumPhotos('france', ['IMG_1176.webp', 'IMG_1583.webp', 'IMG_1624.webp', 'IMG_1632.webp', 'IMG_1609.webp'])
+    },
+    {
+        albumName: 'USA',
+        dialogTitle: 'Travel memories',
+        dialogImages: albumPhotos('usa', [
+            'IMG_4709.webp', 'IMG_5159.webp', 'IMG_4898.webp', 'IMG_2624.webp', 'IMG_5179.webp', 'IMG_2079.webp',
+            'IMG_2901.webp', 'IMG_2015.webp', 'IMG_4895.webp', 'IMG_5379.webp', 'IMG_5528.webp', 'IMG_8101.webp',
+            'IMG_3063.webp', 'IMG_3327.webp', 'IMG_4661.webp', 'IMG_7683.webp', 'IMG_2090.webp', 'IMG_1976.webp',
+            'IMG_4959.webp', 'IMG_7965.webp', 'IMG_8106.webp', 'IMG_8015.webp', 'IMG_4759.webp', 'IMG_5236.webp',
+            'IMG_7698.webp', 'IMG_8035.webp', 'IMG_2856.webp', 'IMG_4691.webp', 'IMG_5433.webp', 'IMG_2898.webp',
+            'IMG_5536.webp', 'IMG_4999.webp', 'IMG_5008.webp', 'IMG_8114.webp', 'IMG_3001.webp', 'IMG_4966.webp'
+        ])
     },
     {
         albumName: 'Portugal',
         dialogTitle: 'During my life',
-        dialogImages: [
-            {description: 'Almada', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/1BB3E15D-4298-4C6F-8739-81386C84431E.JPEG'},
-            {description: 'Serra da Estrela', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_2B2CD28C5E20-59.jpeg'},
-            {description: 'Gêres', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_2B2CD28C5E20-63.jpeg'},
-            {description: 'Gêres', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_2B2CD28C5E20-64.jpeg'},
-            {description: 'Aveiro', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_2B2CD28C5E20-48.jpeg'},
-            {description: 'Lisboa', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_0541.jpg'},
-            {description: 'Lisboa', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_9949.jpg'},
-            {description: 'Lisboa', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_9902.jpg'},
-            {description: 'Lisboa', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_9552.jpg'},
-            {description: 'Porto', image:'https://my-website-gallery.s3.eu-west-2.amazonaws.com/Portugal/IMG_2B2CD28C5E20-15.jpeg'}
-        ]
+        dialogImages: albumPhotos('portugal', [
+            'IMG_0265.webp', 'IMG_1931.webp', 'IMG_5860.webp', 'IMG_1858.webp', 'IMG_8946.webp',
+            'IMG_1706.webp', 'IMG_1839.webp', 'IMG_6647.webp', 'IMG_9770.webp', 'IMG_7200.webp',
+            'IMG_5143.webp', 'IMG_7538.webp', 'DSCF8480.webp', 'IMG_1843.webp', 'IMG_1681.webp',
+            'IMG_1785.webp', 'IMG_7738.webp', 'IMG_3501.webp', 'IMG_0073.webp', 'IMG_3649.webp',
+            'IMG_6298.webp', 'IMG_5965.webp', 'IMG_3678.webp', 'IMG_0541.webp', 'IMG_0384.webp',
+            'IMG_1080.webp', 'IMG_1852.webp', 'IMG_4754.webp', 'IMG_1608.webp', 'IMG_9351.webp',
+            'IMG_7498.webp', 'IMG_1848.webp', 'IMG_1845.webp', 'IMG_7180.webp', 'IMG_1853.webp',
+            'IMG_1081.webp', 'IMG_9777.webp', 'IMG_1255.webp', 'IMG_1097.webp', 'IMG_1644.webp',
+            'IMG_1846.webp', 'IMG_9762.webp', 'IMG_1149.webp', 'IMG_2266.webp', 'IMG_9902.webp',
+            'IMG_3363.webp', 'IMG_6567.webp', 'IMG_3499.webp', 'IMG_0098.webp', 'IMG_9558.webp',
+            '1BB3E15D-4298-4C6F-8739-81386C84431E.webp', 'IMG_0743.webp', 'IMG_7182.webp', 'IMG_7497.webp',
+            'IMG_1902.webp', 'IMG_1899.webp', 'IMG_1933.webp', 'IMG_0322.webp', 'IMG_1358.webp',
+            'IMG_1768_SnapseedCopy.webp', 'IMG_1905.webp', 'IMG_0247.webp', 'IMG_1006.webp',
+            'IMG_1856.webp', 'IMG_9949.webp', 'IMG_0379.webp', 'IMG_2938.webp', 'IMG_3329.webp',
+            'IMG_0339.webp', 'IMG_7700.webp', 'IMG_1861.webp', 'IMG_7960.webp', 'IMG_5859.webp'
+        ])
     }
 ]
 
@@ -185,6 +171,10 @@ export const Hobbies = (props: IProps) => {
                     <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages.filter((image) => image.image)} />
                 ))}
             </div>
+            <aside className="instagram-invite" aria-label="Photography Instagram invitation">
+                <p className="section-kicker">ONE LAST FRAME</p>
+                <p>If you made it this far, you deserve a reward: follow <a href="https://www.instagram.com/isabel.infilm/" target="_blank" rel="noopener noreferrer">@isabel.infilm</a> on Instagram. My camera roll needs the emotional support.</p>
+            </aside>
         </main>
     )
 }
