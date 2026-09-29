@@ -6,7 +6,7 @@
 }
 
 .section-kicker {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
     font-weight: 700;
@@ -17,7 +17,7 @@
 
 .resume-heading {
     align-items: flex-end;
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
@@ -31,7 +31,7 @@
 }
 
 .resume-contact {
-    color: #155e63;
+    color: var(--site-teal);
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
     text-decoration: none;
@@ -45,7 +45,7 @@
 }
 
 .resume-contact svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-left: 6px;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .experience-card {
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     display: grid;
     gap: 28px;
     grid-template-columns: 70px 1fr;
@@ -62,7 +62,7 @@
 }
 
 .experience-index {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
     font-weight: 700;
@@ -70,7 +70,7 @@
 }
 
 .experience-meta {
-    color: #6f8080;
+    color: var(--site-subtle);
     display: flex;
     font-family: 'Space Mono', monospace;
     font-size: 0.68rem;
@@ -80,12 +80,12 @@
 }
 
 .experience-meta svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-right: 4px;
 }
 
 .experience-content h2 {
-    color: #17262b;
+    color: var(--site-text);
     font-size: clamp(1.8rem, 3.2vw, 3.4rem);
     letter-spacing: -0.07em;
     line-height: 1;
@@ -93,7 +93,7 @@
 }
 
 .experience-summary {
-    color: #155e63;
+    color: var(--site-teal);
     font-size: 1.05rem;
     line-height: 1.5;
     margin: 0;
@@ -102,7 +102,7 @@
 
 .experience-content ul,
 .resume-panel ul {
-    color: #53676a;
+    color: var(--site-muted);
     line-height: 1.6;
     margin: 22px 0 0;
     max-width: 850px;
@@ -128,7 +128,7 @@
 }
 
 .resume-panel p:not(.section-kicker) {
-    color: #53676a;
+    color: var(--site-muted);
     line-height: 1.6;
 }
 
@@ -138,13 +138,13 @@
 }
 
 .skills-panel {
-    border-left: 1px solid #cdd2c9;
+    border-left: 1px solid var(--site-border);
     padding-left: 42px;
 }
 
 .skill-row,
 .language-row {
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     display: grid;
     gap: 18px;
     grid-template-columns: 100px 1fr;
@@ -153,21 +153,21 @@
 
 .skill-row strong,
 .language-row strong {
-    color: #17262b;
+    color: var(--site-text);
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
 }
 
 .skill-row span,
 .language-row span {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
 .resume-scroll-note {
     bottom: 28px;
-    color: #7a8989;
+    color: var(--site-subtle);
     font-family: 'Space Mono', monospace;
     font-size: 0.65rem;
     position: absolute;
@@ -177,7 +177,7 @@
 }
 
 .resume-scroll-note svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-right: 7px;
 }
 
@@ -210,7 +210,7 @@
 
     .skills-panel {
         border-left: 0;
-        border-top: 1px solid #cdd2c9;
+    border-top: 1px solid var(--site-border);
         padding-left: 0;
         padding-top: 45px;
     }

@@ -19,7 +19,7 @@
 .eyebrow,
 .section-kicker,
 .about-me-portrait-label {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
     font-weight: 700;
@@ -29,7 +29,7 @@
 }
 
 .about-me h1 {
-    color: #17262b;
+    color: var(--site-text);
     font-size: clamp(3rem, 6.2vw, 6.7rem);
     letter-spacing: -0.075em;
     line-height: 0.96;
@@ -38,7 +38,7 @@
 }
 
 .about-me-lead {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: clamp(1.05rem, 1.7vw, 1.3rem);
     line-height: 1.6;
     margin: 34px 0 0;
@@ -62,25 +62,25 @@
 }
 
 .primary-action {
-    background: #17262b;
+    background: var(--site-text);
     border-radius: 999px;
-    color: #fffdf8;
+    color: var(--site-on-text);
     padding: 15px 20px;
 }
 
 .primary-action svg {
-    color: #f2b19c;
+    color: var(--site-teal);
     margin-left: 10px;
 }
 
 .text-action {
-    border-bottom: 1px solid #d96c4b;
-    color: #17262b;
+    border-bottom: 1px solid var(--site-accent);
+    color: var(--site-text);
     padding-bottom: 4px;
 }
 
 .about-me-facts {
-    color: #7a8989;
+    color: var(--site-subtle);
     display: flex;
     flex-wrap: wrap;
     font-family: 'Space Mono', monospace;
@@ -90,7 +90,7 @@
 }
 
 .about-me-facts svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-right: 7px;
 }
 
@@ -116,9 +116,9 @@
 
 .about-me-stamp {
     align-items: center;
-    background: #d96c4b;
+    background: var(--site-accent);
     border-radius: 50%;
-    color: #fffdf8;
+    color: var(--site-on-accent);
     display: flex;
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
@@ -135,7 +135,7 @@
 }
 
 .about-me-details {
-    border-top: 1px solid #cdd2c9;
+    border-top: 1px solid var(--site-border);
     display: grid;
     gap: 60px;
     grid-template-columns: 1fr 1fr;
@@ -152,7 +152,7 @@
 }
 
 .about-me-details-copy {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: 1rem;
     line-height: 1.65;
     max-width: 520px;
@@ -166,20 +166,20 @@
 }
 
 .social-links a {
-    color: #17262b;
+    color: var(--site-text);
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
     text-decoration: none;
 }
 
 .social-links svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-right: 6px;
 }
 
 .impact-strip {
-    border-bottom: 1px solid #cdd2c9;
-    border-top: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
+    border-top: 1px solid var(--site-border);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 90px;
@@ -194,24 +194,24 @@
 }
 
 .impact-item + .impact-item {
-    border-left: 1px solid #cdd2c9;
+    border-left: 1px solid var(--site-border);
     padding-left: 25px;
 }
 
 .impact-item strong {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 1.55rem;
 }
 
 .impact-item span {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: 0.8rem;
     line-height: 1.4;
 }
 
 .personal-note {
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     display: grid;
     gap: 60px;
     grid-template-columns: 1fr 1fr;
@@ -227,13 +227,13 @@
 }
 
 .personal-note-copy {
-    color: #53676a;
+    color: var(--site-muted);
     line-height: 1.65;
     max-width: 500px;
 }
 
 .personal-note-link {
-    color: #17262b;
+    color: var(--site-text);
     display: inline-block;
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
@@ -243,7 +243,7 @@
 }
 
 .personal-note-link svg {
-    color: #d96c4b;
+    color: var(--site-accent);
     margin-left: 7px;
 }
 

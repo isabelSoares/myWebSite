@@ -5,7 +5,7 @@
 }
 
 .section-kicker {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
     font-weight: 700;
@@ -15,7 +15,7 @@
 }
 
 .hobbies-heading {
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     padding-bottom: 60px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .hobbies-lead {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 35px 0 0;
@@ -41,14 +41,14 @@
 
 .interest-item {
     align-items: center;
-    border-bottom: 1px solid #cdd2c9;
+    border-bottom: 1px solid var(--site-border);
     display: flex;
     gap: 20px;
     padding: 20px 0;
 }
 
 .interest-item span {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-family: 'Space Mono', monospace;
     font-size: 0.68rem;
 }
@@ -60,7 +60,7 @@
 }
 
 .interest-item small {
-    color: #7a8989;
+    color: var(--site-subtle);
     display: block;
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
@@ -84,7 +84,7 @@
 }
 
 .photography-intro > p:last-child {
-    color: #53676a;
+    color: var(--site-muted);
     line-height: 1.6;
     max-width: 350px;
 }
@@ -104,21 +104,21 @@
 }
 
 .instagram-invite {
-    border-top: 1px solid #cdd2c9;
+    border-top: 1px solid var(--site-border);
     margin-top: 70px;
     max-width: 620px;
     padding-top: 28px;
 }
 
 .instagram-invite p:last-child {
-    color: #53676a;
+    color: var(--site-muted);
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
 }
 
 .instagram-invite a {
-    color: #d96c4b;
+    color: var(--site-accent);
     font-weight: 700;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;

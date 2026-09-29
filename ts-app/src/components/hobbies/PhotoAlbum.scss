@@ -56,6 +56,20 @@
             column-gap: 20px;
             width: 100%;
             margin-top: 20px;
+
+            .photo-navigation-button {
+                background-color: var(--site-accent);
+                color: var(--site-on-accent);
+
+                &:hover {
+                    background-color: var(--site-teal);
+                }
+
+                &:disabled {
+                    background-color: var(--site-border);
+                    color: var(--site-muted);
+                }
+            }
         }
     }
 }
