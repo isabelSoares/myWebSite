@@ -31,7 +31,7 @@
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 35px 0 0;
-    max-width: 550px;
+    width: 100%;
 }
 
 .interest-list {
@@ -98,15 +98,20 @@
 }
 
 .hobbies-folder {
+    counter-reset: album;
     display: grid;
     gap: 18px;
     grid-template-columns: repeat(4, 1fr);
 }
 
+.hobbies-folder .photos {
+    counter-increment: album;
+}
+
 .instagram-invite {
     border-top: 1px solid var(--site-border);
     margin-top: 70px;
-    max-width: 620px;
+    width: 100%;
     padding-top: 28px;
 }
 
