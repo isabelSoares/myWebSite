@@ -185,6 +185,10 @@ export const Hobbies = (props: IProps) => {
                     <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogTitle={item.dialogTitle} dialogImages={item.dialogImages.filter((image) => image.image)} />
                 ))}
             </div>
+            <aside className="instagram-invite" aria-label="Photography Instagram invitation">
+                <p className="section-kicker">ONE LAST FRAME</p>
+                <p>If you made it this far, you deserve a reward: follow <a href="https://www.instagram.com/isabel.infilm/" target="_blank" rel="noopener noreferrer">@isabel.infilm</a> on Instagram. My camera roll needs the emotional support.</p>
+            </aside>
         </main>
     )
 }
