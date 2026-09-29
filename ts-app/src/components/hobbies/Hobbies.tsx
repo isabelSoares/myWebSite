@@ -164,7 +164,7 @@ export const Hobbies = (props: IProps) => {
                     <h2>A few places I have photographed.</h2>
                     <p>Landscapes, people, buildings, and architectural details from trips with family and friends. The albums are not a professional photography portfolio; they are just memories I like.</p>
                 </div>
-                <img src='https://my-website-gallery.s3.eu-west-2.amazonaws.com/general/IMG_9251.jpg' alt='A landscape photographed by Isabel' className='hobby-photography' referrerPolicy="no-referrer" />
+                <img src='photos/1BB3E15D-4298-4C6F-8739-81386C84431E.webp' alt='A landscape photographed by Isabel' className='hobby-photography' />
             </section>
             <div className='hobbies-folder'>
                 {albumsInformation.filter((item) => item.dialogImages.some((image) => image.image)).map((item) => (
