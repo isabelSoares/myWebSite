@@ -7,22 +7,22 @@ const albumsInformation: IPhotoAlbum[] = [
         albumName: 'Austria, 2025',
         dialogTitle: 'March, 2025',
         dialogImages: [
-            { description: 'Schonbrunn Garden', image:''},
-            { description: 'Opera Wiener Staatsoper', image:''},
-            { description: 'Hallstatt', image:''},
-            { description: 'Top of Innsbruck', image:''},
-            { description: 'Innbrucke', image:''}
+            { description: 'Schonbrunn Garden', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8550.webp'},
+            { description: 'Opera Wiener Staatsoper', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_7778.webp'},
+            { description: 'Hallstatt', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_1757.webp'},
+            { description: 'Top of Innsbruck', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_0594.webp'},
+            { description: 'Innbrucke', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8278.webp'}
         ]
     },
     {
         albumName: 'UK, 2024',
         dialogTitle: 'October, 2024',
         dialogImages: [
-            { description: 'Hyde Park', image:''},
-            { description: 'Tower Bridge', image:''},
-            { description: 'Nothing Hill', image:''},
-            { description: 'Hampstead Health', image:''},
-            { description: 'Vintage markets', image:''}
+            { description: 'Hyde Park', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/uk/IMG_1110.webp'},
+            { description: 'Tower Bridge', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/uk/IMG_0720.webp'},
+            { description: 'Nothing Hill', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/uk/IMG_1237.webp'},
+            { description: 'Hampstead Health', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/uk/IMG_0671.webp'},
+            { description: 'Vintage markets', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/uk/IMG_0962.webp'}
         ]
     },
     {
@@ -43,9 +43,8 @@ const albumsInformation: IPhotoAlbum[] = [
         albumName: 'Switzerland, 2024',
         dialogTitle: 'March, 2024',
         dialogImages: [
-            { description: 'Zurich', image:''},
-            { description: 'The top of Zurich', image:''},
-            { description: 'Geneve', image:''}
+            { description: 'Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5237.webp'},
+            { description: 'The top of Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5481.webp'}
         ]
     },
     {
