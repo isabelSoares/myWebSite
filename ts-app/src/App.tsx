@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
 
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
@@ -25,6 +25,16 @@ const createSiteTheme = (darkMode: boolean) => createTheme({
   },
 });
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('dark-mode') === 'true');
 
@@ -37,6 +47,7 @@ function App() {
         <ThemeProvider theme={createSiteTheme(darkMode)}>
         <CssBaseline />
         <Router basename={process.env.PUBLIC_URL}>
+          <ScrollToTop />
           <TopBar darkMode={darkMode} onToggleDarkMode={() => setDarkMode((isDark) => !isDark)} />
           <Routes>
             <Route path="/" element={<AboutMe />} />
