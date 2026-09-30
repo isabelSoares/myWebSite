@@ -74,7 +74,6 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 </IconButton>
                 <DialogContent dividers>
                     <div className='content-dialog'>
-                        <p>{props.dialogImages[photoIndex].description}</p>
                         <div className='photos-dialog'>
                             <img src={props.dialogImages[photoIndex].image} alt={props.dialogImages[photoIndex].description} className='photo-dialog' />
                         </div>
