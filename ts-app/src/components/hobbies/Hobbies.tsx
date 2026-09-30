@@ -12,13 +12,7 @@ const albumPhotos = (country: string, files: string[]): ImageInformation[] => fi
 const albumsInformation: IPhotoAlbum[] = [
     {
         albumName: 'Austria',
-        dialogImages: [
-            { description: 'Schonbrunn Garden', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8550.webp'},
-            { description: 'Opera Wiener Staatsoper', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_7778.webp'},
-            { description: 'Hallstatt', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_1757.webp'},
-            { description: 'Top of Innsbruck', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_0594.webp'},
-            { description: 'Innbrucke', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/austria/IMG_8278.webp'}
-        ]
+        dialogImages: albumPhotos('austria', ['IMG_8550.webp', 'IMG_7778.webp', 'IMG_1757.webp', 'IMG_0594.webp', 'IMG_8278.webp'])
     },
     {
         albumName: 'UK',
@@ -26,20 +20,11 @@ const albumsInformation: IPhotoAlbum[] = [
     },
     {
         albumName: 'Croatia',
-        dialogImages: [
-            { description: 'Dubrovnik coastline', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8442.webp'},
-            { description: 'Croatian coast', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8287.webp'},
-            { description: 'Krka National Park', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_9141.webp'},
-            { description: 'Croatian coast', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/croatia/IMG_8278.webp'}
-
-        ]
+        dialogImages: albumPhotos('croatia', ['IMG_8442.webp', 'IMG_8287.webp', 'IMG_9141.webp', 'IMG_8278.webp'])
     },
     {
         albumName: 'Switzerland',
-        dialogImages: [
-            { description: 'Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5237.webp'},
-            { description: 'The top of Zurich', image:'https://raw.githubusercontent.com/isabelSoares/myWebSite/97feda5/photos/switzerland/IMG_5481.webp'}
-        ]
+        dialogImages: albumPhotos('switzerland', ['IMG_5237.webp', 'IMG_5481.webp'])
     },
     {
         albumName: 'Malta',
@@ -55,7 +40,7 @@ const albumsInformation: IPhotoAlbum[] = [
     },
     {
         albumName: 'Republic Dominican',
-        dialogImages: [...albumPhotos('republicDominican', ['IMG_2902.webp'])]
+        dialogImages: albumPhotos('republicDominican', ['IMG_2902.webp'])
     },
     {
         albumName: 'Netherlands',
