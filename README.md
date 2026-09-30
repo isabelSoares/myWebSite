@@ -11,7 +11,7 @@ Requirements: Node.js 24 or newer and npm.
 
 ```sh
 cd ts-app
-npm ci
+npm i
 npm start
 ```
 
