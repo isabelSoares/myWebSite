@@ -33,7 +33,6 @@ export const AboutMe = () => {
                         alt="Isabel Soares"
                         className="about-me-portrait"
                     />
-                    <span className="about-me-stamp">IS<br />26</span>
                 </div>
             </section>
 

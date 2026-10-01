@@ -99,11 +99,7 @@
 }
 
 .about-me-portrait-label {
-    left: -30px;
-    position: absolute;
-    top: -34px;
-    transform: rotate(-90deg);
-    transform-origin: left top;
+    position: static;
 }
 
 .about-me-portrait {
@@ -112,26 +108,6 @@
     filter: saturate(0.75);
     object-fit: cover;
     width: 100%;
-}
-
-.about-me-stamp {
-    align-items: center;
-    background: var(--site-accent);
-    border-radius: 50%;
-    color: var(--site-on-accent);
-    display: flex;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    height: 70px;
-    justify-content: center;
-    line-height: 1.2;
-    position: absolute;
-    right: -25px;
-    text-align: center;
-    top: 35%;
-    transform: rotate(12deg);
-    width: 70px;
 }
 
 .about-me-details {
