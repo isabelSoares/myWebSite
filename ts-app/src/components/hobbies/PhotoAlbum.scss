@@ -4,56 +4,98 @@
     height: 100%;
 }
 
-.photos-album-box {
+.film-strip-heading {
+    align-items: flex-end;
+    border-top: 1px solid var(--site-border);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    width: 100%;
+    justify-content: space-between;
+    padding: 18px 0 14px;
 
-    &::before {
-        color: var(--site-accent);
-        content: counter(album, decimal-leading-zero);
-        font-family: 'Space Mono', monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
-    }
-
-    p {
-        color: var(--site-text);
-        font-size: 1.05rem;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        margin: 0;
-        text-align: left;
+    h3 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        letter-spacing: -0.07em;
+        line-height: 1;
+        margin: 8px 0 0;
     }
 }
 
-.photos .photo-album-button {
-    align-items: flex-start;
-    border-color: var(--site-border);
-    border-radius: 0;
-    color: var(--site-text);
+.film-strip-index,
+.film-strip-hint,
+.film-frame-number {
+    color: var(--site-accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.film-strip-hint {
+    color: var(--site-subtle);
+}
+
+.film-strip {
+    background-color: #000000;
     display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    min-height: 150px;
-    padding: 22px;
-    text-align: left;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 10px 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: var(--site-accent) var(--site-surface);
+    scrollbar-width: thin;
+}
+
+.film-frame {
+    background-color: #000000 !important;
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    flex: 0 0 clamp(180px, 21vw, 270px);
+    flex-direction: column;
+    gap: 8px;
+    min-height: 220px;
+    padding: 10px 10px 14px;
+    scroll-snap-align: start;
     text-transform: none;
-    transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
-    width: 100%;
+    transition: transform 180ms ease, background-color 180ms ease;
 
     &:hover {
-        background: var(--site-surface);
-        border-color: var(--site-teal);
-        transform: translateY(-3px);
+        background-color: #000000 !important;
+        transform: translateY(-5px) rotate(-1deg);
     }
 
-    .icon-style {
-        color: var(--site-teal);
-        font-size: 1.35rem;
+    &:focus-visible {
+        outline: 2px solid var(--site-accent);
+        outline-offset: 4px;
     }
+
+    .film-frame-number {
+        align-self: flex-start;
+        color: #ffffff;
+        font-size: 0.58rem;
+    }
+
+    img {
+        aspect-ratio: 3 / 4;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.dark-mode .film-frame {
+    background-color: #ffffff !important;
+
+    &:hover {
+        background-color: #ffffff !important;
+    }
+
+    .film-frame-number {
+        color: #000000;
+    }
+}
+
+.dark-mode .film-strip {
+    background-color: #ffffff;
 }
 
 .MuiDialog-container > div {
@@ -113,5 +155,22 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 760px) {
+    .film-strip-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .film-strip-hint {
+        font-size: 0.58rem;
+    }
+
+    .film-frame {
+        flex-basis: 155px;
+        min-height: 195px;
     }
 }
