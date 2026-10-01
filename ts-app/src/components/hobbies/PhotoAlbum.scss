@@ -36,7 +36,7 @@
 .film-strip {
     background-color: #000000;
     display: flex;
-    gap: 10px;
+    gap: 18px;
     overflow-x: auto;
     padding: 10px 10px 16px;
     scroll-snap-type: x mandatory;
@@ -56,11 +56,9 @@
     padding: 10px 10px 14px;
     scroll-snap-align: start;
     text-transform: none;
-    transition: transform 180ms ease, background-color 180ms ease;
 
     &:hover {
         background-color: #000000 !important;
-        transform: translateY(-5px) rotate(-1deg);
     }
 
     &:focus-visible {
