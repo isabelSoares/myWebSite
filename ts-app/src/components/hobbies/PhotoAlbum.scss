@@ -66,6 +66,17 @@
         outline-offset: 4px;
     }
 
+    .film-frame-photo {
+        align-items: center;
+        aspect-ratio: 3 / 4;
+        display: flex;
+        flex: 0 1 auto;
+        justify-content: center;
+        min-height: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+
     .film-frame-number {
         align-self: flex-start;
         color: #ffffff;
@@ -75,8 +86,17 @@
     img {
         aspect-ratio: 3 / 4;
         display: block;
-        object-fit: cover;
+        object-fit: contain;
         width: 100%;
+
+        &.rotation-90 {
+            aspect-ratio: 4 / 3;
+            height: 75%;
+            max-height: none;
+            max-width: none;
+            width: 133.333%;
+            transform: rotate(90deg);
+        }
     }
 }
 
@@ -127,6 +147,10 @@
                     width: auto;
                     max-height: 100%;
                     max-width: 100%;
+
+                    &.rotation-90 {
+                        transform: rotate(90deg);
+                    }
                 }
             }
         }

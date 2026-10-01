@@ -15,7 +15,8 @@ export interface IPhotoAlbum {
 
 export interface ImageInformation {
     description:string,
-    image:string
+    image:string,
+    rotation?: number
 }
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -63,7 +64,9 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                         aria-label={`Open ${props.albumName} photo ${index + 1}`}
                     >
                         <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
-                        <img src={image.image} alt={image.description} />
+                        <span className="film-frame-photo">
+                            <img className={`rotation-${image.rotation || 0}`} src={image.image} alt={image.description} />
+                        </span>
                     </Button>
                 ))}
             </div>
@@ -87,7 +90,11 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 <DialogContent dividers>
                     <div className='content-dialog'>
                         <div className='photos-dialog'>
-                            <img src={props.dialogImages[photoIndex].image} alt={props.dialogImages[photoIndex].description} className='photo-dialog' />
+                            <img
+                                src={props.dialogImages[photoIndex].image}
+                                alt={props.dialogImages[photoIndex].description}
+                                className={`photo-dialog rotation-${props.dialogImages[photoIndex].rotation || 0}`}
+                            />
                         </div>
                     </div>
                     <div className='buttons-dialog'>
