@@ -8,9 +8,6 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faFolder} from '@fortawesome/free-solid-svg-icons';
-
 export interface IPhotoAlbum {
     albumName:string,
     dialogImages:ImageInformation[]
@@ -34,7 +31,8 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
     const [open, setOpen] = React.useState(false);
     const [photoIndex, setPhotoIndex] = React.useState(0);
 
-    const handleClickOpen = () => {
+    const handleClickOpen = (index = 0) => {
+      setPhotoIndex(index);
       setOpen(true);
     };
     const handleClose = () => {
@@ -49,12 +47,26 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
 
     return (
         <div className="photos">
-            <Button className="photo-album-button" variant="outlined" onClick={handleClickOpen}>
-                <div className='photos-album-box'>
-                    <FontAwesomeIcon icon={faFolder}  className="icon-style"/>
-                    <p>{props.albumName}</p>
+            <div className="film-strip-heading">
+                <div>
+                    <span className="film-strip-index">{String(props.dialogImages.length).padStart(2, '0')} frames</span>
+                    <h3>{props.albumName}</h3>
                 </div>
-            </Button>
+                <span className="film-strip-hint">Scroll to explore</span>
+            </div>
+            <div className="film-strip" aria-label={`${props.albumName} photo strip`}>
+                {props.dialogImages.map((image, index) => (
+                    <Button
+                        className="film-frame"
+                        key={image.image}
+                        onClick={() => handleClickOpen(index)}
+                        aria-label={`Open ${props.albumName} photo ${index + 1}`}
+                    >
+                        <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
+                        <img src={image.image} alt={image.description} />
+                    </Button>
+                ))}
+            </div>
             <BootstrapDialog
                 className='teste'
                 onClose={handleClose}

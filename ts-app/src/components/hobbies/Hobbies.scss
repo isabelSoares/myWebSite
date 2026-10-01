@@ -98,14 +98,9 @@
 }
 
 .hobbies-folder {
-    counter-reset: album;
-    display: grid;
-    gap: 18px;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.hobbies-folder .photos {
-    counter-increment: album;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
 }
 
 .instagram-invite {
@@ -145,6 +140,6 @@
     }
 
     .hobbies-folder {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 42px;
     }
 }
