@@ -53,7 +53,7 @@ const albumsInformation: IPhotoAlbum[] = [
     },
     {
         albumName: 'Canada',
-        dialogImages: albumPhotos('canada', ['IMG_7416.webp', 'IMG_8015.webp', 'IMG_7778.webp', 'IMG_8035.webp', 'IMG_8114.webp','IMG_5179.webp', 'IMG_7965.webp', 'IMG_8106.webp', 'IMG_8101.webp', 'IMG_7490.webp', 'IMG_7519.webp', 'IMG_8954.webp'])
+        dialogImages: albumPhotos('canada', ['IMG_7416.webp', 'IMG_8954.webp', 'IMG_7778.webp','IMG_8101.webp', 'IMG_8015.webp', 'IMG_8114.webp', 'IMG_5179.webp', 'IMG_7965.webp','IMG_7490.webp', 'IMG_8106.webp', 'IMG_7519.webp'])
     },
     {
         albumName: 'France',
