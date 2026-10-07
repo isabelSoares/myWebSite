@@ -68,6 +68,17 @@
     padding: 15px 20px;
 }
 
+.assistant-action {
+    background: var(--site-teal);
+    color: var(--site-on-accent);
+}
+
+.primary-action:focus-visible,
+.text-action:focus-visible {
+    outline: 3px solid var(--site-accent);
+    outline-offset: 4px;
+}
+
 .primary-action svg {
     color: var(--site-teal);
     margin-left: 10px;
@@ -132,6 +143,97 @@
     font-size: 1rem;
     line-height: 1.65;
     max-width: 520px;
+}
+
+.personal-projects {
+    border-bottom: 1px solid var(--site-border);
+    border-top: 1px solid var(--site-border);
+    display: grid;
+    gap: 60px;
+    grid-template-columns: minmax(220px, 0.75fr) 1.25fr;
+    margin-top: 90px;
+    padding: 30px 0 90px;
+}
+
+.personal-projects-heading h2 {
+    font-size: clamp(2rem, 3.8vw, 4rem);
+    letter-spacing: -0.07em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 390px;
+}
+
+.project-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    padding: 25px;
+}
+
+.project-card-kicker {
+    color: var(--site-accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0 0 28px;
+}
+
+.project-card h3 {
+    color: var(--site-text);
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin: 0;
+}
+
+.project-card > p:not(.project-card-kicker) {
+    color: var(--site-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 18px 0 28px;
+}
+
+.project-card-footer {
+    align-items: flex-end;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+}
+
+.project-card-footer span {
+    color: var(--site-subtle);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    line-height: 1.5;
+}
+
+.project-card-footer a {
+    color: var(--site-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.project-card-footer a svg {
+    color: var(--site-accent);
+    margin-left: 6px;
+}
+
+.project-card-footer a:focus-visible {
+    outline: 3px solid var(--site-accent);
+    outline-offset: 4px;
 }
 
 .social-links {
@@ -229,7 +331,8 @@
     }
 
     .about-me-hero,
-    .about-me-details {
+    .about-me-details,
+    .personal-projects {
         grid-template-columns: 1fr;
     }
 
@@ -250,6 +353,12 @@
     .about-me-details {
         gap: 22px;
         margin-top: 70px;
+    }
+
+    .personal-projects {
+        gap: 28px;
+        margin-top: 70px;
+        padding-bottom: 70px;
     }
 
     .impact-strip,

@@ -42,6 +42,17 @@ settings, select **Pages > Build and deployment > Source > GitHub Actions**.
 
 Published site: <https://isabelsoares.github.io/myWebSite/>
 
+### AI Photographer Assistant
+
+The homepage links to the separately deployed AI Photographer Assistant. Configure
+the public HTTPS deployment URL as the repository variable `AI_ASSISTANT_URL` before
+publishing. The Pages workflow rejects missing, placeholder, local, insecure, and
+GitHub repository URLs before deployment.
+
+The link exposes the optional `ai_assistant_link_click` interaction name for a future
+analytics integration. Navigation does not depend on analytics, and this portfolio
+link does not collect uploaded photos or assistant results.
+
 ### Contribution workflow
 
 Create a branch for each change:

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { AI_ASSISTANT_URL } from '../../config/assistant';
 
 export const AboutMe = () => {
     return (
@@ -19,6 +20,15 @@ export const AboutMe = () => {
                     </p>
                     <div className="about-me-actions">
                         <Link className="primary-action" to="/resume">Explore my experience <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+                        <a
+                            className="primary-action assistant-action"
+                            href={AI_ASSISTANT_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-analytics-event="ai_assistant_link_click"
+                        >
+                            Try the AI Photographer Assistant <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </a>
                         <a className="text-action" href="mailto:isabel.srsoares@gmail.com">Let&apos;s connect</a>
                     </div>
                     <div className="about-me-facts">
@@ -56,6 +66,43 @@ export const AboutMe = () => {
                         <a href="https://www.linkedin.com/in/isabel-soares-58116b1a4" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /> LinkedIn</a>
                         <a href="https://github.com/isabelSoares" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> GitHub</a>
                     </div>
+                </div>
+            </section>
+
+            <section className="personal-projects" aria-labelledby="projects-title">
+                <div className="personal-projects-heading">
+                    <p className="section-kicker">02 / PERSONAL PROJECTS</p>
+                    <h2 id="projects-title">Things I build outside work.</h2>
+                </div>
+                <div className="project-grid">
+                    <article className="project-card">
+                        <p className="project-card-kicker">PHOTO ANALYSIS</p>
+                        <h3>AI Photographer Assistant</h3>
+                        <p>
+                            A computer-vision assistant that turns photo analysis into practical guidance
+                            for composition, lighting, and framing.
+                        </p>
+                        <div className="project-card-footer">
+                            <span>Python · YOLO · Computer vision</span>
+                            <a href="https://github.com/isabelSoares/ai-photographer-assistant" target="_blank" rel="noopener noreferrer">
+                                View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            </a>
+                        </div>
+                    </article>
+                    <article className="project-card">
+                        <p className="project-card-kicker">COMPUTER VISION</p>
+                        <h3>CV Photo AI</h3>
+                        <p>
+                            A local-first gallery toolkit for detecting people, visualizing results, and
+                            finding similar photos without sending the collection to a server.
+                        </p>
+                        <div className="project-card-footer">
+                            <span>Python · YOLOv8 · CLIP</span>
+                            <a href="https://github.com/isabelSoares/cv-detect-people-my-gallery" target="_blank" rel="noopener noreferrer">
+                                View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </section>
 

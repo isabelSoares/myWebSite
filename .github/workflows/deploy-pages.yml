@@ -1,6 +1,8 @@
 name: Deploy portfolio to GitHub Pages
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -37,7 +39,12 @@ jobs:
 
       - name: Build site
         working-directory: ts-app
-        run: npm run build
+        env:
+          REACT_APP_AI_ASSISTANT_URL: ${{ vars.AI_ASSISTANT_URL }}
+        run: |
+          npm run validate:assistant-url
+          npm run test:assistant-url
+          npm run build
 
       - name: Support direct client-side routes
         run: cp ts-app/build/index.html ts-app/build/404.html
@@ -48,6 +55,7 @@ jobs:
           path: ts-app/build
 
   deploy:
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
