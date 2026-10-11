@@ -6,6 +6,7 @@ import { TopBar } from './components/top-bar/TopBar';
 import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
 import { Hobbies } from './components/hobbies/Hobbies';
+import { PersonalProjects } from './components/personal-projects/PersonalProjects';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -35,7 +36,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-function App() {
+export const AppContent = () => {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('dark-mode') === 'true');
 
   useEffect(() => {
@@ -44,19 +45,26 @@ function App() {
 
   return (
     <div className={`App${darkMode ? ' dark-mode' : ''}`}>
-        <ThemeProvider theme={createSiteTheme(darkMode)}>
+      <ThemeProvider theme={createSiteTheme(darkMode)}>
         <CssBaseline />
-        <Router basename={process.env.PUBLIC_URL}>
-          <ScrollToTop />
-          <TopBar darkMode={darkMode} onToggleDarkMode={() => setDarkMode((isDark) => !isDark)} />
-          <Routes>
-            <Route path="/" element={<AboutMe />} />
-            <Route path="/resume" element={<ResumeCV />} />
-            <Route path="/hobbies" element={<Hobbies />} />
-          </Routes>
-        </Router>
+        <ScrollToTop />
+        <TopBar darkMode={darkMode} onToggleDarkMode={() => setDarkMode((isDark) => !isDark)} />
+        <Routes>
+          <Route path="/" element={<AboutMe />} />
+          <Route path="/resume" element={<ResumeCV />} />
+          <Route path="/projects" element={<PersonalProjects />} />
+          <Route path="/hobbies" element={<Hobbies />} />
+        </Routes>
       </ThemeProvider>
     </div>
+  );
+};
+
+function App() {
+  return (
+    <Router basename={process.env.PUBLIC_URL}>
+      <AppContent />
+    </Router>
   );
 }
 

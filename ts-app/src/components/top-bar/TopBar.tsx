@@ -15,7 +15,8 @@ interface IProps {
 const redirect_buttons = [
     {name:'About', page: "/"},
     {name:'Experience', page:"/resume"},
-    {name:'Off the clock', page:"/hobbies"}
+    {name:'Projects', page:"/projects"},
+    {name:'Hobbies', page:"/hobbies"}
 ];
 
 export const TopBar = ({ darkMode, onToggleDarkMode }: IProps) => {
