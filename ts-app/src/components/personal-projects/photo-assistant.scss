@@ -54,6 +54,35 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
     margin: 0 0 1.25rem;
   }
 
+  &__upload-panel {
+    background: #fff;
+    border: 2px solid var(--pa-accent);
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(56, 39, 25, 0.12);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  &__upload-title {
+    color: var(--pa-text);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+
+  &__file-selection {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__file-name {
+    color: var(--pa-muted);
+    flex: 1 1 12rem;
+    font-size: 0.9rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -63,20 +92,32 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
   &__drop {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 0.25rem;
     padding: 1.5rem;
     border: 2px dashed var(--pa-card-border);
     border-radius: 14px;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     transition: border-color 0.2s ease, background 0.2s ease;
+    width: 100%;
 
     &:hover,
     &:focus-within {
       border-color: var(--pa-accent);
       background: rgba($pa-accent, 0.04);
+    }
+
+    &:focus-within {
+      outline: 3px solid rgba($pa-accent, 0.3);
+      outline-offset: 3px;
+    }
+
+    &--dragging {
+      background: rgba($pa-accent, 0.12);
+      border-color: var(--pa-accent);
+      box-shadow: inset 0 0 0 1px var(--pa-accent);
     }
 
     input[type="file"] {
@@ -131,6 +172,11 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
     &:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--pa-accent);
+      outline-offset: 3px;
     }
 
     &--primary {
@@ -255,7 +301,7 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
     margin: 1.25rem 0 0;
     font-size: 0.8rem;
     color: var(--pa-muted);
-    text-align: center;
+    text-align: left;
   }
 }
 

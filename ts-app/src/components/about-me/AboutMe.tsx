@@ -2,7 +2,7 @@ import React from 'react';
 import './AboutMe.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { AI_ASSISTANT_URL } from '../../config/assistant';
@@ -19,17 +19,23 @@ export const AboutMe = () => {
                         automation workflows. Before that, I spent a few years building frontend products.
                     </p>
                     <div className="about-me-actions">
-                        <Link className="primary-action" to="/resume">Explore my experience <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
-                        <a
-                            className="primary-action assistant-action"
-                            href={AI_ASSISTANT_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-analytics-event="ai_assistant_link_click"
-                        >
-                            Try the AI Photographer Assistant <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                        </a>
-                        <a className="text-action" href="mailto:isabel.srsoares@gmail.com">Let&apos;s connect</a>
+                        <div className="about-me-actions-row">
+                            <Link className="primary-action" to="/resume">Explore my experience</Link>
+                            <Link className="primary-action" to="/projects">My Projects</Link>
+                            <Link className="primary-action" to="/hobbies">Off the Clock</Link>
+                        </div>
+                        <div className="about-me-actions-row">
+                            <a
+                                className="primary-action assistant-action"
+                                href={AI_ASSISTANT_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-analytics-event="ai_assistant_link_click"
+                            >
+                                Try the AI Photographer Assistant
+                            </a>
+                            <a className="text-action" href="mailto:isabel.srsoares@gmail.com">Let&apos;s connect</a>
+                        </div>
                     </div>
                     <div className="about-me-facts">
                         <span><FontAwesomeIcon icon={faLocationDot} /> Lisbon, Portugal</span>
@@ -69,43 +75,6 @@ export const AboutMe = () => {
                 </div>
             </section>
 
-            <section className="personal-projects" aria-labelledby="projects-title">
-                <div className="personal-projects-heading">
-                    <p className="section-kicker">02 / PERSONAL PROJECTS</p>
-                    <h2 id="projects-title">Things I build outside work.</h2>
-                </div>
-                <div className="project-grid">
-                    <article className="project-card">
-                        <p className="project-card-kicker">PHOTO ANALYSIS</p>
-                        <h3>AI Photographer Assistant</h3>
-                        <p>
-                            A computer-vision assistant that turns photo analysis into practical guidance
-                            for composition, lighting, and framing.
-                        </p>
-                        <div className="project-card-footer">
-                            <span>Python · YOLO · Computer vision</span>
-                            <a href="https://github.com/isabelSoares/ai-photographer-assistant" target="_blank" rel="noopener noreferrer">
-                                View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                            </a>
-                        </div>
-                    </article>
-                    <article className="project-card">
-                        <p className="project-card-kicker">COMPUTER VISION</p>
-                        <h3>CV Photo AI</h3>
-                        <p>
-                            A local-first gallery toolkit for detecting people, visualizing results, and
-                            finding similar photos without sending the collection to a server.
-                        </p>
-                        <div className="project-card-footer">
-                            <span>Python · YOLOv8 · CLIP</span>
-                            <a href="https://github.com/isabelSoares/cv-detect-people-my-gallery" target="_blank" rel="noopener noreferrer">
-                                View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
             <section className="impact-strip" aria-label="Selected impact">
                 <div className="impact-item">
                     <strong>30+</strong>
@@ -132,7 +101,7 @@ export const AboutMe = () => {
                         listen to music, and do Pilates. None of that needs to be on a CV, but it is a much
                         better introduction to how I spend an ordinary week.
                     </p>
-                    <Link className="personal-note-link" to="/hobbies">Meet me off the clock <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+                    <Link className="personal-note-link" to="/hobbies">Meet me off the clock</Link>
                 </div>
             </section>
         </main>

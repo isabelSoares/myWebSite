@@ -53,7 +53,10 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                     <span className="film-strip-index">{String(props.dialogImages.length).padStart(2, '0')} frames</span>
                     <h3>{props.albumName}</h3>
                 </div>
-                <span className="film-strip-hint">Scroll to explore</span>
+                <span className="film-strip-hint">
+                    Scroll to explore
+                    <span className="film-strip-arrow" aria-hidden="true">-&gt;</span>
+                </span>
             </div>
             <div className="film-strip" aria-label={`${props.albumName} photo strip`}>
                 {props.dialogImages.map((image, index) => (

@@ -43,16 +43,12 @@ test('renders a safe external AI photographer assistant link', () => {
     expect(assistantLink).toHaveAttribute('data-analytics-event', 'ai_assistant_link_click');
 });
 
-test('renders the personal projects section with both project links', () => {
+test('does not render personal project cards on the homepage', () => {
     renderWithRouter();
 
-    expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'AI Photographer Assistant' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'CV Photo AI' })).toBeInTheDocument();
-    const projectLinks = screen.getAllByRole('link', { name: /View project/i });
-    expect(projectLinks).toHaveLength(2);
-    expect(projectLinks[0]).toHaveAttribute('href', 'https://github.com/isabelSoares/ai-photographer-assistant');
-    expect(projectLinks[1]).toHaveAttribute('href', 'https://github.com/isabelSoares/cv-detect-people-my-gallery');
+    expect(screen.queryByRole('heading', { name: 'Things I build outside work.' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'CV Photo AI' })).not.toBeInTheDocument();
+    expect(screen.queryAllByRole('link', { name: /View project/i })).toHaveLength(0);
 });
 
 test('Projects page links to both GitHub repositories', () => {
