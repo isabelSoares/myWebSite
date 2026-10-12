@@ -33,6 +33,14 @@
     color: var(--site-subtle);
 }
 
+.film-strip-arrow {
+    color: var(--site-accent);
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-left: 0.45em;
+}
+
 .film-strip {
     background-color: #000000;
     display: flex;

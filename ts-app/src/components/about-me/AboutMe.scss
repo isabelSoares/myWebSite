@@ -63,34 +63,40 @@
 
 .primary-action,
 .text-action {
+    background: #fff;
+    border-radius: 999px;
+    color: #17262b;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.03em;
+    padding: 15px 20px;
     text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.primary-action {
-    background: var(--site-text);
-    border-radius: 999px;
-    color: var(--site-on-text);
-    padding: 15px 20px;
+.primary-action:hover,
+.text-action:hover {
+    background: var(--site-teal-hover);
+    color: var(--site-on-teal-hover);
+}
+
+.primary-action:active,
+.primary-action:focus-visible,
+.text-action:active,
+.text-action:focus-visible {
+    background: var(--site-teal-light);
+    color: #17262b;
 }
 
 .assistant-action {
-    background: var(--site-teal);
-    color: var(--site-on-accent);
+    background: #fff;
+    color: #17262b;
 }
 
 .primary-action:focus-visible,
 .text-action:focus-visible {
     outline: 3px solid var(--site-accent);
     outline-offset: 4px;
-}
-
-.text-action {
-    border-bottom: 1px solid var(--site-accent);
-    color: var(--site-text);
-    padding-bottom: 4px;
 }
 
 .about-me-facts {

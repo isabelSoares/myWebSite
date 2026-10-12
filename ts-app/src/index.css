@@ -7,6 +7,9 @@
   --site-border: #cdd2c9;
   --site-accent: #243b53;
   --site-teal: #155e63;
+  --site-teal-hover: #155e63;
+  --site-teal-light: #63b3b5;
+  --site-on-teal-hover: #fffdf8;
   --site-on-accent: #fffdf8;
   --site-on-text: #fffdf8;
 }
@@ -20,6 +23,9 @@
   --site-border: #486269;
   --site-accent: #f2c94c;
   --site-teal: #63b3b5;
+  --site-teal-hover: #24585d;
+  --site-teal-light: #7ddbdb;
+  --site-on-teal-hover: #f4f0e8;
   --site-on-accent: #17262b;
   --site-on-text: #17262b;
 }

@@ -25,14 +25,26 @@
         }
         
         .top-bar-button-selected {
-            background: var(--site-text);
+            background: var(--site-teal-light);
             border-radius: 999px;
-            color: var(--site-on-text);
+            color: #17262b;
         }
 
-        .top-bar-button:hover {
-            background: var(--site-teal);
-            color: var(--site-on-accent);
+        .top-bar-button:not(.top-bar-button-selected):hover {
+            background: var(--site-teal-hover);
+            border-radius: 999px;
+            color: var(--site-on-teal-hover);
+        }
+
+        .top-bar-button-selected:hover {
+            background: var(--site-teal-light);
+            color: #17262b;
+        }
+
+        .top-bar-button:focus-visible {
+            border-radius: 999px;
+            outline: 2px solid var(--site-accent);
+            outline-offset: 2px;
         }
     }
 
@@ -67,9 +79,9 @@
         width: 36px;
 
         &:hover {
-            background: var(--site-teal);
-            border-color: var(--site-teal);
-            color: var(--site-on-accent);
+            background: var(--site-teal-hover);
+            border-color: var(--site-teal-hover);
+            color: var(--site-on-teal-hover);
         }
 
         svg {

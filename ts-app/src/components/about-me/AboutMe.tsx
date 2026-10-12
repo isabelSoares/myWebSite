@@ -75,43 +75,6 @@ export const AboutMe = () => {
                 </div>
             </section>
 
-            <section className="personal-projects" aria-labelledby="projects-title">
-                <div className="personal-projects-heading">
-                    <p className="section-kicker">02 / PERSONAL PROJECTS</p>
-                    <h2 id="projects-title">Things I build outside work.</h2>
-                </div>
-                <div className="project-grid">
-                    <article className="project-card">
-                        <p className="project-card-kicker">PHOTO ANALYSIS</p>
-                        <h3>AI Photographer Assistant</h3>
-                        <p>
-                            A computer-vision assistant that turns photo analysis into practical guidance
-                            for composition, lighting, and framing.
-                        </p>
-                        <div className="project-card-footer">
-                            <span>Python · YOLO · Computer vision</span>
-                            <a href="https://github.com/isabelSoares/ai-photographer-assistant" target="_blank" rel="noopener noreferrer">
-                                View project
-                            </a>
-                        </div>
-                    </article>
-                    <article className="project-card">
-                        <p className="project-card-kicker">COMPUTER VISION</p>
-                        <h3>CV Photo AI</h3>
-                        <p>
-                            A local-first gallery toolkit for detecting people, visualizing results, and
-                            finding similar photos without sending the collection to a server.
-                        </p>
-                        <div className="project-card-footer">
-                            <span>Python · YOLOv8 · CLIP</span>
-                            <a href="https://github.com/isabelSoares/cv-detect-people-my-gallery" target="_blank" rel="noopener noreferrer">
-                                View project
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
             <section className="impact-strip" aria-label="Selected impact">
                 <div className="impact-item">
                     <strong>30+</strong>

@@ -1,4 +1,5 @@
-import { useState, useRef, useCallback, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, useCallback, ChangeEvent, DragEvent, FormEvent } from "react";
+import './photo-assistant.scss';
 
 export interface DetectedObject {
   label: string;
@@ -107,10 +108,11 @@ export default function PhotoAssistant({
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<PhotoGuidanceResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    const selected = event.target.files?.[0];
+  const processSelectedFile = useCallback((selected?: File) => {
+    setIsDragging(false);
     setResult(null);
     setError(null);
     setFile(null);
@@ -135,6 +137,32 @@ export default function PhotoAssistant({
     reader.onerror = () => setError("Could not read the selected photo.");
     reader.readAsDataURL(selected);
   }, []);
+
+  const handleFileChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const selected = event.currentTarget.files?.[0];
+    event.currentTarget.value = "";
+    processSelectedFile(selected);
+  }, [processSelectedFile]);
+
+  const handleDragOver = useCallback((event: DragEvent<HTMLLabelElement>) => {
+    event.preventDefault();
+    if (!loading) {
+      event.dataTransfer.dropEffect = "copy";
+      setIsDragging(true);
+    }
+  }, [loading]);
+
+  const handleDragLeave = useCallback((event: DragEvent<HTMLLabelElement>) => {
+    const nextTarget = event.relatedTarget;
+    if (nextTarget instanceof Node && event.currentTarget.contains(nextTarget)) return;
+    setIsDragging(false);
+  }, []);
+
+  const handleDrop = useCallback((event: DragEvent<HTMLLabelElement>) => {
+    event.preventDefault();
+    if (loading) return;
+    processSelectedFile(event.dataTransfer.files?.[0]);
+  }, [loading, processSelectedFile]);
 
   const handleSubmit = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {
@@ -198,43 +226,66 @@ export default function PhotoAssistant({
         )}
 
         {!result && (
-          <form onSubmit={handleSubmit} className="photo-assistant__form">
-            <label className="photo-assistant__drop">
-              <input
-                ref={inputRef}
-                type="file"
-                accept=".jpg,.jpeg,.png,.webp,image/*"
-                onChange={handleFileChange}
-                disabled={loading}
-              />
-              <span className="photo-assistant__drop-text">
-                {preview ? file?.name : "Click or drag a photo here"}
-              </span>
-              <span className="photo-assistant__drop-hint">
-                JPG, PNG, or WEBP. Max 10 MB.
-              </span>
-            </label>
+          <section className="photo-assistant__upload-panel" aria-labelledby="photo-upload-title">
+            <h3 id="photo-upload-title" className="photo-assistant__upload-title">Upload a photo</h3>
+            <form onSubmit={handleSubmit} className="photo-assistant__form">
+              <div className="photo-assistant__file-selection">
+                <button
+                  type="button"
+                  className="photo-assistant__button photo-assistant__button--secondary"
+                  onClick={() => inputRef.current?.click()}
+                  disabled={loading}
+                >
+                  Choose photo
+                </button>
+                <span className="photo-assistant__file-name" role="status" aria-live="polite">
+                  {file?.name ?? "No file chosen"}
+                </span>
+              </div>
 
-            {preview && (
-              <img
-                src={preview}
-                alt="Selected preview"
-                className="photo-assistant__preview"
-              />
-            )}
-
-            {error && <div className="photo-assistant__error" role="alert">{error}</div>}
-
-            <div className="photo-assistant__actions">
-              <button
-                type="submit"
-                className="photo-assistant__button photo-assistant__button--primary"
-                disabled={!preview || loading}
+              <label
+                className={`photo-assistant__drop${isDragging ? " photo-assistant__drop--dragging" : ""}`}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
               >
-                {loading ? "Analyzing..." : "Review photo"}
-              </button>
-            </div>
-          </form>
+                <input
+                  ref={inputRef}
+                  type="file"
+                  accept=".jpg,.jpeg,.png,.webp,image/*"
+                  onChange={handleFileChange}
+                  disabled={loading}
+                />
+                <span className="photo-assistant__drop-text">Click or drag a photo here</span>
+                <span className="photo-assistant__drop-hint">
+                  JPG, PNG, or WEBP. Max 10 MB.
+                </span>
+              </label>
+
+              {preview && (
+                <img
+                  src={preview}
+                  alt="Selected preview"
+                  className="photo-assistant__preview"
+                />
+              )}
+
+              {error && <div className="photo-assistant__error" role="alert">{error}</div>}
+
+              <div className="photo-assistant__actions">
+                <button
+                  type="submit"
+                  className="photo-assistant__button photo-assistant__button--primary"
+                  disabled={!preview || loading}
+                >
+                  {loading ? "Analyzing..." : "Review photo"}
+                </button>
+              </div>
+            </form>
+            <p className="photo-assistant__privacy">
+              Your photo is analyzed in real time and not stored.
+            </p>
+          </section>
         )}
 
         {loading && (
@@ -301,9 +352,11 @@ export default function PhotoAssistant({
           </div>
         )}
 
-        <p className="photo-assistant__privacy">
-          Your photo is analyzed in real time and not stored.
-        </p>
+        {result && (
+          <p className="photo-assistant__privacy">
+            Your photo is analyzed in real time and not stored.
+          </p>
+        )}
       </div>
     </div>
   );
