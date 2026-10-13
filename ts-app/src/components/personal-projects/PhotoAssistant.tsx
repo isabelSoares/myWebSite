@@ -50,11 +50,34 @@ const SUPPORTED_TYPES = ["image/jpeg", "image/png", "image/webp"] as const;
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MiB
 const DEFAULT_MAX_DIMENSION = 1024;
 const DEFAULT_QUALITY = 0.85;
+const REVIEW_DEADLINE_MS = 30_000;
 
 interface ResizeResult {
   dataUrl: string;
   width: number;
   height: number;
+}
+
+function isPhotoGuidanceResult(value: unknown): value is PhotoGuidanceResult {
+  if (typeof value !== "object" || value === null) return false;
+  const result = value as Partial<PhotoGuidanceResult>;
+  return (
+    typeof result.summary === "string" &&
+    Array.isArray(result.subjects) &&
+    Array.isArray(result.scenes) &&
+    Array.isArray(result.tips) &&
+    typeof result.uncertain === "boolean" &&
+    (typeof result.notice === "string" || result.notice === null) &&
+    (typeof result.error_message === "string" || result.error_message === null)
+  );
+}
+
+function visitorError(error: unknown): string {
+  if (error instanceof TypeError || (error instanceof Error && /failed to fetch|networkerror/i.test(error.message))) {
+    return "Could not connect to the photo assistant. Check your connection and try again.";
+  }
+  if (error instanceof Error && error.message) return error.message;
+  return "The photo could not be analyzed. Please try again.";
 }
 
 /**
@@ -173,30 +196,57 @@ export default function PhotoAssistant({
       setError(null);
       setResult(null);
 
+      const controller = new AbortController();
+      let timedOut = false;
+      let timeoutId: number | undefined;
+      const timeout = new Promise<never>((_, reject) => {
+        timeoutId = window.setTimeout(() => {
+          timedOut = true;
+          controller.abort();
+          reject(new Error("Photo review timed out."));
+        }, REVIEW_DEADLINE_MS);
+      });
+
       try {
-        const { dataUrl, width, height } = await resizeImage(preview, maxDimension, quality);
+        const review = (async () => {
+          const { dataUrl, width, height } = await resizeImage(preview, maxDimension, quality);
+          if (timedOut) throw new Error("Photo review timed out.");
 
-        const response = await fetch(workerUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            image: dataUrl,
-            width,
-            height,
-            filename: file.name,
-          }),
-        });
+          const response = await fetch(workerUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              image: dataUrl,
+              width,
+              height,
+              filename: file.name,
+            }),
+            signal: controller.signal,
+          });
 
-        const data = (await response.json().catch(() => ({}))) as PhotoGuidanceResult & { error?: string };
+          const data: unknown = await response.json().catch(() => null);
+          if (!response.ok) {
+            const serviceError =
+              typeof data === "object" && data !== null && "error" in data && typeof data.error === "string"
+                ? data.error
+                : "The photo assistant could not complete the review. Please try again.";
+            throw new Error(serviceError);
+          }
+          if (!isPhotoGuidanceResult(data)) {
+            throw new Error("The photo assistant returned an unreadable result. Please try again.");
+          }
+          return data;
+        })();
 
-        if (!response.ok) {
-          throw new Error(data.error || "The photo could not be analyzed. Please try again.");
-        }
-
-        setResult(data);
+        setResult(await Promise.race([review, timeout]));
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+        setError(
+          timedOut
+            ? "Photo review took too long. Please try again."
+            : visitorError(err)
+        );
       } finally {
+        if (timeoutId !== undefined) window.clearTimeout(timeoutId);
         setLoading(false);
       }
     },

@@ -33,14 +33,16 @@ test('navigates to the Projects page and shows the AI Photographer Assistant', (
     expect(screen.getByRole('heading', { name: 'AI Photographer Assistant' })).toBeInTheDocument();
 });
 
-test('renders a safe external AI photographer assistant link', () => {
+test('routes the AI photographer assistant invitation to the embedded Projects experience', () => {
     renderWithRouter();
 
     const assistantLink = screen.getByRole('link', { name: /AI Photographer Assistant/i });
-    expect(assistantLink).toHaveAttribute('href', 'https://ai-photographer-assistant.example.invalid');
-    expect(assistantLink).toHaveAttribute('target', '_blank');
-    expect(assistantLink).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(assistantLink).toHaveAttribute('href', '/projects');
+    expect(assistantLink).not.toHaveAttribute('target', '_blank');
     expect(assistantLink).toHaveAttribute('data-analytics-event', 'ai_assistant_link_click');
+
+    userEvent.click(assistantLink);
+    expect(screen.getByRole('heading', { name: 'AI Photographer Assistant' })).toBeInTheDocument();
 });
 
 test('does not render personal project cards on the homepage', () => {

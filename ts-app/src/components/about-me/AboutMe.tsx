@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import { AI_ASSISTANT_URL } from '../../config/assistant';
 
 export const AboutMe = () => {
     return (
@@ -25,15 +24,13 @@ export const AboutMe = () => {
                             <Link className="primary-action" to="/hobbies">Off the Clock</Link>
                         </div>
                         <div className="about-me-actions-row">
-                            <a
+                            <Link
                                 className="primary-action assistant-action"
-                                href={AI_ASSISTANT_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                to="/projects"
                                 data-analytics-event="ai_assistant_link_click"
                             >
                                 Try the AI Photographer Assistant
-                            </a>
+                            </Link>
                             <a className="text-action" href="mailto:isabel.srsoares@gmail.com">Let&apos;s connect</a>
                         </div>
                     </div>

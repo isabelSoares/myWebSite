@@ -44,10 +44,12 @@ Published site: <https://isabelsoares.github.io/myWebSite/>
 
 ### AI Photographer Assistant
 
-The homepage links to the separately deployed AI Photographer Assistant. Configure
-the public HTTPS deployment URL as the repository variable `AI_ASSISTANT_URL` before
-publishing. The Pages workflow rejects missing, placeholder, local, insecure, and
-GitHub repository URLs before deployment.
+The portfolio photo assistant uses the public Cloudflare review endpoint. Configure
+its complete HTTPS URL as the repository variable `AI_ASSISTANT_URL` before
+publishing. The Pages workflow rejects missing, placeholder, local, insecure,
+GitHub repository, and retired Render URLs before deployment. The checked-in
+`REACT_APP_AI_ASSISTANT_URL` fallback is only for local tests; production builds
+must use the configured Cloudflare endpoint.
 
 The link exposes the optional `ai_assistant_link_click` interaction name for a future
 analytics integration. Navigation does not depend on analytics, and this portfolio
