@@ -24,7 +24,7 @@ function validateAssistantUrl(value) {
     return { valid: false, message: 'Assistant URL must be an absolute URL.' };
   }
 
-  const hostname = parsed.hostname.toLowerCase();
+  const hostname = parsed.hostname.toLowerCase().replace(/\.$/, '');
   if (parsed.protocol !== 'https:') {
     return { valid: false, message: 'Assistant URL must use HTTPS.' };
   }
@@ -33,6 +33,9 @@ function validateAssistantUrl(value) {
   }
   if (isPrivateHost(hostname)) {
     return { valid: false, message: 'Assistant URL must not point to a development or private host.' };
+  }
+  if (hostname === 'onrender.com' || hostname.endsWith('.onrender.com')) {
+    return { valid: false, message: 'Render deployments are retired; use the active Cloudflare assistant URL.' };
   }
   if (PLACEHOLDER_HOSTS.has(hostname) || hostname.endsWith('.example.com') || hostname.endsWith('.example.invalid')) {
     return { valid: false, message: 'Assistant URL must not be a placeholder.' };
