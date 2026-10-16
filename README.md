@@ -42,7 +42,7 @@ settings, select **Pages > Build and deployment > Source > GitHub Actions**.
 
 Published site: <https://isabelsoares.github.io/myWebSite/>
 
-### AI Photographer Assistant
+### AI Photographer Assistant 
 
 The portfolio photo assistant uses the public Cloudflare review endpoint. Configure
 its complete HTTPS URL as the repository variable `AI_ASSISTANT_URL` before
@@ -54,6 +54,8 @@ must use the configured Cloudflare endpoint.
 The link exposes the optional `ai_assistant_link_click` interaction name for a future
 analytics integration. Navigation does not depend on analytics, and this portfolio
 link does not collect uploaded photos or assistant results.
+
+To see more about [ai-photographer-assistant project](https://github.com/isabelSoares/ai-photographer-assistant)
 
 ### Contribution workflow
 
