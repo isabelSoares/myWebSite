@@ -1,69 +1,38 @@
-$pa-bg: #f5f1ea;
-$pa-card-bg: #fffaf3;
-$pa-card-border: #d9cdbd;
-$pa-text: #27221d;
-$pa-muted: #65584d;
-$pa-accent: #b95f3b;
-$pa-accent-hover: #a34f30;
-$pa-error-bg: #fff0ed;
-$pa-error-border: #b43d32;
-$pa-error-text: #b43d32;
-$pa-radius: 18px;
 $pa-spacing: 1rem;
-$pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-:root {
-  --pa-bg: #{$pa-bg};
-  --pa-card-bg: #{$pa-card-bg};
-  --pa-card-border: #{$pa-card-border};
-  --pa-text: #{$pa-text};
-  --pa-muted: #{$pa-muted};
-  --pa-accent: #{$pa-accent};
-  --pa-accent-hover: #{$pa-accent-hover};
-  --pa-error-bg: #{$pa-error-bg};
-  --pa-error-border: #{$pa-error-border};
-  --pa-error-text: #{$pa-error-text};
-  --pa-radius: #{$pa-radius};
-  --pa-spacing: #{$pa-spacing};
-  --pa-font: #{$pa-font};
-}
 
 .photo-assistant {
-  font-family: var(--pa-font);
-  color: var(--pa-text);
+  color: var(--site-text);
+  font: inherit;
   line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
   padding: clamp(1rem, 4vw, 2rem);
 
   &__card {
-    background: var(--pa-card-bg);
-    border: 1px solid var(--pa-card-border);
-    border-radius: var(--pa-radius);
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
     padding: clamp(1.25rem, 5vw, 2rem);
-    box-shadow: 0 10px 30px rgba(56, 39, 25, 0.07);
   }
 
   &__title {
+    color: var(--site-text);
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin: 0 0 0.25rem;
   }
 
   &__subtitle {
-    color: var(--pa-muted);
+    color: var(--site-muted);
     margin: 0 0 1.25rem;
   }
 
   &__upload-panel {
-    background: #fff;
-    border: 2px solid var(--pa-accent);
-    border-radius: 20px;
-    box-shadow: 0 12px 28px rgba(56, 39, 25, 0.12);
+    background: var(--site-background);
+    border: 1px solid var(--site-border);
     padding: clamp(1.25rem, 3vw, 1.75rem);
   }
 
   &__upload-title {
-    color: var(--pa-text);
+    color: var(--site-text);
     font-size: 1.1rem;
     margin: 0 0 1rem;
   }
@@ -76,7 +45,7 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
   }
 
   &__file-name {
-    color: var(--pa-muted);
+    color: var(--site-muted);
     flex: 1 1 12rem;
     font-size: 0.9rem;
     min-width: 0;
@@ -86,134 +55,155 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
   &__form {
     display: flex;
     flex-direction: column;
-    gap: var(--pa-spacing);
+    gap: $pa-spacing;
   }
 
   &__drop {
+    align-items: flex-start;
+    background: var(--site-surface);
+    border: 2px dashed var(--site-muted);
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     gap: 0.25rem;
+    justify-content: center;
     padding: 1.5rem;
-    border: 2px dashed var(--pa-card-border);
-    border-radius: 14px;
-    cursor: pointer;
     text-align: left;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
     width: 100%;
 
-    &:hover,
-    &:focus-within {
-      border-color: var(--pa-accent);
-      background: rgba($pa-accent, 0.04);
+    &:hover {
+      border-color: var(--site-teal);
     }
 
     &:focus-within {
-      outline: 3px solid rgba($pa-accent, 0.3);
+      border-color: var(--site-teal);
+      outline: 3px solid var(--site-accent);
       outline-offset: 3px;
     }
 
     &--dragging {
-      background: rgba($pa-accent, 0.12);
-      border-color: var(--pa-accent);
-      box-shadow: inset 0 0 0 1px var(--pa-accent);
+      background: var(--site-background);
+      border-color: var(--site-teal);
+      border-style: solid;
+      box-shadow: inset 0 0 0 1px var(--site-teal);
     }
 
     input[type="file"] {
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
       position: absolute;
-      opacity: 0;
-      width: 0;
-      height: 0;
+      white-space: nowrap;
+      width: 1px;
     }
   }
 
   &__drop-text {
+    color: var(--site-text);
     font-weight: 600;
-    color: var(--pa-text);
   }
 
   &__drop-hint {
+    color: var(--site-muted);
     font-size: 0.875rem;
-    color: var(--pa-muted);
   }
 
   &__preview {
-    width: 100%;
+    border: 1px solid var(--site-border);
+    display: block;
     max-height: 320px;
     object-fit: contain;
-    border-radius: 12px;
-    border: 1px solid var(--pa-card-border);
+    width: 100%;
   }
 
   &__error {
-    background: var(--pa-error-bg);
-    border-left: 4px solid var(--pa-error-border);
-    color: var(--pa-error-text);
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+    border-left: 4px solid var(--site-accent);
+    color: var(--site-text);
     padding: 0.75rem 1rem;
-    border-radius: 0 8px 8px 0;
   }
 
   &__actions {
     display: flex;
-    gap: 0.75rem;
     flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   &__button {
-    border: 0;
+    border: 2px solid transparent;
     border-radius: 999px;
-    padding: 0.75rem 1.25rem;
-    font: inherit;
-    font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.2s ease, background 0.2s ease;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.75rem 1.25rem;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 
     &:disabled {
-      opacity: 0.6;
       cursor: not-allowed;
+      opacity: 1;
     }
 
     &:focus-visible {
-      outline: 3px solid var(--pa-accent);
+      outline: 3px solid var(--site-accent);
       outline-offset: 3px;
     }
 
     &--primary {
-      background: var(--pa-accent);
-      color: #fff;
+      background: var(--site-accent);
+      color: var(--site-on-accent);
+
+      &:disabled {
+        background: var(--site-border);
+        border-color: var(--site-border);
+        color: var(--site-text);
+      }
 
       &:hover:not(:disabled) {
-        background: var(--pa-accent-hover);
+        background: var(--site-teal-hover);
+        color: var(--site-on-teal-hover);
       }
     }
 
     &--secondary {
       background: transparent;
-      color: var(--pa-accent);
-      border: 2px solid var(--pa-accent);
+      border-color: var(--site-teal);
+      color: var(--site-teal);
 
-      &:hover {
-        background: rgba($pa-accent, 0.08);
+      &:disabled {
+        border-color: var(--site-border);
+        color: var(--site-muted);
+      }
+
+      &:hover:not(:disabled) {
+        background: var(--site-teal-hover);
+        border-color: var(--site-teal-hover);
+        color: var(--site-on-teal-hover);
       }
     }
   }
 
   &__status {
-    display: flex;
     align-items: center;
+    color: var(--site-muted);
+    display: flex;
     gap: 0.75rem;
     margin-top: 1rem;
-    color: var(--pa-muted);
   }
 
   &__spinner {
-    width: 1.25rem;
-    height: 1.25rem;
-    border: 2px solid var(--pa-card-border);
-    border-top-color: var(--pa-accent);
-    border-radius: 50%;
     animation: pa-spin 1s linear infinite;
+    border: 2px solid var(--site-muted);
+    border-radius: 50%;
+    border-top-color: var(--site-accent);
+    flex: 0 0 auto;
+    height: 1.25rem;
+    width: 1.25rem;
   }
 
   &__result {
@@ -221,57 +211,59 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
   }
 
   &__eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    color: var(--site-accent);
     font-size: 0.75rem;
-    color: var(--pa-accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
     margin: 0 0 0.25rem;
+    text-transform: uppercase;
   }
 
   &__summary {
+    color: var(--site-text);
     font-size: 1.35rem;
     line-height: 1.35;
     margin: 0 0 1rem;
   }
 
   &__notice {
-    color: var(--pa-muted);
+    color: var(--site-muted);
     font-style: italic;
     margin: 0 0 1rem;
   }
 
   &__tips {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
   }
 
   &__tip {
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
     padding: 0.75rem 1rem;
-    background: #fff;
-    border: 1px solid var(--pa-card-border);
-    border-radius: 12px;
   }
 
   &__tip-category {
-    color: var(--pa-accent);
+    color: var(--site-accent);
     font-size: 0.8rem;
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   &__tip-text {
-    color: var(--pa-text);
+    color: var(--site-text);
   }
 
   &__tip-reason {
-    color: var(--pa-muted);
+    color: var(--site-muted);
     font-size: 0.85rem;
   }
 
@@ -283,24 +275,23 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
   }
 
   &__tag {
+    background: var(--site-background);
+    border: 1px solid var(--site-border);
+    color: var(--site-teal);
     display: inline-block;
-    padding: 0.35rem 0.7rem;
-    border-radius: 999px;
-    background: rgba($pa-accent, 0.1);
-    color: var(--pa-accent);
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 0.35rem 0.7rem;
 
     &--scene {
-      background: rgba($pa-muted, 0.1);
-      color: var(--pa-muted);
+      color: var(--site-muted);
     }
   }
 
   &__privacy {
-    margin: 1.25rem 0 0;
+    color: var(--site-muted);
     font-size: 0.8rem;
-    color: var(--pa-muted);
+    margin: 1.25rem 0 0;
     text-align: left;
   }
 }
@@ -308,6 +299,17 @@ $pa-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans
 @keyframes pa-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-assistant__spinner {
+    animation: none;
+  }
+
+  .photo-assistant__drop,
+  .photo-assistant__button {
+    transition-duration: 0.01ms;
   }
 }
 

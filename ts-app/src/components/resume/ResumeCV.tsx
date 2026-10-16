@@ -9,7 +9,7 @@ interface Experience {
     role: string;
     period: string;
     summary: string;
-    bullets: string[];
+    bullets: Array<string | { text: string; href: string }>;
     accent: string;
 }
 
@@ -64,7 +64,10 @@ const experience: Experience[] = [
         summary: 'Explored conversational AI and natural language processing for client-facing applications.',
         bullets: [
             'Developed a Python and Rasa chatbot to answer client queries.',
-            'Authored a technical article about chatbot technologies.'
+            {
+                text: 'Authored a technical article about chatbot technologies',
+                href: 'https://medium.com/@isabel.srsoares/chatbots-uma-tecnologia-do-futuro-cd39635ff7b5'
+            }
         ],
         accent: '05'
     }
@@ -103,7 +106,17 @@ export const ResumeCV = () => {
                             <p className="experience-summary">{item.summary}</p>
                             {item.bullets.length > 0 && (
                                 <ul>
-                                    {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                                    {item.bullets.map((bullet) => (
+                                        <li key={typeof bullet === 'string' ? bullet : bullet.href}>
+                                            {typeof bullet === 'string' ? (
+                                                bullet
+                                            ) : (
+                                                <>
+                                                    {bullet.text} <a href={bullet.href} target="_blank" rel="noopener noreferrer">[here]</a>
+                                                </>
+                                            )}
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </div>
