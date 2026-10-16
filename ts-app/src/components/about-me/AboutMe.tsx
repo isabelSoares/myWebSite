@@ -20,7 +20,6 @@ export const AboutMe = () => {
                     <div className="about-me-actions">
                         <div className="about-me-actions-row">
                             <Link className="primary-action" to="/resume">Explore my experience</Link>
-                            <Link className="primary-action" to="/projects">My Projects</Link>
                             <Link className="primary-action" to="/hobbies">Off the Clock</Link>
                         </div>
                         <div className="about-me-actions-row">
