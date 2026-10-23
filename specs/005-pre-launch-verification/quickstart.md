@@ -30,7 +30,7 @@ If any required check fails, the output names the exact file, route, or input to
 
 The release check follows the contract in [contracts/release-verification.md](./contracts/release-verification.md). Confirm that it reports:
 
-- Type safety, lint, and tests pass.
+- Type safety, lint, Jest, and the Node release-script tests pass.
 - The assistant URL is valid when supplied.
 - All local public assets resolve.
 - All album photos exist beneath `photos/`.
@@ -60,6 +60,10 @@ Open the local URL and check each route directly:
 | Unknown path | The SPA loads without a host-level error page |
 
 For each route, also refresh the page and confirm it still loads. Open the browser developer tools and confirm there are no failed local asset requests and no uncaught errors.
+
+GitHub Pages serves a direct route such as `/myWebSite/resume` with HTTP status 404 while
+returning the SPA HTML from `404.html`. Browsers still render the Experience page. Verify
+the visible content, not only the HTTP status code.
 
 ## 4. Verify the published base path
 

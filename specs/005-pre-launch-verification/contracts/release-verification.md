@@ -39,14 +39,15 @@ The command MUST run the following checks in a deterministic order:
 | 1 | `types` | content | `tsc --noEmit` exits successfully |
 | 2 | `lint` | content | ESLint reports no errors for `src` |
 | 3 | `tests` | content | Jest completes with all tests passing |
-| 4 | `assistant-url` | deployment | The assistant URL validator passes when the variable is set |
-| 5 | `assets.local` | assets | Every required local public asset reference resolves |
-| 6 | `assets.photos` | assets | Every album photo referenced by the source exists beneath `photos/` |
-| 7 | `assets.manifest` | assets | Every manifest icon exists in `public/` and `build/` |
-| 8 | `build` | deployment | The production build completes |
-| 9 | `routes.fallback` | routes | `build/index.html` and `build/404.html` both exist |
-| 10 | `assets.build` | assets | The built manifest and referenced icons are present |
-| 11 | `privacy.no-secrets` | deployment | No committed secret or credential is detected in tracked source files |
+| 4 | `tests.scripts` | content | The Node assistant-URL and site-asset tests pass |
+| 5 | `assistant-url` | deployment | The assistant URL validator passes when the variable is set |
+| 6 | `assets.local` | assets | Every required local public asset reference resolves |
+| 7 | `assets.photos` | assets | Every album photo referenced by the source exists beneath `photos/` |
+| 8 | `assets.manifest` | assets | Every manifest icon exists in `public/` and `build/` |
+| 9 | `build` | deployment | The production build completes |
+| 10 | `routes.fallback` | routes | `build/index.html` and `build/404.html` both exist |
+| 11 | `assets.build` | assets | The built manifest and referenced icons are present |
+| 12 | `privacy.no-secrets` | deployment | No committed secret or credential is detected in tracked source files |
 
 ## Output Contract
 

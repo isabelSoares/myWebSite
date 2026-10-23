@@ -21,6 +21,7 @@ The published site is served beneath `/myWebSite/`. All internal links and asset
 **Rules**:
 
 - Direct requests and refreshes on every main route MUST return the SPA, not a host 404 page.
+- GitHub Pages serves the custom `404.html` with an HTTP 404 status while rendering the SPA. A direct route is acceptable when the visible section renders, even though the status code is 404.
 - Navigation MUST move focus/scroll to the top of the destination section.
 - The `ScrollToTop` behavior MUST not interfere with in-page anchors on the Experience section.
 
