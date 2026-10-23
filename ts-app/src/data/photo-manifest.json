@@ -1,0 +1,3050 @@
+{
+  "version": 1,
+  "generatedFrom": "ts-app/photo-sources.json",
+  "albums": [
+    {
+      "id": "portugal",
+      "name": "Portugal",
+      "photos": [
+        {
+          "sourceId": "480308568703",
+          "alt": "Portugal photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/35d9195bd9b7-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 12670
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/35d9195bd9b7.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 131008
+          }
+        },
+        {
+          "sourceId": "f57366364e59",
+          "alt": "Portugal photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/53e76c86b816-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 32776
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/53e76c86b816.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 329128
+          }
+        },
+        {
+          "sourceId": "4f0bdb19249d",
+          "alt": "Portugal photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/dafe8068f7d7-thumb.webp",
+            "width": 444,
+            "height": 600,
+            "bytes": 36288
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/dafe8068f7d7.webp",
+            "width": 1481,
+            "height": 2000,
+            "bytes": 302396
+          }
+        },
+        {
+          "sourceId": "f48865f2a5b1",
+          "alt": "Portugal photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9ebcd2e4c91c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25896
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9ebcd2e4c91c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 208746
+          }
+        },
+        {
+          "sourceId": "29d62793a829",
+          "alt": "Portugal photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/d04af16ad329-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 44200
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/d04af16ad329.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 350958
+          }
+        },
+        {
+          "sourceId": "616f64e1c2db",
+          "alt": "Portugal photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/dddeafbfc7de-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 51146
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/dddeafbfc7de.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 493026
+          }
+        },
+        {
+          "sourceId": "ce6f097a7cc7",
+          "alt": "Portugal photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/658f60fad9c2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 13044
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/658f60fad9c2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 119058
+          }
+        },
+        {
+          "sourceId": "0808cc47caaa",
+          "alt": "Portugal photo 8",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/b93b89e9c04c-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 68166
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/b93b89e9c04c.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 490036
+          }
+        },
+        {
+          "sourceId": "610d0737c650",
+          "alt": "Portugal photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/72507e7eb09f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 11432
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/72507e7eb09f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 68540
+          }
+        },
+        {
+          "sourceId": "d084ec1c0559",
+          "alt": "Portugal photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/294497df8c1b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 42908
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/294497df8c1b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 294824
+          }
+        },
+        {
+          "sourceId": "1f963f59ff79",
+          "alt": "Portugal photo 11",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/ba563f715845-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 20198
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/ba563f715845.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 196812
+          }
+        },
+        {
+          "sourceId": "605b6dcf5a10",
+          "alt": "Portugal photo 12",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/6a339997385b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 64594
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/6a339997385b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 510764
+          }
+        },
+        {
+          "sourceId": "e85b774cb8e1",
+          "alt": "Portugal photo 13",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/8443c72c9c6d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 49512
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/8443c72c9c6d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 485924
+          }
+        },
+        {
+          "sourceId": "ec625be650aa",
+          "alt": "Portugal photo 14",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/1e931fdb3e6a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 22072
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/1e931fdb3e6a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 179422
+          }
+        },
+        {
+          "sourceId": "564b32e2d295",
+          "alt": "Portugal photo 15",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/b4c42cb406a7-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 60760
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/b4c42cb406a7.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 485796
+          }
+        },
+        {
+          "sourceId": "805b1228ceab",
+          "alt": "Portugal photo 16",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/eee9cb5ce9d7-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 16702
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/eee9cb5ce9d7.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 135412
+          }
+        },
+        {
+          "sourceId": "98bbd1b6b2d0",
+          "alt": "Portugal photo 17",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/6ca29e88d234-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 62968
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/6ca29e88d234.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 489794
+          }
+        },
+        {
+          "sourceId": "5b65fa56abad",
+          "alt": "Portugal photo 18",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9d32abd253ff-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25186
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9d32abd253ff.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 288976
+          }
+        },
+        {
+          "sourceId": "bb8c40d3f958",
+          "alt": "Portugal photo 19",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/e62212171517-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 50606
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/e62212171517.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 355916
+          }
+        },
+        {
+          "sourceId": "9e8772fd2614",
+          "alt": "Portugal photo 20",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/ddfc5f3df9f5-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 58902
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/ddfc5f3df9f5.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 486338
+          }
+        },
+        {
+          "sourceId": "399337caac67",
+          "alt": "Portugal photo 21",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/4cbc1657104b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 26866
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/4cbc1657104b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 218184
+          }
+        },
+        {
+          "sourceId": "4db7b0b4a8d0",
+          "alt": "Portugal photo 22",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9c6ce2817bf0-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 21410
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9c6ce2817bf0.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 164998
+          }
+        },
+        {
+          "sourceId": "7ae252f413c1",
+          "alt": "Portugal photo 23",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/640cd2195a36-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 13308
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/640cd2195a36.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 95768
+          }
+        },
+        {
+          "sourceId": "9a4963b10834",
+          "alt": "Portugal photo 24",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/37b7b615f42c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24328
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/37b7b615f42c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 195242
+          }
+        },
+        {
+          "sourceId": "0fedea9cfafd",
+          "alt": "Portugal photo 25",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/4e1e26c19db2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 48306
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/4e1e26c19db2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 405468
+          }
+        },
+        {
+          "sourceId": "ddd5c9328ed9",
+          "alt": "Portugal photo 26",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/f409cb4b06f6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 23798
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/f409cb4b06f6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 220042
+          }
+        },
+        {
+          "sourceId": "1991b36f51a4",
+          "alt": "Portugal photo 27",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/f84a5a01438f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 18034
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/f84a5a01438f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 164366
+          }
+        },
+        {
+          "sourceId": "231dab997aa8",
+          "alt": "Portugal photo 28",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/6bf0144acc44-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 16878
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/6bf0144acc44.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 173828
+          }
+        },
+        {
+          "sourceId": "c12a7ada40e8",
+          "alt": "Portugal photo 29",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/68d04f17007f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 14702
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/68d04f17007f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 146812
+          }
+        },
+        {
+          "sourceId": "ec4c246a913a",
+          "alt": "Portugal photo 30",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9c2dee50538e-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24532
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9c2dee50538e.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 248358
+          }
+        },
+        {
+          "sourceId": "14ddc61e1b15",
+          "alt": "Portugal photo 31",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9094b068a569-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41356
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9094b068a569.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 459056
+          }
+        },
+        {
+          "sourceId": "9b77cf44fe94",
+          "alt": "Portugal photo 32",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/6cf3aa940ac2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 45904
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/6cf3aa940ac2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 490126
+          }
+        },
+        {
+          "sourceId": "d2b0f0ca5753",
+          "alt": "Portugal photo 33",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/41f136d8133a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24470
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/41f136d8133a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 229368
+          }
+        },
+        {
+          "sourceId": "581462d8316b",
+          "alt": "Portugal photo 34",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/278f40109855-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 30938
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/278f40109855.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 272070
+          }
+        },
+        {
+          "sourceId": "6779c286c070",
+          "alt": "Portugal photo 35",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/42f53662dcc3-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 32114
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/42f53662dcc3.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 336500
+          }
+        },
+        {
+          "sourceId": "03bb826fb387",
+          "alt": "Portugal photo 36",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/1929666d5bc6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 52816
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/1929666d5bc6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 476846
+          }
+        },
+        {
+          "sourceId": "10b74d433429",
+          "alt": "Portugal photo 37",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/8be39e372641-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 46490
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/8be39e372641.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 419048
+          }
+        },
+        {
+          "sourceId": "b015763f2728",
+          "alt": "Portugal photo 38",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/edeee549cef7-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41316
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/edeee549cef7.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 273042
+          }
+        },
+        {
+          "sourceId": "1bb9684110a2",
+          "alt": "Portugal photo 39",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/b24b1a7a80ca-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 70946
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/b24b1a7a80ca.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 510968
+          }
+        },
+        {
+          "sourceId": "1b6c5ec9ac27",
+          "alt": "Portugal photo 40",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/fb5d235c3b7d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 106098
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/fb5d235c3b7d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 506790
+          }
+        },
+        {
+          "sourceId": "d3b48908d292",
+          "alt": "Portugal photo 41",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/432d744259b1-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 30022
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/432d744259b1.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 251594
+          }
+        },
+        {
+          "sourceId": "dbe5f59d9be2",
+          "alt": "Portugal photo 42",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/19e0b9d3d3f2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 56814
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/19e0b9d3d3f2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 433138
+          }
+        },
+        {
+          "sourceId": "cd93af565a19",
+          "alt": "Portugal photo 43",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/38c15bc17b6b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 65356
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/38c15bc17b6b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 510478
+          }
+        },
+        {
+          "sourceId": "8fca8bd33ddb",
+          "alt": "Portugal photo 44",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/661499c6bd5a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 7530
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/661499c6bd5a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 182230
+          }
+        },
+        {
+          "sourceId": "738c2de971fb",
+          "alt": "Portugal photo 45",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/7f1c817ec003-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 20720
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/7f1c817ec003.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 194134
+          }
+        },
+        {
+          "sourceId": "561e77d18d9f",
+          "alt": "Portugal photo 46",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/3eb9b0710843-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 83308
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/3eb9b0710843.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 509932
+          }
+        },
+        {
+          "sourceId": "4326740b2449",
+          "alt": "Portugal photo 47",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/3440a7fea872-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 18702
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/3440a7fea872.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 158592
+          }
+        },
+        {
+          "sourceId": "e1502a43422c",
+          "alt": "Portugal photo 48",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/0571b81e564b-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 8446
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/0571b81e564b.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 75108
+          }
+        },
+        {
+          "sourceId": "b8333bbc38af",
+          "alt": "Portugal photo 49",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/ee9d6bcc6ef6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24414
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/ee9d6bcc6ef6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 229734
+          }
+        },
+        {
+          "sourceId": "d129a9fa3824",
+          "alt": "Portugal photo 50",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/4323fef5fb8d-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 11208
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/4323fef5fb8d.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 73028
+          }
+        },
+        {
+          "sourceId": "807e07e4b1f6",
+          "alt": "Portugal photo 51",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/9b53a2fbf13b-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 43828
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/9b53a2fbf13b.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 297606
+          }
+        },
+        {
+          "sourceId": "ff8d458c3420",
+          "alt": "Portugal photo 52",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/3a2563bd3665-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 31390
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/3a2563bd3665.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 309766
+          }
+        },
+        {
+          "sourceId": "568e779f337d",
+          "alt": "Portugal photo 53",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/723bbf0a4398-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 63160
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/723bbf0a4398.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 505600
+          }
+        },
+        {
+          "sourceId": "7ecc43b3966a",
+          "alt": "Portugal photo 54",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/7b66ee197648-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 35390
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/7b66ee197648.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 400468
+          }
+        },
+        {
+          "sourceId": "ddefcac0af22",
+          "alt": "Portugal photo 55",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/d7f032e975fc-thumb.webp",
+            "width": 540,
+            "height": 405,
+            "bytes": 12440
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/d7f032e975fc.webp",
+            "width": 1800,
+            "height": 1350,
+            "bytes": 185074
+          }
+        },
+        {
+          "sourceId": "210cf8568fa6",
+          "alt": "Portugal photo 56",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/38c50567ff4e-thumb.webp",
+            "width": 540,
+            "height": 360,
+            "bytes": 7706
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/38c50567ff4e.webp",
+            "width": 1800,
+            "height": 1200,
+            "bytes": 65638
+          }
+        },
+        {
+          "sourceId": "0e1cfc602c53",
+          "alt": "Portugal photo 57",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/98a8050b6abc-thumb.webp",
+            "width": 540,
+            "height": 405,
+            "bytes": 11806
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/98a8050b6abc.webp",
+            "width": 1800,
+            "height": 1350,
+            "bytes": 189632
+          }
+        },
+        {
+          "sourceId": "eb2291836005",
+          "alt": "Portugal photo 58",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/8ad6aa196426-thumb.webp",
+            "width": 540,
+            "height": 405,
+            "bytes": 25024
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/8ad6aa196426.webp",
+            "width": 1800,
+            "height": 1350,
+            "bytes": 324310
+          }
+        },
+        {
+          "sourceId": "b0a4159fdd24",
+          "alt": "Portugal photo 59",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/portugal/c15707b82b8d-thumb.webp",
+            "width": 540,
+            "height": 360,
+            "bytes": 14144
+          },
+          "full": {
+            "src": "photos/generated/albums/portugal/c15707b82b8d.webp",
+            "width": 1800,
+            "height": 1200,
+            "bytes": 65504
+          }
+        }
+      ]
+    },
+    {
+      "id": "uk",
+      "name": "UK",
+      "photos": [
+        {
+          "sourceId": "fe808725869a",
+          "alt": "UK photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/51fb67c0e203-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 27326
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/51fb67c0e203.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 162504
+          }
+        },
+        {
+          "sourceId": "8afffe71907f",
+          "alt": "UK photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/4e6f93280840-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 20744
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/4e6f93280840.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 114564
+          }
+        },
+        {
+          "sourceId": "11ad97287adc",
+          "alt": "UK photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/8ec40d3aa289-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 27388
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/8ec40d3aa289.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 189844
+          }
+        },
+        {
+          "sourceId": "bade8c3b9db5",
+          "alt": "UK photo 4",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/b0707c8b40fe-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 70696
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/b0707c8b40fe.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 511156
+          }
+        },
+        {
+          "sourceId": "950d95f7d8ad",
+          "alt": "UK photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/9490bf34a391-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 28972
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/9490bf34a391.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 249340
+          }
+        },
+        {
+          "sourceId": "adb09d81eb0c",
+          "alt": "UK photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/uk/a93d5d0bf68d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 38842
+          },
+          "full": {
+            "src": "photos/generated/albums/uk/a93d5d0bf68d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 489286
+          }
+        }
+      ]
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "photos": [
+        {
+          "sourceId": "ec3146923768",
+          "alt": "USA photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/122e233f160b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 4952
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/122e233f160b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 36402
+          }
+        },
+        {
+          "sourceId": "30847e708560",
+          "alt": "USA photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/ce39bdc09d14-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 26500
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/ce39bdc09d14.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 177426
+          }
+        },
+        {
+          "sourceId": "d7a4388532af",
+          "alt": "USA photo 3",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/6a14f5135654-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 11096
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/6a14f5135654.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 94784
+          }
+        },
+        {
+          "sourceId": "755d0cbde188",
+          "alt": "USA photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/f363526ec605-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41874
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/f363526ec605.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 368532
+          }
+        },
+        {
+          "sourceId": "02c55e202ca8",
+          "alt": "USA photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/498f900f8c00-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 27208
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/498f900f8c00.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 149700
+          }
+        },
+        {
+          "sourceId": "0537e6cfdf2e",
+          "alt": "USA photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/6eee73e79c85-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 69934
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/6eee73e79c85.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 474318
+          }
+        },
+        {
+          "sourceId": "088cabdf87e1",
+          "alt": "USA photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/7624e05c072b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 18900
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/7624e05c072b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 168876
+          }
+        },
+        {
+          "sourceId": "e9b64c46185c",
+          "alt": "USA photo 8",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/db68639bad1a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 23344
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/db68639bad1a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 211232
+          }
+        },
+        {
+          "sourceId": "83e555812925",
+          "alt": "USA photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/682f89386b07-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24380
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/682f89386b07.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 129944
+          }
+        },
+        {
+          "sourceId": "3798886eee8b",
+          "alt": "USA photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/723371d97bcb-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 16124
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/723371d97bcb.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 128662
+          }
+        },
+        {
+          "sourceId": "d407ef87a0a8",
+          "alt": "USA photo 11",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/07f13697c403-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 13442
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/07f13697c403.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 105428
+          }
+        },
+        {
+          "sourceId": "bf3a394bdabe",
+          "alt": "USA photo 12",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/2e11c01a3a97-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 59830
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/2e11c01a3a97.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 449968
+          }
+        },
+        {
+          "sourceId": "b85114db7c69",
+          "alt": "USA photo 13",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/f19d923a8625-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 36806
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/f19d923a8625.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 325664
+          }
+        },
+        {
+          "sourceId": "5a9d3e85fc8e",
+          "alt": "USA photo 14",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/155d597ad27a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 31114
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/155d597ad27a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 321354
+          }
+        },
+        {
+          "sourceId": "5bb5f3c9cefe",
+          "alt": "USA photo 15",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/e94274121cf3-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 10350
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/e94274121cf3.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 96656
+          }
+        },
+        {
+          "sourceId": "c7f19a01ee0f",
+          "alt": "USA photo 16",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/fe62069a6b05-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 43978
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/fe62069a6b05.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 304160
+          }
+        },
+        {
+          "sourceId": "86d7c45fb882",
+          "alt": "USA photo 17",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/2eeed29d67b4-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 39926
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/2eeed29d67b4.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 371996
+          }
+        },
+        {
+          "sourceId": "a8a44aa6c12d",
+          "alt": "USA photo 18",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/4ca21c7d2bed-thumb.webp",
+            "width": 338,
+            "height": 600,
+            "bytes": 66318
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/4ca21c7d2bed.webp",
+            "width": 1125,
+            "height": 2000,
+            "bytes": 464308
+          }
+        },
+        {
+          "sourceId": "9daaf42627d1",
+          "alt": "USA photo 19",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/92536a3bcf8c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 51228
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/92536a3bcf8c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 408314
+          }
+        },
+        {
+          "sourceId": "8bd16bbd38f0",
+          "alt": "USA photo 20",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/a7da02f710f6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 56746
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/a7da02f710f6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 443916
+          }
+        },
+        {
+          "sourceId": "9fd08c99a5d9",
+          "alt": "USA photo 21",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/ce7645d24840-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 74220
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/ce7645d24840.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 503834
+          }
+        },
+        {
+          "sourceId": "736d882f544a",
+          "alt": "USA photo 22",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/0cb9de4bcc89-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 16124
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/0cb9de4bcc89.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 137718
+          }
+        },
+        {
+          "sourceId": "daa83f2c076a",
+          "alt": "USA photo 23",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/962abceed3b4-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 57154
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/962abceed3b4.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 439052
+          }
+        },
+        {
+          "sourceId": "156730b0b9b4",
+          "alt": "USA photo 24",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/a995e661b81a-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 66104
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/a995e661b81a.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 501646
+          }
+        },
+        {
+          "sourceId": "c681c5e8bb8a",
+          "alt": "USA photo 25",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/ca7d16892874-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 44230
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/ca7d16892874.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 325626
+          }
+        },
+        {
+          "sourceId": "75b695d53471",
+          "alt": "USA photo 26",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/03f22f28d351-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 52874
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/03f22f28d351.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 475896
+          }
+        },
+        {
+          "sourceId": "d598139098ca",
+          "alt": "USA photo 27",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/usa/2326717b56c8-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 54498
+          },
+          "full": {
+            "src": "photos/generated/albums/usa/2326717b56c8.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 402710
+          }
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "photos": [
+        {
+          "sourceId": "c401f92f2fda",
+          "alt": "Italy photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/cb6d799a9e78-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 45932
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/cb6d799a9e78.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 490212
+          }
+        },
+        {
+          "sourceId": "6b77c0ca1ca0",
+          "alt": "Italy photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/35e0c8c68acd-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 40666
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/35e0c8c68acd.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 367110
+          }
+        },
+        {
+          "sourceId": "25ff0b9d552c",
+          "alt": "Italy photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/85f6b9fb2611-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 64900
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/85f6b9fb2611.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 509508
+          }
+        },
+        {
+          "sourceId": "81ea0f56fc9a",
+          "alt": "Italy photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/c2a0666565f9-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 65806
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/c2a0666565f9.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 492416
+          }
+        },
+        {
+          "sourceId": "709479147eb3",
+          "alt": "Italy photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/a167b3878495-thumb.webp",
+            "width": 434,
+            "height": 600,
+            "bytes": 13762
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/a167b3878495.webp",
+            "width": 1447,
+            "height": 2000,
+            "bytes": 92472
+          }
+        },
+        {
+          "sourceId": "f118619c36fa",
+          "alt": "Italy photo 6",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/41255f7c49b3-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 54284
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/41255f7c49b3.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 412008
+          }
+        },
+        {
+          "sourceId": "acad4b31fe2a",
+          "alt": "Italy photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/italy/1db4b59f81cb-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 59794
+          },
+          "full": {
+            "src": "photos/generated/albums/italy/1db4b59f81cb.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 493116
+          }
+        }
+      ]
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "photos": [
+        {
+          "sourceId": "5fb6b752566e",
+          "alt": "Netherlands photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/e980ff79eba9-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 45528
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/e980ff79eba9.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 491202
+          }
+        },
+        {
+          "sourceId": "8faabb9b25e3",
+          "alt": "Netherlands photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/52130dbca4ff-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 61700
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/52130dbca4ff.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 504514
+          }
+        },
+        {
+          "sourceId": "9216785ad5d9",
+          "alt": "Netherlands photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/41aad718b18f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 81236
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/41aad718b18f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 507038
+          }
+        },
+        {
+          "sourceId": "28b433b2aab0",
+          "alt": "Netherlands photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/73a0cbc33bc0-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 21412
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/73a0cbc33bc0.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 133362
+          }
+        },
+        {
+          "sourceId": "d37222eb05b9",
+          "alt": "Netherlands photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/e1b348a88d04-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25390
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/e1b348a88d04.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 214614
+          }
+        },
+        {
+          "sourceId": "189d52e86433",
+          "alt": "Netherlands photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/bc4af2fa2613-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 51994
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/bc4af2fa2613.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 305432
+          }
+        },
+        {
+          "sourceId": "bd8ed3dc5350",
+          "alt": "Netherlands photo 7",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/1ec40b7f9140-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 41406
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/1ec40b7f9140.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 352724
+          }
+        },
+        {
+          "sourceId": "4f18c3a5a58b",
+          "alt": "Netherlands photo 8",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/14c9f7093dd6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 60514
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/14c9f7093dd6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 497980
+          }
+        },
+        {
+          "sourceId": "28955c096548",
+          "alt": "Netherlands photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/bc9e5017004d-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 47232
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/bc9e5017004d.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 399366
+          }
+        },
+        {
+          "sourceId": "26341859b85c",
+          "alt": "Netherlands photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/021f9340612b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41458
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/021f9340612b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 309666
+          }
+        },
+        {
+          "sourceId": "fc31e57fa92c",
+          "alt": "Netherlands photo 11",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/b159058dbb18-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 48936
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/b159058dbb18.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 483946
+          }
+        },
+        {
+          "sourceId": "7a5999c5124b",
+          "alt": "Netherlands photo 12",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/43729a21c956-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 49732
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/43729a21c956.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 446624
+          }
+        },
+        {
+          "sourceId": "df3194d26b6c",
+          "alt": "Netherlands photo 13",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/b60fb6088279-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 50804
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/b60fb6088279.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 364086
+          }
+        },
+        {
+          "sourceId": "bb546ff18a32",
+          "alt": "Netherlands photo 14",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/netherlands/c31134532f80-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 92268
+          },
+          "full": {
+            "src": "photos/generated/albums/netherlands/c31134532f80.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 506010
+          }
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil",
+      "photos": [
+        {
+          "sourceId": "38099eec586b",
+          "alt": "Brazil photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/e49e41643a8a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 47464
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/e49e41643a8a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 418148
+          }
+        },
+        {
+          "sourceId": "46eb77be6e8c",
+          "alt": "Brazil photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/f28648186ce2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 47468
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/f28648186ce2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 408904
+          }
+        },
+        {
+          "sourceId": "aa7689a7b0dd",
+          "alt": "Brazil photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/8b55b4e07c57-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 50400
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/8b55b4e07c57.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 496124
+          }
+        },
+        {
+          "sourceId": "4e61258c6f85",
+          "alt": "Brazil photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/9dc47748c577-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 73010
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/9dc47748c577.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 500204
+          }
+        },
+        {
+          "sourceId": "9599c5090888",
+          "alt": "Brazil photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/746eb950c04d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 39602
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/746eb950c04d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 361466
+          }
+        },
+        {
+          "sourceId": "e6fdcf55a465",
+          "alt": "Brazil photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/brazil/9eb8ec22d41c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 24382
+          },
+          "full": {
+            "src": "photos/generated/albums/brazil/9eb8ec22d41c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 254054
+          }
+        }
+      ]
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "photos": [
+        {
+          "sourceId": "d8c1687ba16b",
+          "alt": "Canada photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/72f3fd903856-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 28230
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/72f3fd903856.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 202632
+          }
+        },
+        {
+          "sourceId": "537752991e81",
+          "alt": "Canada photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/f900912c9ee9-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 37190
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/f900912c9ee9.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 247534
+          }
+        },
+        {
+          "sourceId": "b10a7bb2518f",
+          "alt": "Canada photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/e30c6297407c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25588
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/e30c6297407c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 190544
+          }
+        },
+        {
+          "sourceId": "0c3cc7cd3b61",
+          "alt": "Canada photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/fb826de9ad8f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 61528
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/fb826de9ad8f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 497676
+          }
+        },
+        {
+          "sourceId": "36d22cfda27b",
+          "alt": "Canada photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/f23f66acbaae-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 18548
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/f23f66acbaae.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 146506
+          }
+        },
+        {
+          "sourceId": "4919798c3640",
+          "alt": "Canada photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/c47e5f39dbd8-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41712
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/c47e5f39dbd8.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 344454
+          }
+        },
+        {
+          "sourceId": "081c21c0ee0d",
+          "alt": "Canada photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/4e9d44595cf6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 60682
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/4e9d44595cf6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 491488
+          }
+        },
+        {
+          "sourceId": "078eb71bd1c0",
+          "alt": "Canada photo 8",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/c61bf4db74d8-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25524
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/c61bf4db74d8.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 218390
+          }
+        },
+        {
+          "sourceId": "27cf06d124b8",
+          "alt": "Canada photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/83ef820bae56-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 43560
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/83ef820bae56.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 405624
+          }
+        },
+        {
+          "sourceId": "a06306dead4a",
+          "alt": "Canada photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/01c95fdcbb51-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 43650
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/01c95fdcbb51.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 358452
+          }
+        },
+        {
+          "sourceId": "014361b60d92",
+          "alt": "Canada photo 11",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/canada/462440551fbd-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 50130
+          },
+          "full": {
+            "src": "photos/generated/albums/canada/462440551fbd.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 377282
+          }
+        }
+      ]
+    },
+    {
+      "id": "austria",
+      "name": "Austria",
+      "photos": [
+        {
+          "sourceId": "8491e4a658d7",
+          "alt": "Austria photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/1cc00784f84d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 26112
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/1cc00784f84d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 206764
+          }
+        },
+        {
+          "sourceId": "2afb9517eee5",
+          "alt": "Austria photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/18fc650cbab6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 38224
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/18fc650cbab6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 303322
+          }
+        },
+        {
+          "sourceId": "9c79385e6478",
+          "alt": "Austria photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/75353948cc1d-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 47338
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/75353948cc1d.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 360904
+          }
+        },
+        {
+          "sourceId": "76d201c5f013",
+          "alt": "Austria photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/2e0d5fd1bbf8-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 53118
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/2e0d5fd1bbf8.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 502528
+          }
+        },
+        {
+          "sourceId": "427bf4f8462e",
+          "alt": "Austria photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/778eb9e59b86-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 69894
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/778eb9e59b86.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 506652
+          }
+        },
+        {
+          "sourceId": "42576c61c413",
+          "alt": "Austria photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/cbeca69cd87a-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 35278
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/cbeca69cd87a.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 224090
+          }
+        },
+        {
+          "sourceId": "5a59056e107d",
+          "alt": "Austria photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/0b288f252868-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 53196
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/0b288f252868.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 386322
+          }
+        },
+        {
+          "sourceId": "e32e4135993b",
+          "alt": "Austria photo 8",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/46c9a436ed7f-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 13360
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/46c9a436ed7f.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 116440
+          }
+        },
+        {
+          "sourceId": "0656aecf8638",
+          "alt": "Austria photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/d30e62262acd-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 21064
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/d30e62262acd.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 167358
+          }
+        },
+        {
+          "sourceId": "5f969696f19b",
+          "alt": "Austria photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/a65bedcccdbf-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 69798
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/a65bedcccdbf.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 507210
+          }
+        },
+        {
+          "sourceId": "ba4d702743f6",
+          "alt": "Austria photo 11",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/austria/34e21be70760-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 29996
+          },
+          "full": {
+            "src": "photos/generated/albums/austria/34e21be70760.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 210500
+          }
+        }
+      ]
+    },
+    {
+      "id": "croatia",
+      "name": "Croatia",
+      "photos": [
+        {
+          "sourceId": "18156ab1980f",
+          "alt": "Croatia photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/03eacbc861dc-thumb.webp",
+            "width": 429,
+            "height": 600,
+            "bytes": 33320
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/03eacbc861dc.webp",
+            "width": 1429,
+            "height": 2000,
+            "bytes": 287266
+          }
+        },
+        {
+          "sourceId": "90ff004979aa",
+          "alt": "Croatia photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/ce1926095ae2-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 92258
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/ce1926095ae2.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 504670
+          }
+        },
+        {
+          "sourceId": "2ccae0db8c49",
+          "alt": "Croatia photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/bdc3ef2ab33f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 48818
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/bdc3ef2ab33f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 477296
+          }
+        },
+        {
+          "sourceId": "872f4289c9ae",
+          "alt": "Croatia photo 4",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/84f1ac48d3bd-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 21626
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/84f1ac48d3bd.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 222084
+          }
+        },
+        {
+          "sourceId": "ec4b318b27cd",
+          "alt": "Croatia photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/71eb5ae01978-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 54596
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/71eb5ae01978.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 500284
+          }
+        },
+        {
+          "sourceId": "d4058ec04733",
+          "alt": "Croatia photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/croatia/a622c6b1c14c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 63586
+          },
+          "full": {
+            "src": "photos/generated/albums/croatia/a622c6b1c14c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 507412
+          }
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "photos": [
+        {
+          "sourceId": "53804e7d8c66",
+          "alt": "France photo 1",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/france/13ecedf54098-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 29592
+          },
+          "full": {
+            "src": "photos/generated/albums/france/13ecedf54098.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 228844
+          }
+        },
+        {
+          "sourceId": "32a0fc7795ab",
+          "alt": "France photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/france/57d1c0358745-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 11122
+          },
+          "full": {
+            "src": "photos/generated/albums/france/57d1c0358745.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 131828
+          }
+        },
+        {
+          "sourceId": "5f9218ef21c9",
+          "alt": "France photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/france/b666617b591b-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 16614
+          },
+          "full": {
+            "src": "photos/generated/albums/france/b666617b591b.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 167368
+          }
+        },
+        {
+          "sourceId": "c4e5ffe93d11",
+          "alt": "France photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/france/34c9c3114595-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 19696
+          },
+          "full": {
+            "src": "photos/generated/albums/france/34c9c3114595.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 147244
+          }
+        },
+        {
+          "sourceId": "b0c3ce15bda8",
+          "alt": "France photo 5",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/france/957a63895c26-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 14038
+          },
+          "full": {
+            "src": "photos/generated/albums/france/957a63895c26.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 135122
+          }
+        }
+      ]
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland",
+      "photos": [
+        {
+          "sourceId": "b2b89bf7996f",
+          "alt": "Switzerland photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/switzerland/c0e872ac61f1-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 16154
+          },
+          "full": {
+            "src": "photos/generated/albums/switzerland/c0e872ac61f1.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 149390
+          }
+        },
+        {
+          "sourceId": "e22330dffc07",
+          "alt": "Switzerland photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/switzerland/a8a78d01e121-thumb.webp",
+            "width": 540,
+            "height": 360,
+            "bytes": 19312
+          },
+          "full": {
+            "src": "photos/generated/albums/switzerland/a8a78d01e121.webp",
+            "width": 1800,
+            "height": 1200,
+            "bytes": 165356
+          }
+        },
+        {
+          "sourceId": "df18937e3045",
+          "alt": "Switzerland photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/switzerland/36ad0d911eea-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 44336
+          },
+          "full": {
+            "src": "photos/generated/albums/switzerland/36ad0d911eea.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 481890
+          }
+        }
+      ]
+    },
+    {
+      "id": "malta",
+      "name": "Malta",
+      "photos": [
+        {
+          "sourceId": "abd872444261",
+          "alt": "Malta photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/malta/9cef1f10478f-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 47324
+          },
+          "full": {
+            "src": "photos/generated/albums/malta/9cef1f10478f.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 470596
+          }
+        },
+        {
+          "sourceId": "f9df78016a22",
+          "alt": "Malta photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/malta/117656d47125-thumb.webp",
+            "width": 449,
+            "height": 600,
+            "bytes": 45002
+          },
+          "full": {
+            "src": "photos/generated/albums/malta/117656d47125.webp",
+            "width": 1496,
+            "height": 2000,
+            "bytes": 474160
+          }
+        },
+        {
+          "sourceId": "a82f9192f5ce",
+          "alt": "Malta photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/malta/bcb0ccddafcd-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 60028
+          },
+          "full": {
+            "src": "photos/generated/albums/malta/bcb0ccddafcd.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 497014
+          }
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "photos": [
+        {
+          "sourceId": "d52c6a010291",
+          "alt": "Spain photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/8924b5a1bc40-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 31632
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/8924b5a1bc40.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 242524
+          }
+        },
+        {
+          "sourceId": "fc8cc804f752",
+          "alt": "Spain photo 2",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/d9b61ccc32d5-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 26300
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/d9b61ccc32d5.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 355084
+          }
+        },
+        {
+          "sourceId": "b4a5d956bd93",
+          "alt": "Spain photo 3",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/5b22722d97f6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 42584
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/5b22722d97f6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 479164
+          }
+        },
+        {
+          "sourceId": "6a4f8f5f3047",
+          "alt": "Spain photo 4",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/c13bb457410b-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 40962
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/c13bb457410b.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 381478
+          }
+        },
+        {
+          "sourceId": "8c85afe4ae05",
+          "alt": "Spain photo 5",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/d1cd88ff6691-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 41124
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/d1cd88ff6691.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 375682
+          }
+        },
+        {
+          "sourceId": "07b51e665744",
+          "alt": "Spain photo 6",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/9a2b535228a5-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 44188
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/9a2b535228a5.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 331382
+          }
+        },
+        {
+          "sourceId": "17a2a2d6b644",
+          "alt": "Spain photo 7",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/8090452241d1-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 50108
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/8090452241d1.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 481786
+          }
+        },
+        {
+          "sourceId": "4567c28f843c",
+          "alt": "Spain photo 8",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/85190297f724-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 25206
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/85190297f724.webp",
+            "width": 1499,
+            "height": 2000,
+            "bytes": 161694
+          }
+        },
+        {
+          "sourceId": "350087a8aafa",
+          "alt": "Spain photo 9",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/5d5983b3538c-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 42504
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/5d5983b3538c.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 381234
+          }
+        },
+        {
+          "sourceId": "3dbcdcdcca48",
+          "alt": "Spain photo 10",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/192d6a244568-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 43122
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/192d6a244568.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 436096
+          }
+        },
+        {
+          "sourceId": "818761a90ad6",
+          "alt": "Spain photo 11",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/5cd8eb9dac71-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 46132
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/5cd8eb9dac71.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 458990
+          }
+        },
+        {
+          "sourceId": "ee0cac212723",
+          "alt": "Spain photo 12",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/6ae7cc3ec0ff-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 59180
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/6ae7cc3ec0ff.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 499618
+          }
+        },
+        {
+          "sourceId": "8a6e3206b32e",
+          "alt": "Spain photo 13",
+          "rotation": 90,
+          "thumbnail": {
+            "src": "photos/generated/albums/spain/662182e06956-thumb.webp",
+            "width": 400,
+            "height": 600,
+            "bytes": 17378
+          },
+          "full": {
+            "src": "photos/generated/albums/spain/662182e06956.webp",
+            "width": 1333,
+            "height": 2000,
+            "bytes": 151476
+          }
+        }
+      ]
+    },
+    {
+      "id": "republic-dominican",
+      "name": "Republic Dominican",
+      "photos": [
+        {
+          "sourceId": "b47d3294bfc9",
+          "alt": "Republic Dominican photo 1",
+          "rotation": 0,
+          "thumbnail": {
+            "src": "photos/generated/albums/republic-dominican/844f66fee0a6-thumb.webp",
+            "width": 450,
+            "height": 600,
+            "bytes": 40950
+          },
+          "full": {
+            "src": "photos/generated/albums/republic-dominican/844f66fee0a6.webp",
+            "width": 1500,
+            "height": 2000,
+            "bytes": 336368
+          }
+        }
+      ]
+    }
+  ],
+  "featured": {
+    "hero": {
+      "sourceId": "8356d5b43a5a",
+      "alt": "sunset and a person jump",
+      "rotation": 0,
+      "thumbnail": {
+        "src": "photos/generated/featured/hero-535188deb8c6-thumb.webp",
+        "width": 540,
+        "height": 480,
+        "bytes": 14946
+      },
+      "full": {
+        "src": "photos/generated/featured/hero-535188deb8c6.webp",
+        "width": 1800,
+        "height": 1601,
+        "bytes": 147586
+      }
+    },
+    "portrait": {
+      "sourceId": "7fb8f4fbc926",
+      "alt": "Isabel Soares",
+      "rotation": 0,
+      "thumbnail": {
+        "src": "photos/generated/featured/portrait-1d1f54d27acc-thumb.webp",
+        "width": 450,
+        "height": 600,
+        "bytes": 46434
+      },
+      "full": {
+        "src": "photos/generated/featured/portrait-1d1f54d27acc.webp",
+        "width": 1500,
+        "height": 2000,
+        "bytes": 363662
+      }
+    }
+  }
+}
