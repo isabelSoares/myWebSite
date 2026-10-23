@@ -5,3 +5,7 @@ coverage/
 .github/
 .env*
 *.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
