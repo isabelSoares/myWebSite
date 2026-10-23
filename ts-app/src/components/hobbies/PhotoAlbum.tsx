@@ -16,6 +16,11 @@ export interface IPhotoAlbum {
 export interface ImageInformation {
     description:string,
     image:string,
+    thumbnail?:string,
+    width?:number,
+    height?:number,
+    fullWidth?:number,
+    fullHeight?:number,
     rotation?: number
 }
 
@@ -27,6 +32,8 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
       padding: theme.spacing(1),
     },
 }));
+
+const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
 export const PhotoAlbum = (props: IPhotoAlbum) => {   
     const [open, setOpen] = React.useState(false);
@@ -47,7 +54,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
     };
 
     return (
-        <div className="photos">
+        <div className="photos" onContextMenu={preventDefault}>
             <div className="film-strip-heading">
                 <div>
                     <span className="film-strip-index">{String(props.dialogImages.length).padStart(2, '0')} frames</span>
@@ -68,7 +75,17 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                     >
                         <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
                         <span className="film-frame-photo">
-                            <img className={`rotation-${image.rotation || 0}`} src={image.image} alt={image.description} loading="lazy" decoding="async" />
+                            <img
+                                className={`rotation-${image.rotation || 0}`}
+                                src={image.thumbnail || image.image}
+                                alt={image.description}
+                                width={image.width}
+                                height={image.height}
+                                loading="lazy"
+                                decoding="async"
+                                draggable={false}
+                                onDragStart={preventDefault}
+                            />
                         </span>
                     </Button>
                 ))}
@@ -96,7 +113,11 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                             <img
                                 src={props.dialogImages[photoIndex].image}
                                 alt={props.dialogImages[photoIndex].description}
+                                width={props.dialogImages[photoIndex].fullWidth}
+                                height={props.dialogImages[photoIndex].fullHeight}
                                 className={`photo-dialog rotation-${props.dialogImages[photoIndex].rotation || 0}`}
+                                draggable={false}
+                                onDragStart={preventDefault}
                             />
                         </div>
                     </div>
