@@ -4,7 +4,21 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/flower.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="theme-color" content="#17262b" />
+    <script>
+      (function () {
+        try {
+          var isLight = window.localStorage.getItem('dark-mode') === 'false';
+          document.documentElement.classList.toggle('dark-mode', !isLight);
+          var themeColor = document.querySelector('meta[name="theme-color"]');
+          if (themeColor) {
+            themeColor.setAttribute('content', isLight ? '#f4f0e8' : '#17262b');
+          }
+        } catch (error) {
+          document.documentElement.classList.add('dark-mode');
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="Isabel Soares is an AI Engineer building practical AI products, automation workflows, and thoughtful interfaces."
