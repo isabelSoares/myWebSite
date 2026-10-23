@@ -16,10 +16,11 @@ const images = [
     description: 'Portugal photo 2',
     image: '/photos/generated/albums/portugal/two.webp',
     thumbnail: '/photos/generated/albums/portugal/two-thumb.webp',
-    width: 540,
-    height: 360,
-    fullWidth: 1800,
-    fullHeight: 1200,
+    width: 400,
+    height: 600,
+    fullWidth: 1333,
+    fullHeight: 2000,
+    rotation: 90,
   },
 ];
 
@@ -34,6 +35,8 @@ test('uses thumbnails, opens the full image, and preserves keyboard controls', a
   const dialog = await screen.findByRole('dialog');
   const fullImage = within(dialog).getByAltText('Portugal photo 1');
   expect(fullImage).toHaveAttribute('src', images[0].image);
+  expect(within(dialog).getByRole('button', { name: 'Previous' })).toBeDisabled();
+  expect(within(dialog).getByRole('button', { name: 'Next' })).toBeEnabled();
 
   const contextMenu = createEvent.contextMenu(fullImage);
   fireEvent(fullImage, contextMenu);
@@ -42,4 +45,19 @@ test('uses thumbnails, opens the full image, and preserves keyboard controls', a
   fireEvent.click(within(dialog).getByRole('button', { name: 'Next' }));
   expect(within(dialog).getByAltText('Portugal photo 2')).toHaveAttribute('src', images[1].image);
   expect(within(dialog).getByRole('button', { name: 'Previous' })).toBeEnabled();
+  expect(within(dialog).getByRole('button', { name: 'Next' })).toBeDisabled();
+});
+
+test('applies the quarter-turn orientation to the strip and the dialog', async () => {
+  render(<PhotoAlbum albumName="Portugal" dialogImages={images} />);
+
+  const rotatedThumbnail = screen.getByAltText('Portugal photo 2');
+  expect(rotatedThumbnail).toHaveClass('rotation-90');
+  expect(rotatedThumbnail).toHaveClass('is-quarter-turn');
+
+  fireEvent.click(screen.getByRole('button', { name: 'Open Portugal photo 2' }));
+  const dialog = await screen.findByRole('dialog');
+  const fullImage = within(dialog).getByAltText('Portugal photo 2');
+  expect(fullImage).toHaveClass('rotation-90');
+  expect(fullImage).toHaveClass('is-quarter-turn');
 });

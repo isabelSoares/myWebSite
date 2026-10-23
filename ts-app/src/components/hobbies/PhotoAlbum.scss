@@ -89,6 +89,10 @@
         min-height: 0;
         overflow: hidden;
         width: 100%;
+
+        &.is-quarter-turn {
+            aspect-ratio: 4 / 3;
+        }
     }
 
     .film-frame-number {
@@ -98,19 +102,20 @@
     }
 
     img {
-        aspect-ratio: 3 / 4;
         display: block;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
         object-fit: contain;
         width: 100%;
+    }
 
-        &.rotation-90 {
-            aspect-ratio: 4 / 3;
-            height: 75%;
-            max-height: none;
-            max-width: none;
-            width: 133.333%;
-            transform: rotate(90deg);
-        }
+    .film-frame-photo.is-quarter-turn img.rotation-90 {
+        height: 133.333%;
+        max-height: none;
+        max-width: none;
+        transform: rotate(90deg);
+        width: auto;
     }
 }
 
@@ -145,25 +150,32 @@
             align-items: center;
     
             .photos-dialog {
-                width: 100%;
-                height: 90%;
-    
-                display: flex;
                 align-items: center;
+                display: flex;
                 justify-content: center;
-                align-content: center;
-                flex-direction: column;
-            
-                .photo-dialog {
-                    display: flex;
-                    flex-direction: column;
-                    height: 450px;
-                    width: auto;
-                    max-height: 100%;
-                    max-width: 100%;
+                max-width: 900px;
+                width: 100%;
 
-                    &.rotation-90 {
+                .photo-dialog {
+                    display: block;
+                    height: auto;
+                    max-height: min(64vh, 640px);
+                    max-width: 100%;
+                    object-fit: contain;
+                    width: auto;
+                }
+
+                &.is-quarter-turn {
+                    aspect-ratio: 4 / 3;
+                    overflow: hidden;
+                    width: min(100%, calc(64vh * 4 / 3), 900px);
+
+                    .photo-dialog.rotation-90 {
+                        height: 133.333%;
+                        max-height: none;
+                        max-width: none;
                         transform: rotate(90deg);
+                        width: auto;
                     }
                 }
             }
