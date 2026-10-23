@@ -45,8 +45,8 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-async function selectPhoto(container: HTMLElement) {
-  const input = container.querySelector('input[type="file"]');
+async function selectPhoto() {
+  const input = screen.getByLabelText(/click or drag a photo here/i);
   if (!(input instanceof HTMLInputElement)) throw new Error("Photo input not found.");
   const photo = new File(["photo"], "portrait.jpg", { type: "image/jpeg" });
   fireEvent.change(input, { target: { files: [photo] } });
@@ -54,9 +54,9 @@ async function selectPhoto(container: HTMLElement) {
 }
 
 test("submits a prepared photo to the configured Cloudflare endpoint and displays guidance", async () => {
-  const { container } = render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
+  render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
   (global.fetch as jest.Mock).mockResolvedValue(successfulResponse());
-  await selectPhoto(container);
+  await selectPhoto();
 
   fireEvent.click(screen.getByRole("button", { name: "Review photo" }));
 
@@ -68,12 +68,12 @@ test("submits a prepared photo to the configured Cloudflare endpoint and display
 });
 
 test("shows a plain-language network error and allows retry without selecting the photo again", async () => {
-  const { container } = render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
+  render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
   (global.fetch as jest.Mock)
     .mockRejectedValueOnce(new TypeError("Failed to fetch"))
     .mockResolvedValueOnce({ ok: false, json: async () => ({ error: "The service is busy." }) })
     .mockResolvedValueOnce(successfulResponse());
-  await selectPhoto(container);
+  await selectPhoto();
 
   fireEvent.click(screen.getByRole("button", { name: "Review photo" }));
 
@@ -89,13 +89,13 @@ test("shows a plain-language network error and allows retry without selecting th
 });
 
 test("reports unreadable responses and times out a slow review while preserving retry", async () => {
-  const { container } = render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
+  render(<PhotoAssistant workerUrl="https://assistant.example.workers.dev/" />);
   const pendingResponse = new Promise<Response>(() => undefined);
   (global.fetch as jest.Mock)
     .mockResolvedValueOnce({ ok: true, json: async () => ({ unexpected: true }) })
     .mockReturnValueOnce(pendingResponse)
     .mockResolvedValueOnce(successfulResponse());
-  await selectPhoto(container);
+  await selectPhoto();
 
   fireEvent.click(screen.getByRole("button", { name: "Review photo" }));
   expect(await screen.findByRole("alert")).toHaveTextContent("returned an unreadable result");

@@ -68,7 +68,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                     >
                         <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
                         <span className="film-frame-photo">
-                            <img className={`rotation-${image.rotation || 0}`} src={image.image} alt={image.description} />
+                            <img className={`rotation-${image.rotation || 0}`} src={image.image} alt={image.description} loading="lazy" decoding="async" />
                         </span>
                     </Button>
                 ))}
