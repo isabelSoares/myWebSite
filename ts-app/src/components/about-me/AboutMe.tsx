@@ -51,6 +51,8 @@ export const AboutMe = () => {
                             width={portrait.full.width}
                             height={portrait.full.height}
                             className="about-me-portrait"
+                            loading="lazy"
+                            decoding="async"
                         />
                     )}
                 </div>
