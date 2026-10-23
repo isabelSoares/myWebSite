@@ -20,6 +20,8 @@ const {
   createSiteAssetReport,
   validateBuildOutput,
 } = require('./validate-site-assets');
+const { createPhotoPrivacyReport } = require('./validate-photo-privacy');
+const { createTsConfigReport } = require('./validate-tsconfig');
 
 const EXTERNAL_URLS = [
   'https://www.instagram.com/isabel.infilm/',
@@ -27,7 +29,6 @@ const EXTERNAL_URLS = [
   'https://github.com/isabelSoares',
   'https://github.com/isabelSoares/ai-photographer-assistant',
   'https://github.com/isabelSoares/cv-detect-people-my-gallery',
-  'https://raw.githubusercontent.com/isabelSoares/myWebSite/main/photos/portugal/IMG_0541.webp',
 ];
 
 const SECRET_PATTERNS = [
@@ -81,10 +82,52 @@ function commandCheck(report, { id, category, command, args, successDetail }) {
   return ok;
 }
 
+function typeCheck(report) {
+  const { ok, output } = runCommand(
+    process.platform === 'win32' ? 'npx.cmd' : 'npx',
+    ['tsc', '--noEmit'],
+  );
+
+  addCheck(report, {
+    id: 'types',
+    category: 'content',
+    status: ok ? 'pass' : 'fail',
+    detail: ok ? 'TypeScript type check passed' : output || 'type check failed',
+  });
+
+  const deprecation = /deprecat/i.test(output);
+  addCheck(report, {
+    id: 'types.deprecations',
+    category: 'content',
+    status: ok && !deprecation ? 'pass' : 'fail',
+    detail: ok
+      ? (deprecation ? truncateOutput(output) : 'no TypeScript deprecation warnings')
+      : 'type check must pass before deprecation warnings can be evaluated',
+  });
+}
+
+function configChecks(report) {
+  const configReport = createTsConfigReport();
+  for (const check of configReport.checks) {
+    addCheck(report, check);
+  }
+}
+
+async function photoPrivacyChecks(report) {
+  const photoReport = await createPhotoPrivacyReport();
+  for (const check of photoReport.checks) {
+    addCheck(report, check);
+  }
+}
+
 function scriptTestsCheck(report) {
   const scripts = [
     'scripts/validate-assistant-url.test.js',
     'scripts/validate-site-assets.test.js',
+    'scripts/validate-photo-limits.test.js',
+    'scripts/build-photos.test.js',
+    'scripts/validate-photo-privacy.test.js',
+    'scripts/validate-tsconfig.test.js',
   ];
   const failures = [];
 
@@ -277,13 +320,8 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const report = createReport();
 
-  commandCheck(report, {
-    id: 'types',
-    category: 'content',
-    command: process.platform === 'win32' ? 'npx.cmd' : 'npx',
-    args: ['tsc', '--noEmit'],
-    successDetail: 'TypeScript type check passed',
-  });
+  typeCheck(report);
+  configChecks(report);
 
   commandCheck(report, {
     id: 'lint',
@@ -316,6 +354,7 @@ async function main() {
   ensurePagesFallback();
   fallbackCheck(report);
   buildAssetsCheck(report);
+  await photoPrivacyChecks(report);
   privacyCheck(report);
   await externalLinksCheck(report, options.online);
 

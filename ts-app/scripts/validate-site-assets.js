@@ -8,8 +8,11 @@ const {
 } = require('./lib/check-report');
 const {
   APP_ROOT,
-  REPO_ROOT,
 } = require('./lib/routes');
+const {
+  collectManifestPhotos,
+  loadPhotoManifest,
+} = require('./lib/photo-manifest');
 
 const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx', '.scss', '.css']);
 
@@ -54,30 +57,18 @@ function collectPublicAssetReferences(source) {
     references.add(normalizeReference(match[1]));
   }
 
-  return [...references].filter((reference) => reference && !/^https?:/i.test(reference));
-}
-
-function collectAlbumPhotoReferences(source) {
-  const albums = [];
-  const albumPattern = /albumPhotos\(\s*['"]([^'"]+)['"]\s*,\s*\[([\s\S]*?)\]\s*(?:,\s*\[[\s\S]*?\])?\s*\)/g;
-  const filePattern = /['"]([^'"]+\.(?:webp|jpe?g|png|gif|avif))['"]/gi;
-
-  let albumMatch;
-  while ((albumMatch = albumPattern.exec(source)) !== null) {
-    const country = albumMatch[1];
-    const filesBlock = albumMatch[2];
-    let fileMatch;
-    while ((fileMatch = filePattern.exec(filesBlock)) !== null) {
-      albums.push({ country, file: fileMatch[1] });
-    }
-  }
-
-  return albums;
+  return [...references].filter((reference) => (
+    reference
+    && !/^https?:/i.test(reference)
+    && !reference.includes('{')
+    && !reference.includes('$')
+  ));
 }
 
 function readSourceFiles(srcDir) {
   return walkFiles(srcDir)
     .filter((file) => SOURCE_EXTENSIONS.has(path.extname(file).toLowerCase()))
+    .filter((file) => !/\.(?:test|spec)\.[jt]sx?$/.test(file))
     .map((file) => ({ file, content: fs.readFileSync(file, 'utf8') }));
 }
 
@@ -109,28 +100,34 @@ function validateLocalAssets({ appRoot = APP_ROOT } = {}) {
   };
 }
 
-function validateAlbumPhotos({ repoRoot = REPO_ROOT } = {}) {
-  const hobbiesPath = path.join(repoRoot, 'ts-app', 'src', 'components', 'hobbies', 'Hobbies.tsx');
-  if (!fs.existsSync(hobbiesPath)) {
-    return { checked: 0, missing: [], sourceFound: false };
+function validateAlbumPhotos({ appRoot = APP_ROOT, manifestPath } = {}) {
+  const resolvedManifestPath = manifestPath || path.join(appRoot, 'src', 'data', 'photo-manifest.json');
+  const { data, errors } = loadPhotoManifest({ manifestPath: resolvedManifestPath });
+
+  if (errors.length > 0) {
+    return { checked: 0, missing: errors, sourceFound: false };
   }
 
-  const source = fs.readFileSync(hobbiesPath, 'utf8');
-  const albums = collectAlbumPhotoReferences(source);
-  const missing = [];
+  const photos = collectManifestPhotos(data);
+  if (photos.length === 0) {
+    return { checked: 0, missing: [], sourceFound: true };
+  }
 
-  for (const { country, file } of albums) {
-    const target = path.join(repoRoot, 'photos', country, file);
-    if (!fs.existsSync(target)) {
-      missing.push(`photos/${country}/${file}`);
+  const publicDir = path.join(appRoot, 'public');
+  const missing = [];
+  let checked = 0;
+
+  for (const photo of photos) {
+    for (const variant of [photo.thumbnail, photo.full]) {
+      if (!variant || !variant.src) continue;
+      checked += 1;
+      if (!fs.existsSync(path.join(publicDir, variant.src))) {
+        missing.push(variant.src);
+      }
     }
   }
 
-  return {
-    checked: albums.length,
-    missing,
-    sourceFound: true,
-  };
+  return { checked, missing, sourceFound: true };
 }
 
 function readManifest(publicDir) {
@@ -212,7 +209,7 @@ function validateBuildOutput({ appRoot = APP_ROOT } = {}) {
   };
 }
 
-function createSiteAssetReport({ appRoot = APP_ROOT, repoRoot = REPO_ROOT, requireBuild = false } = {}) {
+function createSiteAssetReport({ appRoot = APP_ROOT, requireBuild = false } = {}) {
   const report = createReport();
 
   const local = validateLocalAssets({ appRoot });
@@ -225,7 +222,7 @@ function createSiteAssetReport({ appRoot = APP_ROOT, repoRoot = REPO_ROOT, requi
       : `missing: ${local.missing.join('; ')}`,
   });
 
-  const albums = validateAlbumPhotos({ repoRoot });
+  const albums = validateAlbumPhotos({ appRoot });
   const albumStatus = !albums.sourceFound || albums.missing.length > 0 || albums.checked === 0
     ? 'fail'
     : 'pass';
@@ -238,7 +235,7 @@ function createSiteAssetReport({ appRoot = APP_ROOT, repoRoot = REPO_ROOT, requi
       : albums.checked === 0
         ? 'no album photo references found'
         : albums.missing.length === 0
-          ? `${albums.checked} album photos exist`
+          ? `${albums.checked} generated photo files resolve`
           : `missing: ${albums.missing.join('; ')}`,
   });
 
@@ -264,12 +261,6 @@ function createSiteAssetReport({ appRoot = APP_ROOT, repoRoot = REPO_ROOT, requi
     });
   }
 
-  addCheck(report, {
-    id: 'assets.external',
-    category: 'assets',
-    status: 'warn',
-    detail: 'photos are hotlinked from raw.githubusercontent.com, an external host without a production CDN guarantee',
-  });
 
   return report;
 }
@@ -289,7 +280,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-  collectAlbumPhotoReferences,
   collectPublicAssetReferences,
   createSiteAssetReport,
   normalizeReference,
