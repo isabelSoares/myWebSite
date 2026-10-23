@@ -19,7 +19,7 @@
 
 **Decision**: Add `sharp` as a local development dependency and use it in `scripts/build-photos.js`.
 
-**Rationale**: `sharp` provides EXIF-aware rotation, metadata stripping, high-quality resizing, and WebP encoding in one Node API. It is fast enough for a 194-photo batch and avoids shelling out to platform-specific tools. It runs locally only; CI consumes the committed output.
+**Rationale**: `sharp` provides EXIF-aware rotation, metadata stripping, high-quality resizing, and WebP encoding in one Node API. It is fast enough for a 174-photo batch and avoids shelling out to platform-specific tools. It runs locally only; CI consumes the committed output.
 
 **Alternatives considered**:
 - **ImageMagick**: Powerful but relies on a system binary and has inconsistent metadata behavior across machines.

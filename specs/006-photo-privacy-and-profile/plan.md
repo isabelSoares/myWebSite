@@ -30,7 +30,7 @@ The approach is deliberately static: no signed-URL service, no image CDN account
 
 **Constraints**: No server runtime, no committed credentials, no private originals in CI, GitHub Pages artifact limit (1 GB), TypeScript 4.9 compatibility with CRA 5, accessibility must not regress, revocation limited to the current deploy and repository state
 
-**Scale/Scope**: 14 albums and 194 album photos currently listed in `Hobbies.tsx`, plus 2 featured images (hero and portrait); approximately 390 generated derivatives (thumbnail + full per photo)
+**Scale/Scope**: 14 albums and 172 album photos currently listed in `Hobbies.tsx`, plus 2 featured images (hero and portrait); approximately 348 generated derivatives (thumbnail + full per photo)
 
 ## Constitution Check
 

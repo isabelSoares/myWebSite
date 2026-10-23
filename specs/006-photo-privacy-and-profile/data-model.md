@@ -46,7 +46,7 @@ A curated album in `photo-sources.json`.
 - `id` must match `^[a-z0-9]+(?:-[a-z0-9]+)*$` and be unique.
 - `name` must be non-empty and unique.
 - `photos` must contain at least one entry; an album with no published photos is omitted from the public manifest.
-- The current baseline is 14 albums and 194 album photos.
+- The current baseline is 14 albums and 172 album photos.
 
 ### FeaturedSource
 
