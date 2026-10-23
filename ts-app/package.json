@@ -41,7 +41,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "validate:assistant-url": "node scripts/validate-assistant-url.js",
-    "test:assistant-url": "node scripts/validate-assistant-url.test.js"
+    "test:assistant-url": "node scripts/validate-assistant-url.test.js",
+    "validate:site-assets": "node scripts/validate-site-assets.js",
+    "test:site-assets": "node scripts/validate-site-assets.test.js",
+    "verify:release": "node scripts/verify-release.js",
+    "load:smoke": "node scripts/load-smoke.js"
   },
   "eslintConfig": {
     "extends": [
