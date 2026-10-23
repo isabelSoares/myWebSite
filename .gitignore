@@ -13,3 +13,7 @@
 Thumbs.db
 .vscode/
 .idea/
+
+# Private original photos (keep outside the published repository)
+/photos/
+/photo-originals/

@@ -41,7 +41,18 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "validate:assistant-url": "node scripts/validate-assistant-url.js",
-    "test:assistant-url": "node scripts/validate-assistant-url.test.js"
+    "test:assistant-url": "node scripts/validate-assistant-url.test.js",
+    "validate:site-assets": "node scripts/validate-site-assets.js",
+    "test:site-assets": "node scripts/validate-site-assets.test.js",
+    "verify:release": "node scripts/verify-release.js",
+    "load:smoke": "node scripts/load-smoke.js",
+    "photos:build": "node scripts/build-photos.js",
+    "validate:photos": "node scripts/validate-photo-privacy.js",
+    "photos:privacy": "node scripts/validate-photo-privacy.js",
+    "test:photo-privacy": "node scripts/validate-photo-privacy.test.js",
+    "test:photos": "node scripts/validate-photo-limits.test.js && node scripts/build-photos.test.js && node scripts/validate-photo-privacy.test.js",
+    "validate:tsconfig": "node scripts/validate-tsconfig.js",
+    "test:tsconfig": "node scripts/validate-tsconfig.test.js"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +73,7 @@
     ]
   },
   "devDependencies": {
-    "file-loader": "^6.2.0"
+    "file-loader": "^6.2.0",
+    "sharp": "^0.35.5"
   }
 }

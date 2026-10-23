@@ -89,6 +89,16 @@
     max-width: 350px;
 }
 
+.photo-copyright {
+    color: var(--site-subtle);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin: 18px 0 0;
+    text-transform: uppercase;
+}
+
 .hobby-photography {
     aspect-ratio: 1.25;
     display: block;

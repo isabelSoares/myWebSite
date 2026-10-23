@@ -37,17 +37,11 @@ jobs:
         working-directory: ts-app
         run: npm ci
 
-      - name: Build site
+      - name: Verify and build site
         working-directory: ts-app
         env:
           REACT_APP_AI_ASSISTANT_URL: ${{ vars.AI_ASSISTANT_URL }}
-        run: |
-          npm run validate:assistant-url
-          npm run test:assistant-url
-          npm run build
-
-      - name: Support direct client-side routes
-        run: cp ts-app/build/index.html ts-app/build/404.html
+        run: npm run verify:release
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

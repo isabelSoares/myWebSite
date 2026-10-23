@@ -41,6 +41,12 @@
     margin-left: 0.45em;
 }
 
+.film-frame img,
+.photo-dialog {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 .film-strip {
     background-color: #000000;
     display: flex;

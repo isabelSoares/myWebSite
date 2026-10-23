@@ -1,0 +1,1133 @@
+{
+  "version": 1,
+  "albums": [
+    {
+      "id": "portugal",
+      "name": "Portugal",
+      "photos": [
+        {
+          "source": "portugal/IMG_0541.webp",
+          "alt": "Portugal photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_5143.webp",
+          "alt": "Portugal photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3501.webp",
+          "alt": "Portugal photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9777.webp",
+          "alt": "Portugal photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1097.webp",
+          "alt": "Portugal photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7497.webp",
+          "alt": "Portugal photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1644.webp",
+          "alt": "Portugal photo 7",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_2938.webp",
+          "alt": "Portugal photo 8",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_5860.webp",
+          "alt": "Portugal photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7538.webp",
+          "alt": "Portugal photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3649.webp",
+          "alt": "Portugal photo 11",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9949.webp",
+          "alt": "Portugal photo 12",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3678.webp",
+          "alt": "Portugal photo 13",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_5859.webp",
+          "alt": "Portugal photo 14",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3499.webp",
+          "alt": "Portugal photo 15",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0073.webp",
+          "alt": "Portugal photo 16",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7738.webp",
+          "alt": "Portugal photo 17",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7182.webp",
+          "alt": "Portugal photo 18",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1845.webp",
+          "alt": "Portugal photo 19",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7498.webp",
+          "alt": "Portugal photo 20",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_6298.webp",
+          "alt": "Portugal photo 21",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1080.webp",
+          "alt": "Portugal photo 22",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_6567.webp",
+          "alt": "Portugal photo 23",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9351.webp",
+          "alt": "Portugal photo 24",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_4754.webp",
+          "alt": "Portugal photo 25",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1839.webp",
+          "alt": "Portugal photo 26",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9762.webp",
+          "alt": "Portugal photo 27",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1608.webp",
+          "alt": "Portugal photo 28",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0743.webp",
+          "alt": "Portugal photo 29",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_2266.webp",
+          "alt": "Portugal photo 30",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3363.webp",
+          "alt": "Portugal photo 31",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1846.webp",
+          "alt": "Portugal photo 32",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0098.webp",
+          "alt": "Portugal photo 33",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9770.webp",
+          "alt": "Portugal photo 34",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1905.webp",
+          "alt": "Portugal photo 35",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7200.webp",
+          "alt": "Portugal photo 36",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1681.webp",
+          "alt": "Portugal photo 37",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1081.webp",
+          "alt": "Portugal photo 38",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9902.webp",
+          "alt": "Portugal photo 39",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/c7be799f-a549-42b3-b4e1-bb8c9f6266f5.webp",
+          "alt": "Portugal photo 40",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_9558.webp",
+          "alt": "Portugal photo 41",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0247.webp",
+          "alt": "Portugal photo 42",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7700.webp",
+          "alt": "Portugal photo 43",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1861.webp",
+          "alt": "Portugal photo 44",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_7960.webp",
+          "alt": "Portugal photo 45",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1006.webp",
+          "alt": "Portugal photo 46",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1358.webp",
+          "alt": "Portugal photo 47",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0379.webp",
+          "alt": "Portugal photo 48",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_3329.webp",
+          "alt": "Portugal photo 49",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0339.webp",
+          "alt": "Portugal photo 50",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0265.webp",
+          "alt": "Portugal photo 51",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1706.webp",
+          "alt": "Portugal photo 52",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_6647.webp",
+          "alt": "Portugal photo 53",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1768_SnapseedCopy.webp",
+          "alt": "Portugal photo 54",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1856.webp",
+          "alt": "Portugal photo 55",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_0384.webp",
+          "alt": "Portugal photo 56",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_5965.webp",
+          "alt": "Portugal photo 57",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/IMG_1848.webp",
+          "alt": "Portugal photo 58",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "portugal/DSCF8480.webp",
+          "alt": "Portugal photo 59",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "uk",
+      "name": "UK",
+      "photos": [
+        {
+          "source": "uk/IMG_0720.webp",
+          "alt": "UK photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "uk/IMG_1110.webp",
+          "alt": "UK photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "uk/IMG_0503.webp",
+          "alt": "UK photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "uk/IMG_5458.webp",
+          "alt": "UK photo 4",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "uk/IMG_0671.webp",
+          "alt": "UK photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "uk/IMG_0962.webp",
+          "alt": "UK photo 6",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "photos": [
+        {
+          "source": "usa/IMG_4709.webp",
+          "alt": "USA photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4895.webp",
+          "alt": "USA photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4966.webp",
+          "alt": "USA photo 3",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4661.webp",
+          "alt": "USA photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5379.webp",
+          "alt": "USA photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5528.webp",
+          "alt": "USA photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4691.webp",
+          "alt": "USA photo 7",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_3327.webp",
+          "alt": "USA photo 8",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5433.webp",
+          "alt": "USA photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4759.webp",
+          "alt": "USA photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4959.webp",
+          "alt": "USA photo 11",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2015.webp",
+          "alt": "USA photo 12",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4898.webp",
+          "alt": "USA photo 13",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2090.webp",
+          "alt": "USA photo 14",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_4999.webp",
+          "alt": "USA photo 15",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5008.webp",
+          "alt": "USA photo 16",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_1976.webp",
+          "alt": "USA photo 17",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_7683.webp",
+          "alt": "USA photo 18",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5159.webp",
+          "alt": "USA photo 19",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2079.webp",
+          "alt": "USA photo 20",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2624.webp",
+          "alt": "USA photo 21",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2901.webp",
+          "alt": "USA photo 22",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_7698.webp",
+          "alt": "USA photo 23",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2856.webp",
+          "alt": "USA photo 24",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_2898.webp",
+          "alt": "USA photo 25",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_5536.webp",
+          "alt": "USA photo 26",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "usa/IMG_3001.webp",
+          "alt": "USA photo 27",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "photos": [
+        {
+          "source": "italy/IMG_0986.webp",
+          "alt": "Italy photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_0950.webp",
+          "alt": "Italy photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_1016.webp",
+          "alt": "Italy photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_1096.webp",
+          "alt": "Italy photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_1130.webp",
+          "alt": "Italy photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_3161.webp",
+          "alt": "Italy photo 6",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "italy/IMG_1015.webp",
+          "alt": "Italy photo 7",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "photos": [
+        {
+          "source": "netherlands/IMG_3877.webp",
+          "alt": "Netherlands photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4712.webp",
+          "alt": "Netherlands photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_3821.webp",
+          "alt": "Netherlands photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4436.webp",
+          "alt": "Netherlands photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4646.webp",
+          "alt": "Netherlands photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4187.webp",
+          "alt": "Netherlands photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/DSCF8321.webp",
+          "alt": "Netherlands photo 7",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4420.webp",
+          "alt": "Netherlands photo 8",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4419.webp",
+          "alt": "Netherlands photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4266.webp",
+          "alt": "Netherlands photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_3867.webp",
+          "alt": "Netherlands photo 11",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4252.webp",
+          "alt": "Netherlands photo 12",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4377.webp",
+          "alt": "Netherlands photo 13",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "netherlands/IMG_4340.webp",
+          "alt": "Netherlands photo 14",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil",
+      "photos": [
+        {
+          "source": "brazil/IMG_6871.webp",
+          "alt": "Brazil photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "brazil/IMG_7305.webp",
+          "alt": "Brazil photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "brazil/IMG_7829.webp",
+          "alt": "Brazil photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "brazil/IMG_6864.webp",
+          "alt": "Brazil photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "brazil/IMG_7670.webp",
+          "alt": "Brazil photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "brazil/IMG_7034.webp",
+          "alt": "Brazil photo 6",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "photos": [
+        {
+          "source": "canada/IMG_7416.webp",
+          "alt": "Canada photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_8954.webp",
+          "alt": "Canada photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_7778.webp",
+          "alt": "Canada photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_8101.webp",
+          "alt": "Canada photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_8015.webp",
+          "alt": "Canada photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_8114.webp",
+          "alt": "Canada photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_5179.webp",
+          "alt": "Canada photo 7",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_7965.webp",
+          "alt": "Canada photo 8",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_7490.webp",
+          "alt": "Canada photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_8106.webp",
+          "alt": "Canada photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "canada/IMG_7519.webp",
+          "alt": "Canada photo 11",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "austria",
+      "name": "Austria",
+      "photos": [
+        {
+          "source": "austria/IMG_0594.webp",
+          "alt": "Austria photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1757.webp",
+          "alt": "Austria photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_9665.webp",
+          "alt": "Austria photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1098.webp",
+          "alt": "Austria photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1470.webp",
+          "alt": "Austria photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_0021.webp",
+          "alt": "Austria photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_0457.webp",
+          "alt": "Austria photo 7",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1512.webp",
+          "alt": "Austria photo 8",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1133.webp",
+          "alt": "Austria photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_1159.webp",
+          "alt": "Austria photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "austria/IMG_2402.webp",
+          "alt": "Austria photo 11",
+          "rotation": 90,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "croatia",
+      "name": "Croatia",
+      "photos": [
+        {
+          "source": "croatia/IMG_8278.webp",
+          "alt": "Croatia photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "croatia/IMG_8550.webp",
+          "alt": "Croatia photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "croatia/IMG_9141.webp",
+          "alt": "Croatia photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "croatia/IMG_8287.webp",
+          "alt": "Croatia photo 4",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "croatia/IMG_8442.webp",
+          "alt": "Croatia photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "croatia/IMG_9922.webp",
+          "alt": "Croatia photo 6",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "photos": [
+        {
+          "source": "france/IMG_1176.webp",
+          "alt": "France photo 1",
+          "rotation": 90,
+          "published": true
+        },
+        {
+          "source": "france/IMG_1583.webp",
+          "alt": "France photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "france/IMG_1624.webp",
+          "alt": "France photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "france/IMG_1632.webp",
+          "alt": "France photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "france/IMG_1609.webp",
+          "alt": "France photo 5",
+          "rotation": 90,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland",
+      "photos": [
+        {
+          "source": "switzerland/IMG_5237.webp",
+          "alt": "Switzerland photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "switzerland/2024-03-13 16.46.48.webp",
+          "alt": "Switzerland photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "switzerland/IMG_5481.webp",
+          "alt": "Switzerland photo 3",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "malta",
+      "name": "Malta",
+      "photos": [
+        {
+          "source": "malta/IMG_9248.webp",
+          "alt": "Malta photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "malta/IMG20230831095211_01.webp",
+          "alt": "Malta photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "malta/IMG_8686.webp",
+          "alt": "Malta photo 3",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "photos": [
+        {
+          "source": "spain/IMG_8572.webp",
+          "alt": "Spain photo 1",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_5534.webp",
+          "alt": "Spain photo 2",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_7973.webp",
+          "alt": "Spain photo 3",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_8673.webp",
+          "alt": "Spain photo 4",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_5487.webp",
+          "alt": "Spain photo 5",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_8246.webp",
+          "alt": "Spain photo 6",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_8677.webp",
+          "alt": "Spain photo 7",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_4933.webp",
+          "alt": "Spain photo 8",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_7942.webp",
+          "alt": "Spain photo 9",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_7966.webp",
+          "alt": "Spain photo 10",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_1750.webp",
+          "alt": "Spain photo 11",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_1838.webp",
+          "alt": "Spain photo 12",
+          "rotation": 0,
+          "published": true
+        },
+        {
+          "source": "spain/IMG_1872.webp",
+          "alt": "Spain photo 13",
+          "rotation": 90,
+          "published": true
+        }
+      ]
+    },
+    {
+      "id": "republic-dominican",
+      "name": "Republic Dominican",
+      "photos": [
+        {
+          "source": "republic dominican/IMG_2902.webp",
+          "alt": "Republic Dominican photo 1",
+          "rotation": 0,
+          "published": true
+        }
+      ]
+    }
+  ],
+  "featured": {
+    "hero": {
+      "source": "featured/hero.webp",
+      "alt": "sunset and a person jump",
+      "published": true
+    },
+    "portrait": {
+      "source": "profile/portrait.webp",
+      "alt": "Isabel Soares",
+      "published": true
+    }
+  }
+}

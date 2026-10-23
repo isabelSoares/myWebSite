@@ -67,6 +67,23 @@ test('Projects page links to both GitHub repositories', () => {
     expect(cvLink).toHaveAttribute('rel', 'noopener noreferrer');
 });
 
+test.each([
+    ['/resume', 'A career in progress.'],
+    ['/projects', 'Things I build outside work.'],
+    ['/hobbies', 'Things I do when I am not at my keyboard.'],
+])('loads %s directly', (route, heading) => {
+    renderWithRouter([route]);
+
+    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
+});
+
+test('shows the not-found experience for an unknown route', () => {
+    renderWithRouter(['/this-page-does-not-exist']);
+
+    expect(screen.getByRole('heading', { name: 'This page is not in the album.' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Back to the homepage' })).toHaveAttribute('href', '/');
+});
+
 test('App still renders with BrowserRouter without crashing', () => {
     render(<App />);
     expect(screen.getByRole('button', { name: 'About' })).toBeInTheDocument();

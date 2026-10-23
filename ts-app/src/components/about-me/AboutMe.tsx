@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import photoManifest from '../../data/photo-manifest.json';
+import { publicPhotoUrl } from '../../data/photo-url';
+
+const portrait = photoManifest.featured.portrait;
 
 export const AboutMe = () => {
     return (
@@ -40,11 +44,15 @@ export const AboutMe = () => {
                 </div>
                 <div className="about-me-portrait-wrap">
                     <div className="about-me-portrait-label">CURIOUS BY DEFAULT</div>
-                    <img
-                        src={`${process.env.PUBLIC_URL}/photos/IMG_7833.webp`}
-                        alt="Isabel Soares"
-                        className="about-me-portrait"
-                    />
+                    {portrait && (
+                        <img
+                            src={publicPhotoUrl(portrait.full.src)}
+                            alt={portrait.alt}
+                            width={portrait.full.width}
+                            height={portrait.full.height}
+                            className="about-me-portrait"
+                        />
+                    )}
                 </div>
             </section>
 

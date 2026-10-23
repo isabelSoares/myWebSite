@@ -7,6 +7,7 @@ import { AboutMe } from './components/about-me/AboutMe';
 import { ResumeCV } from './components/resume/ResumeCV';
 import { Hobbies } from './components/hobbies/Hobbies';
 import { PersonalProjects } from './components/personal-projects/PersonalProjects';
+import { NotFound } from './components/not-found/NotFound';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -54,6 +55,7 @@ export const AppContent = () => {
           <Route path="/resume" element={<ResumeCV />} />
           <Route path="/projects" element={<PersonalProjects />} />
           <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeProvider>
     </div>
