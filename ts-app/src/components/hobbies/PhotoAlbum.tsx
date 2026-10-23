@@ -53,6 +53,9 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
         setPhotoIndex((index) => index + 1);
     };
 
+    const currentImage = props.dialogImages[photoIndex];
+    const currentIsQuarterTurn = currentImage.rotation === 90;
+
     return (
         <div className="photos" onContextMenu={preventDefault}>
             <div className="film-strip-heading">
@@ -66,29 +69,33 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 </span>
             </div>
             <div className="film-strip" aria-label={`${props.albumName} photo strip`}>
-                {props.dialogImages.map((image, index) => (
-                    <Button
-                        className="film-frame"
-                        key={image.image}
-                        onClick={() => handleClickOpen(index)}
-                        aria-label={`Open ${props.albumName} photo ${index + 1}`}
-                    >
-                        <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
-                        <span className="film-frame-photo">
-                            <img
-                                className={`rotation-${image.rotation || 0}`}
-                                src={image.thumbnail || image.image}
-                                alt={image.description}
-                                width={image.width}
-                                height={image.height}
-                                loading="lazy"
-                                decoding="async"
-                                draggable={false}
-                                onDragStart={preventDefault}
-                            />
-                        </span>
-                    </Button>
-                ))}
+                {props.dialogImages.map((image, index) => {
+                    const isQuarterTurn = image.rotation === 90;
+
+                    return (
+                        <Button
+                            className="film-frame"
+                            key={image.image}
+                            onClick={() => handleClickOpen(index)}
+                            aria-label={`Open ${props.albumName} photo ${index + 1}`}
+                        >
+                            <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
+                            <span className={`film-frame-photo${isQuarterTurn ? ' is-quarter-turn' : ''}`}>
+                                <img
+                                    className={`rotation-${image.rotation || 0}${isQuarterTurn ? ' is-quarter-turn' : ''}`}
+                                    src={image.thumbnail || image.image}
+                                    alt={image.description}
+                                    width={image.width}
+                                    height={image.height}
+                                    loading="lazy"
+                                    decoding="async"
+                                    draggable={false}
+                                    onDragStart={preventDefault}
+                                />
+                            </span>
+                        </Button>
+                    );
+                })}
             </div>
             <BootstrapDialog
                 className='teste'
@@ -109,13 +116,13 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 </IconButton>
                 <DialogContent dividers>
                     <div className='content-dialog'>
-                        <div className='photos-dialog'>
+                        <div className={`photos-dialog${currentIsQuarterTurn ? ' is-quarter-turn' : ''}`}>
                             <img
-                                src={props.dialogImages[photoIndex].image}
-                                alt={props.dialogImages[photoIndex].description}
-                                width={props.dialogImages[photoIndex].fullWidth}
-                                height={props.dialogImages[photoIndex].fullHeight}
-                                className={`photo-dialog rotation-${props.dialogImages[photoIndex].rotation || 0}`}
+                                src={currentImage.image}
+                                alt={currentImage.description}
+                                width={currentImage.fullWidth}
+                                height={currentImage.fullHeight}
+                                className={`photo-dialog rotation-${currentImage.rotation || 0}${currentIsQuarterTurn ? ' is-quarter-turn' : ''}`}
                                 draggable={false}
                                 onDragStart={preventDefault}
                             />

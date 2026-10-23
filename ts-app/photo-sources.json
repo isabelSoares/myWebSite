@@ -50,7 +50,7 @@
         {
           "source": "portugal/IMG_2938.webp",
           "alt": "Portugal photo 8",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -92,7 +92,7 @@
         {
           "source": "portugal/IMG_3499.webp",
           "alt": "Portugal photo 15",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -290,7 +290,7 @@
         {
           "source": "portugal/IMG_0379.webp",
           "alt": "Portugal photo 48",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -302,13 +302,13 @@
         {
           "source": "portugal/IMG_0339.webp",
           "alt": "Portugal photo 50",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
           "source": "portugal/IMG_0265.webp",
           "alt": "Portugal photo 51",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -386,7 +386,7 @@
         {
           "source": "uk/IMG_5458.webp",
           "alt": "UK photo 4",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -422,7 +422,7 @@
         {
           "source": "usa/IMG_4966.webp",
           "alt": "USA photo 3",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -470,7 +470,7 @@
         {
           "source": "usa/IMG_4959.webp",
           "alt": "USA photo 11",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -494,13 +494,13 @@
         {
           "source": "usa/IMG_4999.webp",
           "alt": "USA photo 15",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
           "source": "usa/IMG_5008.webp",
           "alt": "USA photo 16",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -548,7 +548,7 @@
         {
           "source": "usa/IMG_2856.webp",
           "alt": "USA photo 24",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -608,7 +608,7 @@
         {
           "source": "italy/IMG_3161.webp",
           "alt": "Italy photo 6",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -662,7 +662,7 @@
         {
           "source": "netherlands/DSCF8321.webp",
           "alt": "Netherlands photo 7",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -872,7 +872,7 @@
         {
           "source": "austria/IMG_1512.webp",
           "alt": "Austria photo 8",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -890,7 +890,7 @@
         {
           "source": "austria/IMG_2402.webp",
           "alt": "Austria photo 11",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         }
       ]
@@ -920,7 +920,7 @@
         {
           "source": "croatia/IMG_8287.webp",
           "alt": "Croatia photo 4",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -944,7 +944,7 @@
         {
           "source": "france/IMG_1176.webp",
           "alt": "France photo 1",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         },
         {
@@ -968,7 +968,7 @@
         {
           "source": "france/IMG_1609.webp",
           "alt": "France photo 5",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         }
       ]
@@ -1100,7 +1100,7 @@
         {
           "source": "spain/IMG_1872.webp",
           "alt": "Spain photo 13",
-          "rotation": 90,
+          "rotation": 0,
           "published": true
         }
       ]

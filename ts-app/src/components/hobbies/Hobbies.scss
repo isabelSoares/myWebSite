@@ -100,10 +100,10 @@
 }
 
 .hobby-photography {
-    aspect-ratio: 1.25;
     display: block;
     filter: saturate(0.8);
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
     width: 100%;
 }
 

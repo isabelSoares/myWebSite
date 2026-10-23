@@ -8,6 +8,7 @@ import { ResumeCV } from './components/resume/ResumeCV';
 import { Hobbies } from './components/hobbies/Hobbies';
 import { PersonalProjects } from './components/personal-projects/PersonalProjects';
 import { NotFound } from './components/not-found/NotFound';
+import { applyAppearance, readAppearance, writeAppearance } from './theme/appearance';
 
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -38,18 +39,24 @@ const ScrollToTop = () => {
 };
 
 export const AppContent = () => {
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('dark-mode') === 'true');
+  const [darkMode, setDarkMode] = useState(() => readAppearance() === 'dark');
 
   useEffect(() => {
-    localStorage.setItem('dark-mode', String(darkMode));
+    applyAppearance(darkMode ? 'dark' : 'light');
   }, [darkMode]);
+
+  const handleToggleDarkMode = () => {
+    const nextDarkMode = !darkMode;
+    setDarkMode(nextDarkMode);
+    writeAppearance(nextDarkMode ? 'dark' : 'light');
+  };
 
   return (
     <div className={`App${darkMode ? ' dark-mode' : ''}`}>
       <ThemeProvider theme={createSiteTheme(darkMode)}>
         <CssBaseline />
         <ScrollToTop />
-        <TopBar darkMode={darkMode} onToggleDarkMode={() => setDarkMode((isDark) => !isDark)} />
+        <TopBar darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
         <Routes>
           <Route path="/" element={<AboutMe />} />
           <Route path="/resume" element={<ResumeCV />} />

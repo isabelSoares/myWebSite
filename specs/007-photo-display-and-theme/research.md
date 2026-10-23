@@ -7,7 +7,7 @@
 
 - The About Me portrait and the Hobbies hero are rendered from `photoManifest.featured`. Their manifest dimensions are 1500 × 2000 (portrait ratio 0.75) and 1800 × 1601 (landscape ratio ~1.124).
 - `AboutMe.scss` forces `aspect-ratio: 0.78` and `object-fit: cover` on the portrait. `Hobbies.scss` forces `aspect-ratio: 1.25` and `object-fit: cover` on the hero. Both force a different box ratio from the photo and crop with cover, which produces the zoomed/awkward framing the owner reported.
-- Album photos carry a `rotation` value in `photo-manifest.json`. The current data has 19 photos with `rotation: 90` and the rest with `0`. `PhotoAlbum.tsx` applies a `rotation-90` class, but the frame stays portrait and the dialog rotation does not swap the layout box, so quarter-turn photos can be clipped or look wrong.
+- Album photos carry a `rotation` value in `photo-manifest.json`. Nineteen photos were marked `rotation: 90`, but their source files all have EXIF orientation `6`, and `build-photos.js` calls `sharp().rotate()`. The generated derivatives are already upright. Applying the `rotation-90` CSS rule therefore double-rotated them and made them sideways.
 - `App.tsx` resolves the appearance with `localStorage.getItem('dark-mode') === 'true'`. A missing value therefore becomes `false` (light), which is the regression. The CSS variables are defined under `.dark-mode`, and the class is applied only after React renders, so a default change alone would still flash the light theme first.
 - The site is a static GitHub Pages build. There is no server or runtime configuration layer.
 
@@ -23,26 +23,26 @@
 - **Regenerate cropped derivatives per placement**: adds asset variants, changes the privacy/limits pipeline, and is unnecessary. Rejected.
 - **Make the featured images decorative backgrounds**: loses image semantics and alternative text. Rejected.
 
-## Decision 2: Apply album orientation in the presentation layer, not by regenerating photos
+## Decision 2: Treat generated derivatives as orientation-normalized
 
-**Decision**: Treat the manifest `rotation` value as authoritative and apply it consistently to the strip thumbnail and the dialog image. Keep the generated derivatives and `photo-sources.json` unchanged.
+**Decision**: Set the current album `rotation` values to `0` in `photo-sources.json` and `photo-manifest.json`. Keep the existing presentation-layer rotation capability for future manually rotated photos, but do not rotate the current derivatives.
 
-**Rationale**: The orientation metadata already exists and is already used by the UI. The derivatives are approved, validated, and content-hashed; regenerating them to bake in rotation would change filenames, require the private originals, and expand the scope into the privacy pipeline. Presentation-layer orientation fixes the symptom without touching the publishing boundary.
+**Rationale**: All 19 album photos previously marked `rotation: 90` have source files with EXIF orientation `6`. `build-photos.js` calls `sharp().rotate()`, so the generated derivatives are already upright (`1333 × 2000`), and the extra CSS rotation made them sideways. The `rotation` metadata now represents an explicit manual correction only; it must not duplicate EXIF auto-orientation. Generated derivative files remain unchanged.
 
 **Alternatives considered**:
-- **Bake rotation into derivatives in `build-photos.js`**: would require originals and regeneration, change content hashes, and need new validation. Rejected for this fix.
-- **Rely on EXIF auto-orientation only**: EXIF is stripped during derivative generation, and the manual rotation list exists precisely for photos the owner corrected by hand. Rejected.
+- **Keep `rotation: 90` and rotate in the presentation layer**: double-rotates every auto-oriented derivative and was the cause of the sideways photos. Rejected.
+- **Bake an additional rotation into derivatives**: would rotate already-upright images and change content/add unnecessary processing. Rejected.
 - **Use JavaScript canvas pre-rotation**: adds client work, can reduce quality, and harms accessibility. Rejected.
 
-## Decision 3: Swap the frame for quarter-turn photos
+## Decision 3: Do not swap the frame for auto-oriented photos
 
-**Decision**: For `rotation: 90`, change the visible frame to landscape and fit the rotated image entirely inside it. Keep portrait frames for unrotated photos. Use the same rule in the film strip and the enlarged dialog.
+**Decision**: Current album photos all use `rotation: 0`, so every frame keeps the portrait `3 / 4` box and the image is contained without CSS rotation. The landscape-frame rule remains only for an explicit future `rotation: 90` value.
 
-**Rationale**: Rotation changes the visual bounding box. Rotating a portrait-layout image inside a portrait frame without swapping the frame causes clipping or accidental overflow. A landscape frame matches the post-rotation shape and lets `contain` preserve the whole photo.
+**Rationale**: A quarter-turn frame is only needed when the displayed image is actually rotated in the browser. The generated derivatives are already upright, so applying a landscape frame would change the layout without correcting orientation.
 
 **Alternatives considered**:
-- **Rotate inside the existing portrait frame**: clips the long edge or leaves an oversized element that escapes the frame. Rejected.
-- **Keep the portrait frame and shrink the image drastically**: shows the photo but wastes most of the frame. Rejected.
+- **Rotate inside the existing portrait frame**: unnecessary for auto-oriented derivatives and still double-rotates them. Rejected.
+- **Keep the portrait frame and shrink the image drastically**: no rotation is needed, so this would only waste space. Rejected.
 - **Rotate the thumbnail only**: would make the strip and dialog disagree. Rejected.
 
 ## Decision 4: Preserve album order and visible navigation direction
@@ -102,12 +102,12 @@
 - **Rely only on manual review**: would not protect the default-dark logic or orientation classes from regressions. Rejected.
 - **Add image snapshot tests**: brittle across environments and not necessary for ratio/rotation contracts. Rejected.
 
-## Decision 9: No changes to photo assets, manifest, or privacy checks
+## Decision 9: Correct rotation metadata without changing photo assets
 
-**Decision**: Keep `photo-sources.json`, `photo-manifest.json`, the generated WebP derivatives, and the privacy/limit validators unchanged. The feature reads existing rotation and dimension metadata.
+**Decision**: Keep the generated WebP derivatives and privacy/limit validators unchanged, but correct the 19 stale `rotation: 90` values to `0` in `photo-sources.json` and `photo-manifest.json`. The manifest stays generated from the source list, and no photos are regenerated.
 
-**Rationale**: The original-photo boundary and derivative limits were established by feature 006 and already pass validation. This fix should not require private originals, new generated files, or new public assets.
+**Rationale**: The original-photo boundary and derivative limits were established by feature 006 and already pass validation. The derivative files were already upright; only the metadata and presentation rule were wrong. Keeping the assets unchanged avoids new content hashes and a large binary diff.
 
 **Alternatives considered**:
 - **Add higher-resolution or differently cropped hero variants**: increases payload and validation scope without being required by the spec. Rejected.
-- **Remove rotation metadata and regenerate upright derivatives**: requires originals and changes content hashes. Rejected.
+- **Regenerate all derivatives after the metadata correction**: unnecessary because the orientation was already normalized; would add processing and risk unrelated binary churn. Rejected.

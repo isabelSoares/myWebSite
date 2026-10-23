@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App, { AppContent } from './App';
@@ -12,6 +12,11 @@ const renderWithRouter = (initialEntries = ['/']) =>
             <AppContent />
         </MemoryRouter>
     );
+
+beforeEach(() => {
+    window.localStorage.clear();
+    document.documentElement.classList.remove('dark-mode');
+});
 
 test('renders the portfolio homepage and navigation', () => {
     renderWithRouter();
@@ -87,4 +92,52 @@ test('shows the not-found experience for an unknown route', () => {
 test('App still renders with BrowserRouter without crashing', () => {
     render(<App />);
     expect(screen.getByRole('button', { name: 'About' })).toBeInTheDocument();
+});
+
+test('defaults to dark mode when no appearance preference is saved', () => {
+    renderWithRouter();
+
+    expect(document.documentElement).toHaveClass('dark-mode');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+});
+
+test('keeps an explicit light preference', () => {
+    window.localStorage.setItem('dark-mode', 'false');
+    renderWithRouter();
+
+    expect(document.documentElement).not.toHaveClass('dark-mode');
+    expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
+});
+
+test('keeps an explicit dark preference', () => {
+    window.localStorage.setItem('dark-mode', 'true');
+    renderWithRouter();
+
+    expect(document.documentElement).toHaveClass('dark-mode');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+});
+
+test('toggles the appearance and saves the explicit choice', async () => {
+    renderWithRouter();
+
+    userEvent.click(screen.getByRole('button', { name: 'Switch to light mode' }));
+
+    await waitFor(() => expect(document.documentElement).not.toHaveClass('dark-mode'));
+    expect(window.localStorage.getItem('dark-mode')).toBe('false');
+    expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
+
+    userEvent.click(screen.getByRole('button', { name: 'Switch to dark mode' }));
+
+    await waitFor(() => expect(document.documentElement).toHaveClass('dark-mode'));
+    expect(window.localStorage.getItem('dark-mode')).toBe('true');
+});
+
+test('keeps an explicit light preference across route changes', () => {
+    window.localStorage.setItem('dark-mode', 'false');
+    renderWithRouter();
+
+    userEvent.click(screen.getByRole('button', { name: 'Projects' }));
+
+    expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
+    expect(document.documentElement).not.toHaveClass('dark-mode');
 });

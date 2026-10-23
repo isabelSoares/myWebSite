@@ -14,7 +14,7 @@
   --site-on-text: #fffdf8;
 }
 
-.dark-mode {
+:root.dark-mode {
   --site-background: #17262b;
   --site-surface: #20383d;
   --site-text: #f4f0e8;

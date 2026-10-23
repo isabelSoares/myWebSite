@@ -123,10 +123,10 @@
 }
 
 .about-me-portrait {
-    aspect-ratio: 0.78;
     display: block;
     filter: saturate(0.75);
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
     width: 100%;
 }
 
