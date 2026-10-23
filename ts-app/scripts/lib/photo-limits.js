@@ -5,7 +5,7 @@ const THUMBNAIL_LIMITS = Object.freeze({
   width: 540,
   maxDimension: 600,
   maxBytes: 120 * KB,
-  quality: 64,
+  quality: 74,
 });
 
 const FULL_LIMITS = Object.freeze({

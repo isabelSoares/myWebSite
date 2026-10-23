@@ -33,13 +33,12 @@ function resolveOriginal(source) {
 }
 
 function qualitiesFor(limits) {
-  return [...new Set([
-    limits.quality,
-    limits.quality - 8,
-    limits.quality - 16,
-    limits.quality - 24,
-    40, 36, 32, 28, 24, 20,
-  ])].filter((quality) => quality >= 20);
+  const start = Math.min(100, Math.max(20, Math.round(limits.quality)));
+  const qualities = [];
+  for (let quality = start; quality >= 20; quality -= 2) {
+    qualities.push(quality);
+  }
+  return qualities;
 }
 
 async function encodeVariant(sourcePath, destination, limits, label, { publicDir = PUBLIC_DIR } = {}) {
@@ -55,7 +54,7 @@ async function encodeVariant(sourcePath, destination, limits, label, { publicDir
         fit: 'inside',
         withoutEnlargement: true,
       })
-      .webp({ quality, effort: 4 })
+      .webp({ quality, effort: 6, smartSubsample: true })
       .toBuffer();
 
     lastSize = buffer.length;
