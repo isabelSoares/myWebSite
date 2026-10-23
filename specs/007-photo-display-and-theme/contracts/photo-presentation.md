@@ -32,21 +32,22 @@
 ### Inputs
 
 - `photoManifest.albums[].photos[]`, each with `alt`, `rotation`, `thumbnail`, and `full`.
-- The current data uses `rotation: 0` and `rotation: 90`.
+- Generated derivatives are orientation-normalized by `sharp().rotate()`.
+- All current album photos use `rotation: 0` because their EXIF orientation was already applied during the photo build.
 
 ### Required behavior
 
 | Manifest rotation | Strip frame | Dialog frame | Image behavior |
 |-------------------|-------------|--------------|----------------|
-| `0` | Portrait (`3 / 4`) | Portrait | Image contained; no crop, stretch, or mirror. |
-| `90` | Landscape (swapped to `4 / 3` or the image's rotated ratio) | Landscape | Image rotated clockwise into the landscape frame and fully contained. |
+| `0` | Portrait (`3 / 4`) | Portrait | Already-upright image contained; no crop, stretch, mirror, or extra rotation. |
+| `90` | Landscape (swapped to `4 / 3` or the image's rotated ratio) | Landscape | Manual correction for a future non-EXIF image; image rotated clockwise into the landscape frame and fully contained. |
 
 Additional requirements:
 
 1. The strip thumbnail and the dialog image use the same orientation rule.
-2. A quarter-turn image must fit entirely inside its frame; no edge may be clipped by an overflow-hidden ancestor.
+2. An explicit manual quarter-turn image must fit entirely inside its frame; no edge may be clipped by an overflow-hidden ancestor.
 3. The dialog image must remain fully visible while the dialog content scrolls or resizes.
-4. The rotated image must not overlap the previous/next buttons or the close control.
+4. A manually rotated image must not overlap the previous/next buttons or the close control.
 5. The image keeps its alternative text in both the strip and the dialog.
 6. The existing drag prevention, context-menu prevention, and keyboard focus behavior remain in effect.
 

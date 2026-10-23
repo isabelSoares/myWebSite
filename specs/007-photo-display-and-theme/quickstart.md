@@ -71,15 +71,15 @@ Open <http://localhost:3000>. Use a fresh browser profile or clear the site's st
 ## Scenario 5: Album orientation and direction
 
 1. Open `/hobbies`.
-2. Review every album. The manifest currently records 19 quarter-turn photos across Portugal, UK, USA, Italy, Netherlands, Austria, Croatia, France, and Spain.
-3. Open each quarter-turn photo from the film strip and review it in the dialog.
+2. Review every album. Nineteen source photos across Portugal, UK, USA, Italy, Netherlands, Austria, Croatia, France, and Spain had EXIF orientation and are now normalized derivatives with `rotation: 0`.
+3. Open each of those photos from the film strip and review it in the dialog.
 4. Use Previous and Next to move through an album, including the first and last frame.
 5. Scroll each film strip horizontally.
 
 **Expected**:
-- Quarter-turn photos appear upright in both the strip and the dialog.
-- The visible frame becomes landscape for quarter-turn photos and portrait for unrotated photos.
-- No photo is clipped, stretched, mirrored, or hidden behind the dialog controls.
+- Photos whose originals had EXIF orientation appear upright in both the strip and the dialog.
+- No photo is double-rotated, clipped, stretched, mirrored, or hidden behind the dialog controls.
+- Current photos keep the portrait frame; no landscape frame swap is triggered.
 - Previous moves backward and Next moves forward in manifest order.
 - The first frame disables Previous and the last frame disables Next.
 - The strip scrolls left-to-right following the right-pointing hint.
@@ -117,7 +117,7 @@ REACT_APP_AI_ASSISTANT_URL="https://<your-cloudflare-endpoint>/" npm run verify:
 ```
 
 **Expected**:
-- Jest and React Testing Library pass, including the new appearance and orientation cases.
+- Jest and React Testing Library pass, including the new appearance and manual-rotation cases.
 - Photo privacy, manifest, derivative, and site-asset validation pass.
 - The production build succeeds.
 - The release check reports no failures.

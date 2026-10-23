@@ -33,12 +33,12 @@ As a portfolio visitor, I want every album photograph to appear in the correct o
 
 **Why this priority**: Orientation errors make the albums confusing and can make landscape photos look broken. Restoring the intended direction preserves the photographer's framing and the browsing experience.
 
-**Independent Test**: Open every album, visit each photo in the film strip and in the enlarged dialog, and confirm that rotated photos are upright, uncropped, and that previous/next and horizontal browsing move in the expected direction.
+**Independent Test**: Open every album, visit each photo in the film strip and in the enlarged dialog, and confirm that photos from EXIF-oriented originals are upright, uncropped, and that previous/next and horizontal browsing move in the expected direction.
 
 **Acceptance Scenarios**:
 
-1. **Given** an album contains a photo that needs rotation, **When** it appears in the film strip, **Then** it is shown upright and fully within its frame.
-2. **Given** an album contains a photo that needs rotation, **When** it is opened in the enlarged dialog, **Then** it is shown upright and not stretched, mirrored, or cropped.
+1. **Given** an album contains a photo whose original had EXIF orientation, **When** it appears in the film strip, **Then** it is shown upright and fully within its frame.
+2. **Given** an album contains a photo whose original had EXIF orientation, **When** it is opened in the enlarged dialog, **Then** it is shown upright and not stretched, mirrored, or cropped.
 3. **Given** a visitor browses an album, **When** they move forward or backward, **Then** the movement matches the direction indicated by the control.
 4. **Given** a visitor mixes portrait and landscape photos in one album, **When** they browse the album, **Then** each photo keeps its own proportions and no frame distorts the image.
 
@@ -66,8 +66,8 @@ As a portfolio visitor arriving for the first time, I want the site to open in d
 
 - A featured photograph is portrait on one page and landscape on another; each must keep its own proportions.
 - A featured photograph is much taller or wider than the page area reserved for it.
-- Album photos are a mix of portrait, landscape, and photos that require a quarter-turn correction.
-- An album photo's recorded orientation is missing, invalid, or already corrected in the generated image.
+- Album photos are a mix of portrait and landscape, including photos whose originals carry EXIF orientation.
+- An album photo's recorded orientation is missing, invalid, or already normalized in the generated image.
 - A visitor opens an album and moves from the first photo to the last photo, including when the first or last navigation control is unavailable.
 - A visitor uses a very narrow phone screen or a very wide desktop screen.
 - A visitor has saved an appearance preference from an earlier version of the site.
@@ -83,8 +83,8 @@ As a portfolio visitor arriving for the first time, I want the site to open in d
 - **FR-002**: The Hobbies featured photograph MUST be displayed in full with its natural proportions and without an intentional vertical crop or zoom.
 - **FR-003**: Featured photographs MUST remain undistorted and fully visible at phone, tablet, and desktop widths.
 - **FR-004**: The layout MUST reserve space that matches each featured photograph's proportions so that the page does not shift when the image loads.
-- **FR-005**: Album photos MUST respect their recorded orientation in both the film strip and the enlarged dialog.
-- **FR-006**: Album photos that require correction MUST appear upright, not sideways, upside down, stretched, or mirrored.
+- **FR-005**: Album photos MUST render from orientation-normalized derivatives so EXIF-oriented originals are not double-rotated in the film strip or the enlarged dialog.
+- **FR-006**: Album photos MUST appear upright, not sideways, upside down, stretched, or mirrored.
 - **FR-007**: Album film strips and dialogs MUST show the whole photograph without unintended cropping or zoom.
 - **FR-008**: Album browsing controls MUST move in the direction they indicate, and the visible scroll direction MUST match the order of the photos.
 - **FR-009**: Each album MUST preserve its existing photo order.
@@ -99,8 +99,8 @@ As a portfolio visitor arriving for the first time, I want the site to open in d
 ### Key Entities
 
 - **Featured Photograph**: The large portrait on the About Me page or the large photograph on the Hobbies page.
-- **Album Photograph**: A photo shown in an album's film strip and enlarged dialog, with a recorded orientation.
-- **Photo Orientation**: The intended upright direction of an album photograph, including photos that require a quarter-turn correction.
+- **Album Photograph**: A photo shown in an album's film strip and enlarged dialog, rendered from an orientation-normalized derivative.
+- **Photo Orientation**: The intended upright direction of an album photograph after the photo build normalizes EXIF orientation.
 - **Appearance Preference**: A visitor's explicit choice between dark and light appearance, remembered for future visits.
 - **Default Appearance**: The appearance shown when no explicit choice exists; dark mode is the intended default.
 - **Visitor Session**: The context in which a first-time or returning visitor loads the site.
@@ -111,7 +111,7 @@ As a portfolio visitor arriving for the first time, I want the site to open in d
 
 - **SC-001**: 100% of featured photographs on the About Me and Hobbies pages are fully visible and undistorted at 320 px, 768 px, and 1440 px viewport widths.
 - **SC-002**: Zero featured photographs show an intentional vertical crop or zoom that hides the main subject in a review by the site owner.
-- **SC-003**: 100% of photos with a recorded quarter-turn orientation appear upright in both the film strip and the enlarged dialog.
+- **SC-003**: 100% of photos whose originals carried EXIF orientation appear upright in both the film strip and the enlarged dialog.
 - **SC-004**: Zero album photographs appear sideways, upside down, stretched, or mirrored in a full album review.
 - **SC-005**: 100% of previous/next and horizontal browsing actions move in the direction shown to the visitor.
 - **SC-006**: 100% of fresh visits with no saved appearance preference open in dark mode, on every route.
@@ -122,7 +122,7 @@ As a portfolio visitor arriving for the first time, I want the site to open in d
 
 ## Assumptions
 
-- "Direction of the photos" means the intended orientation of album photos (for example, portrait versus landscape and photos needing a quarter-turn), together with the direction in which album navigation moves.
+- "Direction of the photos" means the intended upright orientation of album photos (for example, portrait versus landscape after EXIF normalization), together with the direction in which album navigation moves.
 - Featured photographs should be shown whole rather than artistically cropped; preserving the full image is preferred over filling the available area.
 - The existing portrait and hero photograph chosen for the site remain the featured photographs; this feature changes how they are framed, not which photos are selected.
 - Dark mode is the default for every visitor without an explicit preference, regardless of the operating system's appearance setting.

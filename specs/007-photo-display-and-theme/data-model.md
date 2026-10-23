@@ -42,7 +42,7 @@ A single photograph inside an album's film strip and enlarged dialog.
 |-------|------|----------|-------------|
 | `sourceId` | string | Yes | Stable identifier from the generated manifest. |
 | `alt` | string | Yes | Alternative text for the image. |
-| `rotation` | `0` or `90` | Yes | Intended orientation correction from the curation source. |
+| `rotation` | `0` or `90` | Yes | Optional manual correction only; `0` for all current photos because derivatives are EXIF-normalized. |
 | `thumbnail` | `PhotoDerivative` | Yes | Small derivative used in the film strip. |
 | `full` | `PhotoDerivative` | Yes | Larger derivative used in the dialog. |
 | `albumId` | string (derived) | Yes | Parent album identifier. |
@@ -51,10 +51,11 @@ A single photograph inside an album's film strip and enlarged dialog.
 **Relationships**:
 - Belongs to exactly one `Album`.
 - Uses one `PhotoDerivative` for the strip and one for the dialog.
-- Derives a `PhotoOrientation` from `rotation`.
+- May derive a manual `PhotoOrientation` from an explicit non-zero `rotation`.
 
 **Validation rules**:
-- `rotation` must be `0` or `90` for the current manifest; other quarter-turn values are not present.
+- `rotation` must be `0` or `90`; all current photos are `0`.
+- The generated derivative must not be rotated again when `rotation` is `0`.
 - The same orientation must be applied to the strip and the dialog.
 - `index` order must match the manifest order; it must not be sorted by orientation or filename.
 - Previous/Next must not move below `0` or above `album.photos.length - 1`.
@@ -79,20 +80,18 @@ A published, web-sized image file.
 
 ### PhotoOrientation
 
-A derived presentation value for an album photo.
+A derived presentation value for an album photo that needs an explicit manual rotation.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `rotation` | `0` or `90` | Source value from the manifest. |
-| `isQuarterTurn` | boolean | `true` when `rotation` is `90`. |
-| `frameOrientation` | `"portrait"` or `"landscape"` | `portrait` for `0`; `landscape` for `90`. |
-| `displayWidth` | integer | Visible width after rotation: `thumbnail.width` for `0`, `thumbnail.height` for `90`. |
-| `displayHeight` | integer | Visible height after rotation: `thumbnail.height` for `0`, `thumbnail.width` for `90`. |
+| `isQuarterTurn` | boolean | `true` when `rotation` is `90`; false for every current photo. |
+| `frameOrientation` | `"portrait"` or `"landscape"` | `portrait` for `0`; `landscape` for a manual `90`. |
 
 **Validation rules**:
-- The frame's aspect ratio must match `frameOrientation`.
-- A quarter-turn image must fit entirely inside the landscape frame.
-- An unrotated image must fit entirely inside the portrait frame.
+- EXIF normalization happens in the photo build, not in this presentation value.
+- A current photo with `rotation: 0` must not receive a CSS rotation.
+- A manual `rotation: 90` image must fit entirely inside the landscape frame.
 - No orientation may cause clipping, stretching, mirroring, or horizontal overflow.
 
 ### Album
@@ -172,10 +171,10 @@ Stored value unreadable or storage unavailable
 ### Album photo orientation
 
 ```text
-Manifest rotation 0
-  └─ portrait frame → image contained → strip and dialog match
+Manifest rotation 0 (all current photos)
+  └─ portrait frame → already-upright image contained → strip and dialog match
 
-Manifest rotation 90
+Manifest rotation 90 (future manual correction only)
   └─ landscape frame → image rotated and contained → strip and dialog match
 
 Browsing
