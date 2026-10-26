@@ -8,6 +8,7 @@ const {
   RASTER_EXTENSIONS,
   THUMBNAIL_LIMITS,
   VALID_ROTATIONS,
+  formatMegabytes,
 } = require('./photo-limits');
 const {
   GENERATED_PHOTOS_DIR,
@@ -381,7 +382,9 @@ async function validateGeneratedAssets(manifest, { publicDir = PUBLIC_DIR, gener
   }
 
   if (totalBytes > GENERATED_TOTAL_MAX_BYTES) {
-    errors.push(`generated photos exceed 60 MB (${totalBytes} bytes)`);
+    errors.push(
+      `generated photos exceed ${formatMegabytes(GENERATED_TOTAL_MAX_BYTES)} MB (${totalBytes} bytes)`,
+    );
   }
 
   return { errors, totalBytes, checked };

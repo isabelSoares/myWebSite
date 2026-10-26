@@ -40,6 +40,7 @@ async function main() {
     assert.strictEqual(checks.get('privacy.no-raw-photo-links').status, 'pass');
     assert.strictEqual(checks.get('photos.manifest').status, 'pass');
     assert.strictEqual(checks.get('photos.total-size').status, 'pass');
+    assert.match(checks.get('photos.total-size').detail, /headroom of 64\.00 MB/);
     assert.strictEqual(checks.get('photos.limits').status, 'pass');
 
     const rawPhotoUrl = [

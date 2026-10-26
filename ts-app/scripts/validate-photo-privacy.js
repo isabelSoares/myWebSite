@@ -25,7 +25,11 @@ const {
   validateGeneratedAssets,
   validatePhotoManifest,
 } = require('./lib/photo-manifest');
-const { FULL_LIMITS, GENERATED_TOTAL_MAX_BYTES } = require('./lib/photo-limits');
+const {
+  FULL_LIMITS,
+  GENERATED_TOTAL_MAX_BYTES,
+  describeGeneratedFootprint,
+} = require('./lib/photo-limits');
 
 const TEXT_EXTENSIONS = new Set([
   '.css', '.env', '.html', '.js', '.json', '.jsx', '.md', '.mjs', '.scss',
@@ -187,7 +191,7 @@ async function addManifestChecks(report, {
     id: 'photos.total-size',
     category: 'performance',
     status: generated.totalBytes <= GENERATED_TOTAL_MAX_BYTES ? 'pass' : 'fail',
-    detail: `${(generated.totalBytes / (1024 * 1024)).toFixed(2)} MB generated across ${generated.checked} files`,
+    detail: describeGeneratedFootprint(generated.totalBytes, generated.checked),
   });
 }
 

@@ -8,6 +8,11 @@ const {
   validatePhotoSources,
 } = require('./lib/photo-manifest');
 const {
+  GENERATED_TOTAL_MAX_BYTES,
+  describeGeneratedFootprint,
+  remainingBytes,
+} = require('./lib/photo-limits');
+const {
   cleanup,
   createPhotoFixture,
   createSource,
@@ -89,7 +94,26 @@ async function testGeneratedAssets(fixture) {
   assert.match(wrongDimensionsResult.errors.join('\n'), /dimensions do not match/);
 }
 
+function testHeadroom() {
+  const MB = 1024 * 1024;
+  assert.strictEqual(GENERATED_TOTAL_MAX_BYTES, 64 * MB);
+  assert.strictEqual(remainingBytes(59.92 * MB), GENERATED_TOTAL_MAX_BYTES - 59.92 * MB);
+  assert.match(
+    describeGeneratedFootprint(59.92 * MB, 348),
+    /59\.92 MB generated across 348 files; 4\.08 MB headroom of 64\.00 MB/,
+  );
+  assert.match(
+    describeGeneratedFootprint(GENERATED_TOTAL_MAX_BYTES, 348),
+    /0\.00 MB headroom of 64\.00 MB/,
+  );
+  assert.match(
+    describeGeneratedFootprint(GENERATED_TOTAL_MAX_BYTES + MB, 348),
+    /1\.00 MB over the 64\.00 MB limit/,
+  );
+}
+
 async function main() {
+  testHeadroom();
   await testSourceValidation();
   const fixture = await createPhotoFixture();
   try {

@@ -15,7 +15,21 @@ const FULL_LIMITS = Object.freeze({
   quality: 80,
 });
 
-const GENERATED_TOTAL_MAX_BYTES = 60 * MB;
+const GENERATED_TOTAL_MAX_BYTES = 64 * MB;
+
+const formatMegabytes = (bytes) => (bytes / MB).toFixed(2);
+
+const remainingBytes = (totalBytes, maxBytes = GENERATED_TOTAL_MAX_BYTES) => maxBytes - totalBytes;
+
+const describeGeneratedFootprint = (totalBytes, fileCount, maxBytes = GENERATED_TOTAL_MAX_BYTES) => {
+  const headroom = remainingBytes(totalBytes, maxBytes);
+  const used = formatMegabytes(totalBytes);
+  const limit = formatMegabytes(maxBytes);
+  if (headroom >= 0) {
+    return `${used} MB generated across ${fileCount} files; ${formatMegabytes(headroom)} MB headroom of ${limit} MB`;
+  }
+  return `${used} MB generated across ${fileCount} files; ${formatMegabytes(-headroom)} MB over the ${limit} MB limit`;
+};
 
 const RASTER_EXTENSIONS = new Set([
   '.avif',
@@ -36,4 +50,7 @@ module.exports = {
   RASTER_EXTENSIONS,
   THUMBNAIL_LIMITS,
   VALID_ROTATIONS,
+  describeGeneratedFootprint,
+  formatMegabytes,
+  remainingBytes,
 };
