@@ -2,7 +2,8 @@ import React from 'react';
 import './ResumeCV.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowUpRightFromSquare, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowUpRightFromSquare, faCalendarDays, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { CV_URL } from '../../data/cv-url';
 
 interface Experience {
     company: string;
@@ -90,6 +91,7 @@ export const ResumeCV = () => {
                 </div>
                 <div className="resume-contacts">
                     <a className="resume-contact" href="mailto:isabel.srsoares@gmail.com">isabel.srsoares@gmail.com <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                    <a className="resume-contact" href={CV_URL} download>Download CV <FontAwesomeIcon icon={faDownload} /></a>
                 </div>
             </header>
 

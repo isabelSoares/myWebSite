@@ -19,3 +19,15 @@ test('uses the generated portrait instead of the original public file', () => {
   expect(portrait).not.toHaveAttribute('src', expect.stringContaining('IMG_7833'));
   expect(document.body.innerHTML).not.toContain('raw.githubusercontent.com');
 });
+
+test('offers the PDF CV for download', () => {
+  render(
+    <MemoryRouter>
+      <AboutMe />
+    </MemoryRouter>,
+  );
+
+  const cvLink = screen.getByRole('link', { name: /download cv/i });
+  expect(cvLink.getAttribute('href')).toContain('/isabel-soares-cv.pdf');
+  expect(cvLink).toHaveAttribute('download');
+});
