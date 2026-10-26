@@ -62,7 +62,7 @@ du -sh ts-app/public/photos/generated
 find ts-app/public/photos/generated -type f | wc -l
 ```
 
-Expected: 14 albums, 172 album photos, 2 featured images, approximately 348 derivative files, and a total below 60 MB.
+Expected: 14 albums, 172 album photos, 2 featured images, approximately 348 derivative files, and a total below 64 MB.
 
 ## 3. Remove originals from the public tree
 

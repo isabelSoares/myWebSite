@@ -185,8 +185,8 @@ Browsing
 
 ## Invariants
 
-- The generated photo manifest, source list, derivatives, and privacy limits remain unchanged.
-- Album order and photo count remain unchanged.
+- The generated derivatives, album order, photo count, and privacy limits remain unchanged.
+- The manifest change is limited to correcting EXIF-orientation metadata from `rotation: 90` to `rotation: 0` for the 19 affected photos.
 - Every displayed image keeps meaningful alternative text.
 - Every displayed image comes from an approved generated derivative.
 - No featured or album framing introduces horizontal overflow or unintended layout shift.

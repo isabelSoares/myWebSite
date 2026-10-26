@@ -26,11 +26,11 @@ The photo-generation pipeline, published derivatives, photo privacy boundary, al
 
 **Project Type**: Static web application with local photo publishing tooling.
 
-**Performance Goals**: No increase in image payload; keep thumbnails ≤ 120 KB and full derivatives ≤ 500 KB; keep gallery images lazy-loaded; preserve intrinsic width/height to avoid layout shift; keep the generated photo footprint below 60 MB.
+**Performance Goals**: No increase in image payload; keep thumbnails ≤ 120 KB and full derivatives ≤ 500 KB; keep gallery images lazy-loaded; preserve intrinsic width/height to avoid layout shift; keep the generated photo footprint below 64 MB.
 
 **Constraints**: No server runtime, no committed secrets, no private originals in CI; TypeScript 4.9/CRA 5 compatibility; the pre-paint theme decision must work in a static `index.html`; the photo privacy and derivative limits must not regress; all photo controls must remain keyboard- and screen-reader-accessible.
 
-**Scale/Scope**: 2 featured images (portrait and hero), 14 albums, 174 album photos, 19 photos whose EXIF-oriented originals are now normalized and marked `rotation: 0`, and 348 generated derivatives; all five routes (`/`, `/resume`, `/projects`, `/hobbies`, and not-found) inherit the appearance behavior.
+**Scale/Scope**: 2 featured images (portrait and hero), 14 albums, 172 album photos, 19 photos whose EXIF-oriented originals are now normalized and marked `rotation: 0`, and 348 generated derivatives; all five routes (`/`, `/resume`, `/projects`, `/hobbies`, and not-found) inherit the appearance behavior.
 
 ## Constitution Check
 

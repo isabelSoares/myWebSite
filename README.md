@@ -11,7 +11,7 @@ published with GitHub Pages.
 ## What is in the site
 
 - **Home** — introduction, featured work, and a short overview.
-- **Résumé** — experience, skills, and education.
+- **Experience** — roles, skills, and education.
 - **Projects** — selected AI, frontend, and personal projects, including the
   AI Photographer Assistant.
 - **Hobbies** — travel photography albums, interests, and the photography
@@ -96,7 +96,7 @@ To publish or unpublish a photo, set `published` to `true` or `false` in
 `photo-sources.json`, run `npm run photos:build`, and commit the source list,
 manifest, and generated files. The scripts enforce WebP output, 540 px
 thumbnails, 1800 px full images, size limits, and a total generated footprint
-below 60 MB.
+below 64 MB.
 
 Photo usage and removal details: [PHOTO-POLICY.md](PHOTO-POLICY.md).
 
