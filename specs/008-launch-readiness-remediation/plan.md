@@ -8,7 +8,7 @@
 
 ## Summary
 
-The site is deployed at `d01dc84` and its automated release gate already passes, but the launch evidence is incomplete and several records describe an earlier photo architecture. This remediation:
+The site is deployed at `c6e4b2b` and its automated release gate already passes, but the launch evidence is incomplete and several records describe an earlier photo architecture. This remediation:
 
 1. Executes and records every formerly open launch check, including the responsive framing review, album orientation review, dark-mode behavior, capacity measurement, and direct-link observation.
 2. Corrects the 007 data-model invariant and plan counts so they match the current manifest.

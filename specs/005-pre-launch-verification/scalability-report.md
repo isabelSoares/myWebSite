@@ -10,7 +10,7 @@
 
 The site is a static GitHub Pages deployment. Photos are published as locally generated WebP derivatives: 540 px thumbnails for album strips and up to 1800 px full images loaded on demand in the dialog. The generated photo collection is 59.92 MB across 348 files, and the configured budget is now 64 MB with 4.08 MB of headroom. There is no external image host and no runtime backend.
 
-The application build is not the capacity constraint. A local production build served 192,164 requests at 100 concurrent workers with zero errors, and 114,276 requests at 1,000 concurrent workers with a 0.28% error rate, both below the 1% target. The published host is the constraint: a single-IP burst at 100 concurrent workers triggered GitHub Pages' edge rate limiter, which returned HTTP 429 after the first few hundred requests. The 1,000-visitor target is therefore **RE-SCOPED** to GitHub Pages' host-managed edge capacity; it cannot be proven with a single-source load generator.
+The application build is not the capacity constraint. A local production build served 192,164 requests at 100 concurrent workers with zero errors, and 114,276 requests at 1,000 concurrent workers with a 0.28% error rate, both below the 1% target. The published host is the constraint: a single-IP burst at 100 concurrent workers triggered GitHub Pages' edge rate limiter, which returned HTTP 429 after the first few hundred requests. The 1,000-visitor target is therefore **RE-SCOPED** to GitHub Pages' host-managed edge capacity; it cannot be proven with a single-source load generator. After `c6e4b2b` deployed on 2026-10-26, a 10-concurrency published check completed 730 requests with 0 errors and p95 159.7 ms, and headless Chrome at 320 px found no horizontal overflow on all five routes.
 
 ## Measured Results
 
@@ -60,7 +60,9 @@ After the burst, GitHub Pages returned `429 Rate limit exceeded` for every reque
 
 The `--concurrency=1000` published run was cancelled: once the edge had already rate-limited the source IP, a 15-second thousand-worker run could only produce more `429` responses and would extend the block. No 100-concurrency clean run is claimed.
 
-After the rate limit cleared, a recovery check at 10 concurrency for 5 seconds completed 954 requests with 0 errors (0.00%) and a p95 latency of 76.4 ms. This confirms published availability but does not prove the 1,000-visitor target.
+After the rate limit cleared, a pre-deploy recovery check at 10 concurrency for 5 seconds completed 954 requests with 0 errors (0.00%) and a p95 latency of 76.4 ms. This confirmed published availability but did not prove the 1,000-visitor target.
+
+After `c6e4b2b` deployed (GitHub Actions run `40311592542`), a post-deploy check at 10 concurrency for 5 seconds completed 730 requests with 0 errors (0.00%) and a p95 latency of 159.7 ms. The live CSS contains the 400 px top-bar rule, and a headless Chrome check at 320 px on all five routes reported no horizontal overflow.
 
 ### Build payload
 
@@ -93,14 +95,14 @@ The owner accepts the 404-with-SPA-body behavior for this launch. The visible ex
 
 ## Launch Decision
 
-- The branch build, the photo payload, and the 64 MB budget are ready for launch. Deploy the verified branch before announcing; the currently published site predates the approved top-bar correction.
+- The verified branch was deployed as `c6e4b2b` on 2026-10-26; the build, photo payload, and 64 MB budget passed the post-deploy checks.
 - The 1,000-simultaneous-visitor target is **RE-SCOPED** to GitHub Pages' host-managed capacity. It is not proven by a single-IP smoke test and will not be claimed as proven.
 - The direct-link 404 behavior is accepted with the crawler/SEO limitation documented above.
 - Owner follow-up: the short published availability check passed after the rate limit cleared. If a formal 1,000-visitor proof is required, use a distributed load-testing service rather than a single source IP.
 
 ## Recommended Follow-Up
 
-1. After deploying this branch, re-run `npm run load:smoke -- --concurrency=10 --duration=5 --url=https://isabelsoares.github.io/myWebSite/` to confirm published availability.
+1. Post-deploy check completed: `npm run load:smoke -- --concurrency=10 --duration=5 --url=https://isabelsoares.github.io/myWebSite/` returned 730 requests, 0 errors, and p95 159.7 ms. Re-run after future deployments.
 2. If formal capacity proof is required, use a distributed load-testing service so requests originate from many IPs.
 3. If clean direct-route status codes are required, evaluate hash routing or a host that supports SPA rewrites.
 
