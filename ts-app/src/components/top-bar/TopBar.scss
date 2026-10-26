@@ -102,3 +102,19 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .top-bar {
+        .top-bar-box {
+            .top-bar-button {
+                font-size: 0.55rem;
+                letter-spacing: 0.02em;
+                padding: 8px 4px;
+            }
+
+            .theme-toggle {
+                margin-left: 4px;
+            }
+        }
+    }
+}
