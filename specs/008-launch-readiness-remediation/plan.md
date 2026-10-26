@@ -4,11 +4,11 @@
 
 **Input**: Feature specification from `/specs/008-launch-readiness-remediation/spec.md`
 
-**Note**: This plan closes the evidence and record gaps identified before announcing the site. It changes documentation and the generated-photo budget reporting; it does not change the visitor-facing site, the photo set, or the deployment pipeline.
+**Note**: This plan closes the evidence and record gaps identified before announcing the site. It changes documentation and the generated-photo budget reporting. It does not change the photo set or the deployment pipeline; the only visitor-facing change is the owner-approved 320 px top-bar correction recorded below.
 
 ## Summary
 
-The site is deployed and its automated release gate already passes, but the launch evidence is incomplete and several records describe an earlier photo architecture. This remediation:
+The site is deployed at `d01dc84` and its automated release gate already passes, but the launch evidence is incomplete and several records describe an earlier photo architecture. This remediation:
 
 1. Executes and records every formerly open launch check, including the responsive framing review, album orientation review, dark-mode behavior, capacity measurement, and direct-link observation.
 2. Corrects the 007 data-model invariant and plan counts so they match the current manifest.
@@ -16,11 +16,11 @@ The site is deployed and its automated release gate already passes, but the laun
 4. Raises the generated-photo budget from 60 MB to 64 MB, reports the remaining headroom in the release check, and aligns the documentation.
 5. Removes the stray root task artifact and standardizes documentation terminology.
 
-No photo derivatives are regenerated and no visitor-facing behavior changes.
+No photo derivatives are regenerated. The only visitor-facing change is the owner-approved 320 px top-bar correction.
 
 ## Technical Context
 
-**Language/Version**: Markdown records plus the existing Node.js 24 verification scripts; the React 17 / TypeScript 4.9 application is not modified.
+**Language/Version**: Markdown records plus the existing Node.js 24 verification scripts; the React 17 / TypeScript 4.9 application is unchanged except for the approved `ts-app/src/components/top-bar/TopBar.scss` media query.
 
 **Primary Dependencies**: Existing `verify:release`, `validate:photos`, `validate:site-assets`, `load:smoke`, Jest, and Node assertion tests. No new runtime or development dependency. Google Chrome is used only for visual evidence.
 
@@ -32,9 +32,9 @@ No photo derivatives are regenerated and no visitor-facing behavior changes.
 
 **Project Type**: Static web application with local verification and photo-publishing tooling.
 
-**Performance Goals**: Keep the generated photo footprint below the configured 64 MB limit with at least 1 MB of headroom (expected ~4.08 MB). Measure the published site at 1,000 concurrent route requests and report the actual error rate and p95 latency.
+**Performance Goals**: Keep the generated photo footprint below the configured 64 MB limit with at least 1 MB of headroom (expected ~4.08 MB). Attempt the published site at 1,000 concurrent route requests and record the highest clean concurrency, error rate, and p95 latency. If the host rate-limits the source IP, record the target as `RE-SCOPED` or `UNPROVEN` rather than claiming it as proven.
 
-**Constraints**: No photo regeneration; no new dependencies; no visitor-facing changes; no secret values in records; historical 005 research and plan documents are not rewritten as if they were always correct; the release check remains the automated launch gate.
+**Constraints**: No photo regeneration; no new dependencies; no visitor-facing changes beyond the approved 320 px top-bar correction; no secret values in records; historical 005 research and plan documents are not rewritten as if they were always correct; the release check remains the automated launch gate.
 
 **Post-verification exception (approved 2026-10-26)**: The 320 px visual check found a 27 px top-bar horizontal overflow. The owner explicitly approved the `ts-app/src/components/top-bar/TopBar.scss` `@media (max-width: 400px)` correction. It is the only visitor-facing change and is recorded in `specs/008-launch-readiness-remediation/verification-record.md`.
 
@@ -50,12 +50,12 @@ The project constitution at `.specify/memory/constitution.md` is still the unfil
 
 - **Static hosting**: No runtime backend, server, or secret is introduced.
 - **Privacy**: Only generated derivatives are documented and referenced; no originals are published.
-- **Accessibility**: No visitor-facing markup or interaction changes are made.
-- **No layout regression**: No application styles or components change.
+- **Accessibility**: The approved 320 px top-bar correction preserves all labels, controls, and keyboard behavior.
+- **No layout regression**: The approved top-bar correction removes a 27 px horizontal overflow at 320 px; no other application styles or components change.
 - **Testability**: Every record correction is verifiable from the manifest, filesystem, command output, or live response.
 - **Scope discipline**: No photo regeneration, album changes, new features, or hosting migration.
 
-**Post-design re-check: PASS.** Phase 1 adds only Markdown records, one budget constant change with headroom reporting, its tests, and targeted documentation corrections. No runtime service, secret, photo asset, or visitor-facing behavior is added.
+**Post-design re-check: PASS.** Phase 1 adds Markdown records, one budget constant change with headroom reporting, its tests, targeted documentation corrections, and the approved 320 px top-bar correction. No runtime service, secret, photo asset, or other visitor-facing behavior is added.
 
 ## Project Structure
 
@@ -99,7 +99,7 @@ specs/
     └── tasks.md                         # inline status notes + reconciliation
 ```
 
-**Structure Decision**: Keep the single static application unchanged. The only executable change is in the existing photo-limit and photo-privacy scripts. Every other deliverable is a committed record in the existing specification structure.
+**Structure Decision**: Keep the single static application structure unchanged. The executable changes are in the existing photo-limit and photo-privacy scripts plus the approved `TopBar.scss` responsive correction. Every other deliverable is a committed record in the existing specification structure.
 
 ## Design Decisions
 
@@ -120,8 +120,8 @@ specs/
 
 ### Capacity record
 
-- Run the existing load smoke against the published site at 100 and 1,000 concurrency.
-- If the 1,000-client run fails because of client-side socket limits, record the highest clean run and mark the target `UNPROVEN` with the tested ceiling.
+- Attempt the existing load smoke against the published site at 100 and 1,000 concurrency.
+- If the 1,000-client run is blocked by host rate limiting or client-side socket limits, record the highest clean run and mark the target `RE-SCOPED` or `UNPROVEN` with the tested ceiling and the reason.
 - Rewrite `specs/005-pre-launch-verification/scalability-report.md` around the current 59.92 MB / 348-derivative architecture, 540 px thumbnails, lazy loading, and on-demand dialog images.
 - Retain the direct-link 404 observation and add the launch decision.
 - Add a superseded note instead of rewriting the historical 005 research and plan rationale.

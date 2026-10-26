@@ -93,14 +93,14 @@ The owner accepts the 404-with-SPA-body behavior for this launch. The visible ex
 
 ## Launch Decision
 
-- The application build, the photo payload, and the 64 MB budget are ready for launch.
+- The branch build, the photo payload, and the 64 MB budget are ready for launch. Deploy the verified branch before announcing; the currently published site predates the approved top-bar correction.
 - The 1,000-simultaneous-visitor target is **RE-SCOPED** to GitHub Pages' host-managed capacity. It is not proven by a single-IP smoke test and will not be claimed as proven.
 - The direct-link 404 behavior is accepted with the crawler/SEO limitation documented above.
 - Owner follow-up: the short published availability check passed after the rate limit cleared. If a formal 1,000-visitor proof is required, use a distributed load-testing service rather than a single source IP.
 
 ## Recommended Follow-Up
 
-1. Retry `npm run load:smoke -- --concurrency=10 --duration=5 --url=https://isabelsoares.github.io/myWebSite/` after the edge rate limit resets to confirm published availability.
+1. After deploying this branch, re-run `npm run load:smoke -- --concurrency=10 --duration=5 --url=https://isabelsoares.github.io/myWebSite/` to confirm published availability.
 2. If formal capacity proof is required, use a distributed load-testing service so requests originate from many IPs.
 3. If clean direct-route status codes are required, evaluate hash routing or a host that supports SPA rewrites.
 

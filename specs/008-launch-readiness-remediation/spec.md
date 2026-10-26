@@ -86,7 +86,7 @@ As the site owner, I want the site's traffic ceiling, photo-size headroom, and d
 - **FR-011**: Any obsolete task artifact stored outside the feature specifications location MUST be relocated to the appropriate feature directory or removed.
 - **FR-012**: Terminology for the experience section, the AI Photographer Assistant, and the hobbies section MUST be consistent across the README and feature records.
 - **FR-013**: All existing automated gates — release verification, photo privacy and limits, site assets, tests, type checking, linting, and production build — MUST continue to pass after the remediation.
-- **FR-014**: The remediation MUST NOT change the visitor-facing behavior of the site except for a documented, explicitly approved change to the photo budget or direct-link handling; no photo derivatives may be regenerated unless required by such a change.
+- **FR-014**: The remediation MUST NOT change the visitor-facing behavior of the site except for (a) a documented, explicitly approved change to the photo budget or direct-link handling and (b) the owner-approved 320 px top-bar overflow correction recorded in `specs/008-launch-readiness-remediation/verification-record.md`; no photo derivatives may be regenerated unless required by such a change.
 
 ### Source Findings Addressed
 
@@ -138,6 +138,7 @@ The remediation covers the findings from the prior specification analysis:
 - Restoring photo headroom may be achieved by reducing the generated footprint or by an explicitly approved limit change; either outcome is acceptable if the documentation and release check agree.
 - Ratifying or replacing the project constitution is a separate governance action and is outside this remediation.
 - No new photos, albums, or visitor-facing features are added by this remediation.
+- The owner approved the 320 px top-bar overflow correction on 2026-10-26; it is the only intentional visitor-facing change.
 
 ## Dependencies
 

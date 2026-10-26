@@ -3,9 +3,11 @@
 **Feature**: `008-launch-readiness-remediation`
 **Date**: 2026-10-26
 **Branch**: `fix/launch-readiness-remediation`
+**Verified code commits**: `15b3d2f` (320 px top-bar fix) and `887b809` (photo budget)
+**Record base commit**: `f672b4c`; the documentation edits below are uncommitted.
 **Environment**: local production build, local static preview, headless Google Chrome, and published site `https://isabelsoares.github.io/myWebSite/`
 **Assistant endpoint**: `ai-photo-assistant.isabel-srsoares.workers.dev` (host only; no credentials)
-**Deployed commit observed**: `d01dc84` (merge of PR #18)
+**Deployed commit observed**: `d01dc84` (merge of PR #18); does not include the approved 320 px correction
 
 Status values: `PASS`, `FAIL`, `UNVERIFIED`, `CANCELLED`.
 
@@ -29,6 +31,7 @@ Status values: `PASS`, `FAIL`, `UNVERIFIED`, `CANCELLED`.
 | Baseline release check | `REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | `PASS` | 19 passed, 0 failed, 1 skipped (baseline run) |
 | Baseline Jest suite | `npm test -- --watchAll=false` | `PASS` | 6 suites, 27 tests passed |
 | Final release check | `REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | `PASS` | `Release check: PASS (19 passed, 0 warnings, 1 skipped)`; every check listed below passed |
+| Assistant endpoint reachability | `curl -sS -o /dev/null -w "%{http_code}" --max-time 20 https://ai-photo-assistant.isabel-srsoares.workers.dev/` | `PASS` | HTTP 405 at root (host reachable; GET rejected) in 0.34 s; no credentials recorded. |
 | Type check | `npx tsc --noEmit` | `PASS` | No diagnostics; exit status 0 |
 | Lint | `npx eslint src --ext .ts,.tsx` | `PASS` | No diagnostics; exit status 0 |
 | Jest | `npm test -- --watchAll=false` | `PASS` | `Test Suites: 6 passed, 6 total`; `Tests: 27 passed, 27 total` |
@@ -36,7 +39,7 @@ Status values: `PASS`, `FAIL`, `UNVERIFIED`, `CANCELLED`.
 | Site assets | `npm run validate:site-assets` | `PASS` | `Release check: PASS (3 passed, 0 warnings, 0 skipped)` |
 | Photo scripts | `npm run test:photos` | `PASS` | Photo source/limit, photo build, and privacy tests passed |
 | Photo validation | `npm run validate:photos` | `PASS` | `Release check: PASS (5 passed, 0 warnings, 0 skipped)`; `photos.total-size - 59.92 MB generated across 348 files; 4.08 MB headroom of 64.00 MB` |
-| Change review | `git status --short`, `git diff --stat`, and `verify:release` secret scan | `PASS` | 15 modified files plus the new record: README, the 005/006/007 records, 007/008 task lists, the 008 plan, root `tasks.md` deletion, five photo scripts/tests, and `TopBar.scss`. No `ts-app/public/photos/generated/` or manifest changes; no secrets detected; the only visitor-facing change is the approved 320 px top-bar correction. |
+| Change review | `git diff --stat d01dc84..f672b4c` and `verify:release` secret scan | `PASS` | 15 modified files plus the new record across the four branch commits: README, the 005/006/007 records, 007/008 task lists, the 008 plan, root `tasks.md` deletion, five photo scripts/tests, and `TopBar.scss`. No `ts-app/public/photos/generated/` or manifest changes; no secrets detected; the only visitor-facing change is the approved 320 px top-bar correction. Review performed before the four commits. |
 
 ## Reconciliation of formerly open 007 tasks
 
@@ -60,6 +63,8 @@ Status values: `PASS`, `FAIL`, `UNVERIFIED`, `CANCELLED`.
 | Scenario 5: album orientation, numbering, direction, bounds, and strip order | `PASS` | 19/19 EXIF-origin photos found; `stripTransform: none`, `dialogTransform: none`, `objectFit: contain`, `quarterTurnFrame: false`, `insideContent: true`; maximum rendered/natural ratio delta 0.000012; no double rotation or control overlap. Portugal strip showed 59 frames numbered 01–59 in manifest order; Previous disabled at frame 01 and Next disabled at frame 59; opening frames 01, 02, 05, and 59 matched the manifest; the strip scrolls left-to-right with the right-pointing hint. Captures: `/tmp/shots008/album-dialog-portugal-08.png`; JSON: `/tmp/preview008/album-results.json`. |
 | Scenario 6: cross-cutting regression checks | `PASS` | All five routes loaded directly and refreshed without a blank page; Tab traversal reached the homepage logo, About, Experience, Projects, Hobbies, theme toggle, album frames, and dialog close/Previous/Next; nav and frame focus outlines were 2 px solid, and dialog controls showed MUI `Mui-focusVisible`/ripple. Every rendered `<img src>` on the five routes used `/photos/generated/`; no original path appeared. `privacy.no-originals`, `privacy.no-raw-photo-links`, `photos.manifest`, and `photos.limits` passed. No horizontal overflow at 320, 768, or 1440 px on `/` and `/hobbies`, and no overflow on any of the five routes at 320 px. Keyboard output: `/tmp/preview008/keyboard-results.txt`. |
 | 320 px navigation overflow correction | `PASS` | Before correction, `.top-bar-box` measured 347 px against a 320 px viewport. `ts-app/src/components/top-bar/TopBar.scss` now applies a `@media (max-width: 400px)` rule; after rebuild, `scrollWidth === clientWidth` at 320, 768, and 1440 px on `/`, `/resume`, `/projects`, `/hobbies`, and the unknown path. This is the only visitor-facing source change on this branch, and the owner explicitly approved keeping it on 2026-10-26. |
+
+Visual artifacts were captured in a temporary local directory during verification; the exact routes and viewports above are the durable record.
 
 ## Capacity
 
@@ -107,24 +112,35 @@ The direct-link decision is recorded in `specs/005-pre-launch-verification/scala
 | `specs/006-photo-privacy-and-profile/quickstart.md` | Expected footprint | Below 60 MB | Below 64 MB | `photo-limits.js` |
 | `tasks.md` (repository root) | Stray task artifact | Present, obsolete README setup task list | Deleted; `README.md` still contains the local setup instructions | Repository root |
 | `specs/007-photo-display-and-theme/tasks.md` | Six formerly open tasks | T008, T012, T013, T019, T023, T024 unchecked | All checked with evidence in this record | This record |
+| `specs/008-launch-readiness-remediation/spec.md` | `FR-014` | Visitor-facing changes limited to photo budget/direct-link handling | Added the owner-approved 320 px top-bar correction exception | Owner approval 2026-10-26 |
+| `specs/008-launch-readiness-remediation/plan.md` | Note, Technical Context, Constraints, advisory gates, Structure Decision, Performance Goals | Implied no application/visitor-facing changes and required a published 1,000-concurrency measurement | Records the approved top-bar correction and allows `RE-SCOPED`/`UNPROVEN` when the host rate-limits | This record |
+| `specs/005-pre-launch-verification/scalability-report.md` | Recommended Follow-Up #1 | Told the owner to retry after the rate limit reset | Re-run after deploying the verified branch | This record |
 
 ## Open items
 
 | Item | Status | Reason | Owner action |
 |------|--------|--------|--------------|
 | Published 1,000-concurrency proof | `CANCELLED` | GitHub Pages returned 429 at 100 concurrent single-IP requests; a 1,000-worker run would extend the edge block and cannot model distributed visitors. The local build handled 1,000 workers with a 0.28% error rate. A 10-concurrency published check after the limit cleared was clean. | If formal proof is required, use a distributed load-testing service. A short published availability check already passed. |
-| Direct-link HTTP status for `/resume`, `/projects`, `/hobbies` | Accepted limitation | The host returns 404 with the SPA body; browsers render correctly, but crawlers and status-code tools may report missing pages. | Accepted for launch. Revisit hash routing or an SPA-rewrite host if SEO requires 200 responses. |
-| Published 100-concurrency error rate | Accepted limitation | The 66.69% error rate came from GitHub Pages 429 responses to a single-source burst, not from application errors. Normal distributed visitors do not share one source IP. | No code change. Do not treat single-IP 429s as an application failure. |
 
 ## Launch decision
 
-**Ready to announce with accepted limitations.**
+The branch is verified at the commits above. The live site is `d01dc84` and does not include the approved 320 px top-bar correction. Do not announce until this branch is merged/deployed and the following checks are re-run and recorded:
+
+```sh
+cd ts-app
+npm run load:smoke -- --concurrency=10 --duration=5 --url=https://isabelsoares.github.io/myWebSite/
+for p in "" resume projects hobbies; do
+  curl -sS -o /dev/null -w "/$p -> %{http_code}\n" "https://isabelsoares.github.io/myWebSite/$p"
+done
+```
 
 Every functional, visual, privacy, accessibility, and photo-budget check is `PASS`. The release gate passes 19 checks with 0 failures and 1 online-link check skipped. The 64 MB limit leaves 4.08 MB of headroom.
 
-The two accepted limitations are:
+### Accepted limitations
 
-1. `/resume`, `/projects`, and `/hobbies` return HTTP 404 with the SPA body. Visitors see the correct content; crawlers may not.
-2. The 1,000-simultaneous-visitor target is re-scoped to GitHub Pages' host-managed capacity. The application build handled 1,000 local workers, but a single-IP published burst triggers GitHub Pages 429s. No published 1,000-visitor proof is claimed.
+| Limitation | Rationale | Visitor impact |
+|------------|-----------|----------------|
+| `/resume`, `/projects`, and `/hobbies` return 404 with the SPA body | GitHub Pages does not rewrite SPA routes; the body renders correctly | Visitors see the correct content; crawlers may report missing pages |
+| Single-source 100-concurrency bursts receive GitHub Pages 429s | The edge rate limiter protects the host; distributed visitors do not share one source IP | Normal visitors are unaffected; single-IP load tests are not a capacity model |
 
-No launch-critical item is `FAIL` or an unaccepted `UNVERIFIED`.
+**Decision**: Ready to announce — after the verified branch is deployed and the published re-check is recorded — with the accepted limitations above.
