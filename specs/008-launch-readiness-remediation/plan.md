@@ -36,6 +36,8 @@ No photo derivatives are regenerated and no visitor-facing behavior changes.
 
 **Constraints**: No photo regeneration; no new dependencies; no visitor-facing changes; no secret values in records; historical 005 research and plan documents are not rewritten as if they were always correct; the release check remains the automated launch gate.
 
+**Post-verification exception (approved 2026-10-26)**: The 320 px visual check found a 27 px top-bar horizontal overflow. The owner explicitly approved the `ts-app/src/components/top-bar/TopBar.scss` `@media (max-width: 400px)` correction. It is the only visitor-facing change and is recorded in `specs/008-launch-readiness-remediation/verification-record.md`.
+
 **Scale/Scope**: 14 albums, 172 album photos, 2 featured photos, 348 generated derivatives, 5 route experiences, 6 formerly open tasks, 1 verification record, 1 budget constant plus its reporting, and targeted documentation corrections.
 
 ## Constitution Check

@@ -65,7 +65,7 @@ There are no blocking foundational tasks. The three user stories touch different
 - [x] T005 [P] [US1] Update `ts-app/src/components/hobbies/Hobbies.scss` to remove `aspect-ratio: 1.25` and `object-fit: cover` from `.hobby-photography`; use a block image at `width: 100%`, `height: auto`, and `max-width: 100%`, keeping the existing filter and responsive layout.
 - [x] T006 [US1] Update `ts-app/src/components/about-me/AboutMe.tsx` to keep the manifest `portrait.full.width`/`height` intrinsic attributes and `alt`, and add `loading="lazy"` and `decoding="async"` if not already present; do not add a fixed aspect ratio or crop override.
 - [x] T007 [US1] Update `ts-app/src/components/hobbies/Hobbies.tsx` to keep the manifest `hero.full.width`/`height` intrinsic attributes and `alt`, and keep `loading="lazy"` and `decoding="async"`; do not add a fixed aspect ratio or crop override.
-- [ ] T008 [US1] Validate `ts-app/src/components/about-me/AboutMe.tsx`, `ts-app/src/components/hobbies/Hobbies.tsx`, and their SCSS files at 320 px, 768 px, and 1440 px widths per `specs/007-photo-display-and-theme/quickstart.md`: full photo visible, natural ratio, no horizontal overflow, and no load-time jump.
+- [x] T008 [US1] Validate `ts-app/src/components/about-me/AboutMe.tsx`, `ts-app/src/components/hobbies/Hobbies.tsx`, and their SCSS files at 320 px, 768 px, and 1440 px widths per `specs/007-photo-display-and-theme/quickstart.md`: full photo visible, natural ratio, no horizontal overflow, and no load-time jump.
 
 **Checkpoint**: User Story 1 is independently complete and is the MVP.
 
@@ -85,8 +85,8 @@ There are no blocking foundational tasks. The three user stories touch different
 
 - [x] T010 [US2] Update `ts-app/src/components/hobbies/PhotoAlbum.tsx` to derive a single manual-orientation value from `rotation`, apply an orientation class only for an explicit non-zero `rotation`, and preserve manifest order, opening index, Previous (`index - 1`), Next (`index + 1`), and bounded navigation.
 - [x] T011 [P] [US2] Update `ts-app/src/components/hobbies/PhotoAlbum.scss` so `rotation: 0` keeps the portrait `3 / 4` frame with no CSS transform; keep the manual `rotation-90` landscape rule available for future non-EXIF images, prevent clipping in the strip and dialog, keep `max-width`/`max-height` responsiveness, and keep rotated content clear of the close and Previous/Next controls.
-- [ ] T012 [US2] Set the 19 stale `rotation: 90` values to `0` in `ts-app/photo-sources.json` and `ts-app/src/data/photo-manifest.json`; do not regenerate derivatives. Then review those 19 photos in both the strip and dialog using `specs/007-photo-display-and-theme/quickstart.md`; confirm each is upright, uncropped, unstretched, and not hidden behind dialog controls.
-- [ ] T013 [US2] Validate album direction in `ts-app/src/components/hobbies/PhotoAlbum.tsx`: frame numbers match manifest order, Previous moves backward, Next moves forward, first/last controls are disabled, and the strip scrolls left-to-right with the right-pointing hint.
+- [x] T012 [US2] Set the 19 stale `rotation: 90` values to `0` in `ts-app/photo-sources.json` and `ts-app/src/data/photo-manifest.json`; do not regenerate derivatives. Then review those 19 photos in both the strip and dialog using `specs/007-photo-display-and-theme/quickstart.md`; confirm each is upright, uncropped, unstretched, and not hidden behind dialog controls. Evidence: metadata correction and 19/19 visual review both passed; see `specs/008-launch-readiness-remediation/verification-record.md`.
+- [x] T013 [US2] Validate album direction in `ts-app/src/components/hobbies/PhotoAlbum.tsx`: frame numbers match manifest order, Previous moves backward, Next moves forward, first/last controls are disabled, and the strip scrolls left-to-right with the right-pointing hint.
 
 **Checkpoint**: User Story 2 is independently complete; it does not depend on featured-photo changes.
 
@@ -108,7 +108,7 @@ There are no blocking foundational tasks. The three user stories touch different
 - [x] T016 [P] [US3] Update `ts-app/public/index.html` with a small inline head bootstrap that reads the saved preference before first paint; resolve `"false"` to light and everything else to dark; apply the `dark-mode` class to the document root; update the `theme-color` meta value to `#17262b` for dark or `#f4f0e8` for light; wrap storage access in `try/catch`.
 - [x] T017 [US3] Update `ts-app/src/App.tsx` to initialize appearance state from the same resolver as the bootstrap, drive both the CSS root class and the MUI palette from that single boolean, persist only explicit choices through the helper, and keep the existing toggle and route behavior; do not consult `prefers-color-scheme`.
 - [x] T018 [P] [US3] Review `ts-app/src/index.css` and make the `.dark-mode` variable block apply when the class is on the document root (`:root.dark-mode`); keep the light `:root` values as the explicit-light and fallback palette, and keep body colors driven by the variables.
-- [ ] T019 [US3] Validate `ts-app/src/App.tsx`, `ts-app/public/index.html`, `ts-app/src/index.css`, and `ts-app/src/components/top-bar/TopBar.tsx` with `specs/007-photo-display-and-theme/quickstart.md`: fresh visits are dark on every route, explicit light/dark choices persist, no wrong-theme flash appears, and the top bar, photo frames, dialogs, and not-found page change together.
+- [x] T019 [US3] Validate `ts-app/src/App.tsx`, `ts-app/public/index.html`, `ts-app/src/index.css`, and `ts-app/src/components/top-bar/TopBar.tsx` with `specs/007-photo-display-and-theme/quickstart.md`: fresh visits are dark on every route, explicit light/dark choices persist, no wrong-theme flash appears, and the top bar, photo frames, dialogs, and not-found page change together.
 
 **Checkpoint**: User Story 3 is independently complete; it does not depend on photo framing or orientation changes.
 
@@ -121,8 +121,8 @@ There are no blocking foundational tasks. The three user stories touch different
 - [x] T020 [P] Run `npx tsc --noEmit`, `npx eslint src --ext .ts,.tsx`, and `npm test -- --watchAll=false` from `ts-app/`; fix any type, lint, or test failure introduced by the feature.
 - [x] T021 [P] Run `npm run build`, `npm run validate:photos`, and `npm run validate:site-assets` from `ts-app/`; confirm the production build succeeds and the photo privacy, manifest, derivative, and site-asset checks still pass.
 - [x] T022 [P] Confirm the feature changed only presentation files plus the corrected rotation metadata by comparing `git diff -- ts-app/photo-sources.json ts-app/src/data/photo-manifest.json ts-app/public/photos/generated`; the source list and manifest may show only `rotation: 90` → `0`, and generated derivatives must be unchanged.
-- [ ] T023 [P] Execute all six scenarios in `specs/007-photo-display-and-theme/quickstart.md` at 320 px, 768 px, and 1440 px widths, including the full 19-photo EXIF-orientation review and the fresh-storage dark-mode check.
-- [ ] T024 Run `REACT_APP_AI_ASSISTANT_URL="https://<your-cloudflare-endpoint>/" npm run verify:release` from `ts-app/`; confirm the complete release check passes and record the result.
+- [x] T023 [P] Execute all six scenarios in `specs/007-photo-display-and-theme/quickstart.md` at 320 px, 768 px, and 1440 px widths, including the full 19-photo EXIF-orientation review and the fresh-storage dark-mode check.
+- [x] T024 Run `REACT_APP_AI_ASSISTANT_URL="https://<your-cloudflare-endpoint>/" npm run verify:release` from `ts-app/`; confirm the complete release check passes and record the result.
 
 ---
 
