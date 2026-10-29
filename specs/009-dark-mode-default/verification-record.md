@@ -48,3 +48,25 @@ This confirms the default, invalid-value fallback, and explicit-choice behavior 
 - A saved light preference remains respected; dark is the default only when no valid explicit choice exists.
 - No content, routes, photo assets, privacy behavior, or storage keys changed.
 - The production diff is limited to `manifest.json`, `index.css`, the site-asset validator and its test, and the appearance/App tests.
+
+## Post-analysis accessibility remediation (2026-10-29)
+
+The `/speckit.analyze` pass found that FR-012's contrast and keyboard-focus requirements had no repeatable verification. This remediation adds that coverage without changing the storage contract, routes, or content.
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Theme accessibility script tests | `cd ts-app && node scripts/validate-theme-accessibility.test.js` | PASS — 10 cases |
+| Theme accessibility | `cd ts-app && npm run validate:theme-accessibility` | PASS — `theme.contrast` (30 pairs) and `theme.keyboard` (16 targets) |
+| Full tests | `cd ts-app && npm test -- --watchAll=false` | PASS — 7 suites, 37 tests |
+| Production build | `cd ts-app && npm run build` | PASS — compiled successfully |
+| Release verification | `cd ts-app && REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | PASS — 21 passed, 0 failed, 1 skipped |
+
+Accessibility changes:
+
+- `ts-app/scripts/validate-theme-accessibility.js` computes WCAG contrast for 15 color pairs in both themes: normal text at 4.5:1 and focus/disabled UI at 3:1.
+- The same script requires a global `:focus-visible` fallback and visible accent outlines on the top bar, photo frames, primary/text actions, project links, and assistant controls, and rejects `outline: none` or `outline: 0`.
+- `ts-app/scripts/validate-theme-accessibility.test.js` covers passing and failing contrast, missing variables, missing global focus styles, missing control selectors, and outline suppression.
+- `ts-app/src/index.css` darkens the light-theme `--site-subtle` value from `#7a8989` to `#5f7071` so small secondary text reaches 4.57:1 on the light background, and adds the global keyboard focus fallback.
+- `ts-app/src/components/top-bar/TopBar.scss` adds explicit keyboard focus outlines for the site mark and appearance toggle.
+- `ts-app/src/App.test.tsx` adds tab-order and Enter-key coverage for the top bar and appearance toggle.
+- `npm run verify:release` now runs the accessibility script tests and includes `theme.contrast` and `theme.keyboard` checks.

@@ -21,6 +21,7 @@ const {
   validateBuildOutput,
 } = require('./validate-site-assets');
 const { createPhotoPrivacyReport } = require('./validate-photo-privacy');
+const { createThemeAccessibilityReport } = require('./validate-theme-accessibility');
 const { createTsConfigReport } = require('./validate-tsconfig');
 
 const EXTERNAL_URLS = [
@@ -120,10 +121,18 @@ async function photoPrivacyChecks(report) {
   }
 }
 
+function themeAccessibilityChecks(report) {
+  const accessibilityReport = createThemeAccessibilityReport();
+  for (const check of accessibilityReport.checks) {
+    addCheck(report, check);
+  }
+}
+
 function scriptTestsCheck(report) {
   const scripts = [
     'scripts/validate-assistant-url.test.js',
     'scripts/validate-site-assets.test.js',
+    'scripts/validate-theme-accessibility.test.js',
     'scripts/validate-photo-limits.test.js',
     'scripts/build-photos.test.js',
     'scripts/validate-photo-privacy.test.js',
@@ -342,6 +351,7 @@ async function main() {
   scriptTestsCheck(report);
   assistantUrlCheck(report);
   copySiteAssetChecks(report);
+  themeAccessibilityChecks(report);
 
   commandCheck(report, {
     id: 'build',

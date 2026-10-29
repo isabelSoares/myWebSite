@@ -4,7 +4,7 @@
   --site-surface: #fffdf8;
   --site-text: #17262b;
   --site-muted: #53676a;
-  --site-subtle: #7a8989;
+  --site-subtle: #5f7071;
   --site-border: #cdd2c9;
   --site-accent: #243b53;
   --site-teal: #155e63;
@@ -52,6 +52,11 @@ button {
 
 a {
   color: inherit;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 3px;
 }
 
 code {

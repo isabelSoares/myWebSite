@@ -23,11 +23,14 @@ Run from `ts-app/`:
 ```sh
 npm test -- --watchAll=false
 npm run validate:site-assets
+npm run validate:theme-accessibility
 npm run build
 npm run verify:release
 ```
 
-**Expected**: all commands exit successfully. The site-asset check reports a passing manifest theme/color check, and the release verification reports zero failed checks.
+**Expected**: all commands exit successfully. The site-asset check reports a passing manifest theme/color check, the theme-accessibility check reports passing contrast and keyboard-focus checks, and the release verification reports zero failed checks.
+
+The keyboard check also runs in Jest: tabbing through the top bar must reach the mark, every navigation button, and the appearance toggle in order, and Enter on the toggle must change the appearance.
 
 ## Run the site locally
 

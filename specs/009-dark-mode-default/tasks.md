@@ -118,7 +118,14 @@
 - [X] T025 Run `npm run build` from `ts-app/` and confirm the production build succeeds without warnings that affect the theme.
 - [X] T026 Run `npm run verify:release` from `ts-app/` and confirm zero failed checks, including the manifest color guard.
 - [X] T027 Execute `specs/009-dark-mode-default/quickstart.md` scenario 7 on the deployed site and record whether the behavior is correct, stale, or overridden by a saved light preference.
-- [X] T028 Review `git diff --stat` and `git diff` and confirm no changes outside `ts-app/public/manifest.json`, `ts-app/src/index.css`, `ts-app/scripts/validate-site-assets.js`, `ts-app/scripts/validate-site-assets.test.js`, `ts-app/src/App.test.tsx`, and `ts-app/src/theme/appearance.test.ts`; revert unrelated changes.
+- [X] T028 Review the initial implementation diff and confirm no unrelated changes outside `ts-app/public/manifest.json`, `ts-app/src/index.css`, `ts-app/scripts/validate-site-assets.js`, `ts-app/scripts/validate-site-assets.test.js`, `ts-app/src/App.test.tsx`, and `ts-app/src/theme/appearance.test.ts`.
+
+## Phase 7: Post-Analysis Accessibility Remediation
+
+**Purpose**: Close the FR-012 verification gap found by `/speckit.analyze`.
+
+- [X] T029 [P] Add `ts-app/scripts/validate-theme-accessibility.js` and its tests to check WCAG contrast for light and dark theme pairs and require visible `:focus-visible` outlines on global and key component controls.
+- [X] T030 Wire the accessibility check into `npm run verify:release`, add keyboard-focus Jest coverage, and record the full test/build/release result in `verification-record.md`.
 
 ---
 
