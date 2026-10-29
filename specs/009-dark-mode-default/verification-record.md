@@ -41,7 +41,7 @@ This confirms the default, invalid-value fallback, and explicit-choice behavior 
 
 ## Deployed-site check
 
-`https://isabelsoares.github.io/myWebSite/` returned HTTP 200. Its inline bootstrap already resolves a missing preference to dark and sets `theme-color` to `#17262b`. Its deployed `manifest.json` still returns `#f4f0e8` for `theme_color` and `background_color` because this change has not been deployed yet. After deployment, the manifest should return `#17262b`.
+This initial observation is superseded by the launch verification refresh below. At that time, the deployed manifest had not yet received the dark values.
 
 ## Notes
 
@@ -97,3 +97,12 @@ The follow-up accessibility audit was implemented across the application:
 | Release verification | `cd ts-app && REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | PASS — 21 passed, 0 failed, 1 skipped |
 
 Meaningful descriptions for the photographic content itself remain source content in `ts-app/photo-sources.json`; the implementation prevents duplicate thumbnail announcements and preserves the existing source descriptions for full-size images.
+
+## Launch verification refresh (2026-10-29)
+
+- The feature status is now `Implemented — launch verification pending` rather than `Draft`.
+- The current public page returns the dark pre-paint bootstrap and `theme-color` `#17262b`.
+- The current public `manifest.json` returns `theme_color` and `background_color` as `#17262b`.
+- The earlier accessibility result of 31 contrast pairs, 7 suites, and 37 tests is historical; the current result is 37 contrast pairs, 8 suites, and 43 tests.
+- Online release verification passed with 21 checks and 1 warning: LinkedIn returned HTTP 999 and the assistant endpoint returned HTTP 405 to the link probe; both endpoints are reachable/configured and the assistant worker correctly rejects the probe method.
+- The current branch contains accessibility commits after the deployed bundle was produced. The current accessibility bundle must be deployed and then checked in a fresh private window before launch approval.
