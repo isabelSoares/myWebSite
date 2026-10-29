@@ -13,8 +13,9 @@ beforeEach(() => {
     document.querySelector('meta[name="theme-color"]')?.remove();
 });
 
-test('resolves missing, dark, and light stored values', () => {
+test('resolves missing, empty, dark, and light stored values', () => {
     expect(resolveAppearance(null)).toBe('dark');
+    expect(resolveAppearance('')).toBe('dark');
     expect(resolveAppearance('true')).toBe('dark');
     expect(resolveAppearance('false')).toBe('light');
     expect(resolveAppearance('unexpected')).toBe('dark');
@@ -30,18 +31,25 @@ test('reads the saved preference and defaults to dark', () => {
     expect(readAppearance()).toBe('dark');
 });
 
-test('treats unreadable storage as dark', () => {
+test('does not persist a choice when resolving the default', () => {
+    expect(readAppearance()).toBe('dark');
+    expect(window.localStorage.getItem(APPEARANCE_STORAGE_KEY)).toBeNull();
+});
+
+test('treats unreadable storage as dark and still attempts explicit writes', () => {
+    const setItem = jest.fn(() => {
+        throw new Error('storage unavailable');
+    });
     const brokenStorage = {
         getItem: () => {
             throw new Error('storage unavailable');
         },
-        setItem: () => {
-            throw new Error('storage unavailable');
-        },
+        setItem,
     };
 
     expect(readAppearance(brokenStorage)).toBe('dark');
     expect(() => writeAppearance('light', brokenStorage)).not.toThrow();
+    expect(setItem).toHaveBeenCalledWith(APPEARANCE_STORAGE_KEY, 'false');
 });
 
 test('writes the explicit appearance values', () => {

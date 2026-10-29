@@ -1,10 +1,12 @@
 :root {
+  color-scheme: light;
   --site-background: #f4f0e8;
   --site-surface: #fffdf8;
   --site-text: #17262b;
   --site-muted: #53676a;
-  --site-subtle: #7a8989;
+  --site-subtle: #5f7071;
   --site-border: #cdd2c9;
+  --site-action-border: #53676a;
   --site-accent: #243b53;
   --site-teal: #155e63;
   --site-teal-hover: #155e63;
@@ -15,12 +17,14 @@
 }
 
 :root.dark-mode {
+  color-scheme: dark;
   --site-background: #17262b;
   --site-surface: #20383d;
   --site-text: #f4f0e8;
   --site-muted: #c4d0d0;
   --site-subtle: #a5b5b5;
   --site-border: #486269;
+  --site-action-border: transparent;
   --site-accent: #f2c94c;
   --site-teal: #63b3b5;
   --site-teal-hover: #24585d;
@@ -50,6 +54,11 @@ button {
 
 a {
   color: inherit;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 3px;
 }
 
 code {

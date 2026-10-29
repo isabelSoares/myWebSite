@@ -50,6 +50,36 @@ test('routes the AI photographer assistant invitation to the embedded Projects e
     expect(screen.getByRole('heading', { name: 'AI Photographer Assistant' })).toBeInTheDocument();
 });
 
+test('moves keyboard focus through the primary navigation and appearance toggle', () => {
+    renderWithRouter();
+
+    const controls = [
+        screen.getByRole('button', { name: "Go to Isabel's homepage" }),
+        screen.getByRole('button', { name: 'About' }),
+        screen.getByRole('button', { name: 'Experience' }),
+        screen.getByRole('button', { name: 'Projects' }),
+        screen.getByRole('button', { name: 'Hobbies' }),
+        screen.getByRole('button', { name: 'Switch to light mode' }),
+    ];
+
+    for (const control of controls) {
+        userEvent.tab();
+        expect(control).toHaveFocus();
+    }
+});
+
+test('toggles the appearance with the keyboard', async () => {
+    renderWithRouter();
+
+    const toggle = screen.getByRole('button', { name: 'Switch to light mode' });
+    toggle.focus();
+    userEvent.keyboard('{enter}');
+
+    await waitFor(() => expect(document.documentElement).not.toHaveClass('dark-mode'));
+    expect(window.localStorage.getItem('dark-mode')).toBe('false');
+    expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toHaveFocus();
+});
+
 test('does not render personal project cards on the homepage', () => {
     renderWithRouter();
 
@@ -101,6 +131,18 @@ test('defaults to dark mode when no appearance preference is saved', () => {
     expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
 });
 
+test.each([
+    ['/resume'],
+    ['/projects'],
+    ['/hobbies'],
+    ['/this-page-does-not-exist'],
+])('defaults to dark mode on %s with no saved preference', (route) => {
+    renderWithRouter([route]);
+
+    expect(document.documentElement).toHaveClass('dark-mode');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+});
+
 test('keeps an explicit light preference', () => {
     window.localStorage.setItem('dark-mode', 'false');
     renderWithRouter();
@@ -140,4 +182,14 @@ test('keeps an explicit light preference across route changes', () => {
 
     expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
     expect(document.documentElement).not.toHaveClass('dark-mode');
+});
+
+test('keeps an explicit dark preference across route changes', () => {
+    window.localStorage.setItem('dark-mode', 'true');
+    renderWithRouter(['/resume']);
+
+    userEvent.click(screen.getByRole('button', { name: 'Projects' }));
+
+    expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
+    expect(document.documentElement).toHaveClass('dark-mode');
 });

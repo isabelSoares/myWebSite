@@ -64,6 +64,7 @@
 .primary-action,
 .text-action {
     background: #fff;
+    border: 1px solid var(--site-action-border);
     border-radius: 999px;
     color: #17262b;
     font-size: 0.82rem;
@@ -71,12 +72,13 @@
     letter-spacing: 0.03em;
     padding: 15px 20px;
     text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .primary-action:hover,
 .text-action:hover {
     background: var(--site-teal-hover);
+    border-color: var(--site-teal-hover);
     color: var(--site-on-teal-hover);
 }
 
@@ -85,6 +87,7 @@
 .text-action:active,
 .text-action:focus-visible {
     background: var(--site-teal-light);
+    border-color: var(--site-teal-light);
     color: #17262b;
 }
 

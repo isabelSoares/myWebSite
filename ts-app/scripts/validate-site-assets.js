@@ -15,6 +15,7 @@ const {
 } = require('./lib/photo-manifest');
 
 const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx', '.scss', '.css']);
+const DARK_THEME_COLOR = '#17262b';
 
 function walkFiles(directory) {
   if (!fs.existsSync(directory)) return [];
@@ -153,6 +154,12 @@ function validateManifest({ appRoot = APP_ROOT } = {}) {
     return { checked: 0, missing: [error] };
   }
 
+  for (const field of ['theme_color', 'background_color']) {
+    if (manifest[field] !== DARK_THEME_COLOR) {
+      problems.push(`manifest.json ${field} must be ${DARK_THEME_COLOR} (found ${manifest[field] || 'nothing'}).`);
+    }
+  }
+
   const icons = Array.isArray(manifest.icons) ? manifest.icons : [];
   if (icons.length === 0) {
     problems.push('manifest.json has no icon entries.');
@@ -280,6 +287,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  DARK_THEME_COLOR,
   collectPublicAssetReferences,
   createSiteAssetReport,
   normalizeReference,

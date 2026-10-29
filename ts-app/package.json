@@ -44,6 +44,8 @@
     "test:assistant-url": "node scripts/validate-assistant-url.test.js",
     "validate:site-assets": "node scripts/validate-site-assets.js",
     "test:site-assets": "node scripts/validate-site-assets.test.js",
+    "validate:theme-accessibility": "node scripts/validate-theme-accessibility.js",
+    "test:theme-accessibility": "node scripts/validate-theme-accessibility.test.js",
     "verify:release": "node scripts/verify-release.js",
     "load:smoke": "node scripts/load-smoke.js",
     "photos:build": "node scripts/build-photos.js",
