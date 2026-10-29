@@ -75,6 +75,7 @@
     ]
   },
   "devDependencies": {
+    "axe-core": "^4.8.1",
     "file-loader": "^6.2.0",
     "sharp": "^0.35.5"
   }
