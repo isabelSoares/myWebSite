@@ -127,6 +127,9 @@
 - [X] T029 [P] Add `ts-app/scripts/validate-theme-accessibility.js` and its tests to check WCAG contrast for light and dark theme pairs and require visible `:focus-visible` outlines on global and key component controls.
 - [X] T030 Wire the accessibility check into `npm run verify:release`, add keyboard-focus Jest coverage, and record the full test/build/release result in `verification-record.md`.
 - [X] T031 Add a light-mode action-border token and About-page pill borders, guard the new pair in the accessibility validator, and verify the light render in headless Chrome.
+- [X] T032 Add route titles, a skip link, route-change focus announcements, semantic primary navigation links, and reduced-motion handling across the application.
+- [X] T033 Name the photo dialog, announce photo changes, make thumbnail images decorative within labeled controls, and use descriptive external-link text with new-tab announcements.
+- [X] T034 Add axe-core route smoke tests and extend the contrast validator for accent text and action-pill text.
 
 ---
 
