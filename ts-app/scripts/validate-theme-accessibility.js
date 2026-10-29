@@ -29,6 +29,7 @@ const THEME_PAIRS = Object.freeze([
   { fg: 'site-accent', bg: 'site-background', min: MIN_NON_TEXT, label: 'focus ring on background' },
   { fg: 'site-accent', bg: 'site-surface', min: MIN_NON_TEXT, label: 'focus ring on surface' },
   { fg: 'site-muted', bg: 'site-border', min: MIN_NON_TEXT, label: 'disabled control text' },
+  { fg: 'site-action-border', bg: 'site-background', min: MIN_NON_TEXT, label: 'action button boundary on background', themes: ['light'] },
 ]);
 
 const FOCUS_STYLE_REQUIREMENTS = Object.freeze([
@@ -154,6 +155,8 @@ function validateThemeContrast({ appRoot = APP_ROOT } = {}) {
 
   for (const [theme, variables] of Object.entries(themes)) {
     for (const pair of THEME_PAIRS) {
+      if (pair.themes && !pair.themes.includes(theme)) continue;
+
       const foreground = resolveColor(pair.fg, variables);
       const background = resolveColor(pair.bg, variables);
       const missing = [

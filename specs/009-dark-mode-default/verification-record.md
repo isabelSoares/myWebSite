@@ -30,7 +30,7 @@ The inline `public/index.html` bootstrap was executed in jsdom with four storage
 | `"false"` | light | `#f4f0e8` |
 | `"true"` | dark | `#17262b` |
 
-This confirms the default, invalid-value fallback, and explicit-choice behavior before React renders. A real-browser visual inspection was not available in this CLI environment.
+This confirms the default, invalid-value fallback, and explicit-choice behavior before React renders. The initial first-paint check did not include a real-browser visual inspection; a later light-mode headless Chrome render is recorded below.
 
 ## Surface checks
 
@@ -55,18 +55,22 @@ The `/speckit.analyze` pass found that FR-012's contrast and keyboard-focus requ
 
 | Check | Command | Result |
 |-------|---------|--------|
-| Theme accessibility script tests | `cd ts-app && node scripts/validate-theme-accessibility.test.js` | PASS — 10 cases |
-| Theme accessibility | `cd ts-app && npm run validate:theme-accessibility` | PASS — `theme.contrast` (30 pairs) and `theme.keyboard` (16 targets) |
+| Theme accessibility script tests | `cd ts-app && node scripts/validate-theme-accessibility.test.js` | PASS — 11 cases |
+| Theme accessibility | `cd ts-app && npm run validate:theme-accessibility` | PASS — `theme.contrast` (31 pairs) and `theme.keyboard` (16 targets) |
 | Full tests | `cd ts-app && npm test -- --watchAll=false` | PASS — 7 suites, 37 tests |
 | Production build | `cd ts-app && npm run build` | PASS — compiled successfully |
 | Release verification | `cd ts-app && REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | PASS — 21 passed, 0 failed, 1 skipped |
 
 Accessibility changes:
 
-- `ts-app/scripts/validate-theme-accessibility.js` computes WCAG contrast for 15 color pairs in both themes: normal text at 4.5:1 and focus/disabled UI at 3:1.
+- `ts-app/scripts/validate-theme-accessibility.js` computes WCAG contrast for 15 color pairs in both themes plus a light-only action-border pair: normal text at 4.5:1 and focus/disabled UI at 3:1.
 - The same script requires a global `:focus-visible` fallback and visible accent outlines on the top bar, photo frames, primary/text actions, project links, and assistant controls, and rejects `outline: none` or `outline: 0`.
-- `ts-app/scripts/validate-theme-accessibility.test.js` covers passing and failing contrast, missing variables, missing global focus styles, missing control selectors, and outline suppression.
+- `ts-app/scripts/validate-theme-accessibility.test.js` covers passing and failing contrast, a low-contrast action border, missing variables, missing global focus styles, missing control selectors, and outline suppression.
 - `ts-app/src/index.css` darkens the light-theme `--site-subtle` value from `#7a8989` to `#5f7071` so small secondary text reaches 4.57:1 on the light background, and adds the global keyboard focus fallback.
+- `ts-app/src/index.css` adds `--site-action-border: #53676a` for light mode; that border is 5.25:1 against the page and 5.97:1 against the white pill. Dark mode uses `transparent` because the white pill already contrasts 15.57:1 against the dark page.
+- `ts-app/src/components/about-me/AboutMe.scss` applies the border to `.primary-action` and `.text-action`, switches it to teal on hover, and to light teal on active/focus-visible. This covers all five About-page actions without changing the white fill.
 - `ts-app/src/components/top-bar/TopBar.scss` adds explicit keyboard focus outlines for the site mark and appearance toggle.
 - `ts-app/src/App.test.tsx` adds tab-order and Enter-key coverage for the top bar and appearance toggle.
 - `npm run verify:release` now runs the accessibility script tests and includes `theme.contrast` and `theme.keyboard` checks.
+
+A headless Chrome render of `/` in light mode confirmed the five action pills now have visible outlines against `#f4f0e8`; the dark render was unchanged. Hover and focus border transitions are covered by the new CSS rules and the existing keyboard-focus checks.

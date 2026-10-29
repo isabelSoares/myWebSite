@@ -126,6 +126,7 @@
 
 - [X] T029 [P] Add `ts-app/scripts/validate-theme-accessibility.js` and its tests to check WCAG contrast for light and dark theme pairs and require visible `:focus-visible` outlines on global and key component controls.
 - [X] T030 Wire the accessibility check into `npm run verify:release`, add keyboard-focus Jest coverage, and record the full test/build/release result in `verification-record.md`.
+- [X] T031 Add a light-mode action-border token and About-page pill borders, guard the new pair in the accessibility validator, and verify the light render in headless Chrome.
 
 ---
 

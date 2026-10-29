@@ -20,6 +20,7 @@ const THEME_CSS = `:root {
   --site-muted: #53676a;
   --site-subtle: #5f7071;
   --site-border: #cdd2c9;
+  --site-action-border: #53676a;
   --site-accent: #243b53;
   --site-teal: #155e63;
   --site-teal-hover: #155e63;
@@ -37,6 +38,7 @@ const THEME_CSS = `:root {
   --site-muted: #c4d0d0;
   --site-subtle: #a5b5b5;
   --site-border: #486269;
+  --site-action-border: transparent;
   --site-accent: #f2c94c;
   --site-teal: #63b3b5;
   --site-teal-hover: #24585d;
@@ -96,6 +98,7 @@ function main() {
       run() {
         const themes = parseThemeVariables(THEME_CSS);
         assert.strictEqual(themes.light['site-text'], '#17262b');
+        assert.strictEqual(themes.light['site-action-border'], '#53676a');
         assert.strictEqual(themes.dark['site-text'], '#f4f0e8');
       },
     },
@@ -116,6 +119,17 @@ function main() {
         );
         const result = validateThemeContrast({ appRoot });
         assert.match(result.failures.join('\n'), /light: body text on background is 1\.00:1, below 4\.5:1/);
+      },
+    },
+    {
+      name: 'reports a low-contrast action button border',
+      run(appRoot) {
+        writeFile(
+          path.join(appRoot, 'src', 'index.css'),
+          THEME_CSS.replace('--site-action-border: #53676a;', '--site-action-border: #cdd2c9;'),
+        );
+        const result = validateThemeContrast({ appRoot });
+        assert.match(result.failures.join('\n'), /light: action button boundary on background is 1\.\d+:1, below 3:1/);
       },
     },
     {
