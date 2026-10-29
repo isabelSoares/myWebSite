@@ -23,6 +23,7 @@ published with GitHub Pages.
 - React Router 6, MUI 5, MobX, and SCSS
 - Node.js tooling for local photo generation, release verification, and load
   testing
+- `axe-core` development checks for route-level accessibility coverage
 - GitHub Pages for static hosting and GitHub Actions for deployment
 - `sharp` (development only) for resizing photos and stripping metadata
 
@@ -38,19 +39,43 @@ npm start
 
 Open <http://localhost:3000>. The development server reloads as you edit.
 
+The default appearance is dark when no `dark-mode` preference is saved. An
+explicit light or dark choice is retained in browser storage. To test the dark
+default locally, use a fresh private window or run `localStorage.removeItem('dark-mode')`
+in the browser console before reloading.
+
+## Accessibility
+
+The site includes a skip-to-content link, semantic primary navigation, route
+titles and announcements, keyboard focus management, named photo dialogs,
+reduced-motion support, and theme contrast checks.
+
+Run the accessibility checks from `ts-app/`:
+
+```sh
+npm run validate:theme-accessibility
+npm test -- --watchAll=false
+```
+
+The Jest suite includes `axe-core` checks for the home, experience, projects,
+hobbies, and not-found routes. The theme validator checks WCAG AA contrast
+tokens and visible keyboard focus styles.
+
 ## Verification
 
 Run the full release check:
 
 ```sh
 cd ts-app
-REACT_APP_AI_ASSISTANT_URL="https://<your-cloudflare-endpoint>/" npm run verify:release
+REACT_APP_AI_ASSISTANT_URL="https://<your-cloudflare-endpoint>/" npm run verify:release -- --online
 ```
 
 The release check runs type checking without deprecation warnings, linting, Jest,
-the Node release-script tests, assistant URL validation, photo privacy checks,
+axe-core accessibility checks, the Node release-script tests, assistant URL
+validation, photo privacy checks, theme contrast and keyboard-focus validation,
 manifest and generated-photo validation, a production build, SPA fallback
-validation, and a committed-secret scan.
+validation, and a committed-secret scan. `--online` also probes configured
+external URLs; anti-bot responses are reported as warnings.
 
 Run the individual checks when iterating:
 
@@ -58,6 +83,7 @@ Run the individual checks when iterating:
 cd ts-app
 npm run validate:photos       # photo privacy, manifest, and derivative limits
 npm run validate:tsconfig     # accepted TypeScript target and suppression
+npm run validate:theme-accessibility # WCAG contrast and focus-style checks
 npm test -- --watchAll=false  # Jest and React Testing Library
 npm run build                 # production build
 ```
@@ -137,9 +163,12 @@ and `npm run verify:release` fail if the accepted configuration regresses.
 ## Before announcing the site
 
 1. Run `npm run verify:release` from `ts-app` with the production assistant URL.
-2. Open `/`, `/resume`, `/projects`, `/hobbies`, and an unknown path directly; refresh each one.
-3. Confirm the assistant shows a plain-language error when its endpoint is unavailable.
-4. Run the published-site load smoke test and record the result.
+2. Run `npm run verify:release -- --online` and review any external-link warnings.
+3. Use a fresh private window with the OS set to light and open `/`, `/resume`, `/projects`, `/hobbies`, and an unknown path directly; refresh each one.
+4. Confirm dark mode appears before first paint, the light toggle persists, keyboard focus works, and the photo dialog is announced correctly.
+5. Check the deployed mobile/PWA browser chrome and manifest colors.
+6. Confirm the assistant shows a plain-language error when its endpoint is unavailable.
+7. Run the published-site load smoke test and record the result.
 
 ## Repository structure
 
