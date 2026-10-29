@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --site-background: #f4f0e8;
   --site-surface: #fffdf8;
   --site-text: #17262b;
@@ -15,6 +16,7 @@
 }
 
 :root.dark-mode {
+  color-scheme: dark;
   --site-background: #17262b;
   --site-surface: #20383d;
   --site-text: #f4f0e8;

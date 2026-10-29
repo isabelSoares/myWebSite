@@ -101,6 +101,18 @@ test('defaults to dark mode when no appearance preference is saved', () => {
     expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
 });
 
+test.each([
+    ['/resume'],
+    ['/projects'],
+    ['/hobbies'],
+    ['/this-page-does-not-exist'],
+])('defaults to dark mode on %s with no saved preference', (route) => {
+    renderWithRouter([route]);
+
+    expect(document.documentElement).toHaveClass('dark-mode');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+});
+
 test('keeps an explicit light preference', () => {
     window.localStorage.setItem('dark-mode', 'false');
     renderWithRouter();
@@ -140,4 +152,14 @@ test('keeps an explicit light preference across route changes', () => {
 
     expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
     expect(document.documentElement).not.toHaveClass('dark-mode');
+});
+
+test('keeps an explicit dark preference across route changes', () => {
+    window.localStorage.setItem('dark-mode', 'true');
+    renderWithRouter(['/resume']);
+
+    userEvent.click(screen.getByRole('button', { name: 'Projects' }));
+
+    expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
+    expect(document.documentElement).toHaveClass('dark-mode');
 });

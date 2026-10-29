@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const {
+  DARK_THEME_COLOR,
   createSiteAssetReport,
   validateAlbumPhotos,
   validateBuildOutput,
@@ -28,14 +29,22 @@ async function createFixture() {
   );
   writeFile(
     path.join(fixture.publicDir, 'manifest.json'),
-    JSON.stringify({ icons: [{ src: 'flower.ico', sizes: 'any', type: 'image/x-icon' }] }),
+    JSON.stringify({
+      icons: [{ src: 'flower.ico', sizes: 'any', type: 'image/x-icon' }],
+      theme_color: DARK_THEME_COLOR,
+      background_color: DARK_THEME_COLOR,
+    }),
   );
   writeFile(path.join(fixture.buildDir, 'index.html'), 'index');
   writeFile(path.join(fixture.buildDir, '404.html'), 'fallback');
   writeFile(path.join(fixture.buildDir, 'flower.ico'), 'icon');
   writeFile(
     path.join(fixture.buildDir, 'manifest.json'),
-    JSON.stringify({ icons: [{ src: 'flower.ico' }] }),
+    JSON.stringify({
+      icons: [{ src: 'flower.ico' }],
+      theme_color: DARK_THEME_COLOR,
+      background_color: DARK_THEME_COLOR,
+    }),
   );
   return fixture;
 }
@@ -85,6 +94,22 @@ async function main() {
         remove(path.join(fixture.publicDir, 'flower.ico'));
         const result = validateManifest({ appRoot: fixture.appRoot });
         assert.match(result.missing.join('\n'), /public\/flower\.ico/);
+      },
+    },
+    {
+      name: 'reports manifest theme colors that are not the dark default',
+      run(fixture) {
+        writeFile(
+          path.join(fixture.publicDir, 'manifest.json'),
+          JSON.stringify({
+            icons: [{ src: 'flower.ico', sizes: 'any', type: 'image/x-icon' }],
+            theme_color: '#f4f0e8',
+            background_color: '#f4f0e8',
+          }),
+        );
+        const result = validateManifest({ appRoot: fixture.appRoot });
+        assert.match(result.missing.join('\n'), /theme_color must be #17262b/);
+        assert.match(result.missing.join('\n'), /background_color must be #17262b/);
       },
     },
     {

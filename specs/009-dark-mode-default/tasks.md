@@ -28,8 +28,8 @@
 
 **Purpose**: Confirm the baseline before changing theme metadata or tests.
 
-- [ ] T001 Run the existing appearance and asset checks from `ts-app/` with `npm test -- --watchAll=false` and `npm run validate:site-assets`, and record the baseline pass/fail result.
-- [ ] T002 [P] Review `specs/009-dark-mode-default/plan.md`, `research.md`, `data-model.md`, `contracts/appearance-default.md`, and `quickstart.md` and confirm there are no unresolved decisions or `NEEDS CLARIFICATION` items.
+- [X] T001 Run the existing appearance and asset checks from `ts-app/` with `npm test -- --watchAll=false` and `npm run validate:site-assets`, and record the baseline pass/fail result.
+- [X] T002 [P] Review `specs/009-dark-mode-default/plan.md`, `research.md`, `data-model.md`, `contracts/appearance-default.md`, and `quickstart.md` and confirm there are no unresolved decisions or `NEEDS CLARIFICATION` items.
 
 ---
 
@@ -39,10 +39,10 @@
 
 **⚠️ CRITICAL**: No user story verification can be completed until this phase is done.
 
-- [ ] T003 Confirm `ts-app/src/theme/appearance.ts` implements the contract: storage key `dark-mode`, explicit dark `"true"`, explicit light `"false"`, and missing, empty, invalid, or unreadable values resolve to dark. Do not change the key or value format.
-- [ ] T004 [P] Confirm `ts-app/public/index.html` contains the inline pre-paint bootstrap that applies `dark-mode` to the document root, does not consult `prefers-color-scheme`, and sets the initial `theme-color` meta value to `#17262b`.
-- [ ] T005 Confirm `ts-app/src/App.tsx` initializes from the shared resolver, keeps the document-root class and MUI palette synchronized, and applies the resolved appearance to every route.
-- [ ] T006 [P] Confirm the current coverage in `ts-app/src/App.test.tsx` and `ts-app/src/theme/appearance.test.ts` for dark default, explicit light, explicit dark, toggle, and route changes.
+- [X] T003 Confirm `ts-app/src/theme/appearance.ts` implements the contract: storage key `dark-mode`, explicit dark `"true"`, explicit light `"false"`, and missing, empty, invalid, or unreadable values resolve to dark. Do not change the key or value format.
+- [X] T004 [P] Confirm `ts-app/public/index.html` contains the inline pre-paint bootstrap that applies `dark-mode` to the document root, does not consult `prefers-color-scheme`, and sets the initial `theme-color` meta value to `#17262b`.
+- [X] T005 Confirm `ts-app/src/App.tsx` initializes from the shared resolver, keeps the document-root class and MUI palette synchronized, and applies the resolved appearance to every route.
+- [X] T006 [P] Confirm the current coverage in `ts-app/src/App.test.tsx` and `ts-app/src/theme/appearance.test.ts` for dark default, explicit light, explicit dark, toggle, and route changes.
 
 **Checkpoint**: Foundation confirmed — user story verification can proceed.
 
@@ -56,14 +56,14 @@
 
 ### Tests for User Story 1
 
-- [ ] T007 [P] [US1] Add a direct-route regression test in `ts-app/src/App.test.tsx` that renders `/resume`, `/projects`, `/hobbies`, and an unknown path with no saved `dark-mode` value and asserts `document.documentElement` has the `dark-mode` class.
-- [ ] T008 [P] [US1] Extend `ts-app/src/theme/appearance.test.ts` to assert that missing, empty, and invalid `dark-mode` values resolve to dark and that no explicit choice is written back.
+- [X] T007 [P] [US1] Add a direct-route regression test in `ts-app/src/App.test.tsx` that renders `/resume`, `/projects`, `/hobbies`, and an unknown path with no saved `dark-mode` value and asserts `document.documentElement` has the `dark-mode` class.
+- [X] T008 [P] [US1] Extend `ts-app/src/theme/appearance.test.ts` to assert that missing, empty, and invalid `dark-mode` values resolve to dark and that no explicit choice is written back.
 
 ### Implementation for User Story 1
 
-- [ ] T009 [US1] Verify `resolveAppearance` and `readAppearance` in `ts-app/src/theme/appearance.ts` keep missing, empty, invalid, and unreadable values resolving to dark and never read the operating-system color scheme.
-- [ ] T010 [US1] Verify the `ts-app/public/index.html` bootstrap applies dark before React renders when `localStorage.getItem('dark-mode')` is `null`, `"unexpected"`, or throws.
-- [ ] T011 [US1] Run `npm test -- --watchAll=false --testPathPattern='(App|appearance)\\.test'` from `ts-app/` and confirm the new and existing US1 tests pass.
+- [X] T009 [US1] Verify `resolveAppearance` and `readAppearance` in `ts-app/src/theme/appearance.ts` keep missing, empty, invalid, and unreadable values resolving to dark and never read the operating-system color scheme.
+- [X] T010 [US1] Verify the `ts-app/public/index.html` bootstrap applies dark before React renders when `localStorage.getItem('dark-mode')` is `null`, `"unexpected"`, or throws.
+- [X] T011 [US1] Run `npm test -- --watchAll=false --testPathPattern='(App|appearance)\\.test'` from `ts-app/` and confirm the new and existing US1 tests pass.
 
 **Checkpoint**: User Story 1 is independently verifiable: a fresh visitor gets dark mode on every route.
 
@@ -77,14 +77,14 @@
 
 ### Tests for User Story 2
 
-- [ ] T012 [US2] Add a test in `ts-app/src/App.test.tsx` that sets `dark-mode` to `"true"`, renders a non-home route, and asserts dark mode remains active across route navigation.
-- [ ] T013 [P] [US2] Add a test in `ts-app/src/theme/appearance.test.ts` that `writeAppearance` does not throw and still attempts the explicit value when storage writes fail.
+- [X] T012 [US2] Add a test in `ts-app/src/App.test.tsx` that sets `dark-mode` to `"true"`, renders a non-home route, and asserts dark mode remains active across route navigation.
+- [X] T013 [P] [US2] Add a test in `ts-app/src/theme/appearance.test.ts` that `writeAppearance` does not throw and still attempts the explicit value when storage writes fail.
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Verify `ts-app/src/theme/appearance.ts` writes only `"true"` or `"false"` under `dark-mode`, and `ts-app/src/App.tsx` still updates in-memory appearance when a storage write fails.
-- [ ] T015 [US2] Verify the toggle in `ts-app/src/components/top-bar/TopBar.tsx` exposes the correct accessible label and icon for the current mode, updates immediately, and has a visible keyboard focus state.
-- [ ] T016 [US2] Run `npm test -- --watchAll=false --testPathPattern='(App|appearance)\\.test'` from `ts-app/` and confirm the US1 and US2 tests pass together.
+- [X] T014 [US2] Verify `ts-app/src/theme/appearance.ts` writes only `"true"` or `"false"` under `dark-mode`, and `ts-app/src/App.tsx` still updates in-memory appearance when a storage write fails.
+- [X] T015 [US2] Verify the toggle in `ts-app/src/components/top-bar/TopBar.tsx` exposes the correct accessible label and icon for the current mode, updates immediately, and has a visible keyboard focus state.
+- [X] T016 [US2] Run `npm test -- --watchAll=false --testPathPattern='(App|appearance)\\.test'` from `ts-app/` and confirm the US1 and US2 tests pass together.
 
 **Checkpoint**: User Stories 1 and 2 work independently: the default is dark, and explicit choices are honored.
 
@@ -98,13 +98,13 @@
 
 ### Implementation for User Story 3
 
-- [ ] T017 [P] [US3] Add `color-scheme: light` to `:root` and `color-scheme: dark` to `:root.dark-mode` in `ts-app/src/index.css` so native controls and scrollbars follow the resolved appearance.
-- [ ] T018 [P] [US3] Set `theme_color` and `background_color` to `#17262b` in `ts-app/public/manifest.json`.
-- [ ] T019 [P] [US3] Extend `validateManifest` in `ts-app/scripts/validate-site-assets.js` to report a failure when the public manifest's `theme_color` or `background_color` is not `#17262b`.
-- [ ] T020 [P] [US3] Add a passing fixture and a failing fixture for manifest theme colors in `ts-app/scripts/validate-site-assets.test.js`.
-- [ ] T021 [US3] Verify `ts-app/public/index.html` and `applyAppearance` in `ts-app/src/theme/appearance.ts` keep the `theme-color` meta value synchronized with the resolved mode at first paint and on toggle.
-- [ ] T022 [US3] Run `npm run validate:site-assets` and `npm test -- --watchAll=false` from `ts-app/` and confirm the manifest guard and appearance tests pass.
-- [ ] T023 [US3] Execute `specs/009-dark-mode-default/quickstart.md` scenarios 1–6 for first paint, OS light appearance, saved choices, invalid storage, and installed-app/browser surfaces, and record the outcome.
+- [X] T017 [P] [US3] Add `color-scheme: light` to `:root` and `color-scheme: dark` to `:root.dark-mode` in `ts-app/src/index.css` so native controls and scrollbars follow the resolved appearance.
+- [X] T018 [P] [US3] Set `theme_color` and `background_color` to `#17262b` in `ts-app/public/manifest.json`.
+- [X] T019 [P] [US3] Extend `validateManifest` in `ts-app/scripts/validate-site-assets.js` to report a failure when the public manifest's `theme_color` or `background_color` is not `#17262b`.
+- [X] T020 [P] [US3] Add a passing fixture and a failing fixture for manifest theme colors in `ts-app/scripts/validate-site-assets.test.js`.
+- [X] T021 [US3] Verify `ts-app/public/index.html` and `applyAppearance` in `ts-app/src/theme/appearance.ts` keep the `theme-color` meta value synchronized with the resolved mode at first paint and on toggle.
+- [X] T022 [US3] Run `npm run validate:site-assets` and `npm test -- --watchAll=false` from `ts-app/` and confirm the manifest guard and appearance tests pass.
+- [X] T023 [US3] Execute `specs/009-dark-mode-default/quickstart.md` scenarios 1–6 for first paint, OS light appearance, saved choices, invalid storage, and installed-app/browser surfaces, and record the outcome.
 
 **Checkpoint**: All three stories are independently functional, and the dark default covers browser and installed-app surfaces.
 
@@ -114,11 +114,11 @@
 
 **Purpose**: Verify the complete feature and guard against unrelated changes.
 
-- [ ] T024 Run `npm test -- --watchAll=false` from `ts-app/` and confirm the full Jest/RTL suite passes.
-- [ ] T025 Run `npm run build` from `ts-app/` and confirm the production build succeeds without warnings that affect the theme.
-- [ ] T026 Run `npm run verify:release` from `ts-app/` and confirm zero failed checks, including the manifest color guard.
-- [ ] T027 Execute `specs/009-dark-mode-default/quickstart.md` scenario 7 on the deployed site and record whether the behavior is correct, stale, or overridden by a saved light preference.
-- [ ] T028 Review `git diff --stat` and `git diff` and confirm no changes outside `ts-app/public/manifest.json`, `ts-app/src/index.css`, `ts-app/scripts/validate-site-assets.js`, `ts-app/scripts/validate-site-assets.test.js`, `ts-app/src/App.test.tsx`, and `ts-app/src/theme/appearance.test.ts`; revert unrelated changes.
+- [X] T024 Run `npm test -- --watchAll=false` from `ts-app/` and confirm the full Jest/RTL suite passes.
+- [X] T025 Run `npm run build` from `ts-app/` and confirm the production build succeeds without warnings that affect the theme.
+- [X] T026 Run `npm run verify:release` from `ts-app/` and confirm zero failed checks, including the manifest color guard.
+- [X] T027 Execute `specs/009-dark-mode-default/quickstart.md` scenario 7 on the deployed site and record whether the behavior is correct, stale, or overridden by a saved light preference.
+- [X] T028 Review `git diff --stat` and `git diff` and confirm no changes outside `ts-app/public/manifest.json`, `ts-app/src/index.css`, `ts-app/scripts/validate-site-assets.js`, `ts-app/scripts/validate-site-assets.test.js`, `ts-app/src/App.test.tsx`, and `ts-app/src/theme/appearance.test.ts`; revert unrelated changes.
 
 ---
 
