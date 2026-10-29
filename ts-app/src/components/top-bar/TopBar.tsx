@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import { Box, Button, Container, Toolbar } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './TopBar.scss';
 
@@ -20,37 +20,37 @@ const redirect_buttons = [
 ];
 
 export const TopBar = ({ darkMode, onToggleDarkMode }: IProps) => {
-    const navigate = useNavigate();
-
     const location = useLocation();
 
     return (
         <AppBar position="static" className="top-bar">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    
-                    <button className="top-bar-mark" aria-label="Go to Isabel's homepage" onClick={() => navigate('/')}>
+                    <Link className="top-bar-mark" to="/" aria-label="Go to Isabel's homepage">
                         IS<span>.</span>
-                    </button>
+                    </Link>
                     <Box className="top-bar-box">
+                        <nav className="top-bar-nav" aria-label="Primary">
                             {redirect_buttons.map((button_info) => (
                                 <Button
+                                    component={Link}
+                                    to={button_info.page}
                                     className={'top-bar-button'  + (location.pathname === button_info.page ? ' top-bar-button-selected' : '') }
                                     key={button_info.name}
-                                    onClick={() => navigate(button_info.page)}
                                     aria-current={location.pathname === button_info.page ? 'page' : undefined}
                                 >
                                     {button_info.name}
                                 </Button>     
                             ))}
-                            <button
-                                className="theme-toggle"
-                                type="button"
-                                onClick={onToggleDarkMode}
-                                aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-                            >
-                                {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
-                            </button>
+                        </nav>
+                        <button
+                            className="theme-toggle"
+                            type="button"
+                            onClick={onToggleDarkMode}
+                            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                        >
+                            {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                        </button>
                     </Box>
                 </Toolbar>
             </Container>    

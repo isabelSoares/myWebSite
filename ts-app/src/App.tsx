@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.scss';
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
@@ -28,6 +28,17 @@ const createSiteTheme = (darkMode: boolean) => createTheme({
   },
 });
 
+const ROUTE_TITLES: Record<string, string> = {
+  '/': 'Isabel Soares | AI Engineer',
+  '/resume': 'Experience | Isabel Soares',
+  '/projects': 'Projects | Isabel Soares',
+  '/hobbies': 'Hobbies | Isabel Soares',
+};
+
+const NOT_FOUND_TITLE = 'Page not found | Isabel Soares';
+
+const getRouteTitle = (pathname: string) => ROUTE_TITLES[pathname] ?? NOT_FOUND_TITLE;
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -40,10 +51,24 @@ const ScrollToTop = () => {
 
 export const AppContent = () => {
   const [darkMode, setDarkMode] = useState(() => readAppearance() === 'dark');
+  const { pathname } = useLocation();
+  const [routeAnnouncement, setRouteAnnouncement] = useState(() => getRouteTitle(pathname));
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     applyAppearance(darkMode ? 'dark' : 'light');
   }, [darkMode]);
+
+  useEffect(() => {
+    const title = getRouteTitle(pathname);
+    document.title = title;
+    setRouteAnnouncement(title);
+
+    if (!isFirstRender.current) {
+      document.getElementById('main-content')?.focus();
+    }
+    isFirstRender.current = false;
+  }, [pathname]);
 
   const handleToggleDarkMode = () => {
     const nextDarkMode = !darkMode;
@@ -53,6 +78,10 @@ export const AppContent = () => {
 
   return (
     <div className={`App${darkMode ? ' dark-mode' : ''}`}>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <div className="visually-hidden" role="status" aria-live="polite">
+        {routeAnnouncement}
+      </div>
       <ThemeProvider theme={createSiteTheme(darkMode)}>
         <CssBaseline />
         <ScrollToTop />
