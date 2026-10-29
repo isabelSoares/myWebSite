@@ -14,6 +14,12 @@
         justify-content:flex-end;
         align-items:center;
 
+        .top-bar-nav {
+            align-items: center;
+            display: flex;
+            gap: 4px;
+        }
+
         .top-bar-button {
             color: var(--site-text);
             font-size: 0.76rem;
@@ -58,6 +64,7 @@
         font-weight: 700;
         letter-spacing: -0.08em;
         padding: 8px 0;
+        text-decoration: none;
 
         span {
              color: var(--site-accent);

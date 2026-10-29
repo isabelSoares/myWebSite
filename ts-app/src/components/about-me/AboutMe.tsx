@@ -13,7 +13,7 @@ const portrait = photoManifest.featured.portrait;
 
 export const AboutMe = () => {
     return (
-        <main className="about-me">
+        <main className="about-me" id="main-content" tabIndex={-1}>
             <section className="about-me-hero" aria-labelledby="intro-title">
                 <div className="about-me-copy">
                     <p className="eyebrow">HELLO, I&apos;M ISABEL</p>
@@ -79,8 +79,8 @@ export const AboutMe = () => {
                     </p>
                     <div className="social-links">
                         <a href="mailto:isabel.srsoares@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> Email</a>
-                        <a href="https://www.linkedin.com/in/isabel-soares-58116b1a4" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /> LinkedIn</a>
-                        <a href="https://github.com/isabelSoares" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> GitHub</a>
+                        <a href="https://www.linkedin.com/in/isabel-soares-58116b1a4" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /> LinkedIn <span className="visually-hidden">(opens in a new tab)</span></a>
+                        <a href="https://github.com/isabelSoares" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> GitHub <span className="visually-hidden">(opens in a new tab)</span></a>
                     </div>
                 </div>
             </section>

@@ -19,7 +19,7 @@ const moreProjects = [
 
 export const PersonalProjects = () => {
     return (
-        <main className="personal-projects-page">
+        <main className="personal-projects-page" id="main-content" tabIndex={-1}>
             <section className="projects-intro" aria-labelledby="projects-intro-title">
                 <p className="section-kicker">PERSONAL PROJECTS</p>
                 <h1 id="projects-intro-title">Things I build outside work.</h1>
@@ -51,7 +51,7 @@ export const PersonalProjects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    View project on GitHub <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    View project on GitHub <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> <span className="visually-hidden">(opens in a new tab)</span>
                 </a>
             </section>
 
@@ -69,7 +69,7 @@ export const PersonalProjects = () => {
                             <div className="project-card-footer">
                                 <span>{project.tags}</span>
                                 <a href={project.href} target="_blank" rel="noopener noreferrer">
-                                    View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                    View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> <span className="visually-hidden">(opens in a new tab)</span>
                                 </a>
                             </div>
                         </article>

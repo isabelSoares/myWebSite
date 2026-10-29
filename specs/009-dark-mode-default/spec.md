@@ -4,7 +4,7 @@
 
 **Created**: 2026-10-26
 
-**Status**: Draft
+**Status**: Implemented — launch verification pending
 
 **Input**: User description: "the default theme need to be dark mode."
 

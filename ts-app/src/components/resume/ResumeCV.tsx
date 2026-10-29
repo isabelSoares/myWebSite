@@ -83,7 +83,7 @@ const skills = [
 
 export const ResumeCV = () => {
     return (
-        <main className="resume-cv">
+        <main className="resume-cv" id="main-content" tabIndex={-1}>
             <header className="resume-heading">
                 <div>
                     <p className="section-kicker">02 / EXPERIENCE</p>
@@ -114,7 +114,7 @@ export const ResumeCV = () => {
                                                 bullet
                                             ) : (
                                                 <>
-                                                    {bullet.text} <a href={bullet.href} target="_blank" rel="noopener noreferrer">[here]</a>
+                                                    {bullet.text} <a href={bullet.href} target="_blank" rel="noopener noreferrer">Read the article <span className="visually-hidden">(opens in a new tab)</span></a>
                                                 </>
                                             )}
                                         </li>

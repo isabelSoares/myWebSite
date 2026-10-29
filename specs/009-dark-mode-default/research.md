@@ -91,9 +91,9 @@
 
 ## Decision 8: Use existing test and release tooling
 
-**Decision**: Rely on Jest/React Testing Library, the Node asset validator, `npm run build`, and `npm run verify:release`, plus a manual quickstart.
+**Decision**: Rely on Jest/React Testing Library, `axe-core` route smoke tests, the Node asset validator, `npm run build`, and `npm run verify:release`, plus a manual quickstart.
 
-**Rationale**: The project already uses these tools. The change is small and mostly metadata; adding a new test framework or browser automation would be disproportionate.
+**Rationale**: The project already uses Jest and the release tooling. `axe-core` adds semantic accessibility checks as a development-only dependency without introducing a new test runner or browser automation framework.
 
 **Alternatives considered**:
 - **Add Playwright or Puppeteer**: stronger visual and first-paint automation but a new dependency, configuration, and CI cost. Not justified for this scope.

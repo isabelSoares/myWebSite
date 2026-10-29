@@ -41,7 +41,7 @@ This confirms the default, invalid-value fallback, and explicit-choice behavior 
 
 ## Deployed-site check
 
-`https://isabelsoares.github.io/myWebSite/` returned HTTP 200. Its inline bootstrap already resolves a missing preference to dark and sets `theme-color` to `#17262b`. Its deployed `manifest.json` still returns `#f4f0e8` for `theme_color` and `background_color` because this change has not been deployed yet. After deployment, the manifest should return `#17262b`.
+This initial observation is superseded by the launch verification refresh below. At that time, the deployed manifest had not yet received the dark values.
 
 ## Notes
 
@@ -74,3 +74,35 @@ Accessibility changes:
 - `npm run verify:release` now runs the accessibility script tests and includes `theme.contrast` and `theme.keyboard` checks.
 
 A headless Chrome render of `/` in light mode confirmed the five action pills now have visible outlines against `#f4f0e8`; the dark render was unchanged. Hover and focus border transitions are covered by the new CSS rules and the existing keyboard-focus checks.
+
+## Accessibility semantics remediation (2026-10-29)
+
+The follow-up accessibility audit was implemented across the application:
+
+- Route-specific document titles and a polite route-change announcement are now applied for all routes.
+- A skip-to-content link, focusable main target, primary navigation landmark, and semantic router links were added.
+- Route changes move focus to the new main content, while the photo dialog now has an accessible name and announces the active photo.
+- Photo-strip thumbnails are decorative because their enclosing buttons provide the accessible names; full-size images retain their source descriptions.
+- External links identify new-tab behavior, the article link has descriptive text, and global reduced-motion handling was added.
+- The contrast validator now covers accent text and action-pill text at WCAG AA thresholds.
+- `axe-core` route smoke tests cover the homepage, resume, projects, hobbies, and not-found views.
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Full tests | `cd ts-app && CI=true npm test -- --watchAll=false --runInBand` | PASS — 8 suites, 43 tests |
+| JSX accessibility lint | `cd ts-app && npx eslint "src/**/*.ts" "src/**/*.tsx"` | PASS |
+| Axe route checks | Included in full Jest suite | PASS — 5 routes, color contrast delegated to token validator |
+| Theme accessibility | `cd ts-app && npm run validate:theme-accessibility` | PASS — 37 contrast pairs and 16 focus targets |
+| Production build | `cd ts-app && npm run build` | PASS — compiled successfully |
+| Release verification | `cd ts-app && REACT_APP_AI_ASSISTANT_URL="https://ai-photo-assistant.isabel-srsoares.workers.dev/" npm run verify:release` | PASS — 21 passed, 0 failed, 1 skipped |
+
+Meaningful descriptions for the photographic content itself remain source content in `ts-app/photo-sources.json`; the implementation prevents duplicate thumbnail announcements and preserves the existing source descriptions for full-size images.
+
+## Launch verification refresh (2026-10-29)
+
+- The feature status is now `Implemented — launch verification pending` rather than `Draft`.
+- The current public page returns the dark pre-paint bootstrap and `theme-color` `#17262b`.
+- The current public `manifest.json` returns `theme_color` and `background_color` as `#17262b`.
+- The earlier accessibility result of 31 contrast pairs, 7 suites, and 37 tests is historical; the current result is 37 contrast pairs, 8 suites, and 43 tests.
+- Online release verification passed with 21 checks and 1 warning: LinkedIn returned HTTP 999 and the assistant endpoint returned HTTP 405 to the link probe; both endpoints are reachable/configured and the assistant worker correctly rejects the probe method.
+- The current branch contains accessibility commits after the deployed bundle was produced. The current accessibility bundle must be deployed and then checked in a fresh private window before launch approval.

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const NotFound = () => {
     return (
-        <main className="not-found">
+        <main className="not-found" id="main-content" tabIndex={-1}>
             <div className="not-found-copy">
                 <p className="section-kicker">404 / OFF THE CONTACT SHEET</p>
                 <h1>This page is not in the album.</h1>

@@ -27,12 +27,16 @@ const images = [
 test('uses thumbnails, opens the full image, and preserves keyboard controls', async () => {
   render(<PhotoAlbum albumName="Portugal" dialogImages={images} />);
 
-  const thumbnail = screen.getByAltText('Portugal photo 1');
+  const thumbnailButton = screen.getByRole('button', { name: 'Open Portugal photo 1' });
+  const thumbnail = within(thumbnailButton).getByRole('img');
   expect(thumbnail).toHaveAttribute('src', images[0].thumbnail);
+  expect(thumbnail).toHaveAttribute('alt', '');
   expect(thumbnail).toHaveAttribute('draggable', 'false');
 
   fireEvent.click(screen.getByRole('button', { name: 'Open Portugal photo 1' }));
   const dialog = await screen.findByRole('dialog');
+  expect(dialog).toHaveAccessibleName('Portugal photo viewer');
+  expect(within(dialog).getByRole('status')).toHaveTextContent('Photo 1 of 2: Portugal photo 1');
   const fullImage = within(dialog).getByAltText('Portugal photo 1');
   expect(fullImage).toHaveAttribute('src', images[0].image);
   expect(within(dialog).getByRole('button', { name: 'Previous' })).toBeDisabled();
@@ -44,6 +48,7 @@ test('uses thumbnails, opens the full image, and preserves keyboard controls', a
 
   fireEvent.click(within(dialog).getByRole('button', { name: 'Next' }));
   expect(within(dialog).getByAltText('Portugal photo 2')).toHaveAttribute('src', images[1].image);
+  expect(within(dialog).getByRole('status')).toHaveTextContent('Photo 2 of 2: Portugal photo 2');
   expect(within(dialog).getByRole('button', { name: 'Previous' })).toBeEnabled();
   expect(within(dialog).getByRole('button', { name: 'Next' })).toBeDisabled();
 });
@@ -51,7 +56,7 @@ test('uses thumbnails, opens the full image, and preserves keyboard controls', a
 test('applies the quarter-turn orientation to the strip and the dialog', async () => {
   render(<PhotoAlbum albumName="Portugal" dialogImages={images} />);
 
-  const rotatedThumbnail = screen.getByAltText('Portugal photo 2');
+  const rotatedThumbnail = within(screen.getByRole('button', { name: 'Open Portugal photo 2' })).getByRole('img');
   expect(rotatedThumbnail).toHaveClass('rotation-90');
   expect(rotatedThumbnail).toHaveClass('is-quarter-turn');
 

@@ -22,16 +22,25 @@ test('renders the portfolio homepage and navigation', () => {
     renderWithRouter();
 
     expect(screen.getByText(/I'm an AI Engineer in Lisbon/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'About' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Experience' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Projects' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Hobbies' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Experience' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Hobbies' })).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+});
+
+test('sets an accessible title and skip link for the current route', () => {
+    renderWithRouter(['/projects']);
+
+    expect(document.title).toBe('Projects | Isabel Soares');
+    expect(screen.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute('href', '#main-content');
+    expect(screen.getByRole('main')).toHaveAttribute('id', 'main-content');
 });
 
 test('navigates to the Projects page and shows the AI Photographer Assistant', () => {
     renderWithRouter();
 
-    const projectsButton = screen.getByRole('button', { name: 'Projects' });
+    const projectsButton = screen.getByRole('link', { name: 'Projects' });
     userEvent.click(projectsButton);
 
     expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
@@ -54,11 +63,12 @@ test('moves keyboard focus through the primary navigation and appearance toggle'
     renderWithRouter();
 
     const controls = [
-        screen.getByRole('button', { name: "Go to Isabel's homepage" }),
-        screen.getByRole('button', { name: 'About' }),
-        screen.getByRole('button', { name: 'Experience' }),
-        screen.getByRole('button', { name: 'Projects' }),
-        screen.getByRole('button', { name: 'Hobbies' }),
+        screen.getByRole('link', { name: 'Skip to main content' }),
+        screen.getByRole('link', { name: "Go to Isabel's homepage" }),
+        screen.getByRole('link', { name: 'About' }),
+        screen.getByRole('link', { name: 'Experience' }),
+        screen.getByRole('link', { name: 'Projects' }),
+        screen.getByRole('link', { name: 'Hobbies' }),
         screen.getByRole('button', { name: 'Switch to light mode' }),
     ];
 
@@ -91,12 +101,14 @@ test('does not render personal project cards on the homepage', () => {
 test('Projects page links to both GitHub repositories', () => {
     renderWithRouter(['/projects']);
 
-    const aiLink = screen.getByRole('link', { name: 'View project on GitHub' });
+    const aiLink = screen.getByRole('link', { name: /View project on GitHub/ });
     expect(aiLink).toHaveAttribute('href', 'https://github.com/isabelSoares/ai-photographer-assistant');
     expect(aiLink).toHaveAttribute('target', '_blank');
     expect(aiLink).toHaveAttribute('rel', 'noopener noreferrer');
 
-    const cvLink = screen.getByRole('link', { name: 'View project' });
+    const cvLink = screen.getAllByRole('link', { name: /View project/ })
+        .find((link) => link.getAttribute('href')?.includes('cv-detect-people-my-gallery'));
+    if (!cvLink) throw new Error('CV project link not found.');
     expect(cvLink).toHaveAttribute('href', 'https://github.com/isabelSoares/cv-detect-people-my-gallery');
     expect(cvLink).toHaveAttribute('target', '_blank');
     expect(cvLink).toHaveAttribute('rel', 'noopener noreferrer');
@@ -121,7 +133,7 @@ test('shows the not-found experience for an unknown route', () => {
 
 test('App still renders with BrowserRouter without crashing', () => {
     render(<App />);
-    expect(screen.getByRole('button', { name: 'About' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
 });
 
 test('defaults to dark mode when no appearance preference is saved', () => {
@@ -178,7 +190,7 @@ test('keeps an explicit light preference across route changes', () => {
     window.localStorage.setItem('dark-mode', 'false');
     renderWithRouter();
 
-    userEvent.click(screen.getByRole('button', { name: 'Projects' }));
+    userEvent.click(screen.getByRole('link', { name: 'Projects' }));
 
     expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
     expect(document.documentElement).not.toHaveClass('dark-mode');
@@ -188,7 +200,7 @@ test('keeps an explicit dark preference across route changes', () => {
     window.localStorage.setItem('dark-mode', 'true');
     renderWithRouter(['/resume']);
 
-    userEvent.click(screen.getByRole('button', { name: 'Projects' }));
+    userEvent.click(screen.getByRole('link', { name: 'Projects' }));
 
     expect(screen.getByRole('heading', { name: 'Things I build outside work.' })).toBeInTheDocument();
     expect(document.documentElement).toHaveClass('dark-mode');

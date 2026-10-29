@@ -68,7 +68,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                     <span className="film-strip-arrow" aria-hidden="true">-&gt;</span>
                 </span>
             </div>
-            <div className="film-strip" aria-label={`${props.albumName} photo strip`}>
+            <div className="film-strip" role="group" aria-label={`${props.albumName} photo strip`}>
                 {props.dialogImages.map((image, index) => {
                     const isQuarterTurn = image.rotation === 90;
 
@@ -84,7 +84,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                                 <img
                                     className={`rotation-${image.rotation || 0}${isQuarterTurn ? ' is-quarter-turn' : ''}`}
                                     src={image.thumbnail || image.image}
-                                    alt={image.description}
+                                    alt=""
                                     width={image.width}
                                     height={image.height}
                                     loading="lazy"
@@ -100,8 +100,13 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
             <BootstrapDialog
                 className='teste'
                 onClose={handleClose}
-                 open={open}
-                 >
+                open={open}
+                aria-labelledby="photo-dialog-title"
+                aria-describedby="photo-dialog-status"
+                >
+                <span id="photo-dialog-title" className="visually-hidden">
+                    {props.albumName} photo viewer
+                </span>
                  <IconButton
                 aria-label="close"
                 onClick={handleClose}
@@ -115,6 +120,9 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                 <CloseIcon />
                 </IconButton>
                 <DialogContent dividers>
+                    <p id="photo-dialog-status" className="visually-hidden" role="status">
+                        Photo {photoIndex + 1} of {props.dialogImages.length}: {currentImage.description}
+                    </p>
                     <div className='content-dialog'>
                         <div className={`photos-dialog${currentIsQuarterTurn ? ' is-quarter-turn' : ''}`}>
                             <img
