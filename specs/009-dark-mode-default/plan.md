@@ -1,6 +1,6 @@
 # Implementation Plan: Dark Mode Default Appearance
 
-**Branch**: `fix/verify-launch` (feature `009-dark-mode-default`) | **Date**: 2026-10-26 | **Spec**: [spec.md](./spec.md)
+**Branch**: `feature/verify-a11y-issues` (feature `009-dark-mode-default`) | **Date**: 2026-10-29 | **Spec**: [spec.md](./spec.md)
 
 **Input**: Feature specification from `/specs/009-dark-mode-default/spec.md`
 
@@ -15,13 +15,13 @@ Make dark mode the unambiguous default appearance for visitors without an explic
 - add an automated guard that the manifest keeps the dark default;
 - verify every route, first paint, explicit light/dark persistence, invalid storage, the production build, and the deployed site.
 
-No content, routes, photo assets, privacy rules, or visitor-facing features change.
+The theme contract remains unchanged. The completed follow-up also adds accessibility semantics, route announcements, focus management, and automated axe checks without changing content, routes, photo assets, privacy rules, or the appearance preference contract.
 
 ## Technical Context
 
 **Language/Version**: TypeScript 4.9.5, React 17.0.2, Node.js 24, SCSS
 
-**Primary Dependencies**: `react-scripts` 5.0.1, React Router 6, MUI 5, Emotion, `sass`. No new dependency is planned.
+**Primary Dependencies**: `react-scripts` 5.0.1, React Router 6, MUI 5, Emotion, `sass`. `axe-core` 4.8.1 is a development-only accessibility test dependency; it is not shipped to visitors.
 
 **Storage**: Browser `localStorage` under the existing `dark-mode` key, with `"true"` for explicit dark and `"false"` for explicit light. No backend or database.
 
@@ -49,13 +49,13 @@ The project constitution at `.specify/memory/constitution.md` is still the unfil
 - **Default correctness**: a visitor with no valid preference must receive dark mode before first paint, regardless of OS appearance.
 - **Preference integrity**: an explicit light or dark choice must survive reloads and route changes.
 - **Surface consistency**: navigation, pages, cards, photo frames, dialogs, not-found page, browser chrome, and installed-app surfaces must agree.
-- **No regression**: content, routes, albums, photo privacy, assistant behavior, and existing automated gates must remain unchanged.
+- **No regression**: content, routes, albums, photo privacy, assistant behavior, and existing automated gates must remain unchanged; accessibility semantics may be improved without changing those contracts.
 - **Testability**: the default, persistence, and manifest appearance must have automated or repeatable verification.
-- **Scope discipline**: no redesign, no new appearance modes, no new dependency, no photo regeneration.
+- **Scope discipline**: no redesign, no new appearance modes, no runtime dependency, no photo regeneration. Development-only `axe-core` is permitted for repeatable accessibility checks.
 
 No constitution violations or complexity exceptions are required.
 
-**Post-design re-check: PASS.** Phase 1 adds theme metadata, one CSS declaration, and regression tests. It introduces no service, dependency, data collection, privacy change, or visitor-facing feature.
+**Post-design re-check: PASS.** The implementation adds theme metadata, CSS declarations, accessibility semantics, regression tests, and the development-only `axe-core` checker. It introduces no service, runtime dependency, data collection, privacy change, or route/content change.
 
 ## Project Structure
 
@@ -86,6 +86,7 @@ ts-app/
 │   ├── index.css                      # add color-scheme for light and dark roots
 │   ├── App.tsx                        # existing resolution/toggle; verify only
 │   ├── App.test.tsx                   # default, persistence, toggle, route coverage
+│   ├── accessibility.test.tsx         # axe route smoke coverage
 │   └── theme/
 │       ├── appearance.ts              # existing resolver/helpers; verify only
 │       └── appearance.test.ts         # resolution and storage-failure coverage
@@ -94,7 +95,7 @@ ts-app/
     └── validate-site-assets.test.js   # pass/fail coverage for the guard
 ```
 
-**Structure Decision**: Keep the existing single static React application. Reuse the appearance helper and pre-paint bootstrap introduced by feature 007. The only production changes are theme metadata in `manifest.json` and `color-scheme` in `index.css`; the rest is verification and regression protection.
+**Structure Decision**: Keep the existing single static React application. Reuse the appearance helper and pre-paint bootstrap introduced by feature 007. Theme metadata and `color-scheme` remain the source of truth for appearance; accessibility semantics stay in the existing route/components, with `axe-core` used only by tests.
 
 ## Design Decisions
 
@@ -133,10 +134,10 @@ Do not rewrite these. Verify them and add only the missing protections.
 
 ### Verification strategy
 
-- Automated: Jest/RTL appearance and route tests; site-asset validator and its tests; production build; release verification.
+- Automated: Jest/RTL appearance and route tests; axe-core route checks; site-asset validator and its tests; production build; release verification.
 - Manual: fresh storage on every route, OS set to light, saved light/dark persistence, blocked/invalid storage, first-paint observation, browser/PWA chrome, and the deployed site.
 - Production check: confirm the deployed commit contains the appearance helper and pre-paint bootstrap. A stale deployment or a previously saved light value can explain a first-hand report of light mode even when the source is correct.
 
 ## Complexity Tracking
 
-No constitution violations. The production diff is limited to theme metadata, one CSS declaration, and regression checks. No additional project, service, dependency, or data store is introduced.
+No constitution violations. The production diff includes theme metadata, accessibility semantics, focus/reduced-motion styles, and regression checks. `axe-core` is development-only; no additional project, service, runtime dependency, or data store is introduced.
