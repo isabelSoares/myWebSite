@@ -25,9 +25,10 @@ const images = [
 ];
 
 test('uses thumbnails, opens the full image, and preserves keyboard controls', async () => {
-  const { container } = render(<PhotoAlbum albumName="Portugal" albumNumber={1} dialogImages={images} />);
+  render(<PhotoAlbum albumName="Portugal" albumNumber={1} dialogImages={images} />);
   expect(screen.getByText('01 FRAMES')).toBeInTheDocument();
-  expect(Array.from(container.querySelectorAll('.film-frame-number')).map((frame) => frame.textContent)).toEqual(['01', '02']);
+  expect(within(screen.getByRole('button', { name: 'Open Portugal photo 1' })).getByText('01')).toBeInTheDocument();
+  expect(within(screen.getByRole('button', { name: 'Open Portugal photo 2' })).getByText('02')).toBeInTheDocument();
 
   const thumbnailButton = screen.getByRole('button', { name: 'Open Portugal photo 1' });
   const thumbnail = within(thumbnailButton).getByRole('img');

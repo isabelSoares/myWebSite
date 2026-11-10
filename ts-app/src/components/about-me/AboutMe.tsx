@@ -2,10 +2,9 @@ import React from 'react';
 import './AboutMe.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import { CV_URL } from '../../data/cv-url';
 import photoManifest from '../../data/photo-manifest.json';
 import { publicPhotoUrl } from '../../data/photo-url';
 

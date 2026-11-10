@@ -102,7 +102,7 @@ export const ResumeCV = () => {
                         <div className="experience-index">{item.accent}</div>
                         <div className="experience-content">
                             <div className="experience-meta">
-                                <h3>{item.company}</h3>
+                                <span className="experience-company">{item.company}</span>
                                 <span><FontAwesomeIcon icon={faCalendarDays} /> {item.period}</span>
                             </div>
                             <h2>{item.role}</h2>
