@@ -13,6 +13,9 @@ test('renders every album from the generated manifest without raw photo links', 
     expect(screen.getByText(album)).toBeInTheDocument();
   }
 
+  expect(screen.getByText('01 FRAMES').nextElementSibling).toHaveTextContent('Portugal');
+  expect(screen.getByText('02 FRAMES').nextElementSibling).toHaveTextContent('UK');
+
   expect(screen.getByText(/Photographs © Isabel Soares/)).toBeInTheDocument();
   expect(document.body.innerHTML).not.toContain('raw.githubusercontent.com');
 

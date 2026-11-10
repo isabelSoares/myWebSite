@@ -5,9 +5,9 @@
 }
 
 .about-me-hero {
-    align-items: center;
+    align-items: left;
     display: grid;
-    gap: clamp(40px, 8vw, 120px);
+    gap: clamp(30px, 6vw, 90px);
     grid-template-columns: minmax(0, 1fr) minmax(260px, 390px);
     min-height: min(680px, calc(100vh - 78px));
 }
@@ -46,19 +46,26 @@
 }
 
 .about-me-actions {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 1rem;
+  width: 100%;
 }
 
 .about-me-actions-row {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 26px;
-    justify-content: center;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.about-me-actions-row > a {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .primary-action,
@@ -390,4 +397,14 @@
         gap: 20px;
         padding: 70px 0;
     }
+}
+
+@media (max-width: 600px) {
+  .about-me-actions-row {
+    flex-direction: column;
+  }
+
+  .about-me-actions-row > a {
+    width: 100%;
+  }
 }
