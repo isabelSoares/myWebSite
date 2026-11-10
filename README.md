@@ -13,7 +13,7 @@ published with GitHub Pages.
 - **Home** — introduction, featured work, and a short overview.
 - **Experience** — roles, skills, and education.
 - **Projects** — selected AI, frontend, and personal projects, including the
-  AI Photographer Assistant.
+  AI Photographer Assistant, CV Photo AI, and AgentFlow AI.
 - **Hobbies** — travel photography albums, interests, and the photography
   Instagram invitation.
 
@@ -147,7 +147,14 @@ The optional `ai_assistant_link_click` interaction name is exposed for a future
 analytics integration. Navigation does not depend on analytics, and the portfolio
 link does not collect uploaded photos or assistant results.
 
-[AI Photographer Assistant project](https://github.com/isabelSoares/ai-photographer-assistant)
+### Project repositories
+
+The Projects page links to these public repositories, and the release check
+verifies their addresses:
+
+- [AI Photographer Assistant](https://github.com/isabelSoares/ai-photographer-assistant)
+- [CV Photo AI](https://github.com/isabelSoares/cv-detect-people-my-gallery)
+- [AgentFlow AI](https://github.com/isabelSoares/agentflow-ai)
 
 ## TypeScript maintenance
 
