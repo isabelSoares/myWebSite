@@ -6,7 +6,16 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import PhotoAssistant from './PhotoAssistant';
 import { AI_ASSISTANT_URL } from '../../config/assistant';
 
-const moreProjects = [
+interface ProjectEntry {
+    kicker: string;
+    title: string;
+    description: string;
+    tags: string;
+    href: string;
+    actionDetail?: string;
+}
+
+const moreProjects: ProjectEntry[] = [
     {
         kicker: 'COMPUTER VISION',
         title: 'CV Photo AI',
@@ -14,6 +23,15 @@ const moreProjects = [
             'A local-first gallery toolkit for detecting people, visualizing results, and finding similar photos without sending the collection to a server.',
         tags: 'Python · YOLOv8 · CLIP',
         href: 'https://github.com/isabelSoares/cv-detect-people-my-gallery',
+    },
+    {
+        kicker: 'MULTI-AGENT AI',
+        title: 'AgentFlow AI',
+        description:
+            'A secure multi-agent support platform where specialized agents collaborate on identity checks, patient classification, and request routing — with deterministic guardrails and observable agent telemetry.',
+        tags: 'Python · FastAPI · LangGraph · React',
+        href: 'https://github.com/isabelSoares/agentflow-ai',
+        actionDetail: 'AgentFlow AI',
     },
 ];
 
@@ -69,7 +87,11 @@ export const PersonalProjects = () => {
                             <div className="project-card-footer">
                                 <span>{project.tags}</span>
                                 <a href={project.href} target="_blank" rel="noopener noreferrer">
-                                    View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> <span className="visually-hidden">(opens in a new tab)</span>
+                                    View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                    {project.actionDetail && (
+                                        <span className="visually-hidden"> {project.actionDetail}</span>
+                                    )}{' '}
+                                    <span className="visually-hidden">(opens in a new tab)</span>
                                 </a>
                             </div>
                         </article>
