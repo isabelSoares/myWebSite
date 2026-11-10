@@ -56,7 +56,6 @@ export const AboutMe = () => {
 
             <section className="about-me-details" aria-label="Profile details">
                 <div>
-                    <p className="section-kicker">01 / PROFILE</p>
                     <h2>The short version.</h2>
                 </div>
                 <div className="about-me-details-copy">

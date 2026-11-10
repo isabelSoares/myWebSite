@@ -11,7 +11,19 @@ beforeEach(() => {
   document.documentElement.classList.remove('dark-mode');
 });
 
-test.each(['/','/resume','/projects','/hobbies','/unknown-route'])('has no axe violations on %s', async (route) => {
+test.each([
+  ['/','dark'],
+  ['/resume','dark'],
+  ['/projects','dark'],
+  ['/hobbies','dark'],
+  ['/unknown-route','dark'],
+  ['/','light'],
+  ['/resume','light'],
+  ['/projects','light'],
+  ['/hobbies','light'],
+  ['/unknown-route','light'],
+])('has no axe violations on %s in %s mode', async (route, mode) => {
+  window.localStorage.setItem('dark-mode', mode === 'light' ? 'false' : 'true');
   const { container } = render(
     <MemoryRouter initialEntries={[route]}>
       <AppContent />
