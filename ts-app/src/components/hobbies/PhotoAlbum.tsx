@@ -63,7 +63,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
     const currentIsQuarterTurn = currentImage.rotation === 90;
 
     return (
-        <div className="photos" onContextMenu={preventDefault}>
+        <div className="photos" role="group" aria-label={`${props.albumName} photo album`} onContextMenu={preventDefault}>
             <div className="film-strip-heading">
                 <div>
                     <span className="film-strip-index">{albumNumber} FRAMES</span>

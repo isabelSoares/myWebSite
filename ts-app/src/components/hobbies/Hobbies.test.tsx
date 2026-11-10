@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import photoManifest from '../../data/photo-manifest.json';
 import { Hobbies } from './Hobbies';
 
@@ -13,8 +13,12 @@ test('renders every album from the generated manifest without raw photo links', 
     expect(screen.getByText(album)).toBeInTheDocument();
   }
 
-  expect(screen.getByText('01 FRAMES').nextElementSibling).toHaveTextContent('Portugal');
-  expect(screen.getByText('02 FRAMES').nextElementSibling).toHaveTextContent('UK');
+  const portugalAlbum = within(screen.getByRole('group', { name: 'Portugal photo album' }));
+  const ukAlbum = within(screen.getByRole('group', { name: 'UK photo album' }));
+  expect(portugalAlbum.getByText('01 FRAMES')).toBeInTheDocument();
+  expect(portugalAlbum.getByRole('heading', { name: 'Portugal' })).toBeInTheDocument();
+  expect(ukAlbum.getByText('02 FRAMES')).toBeInTheDocument();
+  expect(ukAlbum.getByRole('heading', { name: 'UK' })).toBeInTheDocument();
 
   expect(screen.getByText(/Photographs © Isabel Soares/)).toBeInTheDocument();
   expect(document.body.innerHTML).not.toContain('raw.githubusercontent.com');
