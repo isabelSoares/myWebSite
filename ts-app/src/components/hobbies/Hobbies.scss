@@ -50,7 +50,7 @@
 .interest-item span {
     color: var(--site-accent);
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
 }
 
 .interest-item strong {
@@ -69,9 +69,9 @@
 }
 
 .photography-section {
-    align-items: flex-end;
+    align-items: left;
     display: grid;
-    gap: 60px;
+    gap: 30px;
     grid-template-columns: 1fr 0.8fr;
     padding: 100px 0 65px;
 }

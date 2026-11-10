@@ -21,7 +21,7 @@ const experience: Experience[] = [
         period: 'October 2025 — Current',
         summary: 'Building production AI solutions that turn large language models into dependable products and workflows.',
         bullets: [
-            'Architected and deployed enterprise LLM features with Azure OpenAI, including end-to-end multi-agent systems and automated CI/CD pipelines.',
+            'Architected and deployed enterprise LLM features with multipleAI SDKs (Azure OpenAI, AWS Bedrock), including end-to-end multi-agent systems and automated CI/CD pipelines.',
             'Designed DocGen, an AI system automating documentation across 30+ React components and 100+ microservices.',
             'Built the AI Governance Portal with real-time validation, automated error correction, and an interactive chatbot UI.',
             'Improved LLM reliability through prompt engineering, evaluation frameworks, and output validation guardrails.'
@@ -34,6 +34,7 @@ const experience: Experience[] = [
         period: 'February 2024 — October 2025',
         summary: 'Engineered user interfaces across consumer and business products during a large-scale frontend migration.',
         bullets: [
+            'Part of the first team to modernize Vodafone Portugal’s frontend stack, migrating legacy Vue.js code to React and TypeScript.',
             'Built key interfaces in React and Vue.js for consumer and business web applications.',
             'Enhanced the TOBi chatbot interface with clearer conversational UX patterns for high-volume customer interactions.'
         ],
@@ -75,10 +76,10 @@ const experience: Experience[] = [
 ];
 
 const skills = [
-    { label: 'AI & ML', values: 'Azure OpenAI · LLMs · Prompt Engineering · Multi-Agent Systems · NLP' },
-    { label: 'Programming', values: 'Python · JavaScript · TypeScript' },
-    { label: 'Frontend', values: 'React · Vue.js · HTML · CSS' },
-    { label: 'Tools', values: 'Git · CI/CD · Azure' }
+    { label: 'AI & ML', values: 'AI SDKs · LLMs · Prompt Engineering · Multi-Agent Systems · Computer Vision' },
+    { label: 'Programming', values: 'Python · TypeScript · HTML · SCSS' },
+    { label: 'Frontend', values: 'React · HTML · Vue.js · TypeScript · SCSS · CSS' },
+    { label: 'Tools', values: 'Git · CI/CD · Azure · AWS' }
 ];
 
 export const ResumeCV = () => {
@@ -101,7 +102,7 @@ export const ResumeCV = () => {
                         <div className="experience-index">{item.accent}</div>
                         <div className="experience-content">
                             <div className="experience-meta">
-                                <span>{item.company}</span>
+                                <span className="experience-company">{item.company}</span>
                                 <span><FontAwesomeIcon icon={faCalendarDays} /> {item.period}</span>
                             </div>
                             <h2>{item.role}</h2>

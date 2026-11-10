@@ -2,10 +2,9 @@ import React from 'react';
 import './AboutMe.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import { CV_URL } from '../../data/cv-url';
 import photoManifest from '../../data/photo-manifest.json';
 import { publicPhotoUrl } from '../../data/photo-url';
 
@@ -19,16 +18,13 @@ export const AboutMe = () => {
                     <p className="eyebrow">HELLO, I&apos;M ISABEL</p>
                     <h1 id="intro-title">I work with AI, build interfaces, and take too many photos.</h1>
                     <p className="about-me-lead">
-                        I&apos;m an AI Engineer in Lisbon. At Vodafone, I work with Azure OpenAI and
+                        I&apos;m an AI Engineer in Lisbon. At Vodafone, I work with multiple AI SDKs (Azure OpenAI, AWS Bedrock) and
                         automation workflows. Before that, I spent a few years building frontend products.
                     </p>
                     <div className="about-me-actions">
                         <div className="about-me-actions-row">
                             <Link className="primary-action" to="/resume">Explore my experience</Link>
                             <Link className="primary-action" to="/hobbies">Off the Clock</Link>
-                            <a className="text-action cv-action" href={CV_URL} download>
-                                Download CV <FontAwesomeIcon icon={faDownload} />
-                            </a>
                         </div>
                         <div className="about-me-actions-row">
                             <Link
@@ -40,10 +36,6 @@ export const AboutMe = () => {
                             </Link>
                             <a className="text-action" href="mailto:isabel.srsoares@gmail.com">Let&apos;s connect</a>
                         </div>
-                    </div>
-                    <div className="about-me-facts">
-                        <span><FontAwesomeIcon icon={faLocationDot} /> Lisbon, Portugal</span>
-                        <span>Azure OpenAI · LLMs · React</span>
                     </div>
                 </div>
                 <div className="about-me-portrait-wrap">

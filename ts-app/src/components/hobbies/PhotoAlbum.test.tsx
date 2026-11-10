@@ -25,7 +25,10 @@ const images = [
 ];
 
 test('uses thumbnails, opens the full image, and preserves keyboard controls', async () => {
-  render(<PhotoAlbum albumName="Portugal" dialogImages={images} />);
+  render(<PhotoAlbum albumName="Portugal" albumNumber={1} dialogImages={images} />);
+  expect(screen.getByText('01 FRAMES')).toBeInTheDocument();
+  expect(within(screen.getByRole('button', { name: 'Open Portugal photo 1' })).getByText('01')).toBeInTheDocument();
+  expect(within(screen.getByRole('button', { name: 'Open Portugal photo 2' })).getByText('02')).toBeInTheDocument();
 
   const thumbnailButton = screen.getByRole('button', { name: 'Open Portugal photo 1' });
   const thumbnail = within(thumbnailButton).getByRole('img');
@@ -54,7 +57,7 @@ test('uses thumbnails, opens the full image, and preserves keyboard controls', a
 });
 
 test('applies the quarter-turn orientation to the strip and the dialog', async () => {
-  render(<PhotoAlbum albumName="Portugal" dialogImages={images} />);
+  render(<PhotoAlbum albumName="Portugal" albumNumber={1} dialogImages={images} />);
 
   const rotatedThumbnail = within(screen.getByRole('button', { name: 'Open Portugal photo 2' })).getByRole('img');
   expect(rotatedThumbnail).toHaveClass('rotation-90');

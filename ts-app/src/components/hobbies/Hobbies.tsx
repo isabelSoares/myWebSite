@@ -45,7 +45,7 @@ export const Hobbies = (props: IProps) => {
                         <span>0{index + 1}</span>
                         <div>
                             <strong>{interest.name}</strong>
-                            <small>{interest.note}</small>
+                            <span>{interest.note}</span>
                         </div>
                     </div>
                 ))}
@@ -70,8 +70,8 @@ export const Hobbies = (props: IProps) => {
                 )}
             </section>
             <div className='hobbies-folder'>
-                {albumsInformation.filter((item) => item.dialogImages.some((image) => image.image)).map((item) => (
-                    <PhotoAlbum key={item.albumName} albumName={item.albumName} dialogImages={item.dialogImages.filter((image) => image.image)} />
+                {albumsInformation.filter((item) => item.dialogImages.some((image) => image.image)).map((item, index) => (
+                    <PhotoAlbum key={item.albumName} albumName={item.albumName} albumNumber={index + 1} dialogImages={item.dialogImages.filter((image) => image.image)} />
                 ))}
             </div>
             <aside className="instagram-invite" aria-label="Photography Instagram invitation">

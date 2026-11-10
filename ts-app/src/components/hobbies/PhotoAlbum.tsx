@@ -8,8 +8,12 @@ import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export interface IPhotoAlbum {
     albumName:string,
+    albumNumber:number,
     dialogImages:ImageInformation[]
 }
 
@@ -53,24 +57,27 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
         setPhotoIndex((index) => index + 1);
     };
 
+    const albumNumber = String(props.albumNumber).padStart(2, '0');
+    const frameNumbers = props.dialogImages.map((_, index) => String(index + 1).padStart(2, '0'));
     const currentImage = props.dialogImages[photoIndex];
     const currentIsQuarterTurn = currentImage.rotation === 90;
 
     return (
-        <div className="photos" onContextMenu={preventDefault}>
+        <div className="photos" role="group" aria-label={`${props.albumName} photo album`} onContextMenu={preventDefault}>
             <div className="film-strip-heading">
                 <div>
-                    <span className="film-strip-index">{String(props.dialogImages.length).padStart(2, '0')} frames</span>
+                    <span className="film-strip-index">{albumNumber} FRAMES</span>
                     <h3>{props.albumName}</h3>
                 </div>
                 <span className="film-strip-hint">
-                    Scroll to explore
-                    <span className="film-strip-arrow" aria-hidden="true">-&gt;</span>
+                    Scroll to explore 
+                    <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
                 </span>
             </div>
             <div className="film-strip" role="group" aria-label={`${props.albumName} photo strip`}>
                 {props.dialogImages.map((image, index) => {
                     const isQuarterTurn = image.rotation === 90;
+                    const frameNumber = frameNumbers[index];
 
                     return (
                         <Button
@@ -79,7 +86,7 @@ export const PhotoAlbum = (props: IPhotoAlbum) => {
                             onClick={() => handleClickOpen(index)}
                             aria-label={`Open ${props.albumName} photo ${index + 1}`}
                         >
-                            <span className="film-frame-number">{String(index + 1).padStart(2, '0')}</span>
+                            <span className="film-frame-number">{frameNumber}</span>
                             <span className={`film-frame-photo${isQuarterTurn ? ' is-quarter-turn' : ''}`}>
                                 <img
                                     className={`rotation-${image.rotation || 0}${isQuarterTurn ? ' is-quarter-turn' : ''}`}

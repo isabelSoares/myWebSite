@@ -28,7 +28,7 @@ const moreProjects: ProjectEntry[] = [
         kicker: 'MULTI-AGENT AI',
         title: 'AgentFlow AI',
         description:
-            'A secure multi-agent support platform where specialized agents collaborate on identity checks, patient classification, and request routing — with deterministic guardrails and observable agent telemetry.',
+            'A secure multi-agent support platform where specialized agents collaborate on identity checks, patient classification, and request routing, with deterministic guardrails and observable agent telemetry.',
         tags: 'Python · FastAPI · LangGraph · React',
         href: 'https://github.com/isabelSoares/agentflow-ai',
         actionDetail: 'AgentFlow AI',

@@ -24,9 +24,12 @@
 .film-frame-number {
     color: var(--site-accent);
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .film-strip-hint {
