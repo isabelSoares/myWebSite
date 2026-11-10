@@ -5,12 +5,13 @@ photographer of trips and everyday details.
 
 **Live site:** <https://isabelsoares.github.io/myWebSite/>
 
-The site is a static React application. It has no application backend and is
-published with GitHub Pages.
+The portfolio frontend is a static React application published with GitHub
+Pages. The AI Photographer Assistant sends submitted photos to a separately
+deployed Cloudflare Worker; this repository does not contain that service.
 
 ## What is in the site
 
-- **Home** — introduction, featured work, and a short overview.
+- **Home** — introduction, profile, selected impact, and a personal overview.
 - **Experience** — roles, skills, and education.
 - **Projects** — selected AI, frontend, and personal projects, including the
   AI Photographer Assistant, CV Photo AI, and AgentFlow AI.
@@ -20,7 +21,7 @@ published with GitHub Pages.
 ## Technology
 
 - React 17 with TypeScript 4.9 and Create React App 5
-- React Router 6, MUI 5, MobX, and SCSS
+- React Router 6, MUI 5, and SCSS
 - Node.js tooling for local photo generation, release verification, and load
   testing
 - `axe-core` development checks for route-level accessibility coverage
@@ -58,8 +59,11 @@ npm test -- --watchAll=false
 ```
 
 The Jest suite includes `axe-core` checks for the home, experience, projects,
-hobbies, and not-found routes. The theme validator checks WCAG AA contrast
-tokens and visible keyboard focus styles.
+hobbies, and not-found routes in both light and dark modes. App tests also
+exercise keyboard navigation and appearance toggling. The theme validator
+checks WCAG AA contrast tokens and visible keyboard focus styles. Narrow-screen
+browser checks should include horizontal reflow and keyboard focus visibility;
+automated checks do not replace manual screen-reader testing.
 
 ## Verification
 
@@ -120,9 +124,11 @@ npm run validate:photos
 
 To publish or unpublish a photo, set `published` to `true` or `false` in
 `photo-sources.json`, run `npm run photos:build`, and commit the source list,
-manifest, and generated files. The scripts enforce WebP output, 540 px
-thumbnails, 1800 px full images, size limits, and a total generated footprint
-below 64 MB.
+manifest, and generated files. The scripts enforce WebP output, thumbnails up
+to 540 px wide / 600 px on the longest side (120 KiB maximum), full images up
+to 1800 px wide / 2000 px on the longest side (500 KiB maximum), and a total
+generated footprint below 64 MiB. Generated images are re-encoded without
+source metadata.
 
 Photo usage and removal details: [PHOTO-POLICY.md](PHOTO-POLICY.md).
 
@@ -144,8 +150,10 @@ repository, and retired Render URLs. The checked-in
 `REACT_APP_AI_ASSISTANT_URL` fallback is only for local tests.
 
 The optional `ai_assistant_link_click` interaction name is exposed for a future
-analytics integration. Navigation does not depend on analytics, and the portfolio
-link does not collect uploaded photos or assistant results.
+analytics integration; no analytics provider is wired into the portfolio.
+Submitted photos are sent to the configured external endpoint for analysis. The
+portfolio frontend does not persist the submitted image or review result;
+retention by the Worker and its inference provider must be verified separately.
 
 ### Project repositories
 

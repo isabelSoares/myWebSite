@@ -10,8 +10,8 @@ projects without written permission. Linking to the public site is welcome.
 
 Only web-sized derivatives are published:
 
-- thumbnails capped at 540 px and 120 KB;
-- full-screen versions capped at 1800 px wide and 500 KB;
+- thumbnails capped at 540 px wide, 600 px on the longest side, and 120 KiB;
+- full-screen versions capped at 1800 px wide, 2000 px on the longest side, and 500 KiB;
 - WebP files with metadata removed.
 
 The original photographs are kept in a private library outside this repository.
