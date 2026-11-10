@@ -30,6 +30,7 @@ const EXTERNAL_URLS = [
   'https://github.com/isabelSoares',
   'https://github.com/isabelSoares/ai-photographer-assistant',
   'https://github.com/isabelSoares/cv-detect-people-my-gallery',
+  'https://github.com/isabelSoares/agentflow-ai',
 ];
 
 const SECRET_PATTERNS = [
