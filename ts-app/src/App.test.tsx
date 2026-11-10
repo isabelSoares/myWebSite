@@ -95,7 +95,16 @@ test('does not render personal project cards on the homepage', () => {
 
     expect(screen.queryByRole('heading', { name: 'Things I build outside work.' })).not.toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'CV Photo AI' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'AgentFlow AI' })).not.toBeInTheDocument();
     expect(screen.queryAllByRole('link', { name: /View project/i })).toHaveLength(0);
+});
+
+test('Projects page presents the AgentFlow AI project card', () => {
+    renderWithRouter(['/projects']);
+
+    expect(screen.getByRole('heading', { name: 'AgentFlow AI' })).toBeInTheDocument();
+    expect(screen.getByText(/multi-agent support platform/i)).toBeInTheDocument();
+    expect(screen.getByText('Python · FastAPI · LangGraph · React')).toBeInTheDocument();
 });
 
 test('Projects page links to both GitHub repositories', () => {
@@ -112,6 +121,20 @@ test('Projects page links to both GitHub repositories', () => {
     expect(cvLink).toHaveAttribute('href', 'https://github.com/isabelSoares/cv-detect-people-my-gallery');
     expect(cvLink).toHaveAttribute('target', '_blank');
     expect(cvLink).toHaveAttribute('rel', 'noopener noreferrer');
+});
+
+test('Projects page opens the AgentFlow AI repository safely and accessibly', () => {
+    renderWithRouter(['/projects']);
+
+    const agentFlowLink = screen
+        .getAllByRole('link', { name: /View project/ })
+        .find((link) => link.getAttribute('href')?.includes('agentflow-ai'));
+    if (!agentFlowLink) throw new Error('AgentFlow AI project link not found.');
+
+    expect(agentFlowLink).toHaveAttribute('href', 'https://github.com/isabelSoares/agentflow-ai');
+    expect(agentFlowLink).toHaveAttribute('target', '_blank');
+    expect(agentFlowLink).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(agentFlowLink).toHaveAccessibleName(/View project AgentFlow AI \(opens in a new tab\)/i);
 });
 
 test.each([
